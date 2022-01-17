@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using Slipspace.Models;
+using Grunt.Models;
 using System.IO;
 
-namespace Slipspace.Util
+namespace Grunt.Util
 {
     public class ClientConfigurationReader
     {

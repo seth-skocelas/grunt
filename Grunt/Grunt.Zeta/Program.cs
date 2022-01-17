@@ -1,10 +1,10 @@
-﻿using Slipspace.Authentication;
-using Slipspace.Models;
-using Slipspace.Util;
+﻿using Grunt.Authentication;
+using Grunt.Models;
+using Grunt.Util;
 using System;
 using System.Threading.Tasks;
 
-namespace Slipspace.Zeta
+namespace Grunt.Zeta
 {
     class Program
     {

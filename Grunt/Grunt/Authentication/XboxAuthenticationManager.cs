@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Slipspace.Models;
+using Grunt.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slipspace.Authentication
+namespace Grunt.Authentication
 {
     public class XboxAuthenticationManager
     {

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Slipspace\Slipspace.csproj" />
+    <ProjectReference Include="..\Grunt\Grunt.csproj" />
   </ItemGroup>
 
   <ItemGroup>

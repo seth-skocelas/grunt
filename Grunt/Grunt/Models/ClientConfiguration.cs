@@ -1,7 +1,7 @@
 ﻿
 using Newtonsoft.Json;
 
-namespace Slipspace.Models
+namespace Grunt.Models
 {
     public class ClientConfiguration
     {

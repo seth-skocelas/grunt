@@ -1,4 +1,4 @@
-﻿namespace Slipspace.Models
+﻿namespace Grunt.Models
 {
     public class SpartanTokenProof
     {

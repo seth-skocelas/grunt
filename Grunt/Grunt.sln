@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slipspace", "Slipspace\Slipspace.csproj", "{CD40FFAC-27CF-4FEC-AF49-765DC5F20880}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grunt", "Grunt\Grunt.csproj", "{CD40FFAC-27CF-4FEC-AF49-765DC5F20880}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slipspace.Zeta", "Slipspace.Zeta\Slipspace.Zeta.csproj", "{E813456D-A2F4-4F10-A0B1-8EA5A0121442}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grunt.Zeta", "Grunt.Zeta\Grunt.Zeta.csproj", "{E813456D-A2F4-4F10-A0B1-8EA5A0121442}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
