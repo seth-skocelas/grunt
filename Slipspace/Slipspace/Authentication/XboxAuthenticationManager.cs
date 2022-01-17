@@ -17,6 +17,9 @@ namespace Slipspace.Authentication
         private readonly string XBOX_LIVE_TOKEN_URL = "https://login.live.com/oauth20_token.srf";
         private readonly string XBOX_LIVE_NATIVE_RELYING_PARTY_URL = "http://auth.xboxlive.com";
         private readonly string XBOX_LIVE_NATIVE_AUTH_URL = "https://user.auth.xboxlive.com/user/authenticate";
+        private readonly string XBOX_LIVE_XSTS_RELYING_PARTY = "http://xboxlive.com";
+        private readonly string XBOX_LIVE_XSTS_AUTH_URL = "https://xsts.auth.xboxlive.com/xsts/authorize";
+        private readonly string HALO_XSTS_RELYING_PARTY = "https://prod.xsts.halowaypoint.com/";
 
         public string GenerateAuthUrl(string clientId, string redirectUrl, string[] scopes = null, string state = "")
         {
@@ -72,7 +75,7 @@ namespace Slipspace.Authentication
             var client = new HttpClient();
             var response = await client.PostAsync(XBOX_LIVE_TOKEN_URL, new FormUrlEncodedContent(tokenRequestContent));
 
-            if (response.StatusCode == HttpStatusCode.OK)
+            if (response.IsSuccessStatusCode)
             { 
                 return JsonConvert.DeserializeObject<OAuthToken>(response.Content.ReadAsStringAsync().Result);
             }
@@ -82,7 +85,7 @@ namespace Slipspace.Authentication
             }
         }
 
-        public async Task<string> RequestUserToken(string accessToken)
+        public async Task<XboxTicket> RequestUserToken(string accessToken)
         {
             XboxTicketRequest ticketData = new();
             ticketData.RelyingParty = XBOX_LIVE_NATIVE_RELYING_PARTY_URL;
@@ -106,7 +109,64 @@ namespace Slipspace.Authentication
             request.Headers.Add("x-xbl-contract-version", "1");
 
             var response = await client.SendAsync(request);
-            return response.Content.ReadAsStringAsync().Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<XboxTicket>(response.Content.ReadAsStringAsync().Result);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<XboxTicket> RequestXstsToken(string userToken, bool useHaloRelyingParty = true)
+        {
+            XboxTicketRequest ticketData = new();
+
+            if (useHaloRelyingParty)
+            {
+                ticketData.RelyingParty = HALO_XSTS_RELYING_PARTY;
+            }
+            else
+            {
+                ticketData.RelyingParty = XBOX_LIVE_XSTS_RELYING_PARTY;
+            }
+
+            ticketData.TokenType = "JWT";
+            ticketData.Properties = new XboxTicketProperties()
+            {
+                UserTokens = new string[] { userToken },
+                SandboxId = "RETAIL"
+            };
+
+            var client = new HttpClient();
+            var data = JsonConvert.SerializeObject(ticketData);
+
+            var request = new HttpRequestMessage()
+            {
+                RequestUri = new Uri(XBOX_LIVE_XSTS_AUTH_URL),
+                Method = HttpMethod.Post,
+                Content = new StringContent(data, Encoding.UTF8, "application/json")
+            };
+
+            request.Headers.Add("x-xbl-contract-version", "1");
+
+            var response = await client.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<XboxTicket>(response.Content.ReadAsStringAsync().Result);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public string GetXboxLiveV3Token(string userHash, string userToken)
+        {
+            return $"XBL3.0 x={userHash};{userToken}";
         }
     }
 }
