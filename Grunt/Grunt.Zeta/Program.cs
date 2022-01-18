@@ -1,7 +1,6 @@
 ﻿using Grunt.Authentication;
 using Grunt.Core;
 using Grunt.Models;
-using Grunt.Models.HaloInfinite;
 using Grunt.Util;
 using System;
 using System.Threading.Tasks;
@@ -69,12 +68,15 @@ namespace Grunt.Zeta
                 Console.WriteLine(haloToken.Token);
             }).GetAwaiter().GetResult();
 
-            HaloInfiniteClient client = new HaloInfiniteClient(haloToken.Token, gruntConfig.ClearanceToken, extendedTicket.DisplayClaims.Xui[0].Xid);
-            // Try getting the giveaways
+            HaloInfiniteClient client = new(haloToken.Token, gruntConfig.ClearanceToken, extendedTicket.DisplayClaims.Xui[0].Xid);
+            
+            // Try getting actual Halo Infinite data.
             Task.Run(async () =>
             {
                 var giveaways = await client.GetGiveaways();
                 Console.WriteLine(giveaways.GiveawayResults.Length);
+                var customization = await client.GetCustomization();
+                Console.WriteLine("You have customizations.");
             }).GetAwaiter().GetResult();
 
 

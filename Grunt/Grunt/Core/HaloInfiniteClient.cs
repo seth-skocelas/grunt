@@ -45,6 +45,24 @@ namespace Grunt.Core
             }
         }
 
+        public async Task<Customization> GetCustomization()
+        {
+            var response = await ExecuteAPIRequest(string.Format(GlobalConstants.HALO_INFINITE_CUSTOMIZATION_ENDPOINT, this._xuid),
+                                           HttpMethod.Get,
+                                           this._spartanToken,
+                                           this._clearanceToken,
+                                           GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return JsonConvert.DeserializeObject<Customization>(response);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         /// <summary>
         /// Executes an API request in a standard way against a given API endpoint. This is a helper method that's put
         /// in place to simplify how the API calls are made because most requests against the Halo Infinite API are
