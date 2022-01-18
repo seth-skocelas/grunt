@@ -5,14 +5,12 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Grunt.Util;
 
 namespace Grunt.Authentication
 {
     public class HaloAuthenticationClient
     {
-        public readonly string HALO_SPARTAN_TOKEN_URL = "https://settings.svc.halowaypoint.com/spartan-token";
-        public readonly string HALO_WAYPOINT_USER_AGENT = "HaloWaypoint/2021112313511900 CFNetwork/1327.0.4 Darwin/21.2.0";
-
         public async Task<SpartanToken> GetSpartanToken(string xstsToken)
         {
             SpartanTokenRequest tokenRequest = new();
@@ -32,12 +30,12 @@ namespace Grunt.Authentication
 
             var request = new HttpRequestMessage()
             {
-                RequestUri = new Uri(HALO_SPARTAN_TOKEN_URL),
+                RequestUri = new Uri(GlobalConstants.HALO_SPARTAN_TOKEN_URL),
                 Method = HttpMethod.Post,
                 Content = new StringContent(data, Encoding.UTF8, "application/json")
             };
 
-            request.Headers.Add("User-Agent", HALO_WAYPOINT_USER_AGENT);
+            request.Headers.Add("User-Agent", GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             var response = await client.SendAsync(request);
 

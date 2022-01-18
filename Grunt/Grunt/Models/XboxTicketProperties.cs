@@ -14,5 +14,7 @@ namespace Grunt.Models
         public string[] UserTokens { get; set; }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string SandboxId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public bool? UseModernGamertag { get; set; }
     }
 }

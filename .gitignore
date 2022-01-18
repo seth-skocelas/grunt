@@ -353,3 +353,6 @@ MigrationBackup/
 
 ## Contains token information for the registered client.
 client.json
+
+## Contains information about the Halo Waypoint communication tokens.
+grunt.json
