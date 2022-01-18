@@ -1,6 +1,7 @@
 ﻿using Grunt.Authentication;
 using Grunt.Core;
 using Grunt.Models;
+using Grunt.Models.HaloInfinite;
 using Grunt.Util;
 using System;
 using System.Threading.Tasks;

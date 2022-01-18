@@ -2,7 +2,7 @@
 
 namespace Grunt.Models
 {
-    public class SpartanTokenExpirationDate
+    public class SpartanDate
     {
         public DateTime ISO8601Date { get; set; }
     }

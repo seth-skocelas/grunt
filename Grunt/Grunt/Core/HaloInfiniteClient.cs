@@ -1,4 +1,4 @@
-﻿using Grunt.Models;
+﻿using Grunt.Models.HaloInfinite;
 using Grunt.Util;
 using Newtonsoft.Json;
 using System;
@@ -27,7 +27,7 @@ namespace Grunt.Core
         /// associated with your account (they will be registered).
         /// </summary>
         /// <returns>A structured object of type HaloInfiniteGiveaway that contains the list of giveaways for the account.</returns>
-        public async Task<HaloInfiniteGiveaway> GetGiveaways()
+        public async Task<Giveaway> GetGiveaways()
         {
             var response = await ExecuteAPIRequest(string.Format(GlobalConstants.HALO_INFINITE_GIVEAWAYS_ENDPOINT, this._xuid), 
                                            HttpMethod.Get,
@@ -37,7 +37,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<HaloInfiniteGiveaway>(response);
+                return JsonConvert.DeserializeObject<Giveaway>(response);
             }
             else
             {

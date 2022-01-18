@@ -16,5 +16,6 @@
 
         // Halo API endpoints
         internal static readonly string HALO_INFINITE_GIVEAWAYS_ENDPOINT = "https://economy.svc.halowaypoint.com/hi/players/xuid({0})/giveaways";
+        internal static readonly string HALO_INFINITE_CUSTOMIZATION_ENDPOINT = "https://economy.svc.halowaypoint.com/hi/players/xuid({})/customization?view=private";
     }
 }

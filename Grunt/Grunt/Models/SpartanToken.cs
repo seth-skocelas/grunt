@@ -12,7 +12,7 @@ namespace Grunt.Models
     {
         [JsonProperty("SpartanToken")]
         public string Token { get; set; }
-        public SpartanTokenExpirationDate ExpiresUtc { get; set; }
+        public SpartanDate ExpiresUtc { get; set; }
         public string TokenDuration { get; set; }
     }
 }
