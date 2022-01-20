@@ -20,6 +20,19 @@ And more!
 
 >**Current stable package ETA:** February 2022
 
+## Table of contents
+
+<!-- MarkdownTOC -->
+
+- Components
+- Setup & usage
+	- Bring your own token
+	- Authenticate yourself
+- Endpoints
+
+<!-- /MarkdownTOC -->
+
+
 ## Components
 
 | Component | Description |
@@ -64,6 +77,20 @@ Task.Run(async () =>
     var example = await client.StatsGetMatchStats("21416434-4717-4966-9902-af7097469f74");
     Console.WriteLine("You have data.");
 }).GetAwaiter().GetResult();
+```
+
+### Authenticate yourself
+
+If you want to automatically generate the Spartan token, you can do so with the help of Grunt API without having to worry about doing any of the REST API calls yourself. Before you get started, make sure that you [register an Azure Active Directory application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app). You will need it in order to log in with your Microsoft account, that will be used to generate the token. Because this is just for you, you can use `https://localhost` as the redirect URI when you create the application, unless you're thinking of productizing whatever you're building.
+
+With the application created, in the `Grunt.Zeta` project create a `client.json` file, that has the following contents:
+
+```json
+{
+  "client_id": "<YOUR_CLIENT_ID_FROM_AAD>",
+  "client_secret": "<YOUR_SECRET_FROM_AAD>",
+  "redirect_url": "<YOUR_REDIRECT_URI_FROM_AAD>"
+}
 ```
 
 ## Endpoints
