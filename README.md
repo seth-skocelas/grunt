@@ -6,7 +6,7 @@
 
 Complete list of endpoints can be obtained by querying the official Halo Infinite API:
 
-```http
+```bash
 https://settings.svc.halowaypoint.com/settings/hipc/e2a0a7c6-6efe-42af-9283-c2ab73250c48
 ```
 
