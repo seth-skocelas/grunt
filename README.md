@@ -1,5 +1,5 @@
 <div align="center">
-	<img alt="Vaccine Appointment Finder icon" src="images/grunt-logo.png" width="200" height="200" />
+	<img alt="Grunt API logo" src="media/grunt-logo.png" width="200" height="200" />
 	<h1>🪐 Grunt API</h1>
 	<p>
 		<b>The unofficial, reverse-engineered Halo Infinite web API</b>
