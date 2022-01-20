@@ -37,7 +37,11 @@ The core requirement to use the endpoints in the library is to have a Spartan to
 
 ### Bring your own token
 
-If you want to bring your own token, you carry the responsibility of acquiring and getting an up-to-date version of the Spartan token (they do expire frequently).
+If you want to bring your own token, you carry the responsibility of acquiring and getting an up-to-date version of the Spartan token (they do expire frequently). The easiest way to do that is by looking at the [Halo Waypoint site](https://halowaypoint.com) through the lens of your browser's Network Inspector.
+
+Look for API calls that return JSON data, and in some of the request headers you will notice a particularly interesting one - `x-343-authorization-spartan`. That's what you need.
+
+![Acquiring the Spartan token from the Halo Waypoint website](media/spartan-token.png) 
 
 ## Endpoints
 
