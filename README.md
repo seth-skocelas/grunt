@@ -81,6 +81,8 @@ Task.Run(async () =>
 
 ### Authenticate yourself
 
+> **IMPORTANT**: The instructions below are using Visual Studio 2019, but are going to work with Visual Studio 2022, which you can [download for free](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=17).
+
 If you want to automatically generate the Spartan token, you can do so with the help of Grunt API without having to worry about doing any of the REST API calls yourself. Before you get started, make sure that you [register an Azure Active Directory application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app). You will need it in order to log in with your Microsoft account, that will be used to generate the token. Because this is just for you, you can use `https://localhost` as the redirect URI when you create the application, unless you're thinking of productizing whatever you're building.
 
 With the application created, in the `Grunt.Zeta` project create a `client.json` file, that has the following contents:
@@ -92,6 +94,83 @@ With the application created, in the `Grunt.Zeta` project create a `client.json`
   "redirect_url": "<YOUR_REDIRECT_URI_FROM_AAD>"
 }
 ```
+
+When you add the configuration file to your project, make sure that it's `Build Action` is set to `None` and `Copy to Output Directory` is `Copy if newer`.
+
+![Configuration file for Grunt.Zeta](media/grunt-zeta-config.png)
+
+With the file there, you can now run through the authentication flow, that is powered by Grunt's helper methods:
+
+```csharp
+ConfigurationReader clientConfigReader = new();
+var clientConfig = clientConfigReader.ReadConfiguration<ClientConfiguration>("client.json");
+
+XboxAuthenticationManager manager = new();
+var url = manager.GenerateAuthUrl(clientConfig.ClientId, clientConfig.RedirectUrl);
+
+HaloAuthenticationClient haloAuthClient = new();
+
+// You will need to visit this URL and copy the code in the query string
+// that is issued when the login is successful.
+Console.WriteLine("Provide account authorization and grab the code from the URL:");
+Console.WriteLine(url);
+
+Console.WriteLine("Your code:");
+var code = Console.ReadLine();
+
+var accessToken = string.Empty;
+
+var ticket = new XboxTicket();
+var haloTicket = new XboxTicket();
+var extendedTicket = new XboxTicket();
+
+var xblToken = string.Empty;
+var haloToken = new SpartanToken();
+
+// First, request the OAuth token from the Live service.
+Task.Run(async () =>
+{
+    var tokens = await manager.RequestOAuthToken(clientConfig.ClientId, code, clientConfig.RedirectUrl, clientConfig.ClientSecret);
+    accessToken = tokens.AccessToken;
+}).GetAwaiter().GetResult();
+
+// Next, request the user token.
+Task.Run(async () =>
+{
+    ticket = await manager.RequestUserToken(accessToken);
+}).GetAwaiter().GetResult();
+
+// Now, also exchange it for an XSTS token.
+Task.Run(async () =>
+{
+    haloTicket = await manager.RequestXstsToken(ticket.Token);
+}).GetAwaiter().GetResult();
+
+// Get an extended one as well, so that you can get the user XUID.
+Task.Run(async () =>
+{
+    extendedTicket = await manager.RequestXstsToken(ticket.Token, false);
+}).GetAwaiter().GetResult();
+
+// Now, get the XBL3.0 token that is standard for Xbox services.
+if (ticket != null)
+{
+    xblToken = manager.GetXboxLiveV3Token(haloTicket.DisplayClaims.Xui[0].Uhs, haloTicket.Token);
+}
+
+// Lastly, exchange it for a Spartan token.
+Task.Run(async () =>
+{
+    haloToken = await haloAuthClient.GetSpartanToken(haloTicket.Token);
+    Console.WriteLine("Your Halo token:");
+    Console.WriteLine(haloToken.Token);
+}).GetAwaiter().GetResult();
+
+```
+
+The code above doesn't account for token refreshes that don't require visiting the login URL every single time you want to plan for an API call - I will be working on showing how it works in `Grunt.Zeta` in the near future.
+
+Once you have the Spartan token, you are good to go and can start issuing API requests.
 
 ## Endpoints
 
