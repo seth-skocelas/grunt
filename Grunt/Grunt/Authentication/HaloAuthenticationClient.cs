@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Grunt.Models;
 using System;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Grunt.Util;
+using Grunt.Endpoints;
 
 namespace Grunt.Authentication
 {
@@ -30,7 +30,7 @@ namespace Grunt.Authentication
 
             var request = new HttpRequestMessage()
             {
-                RequestUri = new Uri(GlobalConstants.HALO_SPARTAN_TOKEN_URL),
+                RequestUri = new Uri(SettingsEndpoints.SpartanTokenV4),
                 Method = HttpMethod.Post,
                 Content = new StringContent(data, Encoding.UTF8, "application/json")
             };

@@ -69,14 +69,12 @@ namespace Grunt.Zeta
             }).GetAwaiter().GetResult();
 
             HaloInfiniteClient client = new(haloToken.Token, gruntConfig.ClearanceToken, extendedTicket.DisplayClaims.Xui[0].Xid);
-            
+
             // Try getting actual Halo Infinite data.
             Task.Run(async () =>
             {
-                var giveaways = await client.GetGiveaways();
-                Console.WriteLine(giveaways.GiveawayResults.Length);
-                var customization = await client.GetCustomization();
-                Console.WriteLine("You have customizations.");
+                var giveaways = await client.GetApiSettingsContainer();
+                Console.WriteLine("You have settings.");
             }).GetAwaiter().GetResult();
 
 

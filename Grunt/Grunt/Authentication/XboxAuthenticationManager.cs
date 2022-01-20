@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Grunt.Util;
+using Grunt.Endpoints;
 
 namespace Grunt.Authentication
 {
@@ -38,7 +39,7 @@ namespace Grunt.Authentication
                 queryString.Add("state", state);
             }
 
-            return GlobalConstants.XBOX_LIVE_AUTH_URL + "?" + queryString.ToString();
+            return XboxEndpoints.XboxLiveAuthorize + "?" + queryString.ToString();
         }
 
         public async Task<OAuthToken> RequestOAuthToken(string clientId, string authorizationCode, string redirectUrl, string clientSecret = "", string[] scopes = null)
@@ -66,7 +67,7 @@ namespace Grunt.Authentication
             }
 
             var client = new HttpClient();
-            var response = await client.PostAsync(GlobalConstants.XBOX_LIVE_TOKEN_URL, new FormUrlEncodedContent(tokenRequestContent));
+            var response = await client.PostAsync(XboxEndpoints.XboxLiveToken, new FormUrlEncodedContent(tokenRequestContent));
 
             if (response.IsSuccessStatusCode)
             { 
@@ -81,7 +82,7 @@ namespace Grunt.Authentication
         public async Task<XboxTicket> RequestUserToken(string accessToken)
         {
             XboxTicketRequest ticketData = new();
-            ticketData.RelyingParty = GlobalConstants.XBOX_LIVE_NATIVE_RELYING_PARTY_URL;
+            ticketData.RelyingParty = XboxEndpoints.XboxLiveAuthRelyingParty;
             ticketData.TokenType = "JWT";
             ticketData.Properties = new XboxTicketProperties()
             {
@@ -94,7 +95,7 @@ namespace Grunt.Authentication
 
             var request = new HttpRequestMessage()
             {
-                RequestUri = new Uri(GlobalConstants.XBOX_LIVE_NATIVE_AUTH_URL),
+                RequestUri = new Uri(XboxEndpoints.XboxLiveUserAuthenticate),
                 Method = HttpMethod.Post,
                 Content = new StringContent(JsonConvert.SerializeObject(ticketData), Encoding.UTF8, "application/json")
             };
@@ -120,11 +121,11 @@ namespace Grunt.Authentication
 
             if (useHaloRelyingParty)
             {
-                ticketData.RelyingParty = GlobalConstants.HALO_XSTS_RELYING_PARTY;
+                ticketData.RelyingParty = HaloCoreEndpoints.HaloWaypointXstsRelyingParty;
             }
             else
             {
-                ticketData.RelyingParty = GlobalConstants.XBOX_LIVE_XSTS_RELYING_PARTY;
+                ticketData.RelyingParty = XboxEndpoints.XboxLiveRelyingParty;
             }
 
             ticketData.TokenType = "JWT";
@@ -139,7 +140,7 @@ namespace Grunt.Authentication
 
             var request = new HttpRequestMessage()
             {
-                RequestUri = new Uri(GlobalConstants.XBOX_LIVE_XSTS_AUTH_URL),
+                RequestUri = new Uri(XboxEndpoints.XboxLiveXstsAuthorize),
                 Method = HttpMethod.Post,
                 Content = new StringContent(data, Encoding.UTF8, "application/json")
             };
