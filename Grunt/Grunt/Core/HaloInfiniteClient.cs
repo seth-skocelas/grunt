@@ -2773,8 +2773,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> StatsGetMatchStats(string matchId)
+        /// <summary>
+        /// Gets stats for a specific match.
+        /// </summary>
+        /// <param name="matchId">Match ID in GUID format.</param>
+        /// <returns>An instance of MatchStats containing match metadata if request was successful. Return value is null otherwise.</returns>
+        public async Task<MatchStats> StatsGetMatchStats(string matchId)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/matches/{matchId}/stats",
                                    HttpMethod.Get,
@@ -2784,11 +2788,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<MatchStats>(response); ;
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 

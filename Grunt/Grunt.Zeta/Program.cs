@@ -73,7 +73,7 @@ namespace Grunt.Zeta
             // Try getting actual Halo Infinite data.
             Task.Run(async () =>
             {
-                var example = await client.StatsGetMatchCount($"xuid({extendedTicket.DisplayClaims.Xui[0].Xid})");
+                var example = await client.StatsGetMatchStats("21416434-4717-4966-9902-af7097469f74");
                 Console.WriteLine("You have settings.");
             }).GetAwaiter().GetResult();
 
