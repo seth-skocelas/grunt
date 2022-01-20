@@ -22,24 +22,22 @@ And more!
 
 ## Table of contents
 
-<!-- MarkdownTOC -->
-
-- Components
-- Setup & usage
-	- Bring your own token
-	- Authenticate yourself
-- Endpoints
-
-<!-- /MarkdownTOC -->
-
+- [Components](#components)
+- [Setup & usage](#setup--usage)
+	- [Bring your own token](#bring-your-own-token)
+	- [Authenticate yourself](#authenticate-yourself)
+- [Endpoints](#endpoints)
+- [Documentation](#documentation)
+- [FAQ](#faq)
+- [Contributions](#contributions)
 
 ## Components
 
 | Component | Description |
 |:----------|:------------|
-| `Grunt`   | The core library, written in C#, that wraps the Halo Infinite web APIs. |
-| `Grunt.Zeta` | Experimental ground for the Grunt library. This will eventually become the Grunt CLI. |
-| `Grunt.Librarian` | Tool used to auto-generate code stubs for Halo Infinite API endpoints. It's a very "brute"-ish way to generate the code, but it works for now. |
+| [`Grunt`](https://github.com/dend/grunt/tree/main/Grunt/Grunt) | The core library, written in C#, that wraps the Halo Infinite web APIs. |
+| [`Grunt.Zeta`](https://github.com/dend/grunt/tree/main/Grunt/Grunt.Zeta) | Experimental ground for the Grunt library. This will eventually become the Grunt CLI. |
+| [`Grunt.Librarian`](https://github.com/dend/grunt/tree/main/Grunt/Grunt.Librarian) | Tool used to auto-generate code stubs for Halo Infinite API endpoints. It's a very "brute"-ish way to generate the code, but it works for now. |
 
 ## Setup & usage
 
@@ -174,10 +172,36 @@ Once you have the Spartan token, you are good to go and can start issuing API re
 
 ## Endpoints
 
-Complete list of endpoints can be obtained by querying the official Halo Infinite API:
+Complete list of endpoints can be obtained by querying the official Halo Infinite API, that also helpfully contains all the metadata and requirements for each:
 
 ```bash
 https://settings.svc.halowaypoint.com/settings/hipc/e2a0a7c6-6efe-42af-9283-c2ab73250c48
 ```
 
-The endpoint above does not require authentication and can be queried in the open.
+The endpoint above does not require authentication and can be queried in the open. You can also peruse an offline version of the API response [in the library](https://github.com/dend/grunt/blob/main/Grunt/Grunt/endpoints.json).
+
+## Documentation
+
+This is work in progress. Aiming to have better docs as the library becomes more stable, but in the meantime you can explore the [library code](https://github.com/dend/grunt/tree/main/Grunt/Grunt) - I am including detailed code comments for assets that I've formalized.
+
+## FAQ
+
+**Is this in any way endorsed by 343 Industries?**
+
+No. Not at all. This is something that I've put together myself by inspecting network traffic.
+
+**Something is broken and my production site that uses your library doesn't work. Can you help?**
+
+Don't use any of this code in production. It's nowhere near stable.
+
+**Some API endpoint is not working anymore or returns an unexpected result. What's up with that?**
+
+[Open an issue](https://github.com/dend/grunt/issues) so that I can investigate.
+
+**How do I contact the author?**
+
+[Open an issue](https://github.com/dend/grunt/issues) or reach out [on Twitter](https://twitter.com/denniscode).
+
+## Contributions
+
+Contributions are welcome, but please first [open an issue](https://github.com/dend/grunt/issues) so that we can discuss before writing any code.
