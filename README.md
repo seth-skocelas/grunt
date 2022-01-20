@@ -43,6 +43,29 @@ Look for API calls that return JSON data, and in some of the request headers you
 
 ![Acquiring the Spartan token from the Halo Waypoint website](media/spartan-token.png) 
 
+I'll say it again - this token is not long-lived and if you see calls failing with `401 Unauthorized`, that means you need a new token.
+
+Some API calls are also requiring you include another header - `343-clearance`. This token is obtained through a separate API call that I am yet to document, but you can also grab it from the Halo Waypoint site. An example API call that you can watch for with the Synthwave event going on is this:
+
+```bash
+https://gamecms-hacs-origin.svc.halowaypoint.com/hi/Progression/file/ChallengeContent/ClientChallengeDefinitions/S1EventSynthwaveChallenges/Normal/NSynthwaveMedalRevive.json
+```
+
+If you look for it in the network inspector, you will get the `343-clearance` header as well. It's on my TODO list to document available endpoints and whether they require clearance or not.
+
+Once you have the Spartan and clearance tokens, you are good to go, and can now call the API endpoints from Grunt.
+
+```csharp
+HaloInfiniteClient client = new(<YOUR_SPARTAN_TOKEN>, <YOUR_CLEARANCE_TOKEN>, <YOUR_XUID_REQUIRED_ONLY_FOR_SOME_CALLS>);
+
+// Try getting actual Halo Infinite data.
+Task.Run(async () =>
+{
+    var example = await client.StatsGetMatchStats("21416434-4717-4966-9902-af7097469f74");
+    Console.WriteLine("You have data.");
+}).GetAwaiter().GetResult();
+```
+
 ## Endpoints
 
 Complete list of endpoints can be obtained by querying the official Halo Infinite API:
