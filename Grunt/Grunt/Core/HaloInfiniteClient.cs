@@ -2704,8 +2704,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> StatsGetChallengeDecks(string player)
+        /// <summary>
+        /// Gets challenge decks that are available for a player.
+        /// </summary>
+        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <returns>An instance of PlayerDecks containing deck information if request was successful. Return value is null otherwise.</returns>
+        public async Task<PlayerDecks> StatsGetChallengeDecks(string player)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/decks",
                                    HttpMethod.Get,
@@ -2715,16 +2719,20 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<PlayerDecks>(response); ;
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> StatsGetMatchCount(string player)
+        /// <summary>
+        /// Gets the summary on number of played matches.
+        /// </summary>
+        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <returns>An instance of PlayerMatchCount containing match counts if request was successful. Return value is null otherwise.</returns>
+        public async Task<PlayerMatchCount> StatsGetMatchCount(string player)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches/count",
                                    HttpMethod.Get,
@@ -2734,16 +2742,20 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<PlayerMatchCount>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> StatsGetMatchHistory(string player)
+        /// <summary>
+        /// Gets match history for a player.
+        /// </summary>
+        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <returns>An instance of MatchContainer containing match metadata if request was successful. Return value is null otherwise.</returns>
+        public async Task<MatchContainer> StatsGetMatchHistory(string player)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches",
                                    HttpMethod.Get,
@@ -2753,11 +2765,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<MatchContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -3099,7 +3111,7 @@ namespace Grunt.Core
             }
             
             request.Headers.Add("User-Agent", GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-            request.Headers.Add("Accept-Content", "application/json");
+            request.Headers.Add("Accept", "application/json");
 
             var response = await client.SendAsync(request);
 
