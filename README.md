@@ -20,6 +20,14 @@ And more!
 
 >**Current stable package ETA:** February 2022
 
+## Components
+
+| Component | Description |
+|:----------|:------------|
+| `Grunt`   | The core library, written in C#, that wraps the Halo Infinite web APIs. |
+| `Grunt.Zeta` | Experimental ground for the Grunt library. This will eventually become the Grunt CLI. |
+| `Grunt.Librarian` | Tool used to auto-generate code stubs for Halo Infinite API endpoints. It's a very "brute"-ish way to generate the code, but it works for now. |
+
 ## Setup & usage
 
 The core requirement to use the endpoints in the library is to have a Spartan token, that is provided by the Halo Infinite service. That being said, there are two ways to experiment with the library:
