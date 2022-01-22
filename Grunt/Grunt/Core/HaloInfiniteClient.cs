@@ -192,8 +192,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> EconomyAllOwnedCoresDetails(string player)
+        /// <summary>
+        /// Get details about all owned cores for a player.
+        /// </summary>
+        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <returns>An instance of PlayerCores containing player core customization metadata if request was successful. Return value is null otherwise.</returns>
+        public async Task<PlayerCores> EconomyAllOwnedCoresDetails(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/cores",
                                    HttpMethod.Get,
@@ -203,11 +207,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<PlayerCores>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
