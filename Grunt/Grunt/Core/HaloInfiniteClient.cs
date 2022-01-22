@@ -2788,7 +2788,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<MatchStats>(response); ;
+                return JsonConvert.DeserializeObject<MatchStats>(response);
             }
             else
             {
@@ -2796,8 +2796,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> StatsGetPlayerMatchProgression(string player, string matchId)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <param name="matchId">Match ID in GUID format.</param>
+        /// <returns></returns>
+        public async Task<MatchProgression> StatsGetPlayerMatchProgression(string player, string matchId)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches/{matchId}/progression",
                                    HttpMethod.Get,
@@ -2807,16 +2812,20 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<MatchProgression>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> StatsMatchPrivacy(string player)
+        /// <summary>
+        /// Gets match privacy settings for a given player.
+        /// </summary>
+        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <returns>An instance of MatchesPrivacy containing match privacy metadata if request was successful. Return value is null otherwise.</returns>
+        public async Task<MatchesPrivacy> StatsMatchPrivacy(string player)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches-privacy",
                                    HttpMethod.Get,
@@ -2826,11 +2835,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<MatchesPrivacy>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
