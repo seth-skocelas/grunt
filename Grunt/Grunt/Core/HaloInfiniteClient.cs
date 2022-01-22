@@ -169,8 +169,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> EconomyAiCoresCustomization(string player)
+        /// <summary>
+        /// Get AI core customization for a player.
+        /// </summary>
+        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <returns>An instance of AiCores containing AI core customization metadata if request was successful. Return value is null otherwise.</returns>
+        public async Task<AiCores> EconomyAiCoresCustomization(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais",
                                    HttpMethod.Get,
@@ -180,11 +184,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AiCores>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -2797,11 +2801,11 @@ namespace Grunt.Core
         }
 
         /// <summary>
-        /// 
+        /// Get challenge progression associated with a given match. 
         /// </summary>
         /// <param name="player">The player identifier in the format "xuid(000000)"</param>
         /// <param name="matchId">Match ID in GUID format.</param>
-        /// <returns></returns>
+        /// <returns>An instance of MatchProgression containing match challenge progression metadata if request was successful. Return value is null otherwise.</returns>
         public async Task<MatchProgression> StatsGetPlayerMatchProgression(string player, string matchId)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches/{matchId}/progression",
