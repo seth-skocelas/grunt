@@ -49,8 +49,13 @@ namespace Grunt.Core
         //================================================
         // Academy
         //================================================
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> AcademyGetBotCustomization(string flightId)
+
+        /// <summary>
+        /// Get bot customization information.
+        /// </summary>
+        /// <param name="flightId">ID of the flight/clearance associated with the request.</param>
+        /// <returns>If successful, returns an instance of BotCustomizationData that contains bot customization information. Otherwise, returns null.</returns>
+        public async Task<BotCustomizationData> AcademyGetBotCustomization(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/BotCustomizationData.json?flight={flightId}",
                                    HttpMethod.Get,
@@ -60,11 +65,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<BotCustomizationData>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -2592,8 +2597,15 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> SettingsGetPlayerClearance(string audience, string player, string sandbox, string buildNumber)
+        /// <summary>
+        /// Gets the the player clearance/flight ID.
+        /// </summary>
+        /// <param name="audience">Audience that the request is targeting. Standard value is RETAIL.</param>
+        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <param name="sandbox">Identifier associated with the sandbox. Typical value is UNUSED.</param>
+        /// <param name="buildNumber">Number of the game build the data is requested for. Example value is 211755.22.01.23.0549-0.</param>
+        /// <returns>An instance of PlayerClearance if the request is successful. Otherwise, returns null.</returns>
+        public async Task<PlayerClearance> SettingsGetPlayerClearance(string audience, string player, string sandbox, string buildNumber)
         {
             var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/oban/flight-configurations/titles/hi/audiences/{audience}/players/{player}/active?sandbox={sandbox}&build={buildNumber}",
                                    HttpMethod.Get,
@@ -2603,11 +2615,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<PlayerClearance>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
