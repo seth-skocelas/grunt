@@ -9,5 +9,4 @@
         public string CoreType { get; set; }
         public WaypointDate FirstAcquiredDate { get; set; }
     }
-
 }

@@ -10,5 +10,4 @@
         public string Id { get; set; }
         public bool CanReroll { get; set; }
     }
-
 }

@@ -10,5 +10,4 @@
         public string ModelPath { get; set; }
         public string ColorPath { get; set; }
     }
-
 }

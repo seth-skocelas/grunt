@@ -7,5 +7,4 @@
         public int PreviousProgress { get; set; }
         public int Progress { get; set; }
     }
-
 }

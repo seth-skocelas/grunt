@@ -6,5 +6,4 @@ namespace Grunt.Models.HaloInfinite
     {
         public DateTime ISO8601Date { get; set; }
     }
-
 }

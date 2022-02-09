@@ -6,5 +6,4 @@
         public string AssetId { get; set; }
         public string VersionId { get; set; }
     }
-
 }
