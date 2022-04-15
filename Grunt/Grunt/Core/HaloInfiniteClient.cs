@@ -2683,6 +2683,24 @@ namespace Grunt.Core
             }
         }
 
+        public async Task<PlayerSkillResultValue> SkillGetMatchPlayerResult(string matchId, string playerId)
+        {
+            var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players={playerId}",
+                                   HttpMethod.Get,
+                                   true,
+                                   true,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return JsonConvert.DeserializeObject<PlayerSkillResultValue>(response);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //TODO: This function requires manual invtervention/checks.
         public async Task<string> SkillGetPlaylistCsr(string playlistId)
         {
