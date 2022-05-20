@@ -1202,10 +1202,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> GameCmsGetRecommendedDrivers()
+        /// <summary>
+        /// Get recommended drivers for the current version of Halo Infinite.
+        /// </summary>
+        /// <returns>If successful, returns an instance of DriverManifest that contains details on supported drivers. Otherwise, returns null.</returns>
+        public async Task<DriverManifest> GameCmsGetRecommendedDrivers()
         {
-            var response = await ExecuteAPIRequest($"https://gamecms:/hi/Specs/file/graphics/RecommendedDrivers.json",
+            var response = await ExecuteAPIRequest($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/RecommendedDrivers.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1213,11 +1216,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<DriverManifest>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
