@@ -5,6 +5,7 @@ using Grunt.Util;
 using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,7 +74,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual invtervention/checks. The URL here seems to be related to GameCMS, but additional investigation is needed.
         public async Task<string> AcademyGetContent()
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/multiplayer/file/Academy/AcademyClientManifest.json",
@@ -111,22 +112,25 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> AcademyGetStarDefinitions()
+        /// <summary>
+        /// Gets definitions for stars awarded in the Academy. This call breaks if a user agent is specified.
+        /// </summary>
+        /// <returns>If successful, returns an instance of AcademyStarDefinitions that contains definitions for stars awarded in the Academy. Otherwise, returns null.</returns>
+        public async Task<AcademyStarDefinitions> AcademyGetStarDefinitions()
         {
-            var response = await ExecuteAPIRequest($"https://gamecms:/hi/multiplayer/file/Academy/AcademyStarGUIDDefinitions.json",
+            var response = await ExecuteAPIRequest($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyStarGUIDDefinitions.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   String.Empty);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AcademyStarDefinitions>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -3138,7 +3142,10 @@ namespace Grunt.Core
         /// <returns>Response string in case of a successful request. Null if request failed.</returns>
         private async Task<string> ExecuteAPIRequest(string endpoint, HttpMethod method, bool useSpartanToken, bool useClearance, string content = "")
         {
-            var client = new HttpClient();
+            var client = new HttpClient(new HttpClientHandler
+            {
+                AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.Brotli
+            });
 
             var request = new HttpRequestMessage()
             {
@@ -3163,6 +3170,7 @@ namespace Grunt.Core
             
             request.Headers.Add("User-Agent", GlobalConstants.HALO_WAYPOINT_USER_AGENT);
             request.Headers.Add("Accept", "application/json");
+            request.Headers.Add("Accept-Encoding", "gzip, deflate, br");
 
             var response = await client.SendAsync(request);
 

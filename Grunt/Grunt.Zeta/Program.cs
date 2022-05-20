@@ -67,15 +67,21 @@ namespace Grunt.Zeta
                 Console.WriteLine("Your Halo token:");
                 Console.WriteLine(haloToken.Token);
             }).GetAwaiter().GetResult();
-
-            HaloInfiniteClient client = new(haloToken.Token, gruntConfig.ClearanceToken, extendedTicket.DisplayClaims.Xui[0].Xid);
+            
+            HaloInfiniteClient client = new(haloToken.Token, extendedTicket.DisplayClaims.Xui[0].Xid, gruntConfig.ClearanceToken);
 
             // Try getting actual Halo Infinite data.
             Task.Run(async () =>
             {
                 var example = await client.StatsGetMatchStats("21416434-4717-4966-9902-af7097469f74");
-                Console.WriteLine("You have settings.");
+                Console.WriteLine("You have stats.");
             }).GetAwaiter().GetResult();
+
+            Task.Run(async () =>
+            {
+                var academyStarData = await client.AcademyGetStarDefinitions();
+                Console.WriteLine("Got star definitions.");
+            });
 
 
             Console.WriteLine("This is it.");
