@@ -74,41 +74,48 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks. The URL here seems to be related to GameCMS, but additional investigation is needed.
-        public async Task<string> AcademyGetContent()
+        /// <summary>
+        /// Gets the client manifest for the Academy.
+        /// </summary>
+        /// <returns>If successful, returns an instance of AcademyClientManifest that contains the definition of drills available in the Academy. Otherwise, returns null.</returns>
+        public async Task<AcademyClientManifest> AcademyGetContent()
         {
-            var response = await ExecuteAPIRequest($"https://gamecms:/hi/multiplayer/file/Academy/AcademyClientManifest.json",
+            var response = await ExecuteAPIRequest($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyClientManifest.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   string.Empty);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AcademyClientManifest>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> AcademyGetContentTest(string clearanceId)
+        /// <summary>
+        /// Gets the client manifest for the Academy. From the endpoint name we can infer that this is test data.
+        /// </summary>
+        /// <param name="clearanceId">ID of the flight/clearance associated with the request.</param>
+        /// <returns>If successful, returns an instance of TestAcademyClientManifest that contains the definition of drills available in the Academy. Otherwise, returns null.</returns>
+        public async Task<TestAcademyClientManifest> AcademyGetContentTest(string clearanceId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyClientManifest_Test.json?flight={clearanceId}",
                                    HttpMethod.Get,
                                    true,
-                                   true,
+                                   false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<TestAcademyClientManifest>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 

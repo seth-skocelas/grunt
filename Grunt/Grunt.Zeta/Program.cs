@@ -79,8 +79,8 @@ namespace Grunt.Zeta
 
             Task.Run(async () =>
             {
-                var academyStarData = await client.AcademyGetStarDefinitions();
-                Console.WriteLine("Got star definitions.");
+                var academyData = await client.AcademyGetContent();
+                Console.WriteLine("Got academy data.");
             });
 
 
