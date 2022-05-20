@@ -1013,6 +1013,24 @@ namespace Grunt.Core
             }
         }
 
+        public async Task<string> GameCmsGetGraphicsSpecControlOverrides()
+        {
+            var response = await ExecuteAPIRequest($"https://gamecms:/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
+                                   HttpMethod.Get,
+                                   true,
+                                   true,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return response;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
         //TODO: This function requires manual invtervention/checks.
         public async Task<string> GameCmsGetGraphicSpecs()
         {
@@ -1169,6 +1187,25 @@ namespace Grunt.Core
         public async Task<string> GameCmsGetProgressionFile(string filePath)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/{filePath}",
+                                   HttpMethod.Get,
+                                   true,
+                                   true,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return response;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+        //TODO: This function requires manual invtervention/checks.
+        public async Task<string> GameCmsGetRecommendedDrivers()
+        {
+            var response = await ExecuteAPIRequest($"https://gamecms:/hi/Specs/file/graphics/RecommendedDrivers.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1628,6 +1665,26 @@ namespace Grunt.Core
         }
 
         //TODO: This function requires manual invtervention/checks.
+        public async Task<string> HIUGCGetSessionBlob()
+        {
+            var response = await ExecuteAPIRequest($"https://s3infiniteugcsessions.blob.core.windows.net:443",
+                                   HttpMethod.Get,
+                                   false,
+                                   false,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return response;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+
+        //TODO: This function requires manual invtervention/checks.
         public async Task<string> HIUGCGetSpecificAssetVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
@@ -2017,6 +2074,25 @@ namespace Grunt.Core
                                    HttpMethod.Get,
                                    true,
                                    true,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return response;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+        //TODO: This function requires manual invtervention/checks.
+        public async Task<string> HIUGCDiscoveryGetManifestByBranch(string branchName)
+        {
+            var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/branches/{branchName}/game",
+                                   HttpMethod.Get,
+                                   true,
+                                   false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
@@ -2915,6 +2991,25 @@ namespace Grunt.Core
         public async Task<string> StatsPutCampaignProgress(string player)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/campaign/progress",
+                                   HttpMethod.Get,
+                                   true,
+                                   false,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return response;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+        //TODO: This function requires manual invtervention/checks.
+        public async Task<string> StatsPutPlayerPresenceInMatch(string player, string matchId)
+        {
+            var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches/{matchId}/present-in-match",
                                    HttpMethod.Get,
                                    true,
                                    false,
