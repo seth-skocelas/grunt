@@ -3075,7 +3075,7 @@ namespace Grunt.Core
         //TODO: This function requires manual invtervention/checks.
         public async Task<string> TextModerationGetSigningKey(string keyId)
         {
-            var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/moderation-proof-keys//{keyId}",
+            var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/moderation-proof-keys/{keyId}",
                                    HttpMethod.Get,
                                    false,
                                    false,
