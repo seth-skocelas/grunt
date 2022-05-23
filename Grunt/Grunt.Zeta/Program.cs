@@ -3,6 +3,8 @@ using Grunt.Core;
 using Grunt.Models;
 using Grunt.Util;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Grunt.Zeta
@@ -104,6 +106,14 @@ namespace Grunt.Zeta
             {
                 var seasonData = await client.GameCmsGetSeasonRewardTrack("Seasons/Season7.json", localClearance);
                 Console.WriteLine("Got season data.");
+            }).GetAwaiter().GetResult();
+
+            // Try getting skill qualifications with SkillGetMatchPlayerResult.
+            Task.Run(async () =>
+            {
+                List<string> sampleXuids = "xuid(2533274793272155),xuid(2533274814715980),xuid(2533274855333605),xuid(2535435749594170),xuid(2535448099228893),xuid(2535457135464780),xuid(2535466738529606),xuid(2535472868898775)".Split(',').ToList();
+                var performanceData = await client.SkillGetMatchPlayerResult("ad6a3d46-9320-44ee-94cd-c5cb39c7aedd", sampleXuids);
+                Console.WriteLine("Got player performance data.");
             }).GetAwaiter().GetResult();
 
             Console.ReadLine();

@@ -4,6 +4,7 @@ using Grunt.Models.HaloInfinite.ApiIngress;
 using Grunt.Util;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -2769,33 +2770,21 @@ namespace Grunt.Core
         //================================================
         // Skill
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> SkillGetMatchResult(string matchId)
+
+        /// <summary>
+        /// Returns individual player stats for a given match.
+        /// </summary>
+        /// <param name="matchId">The unique match ID.</param>
+        /// <param name="playerIds">Array of player IDs. Each ID string should be in the format of "xuid(XUID_VALUE)."</param>
+        /// <returns></returns>
+        public async Task<PlayerSkillResultValue> SkillGetMatchPlayerResult(string matchId, List<string> playerIds)
         {
-            var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill",
+            var formattedPlayerList = string.Join(",", playerIds);
+            var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players={formattedPlayerList}",
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        //TODO: This function requires manual intervention/checks.
-        public async Task<PlayerSkillResultValue> SkillGetMatchPlayerResult(string matchId, string playerId)
-        {
-            var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players={playerId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -2928,7 +2917,7 @@ namespace Grunt.Core
                                    HttpMethod.Get,
                                    true,
                                    false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -3256,8 +3245,8 @@ namespace Grunt.Core
         /// </summary>
         /// <param name="endpoint">The API endpoint to which the request is sent.</param>
         /// <param name="method">HTTP method to be used for the request.</param>
-        /// <param name="spartanToken">Token issued by the Halo Waypoint service.</param>
-        /// <param name="clearanceToken">Clearance token that is obtained from the Halo Waypoint service.</param>
+        /// <param name="useSpartanToken">Determines whether a Spartan token needs to be applied to teh request.</param>
+        /// <param name="useClearance">Determines whether a clearance/flight ID needs to be applied to the request.</param>
         /// <param name="userAgent">User agent to be used for the request.</param>
         /// <param name="content">If the request contains data to be sent to the Halo Waypoint service, include it here. Expected format is JSON.</param>
         /// <returns>Response string in case of a successful request. Null if request failed.</returns>
