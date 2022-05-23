@@ -3077,41 +3077,48 @@ namespace Grunt.Core
         //================================================
         // TextModeration
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> TextModerationGetSigningKey(string keyId)
+        /// <summary>
+        /// Gets a specific moderation proof signing key.
+        /// </summary>
+        /// <param name="keyId">Key ID. Full list can be obtained by a call to TextModerationGetSigningKeys.</param>
+        /// <returns>An instance of Key containing a single signing key data if request was successful. Return value is null otherwise.</returns>
+        public async Task<Key> TextModerationGetSigningKey(string keyId)
         {
             var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/moderation-proof-keys/{keyId}",
                                    HttpMethod.Get,
                                    false,
                                    false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Key>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> TextModerationGetSigningKeys()
+        /// <summary>
+        /// Gets a list of available moderation proof signing keys.
+        /// </summary>
+        /// <returns>An instance of ModerationProofKeys containing signing key data if request was successful. Return value is null otherwise.</returns>
+        public async Task<ModerationProofKeys> TextModerationGetSigningKeys()
         {
             var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/moderation-proof-keys",
                                    HttpMethod.Get,
                                    false,
                                    false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<ModerationProofKeys>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
