@@ -81,10 +81,31 @@ namespace Grunt.Zeta
             {
                 var academyData = await client.AcademyGetContent();
                 Console.WriteLine("Got academy data.");
-            });
+            }).GetAwaiter().GetResult();
 
+            // Test getting the clearance for local execution.
+            string localClearance = string.Empty;
+            Task.Run(async () =>
+            {
+                var clearance = await client.SettingsGetClearance("RETAIL", "UNUSED", "211755.22.01.23.0549-0");
+                if (clearance != null)
+                {
+                    localClearance = clearance.FlightConfigurationId;
+                    Console.WriteLine($"Your clearance is {localClearance}");
+                }
+                else
+                {
+                    Console.WriteLine("Could not obtain the clearance.");
+                }
+            }).GetAwaiter().GetResult();
 
-            Console.WriteLine("This is it.");
+            // Test getting the season data.
+            Task.Run(async () =>
+            {
+                var seasonData = await client.GameCmsGetSeasonRewardTrack("Seasons/Season7.json", localClearance);
+                Console.WriteLine("Got season data.");
+            }).GetAwaiter().GetResult();
+
             Console.ReadLine();
         }
     }

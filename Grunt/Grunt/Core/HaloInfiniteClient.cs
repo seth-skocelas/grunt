@@ -62,7 +62,7 @@ namespace Grunt.Core
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -84,7 +84,7 @@ namespace Grunt.Core
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   string.Empty);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -107,7 +107,7 @@ namespace Grunt.Core
                                    HttpMethod.Get,
                                    true,
                                    false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -129,7 +129,7 @@ namespace Grunt.Core
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   String.Empty);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -144,7 +144,7 @@ namespace Grunt.Core
         //================================================
         // Crashes
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> CrashesUpload()
         {
             var response = await ExecuteAPIRequest($"https://crashes.svc.halowaypoint.com:443/crashes/hipc/bf05b320-ee8f-4be5-879d-505b669654c9",
@@ -166,7 +166,7 @@ namespace Grunt.Core
         //================================================
         // Economy
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyAiCoreCustomization(string player, string coreId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais/{coreId}",
@@ -196,7 +196,7 @@ namespace Grunt.Core
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -219,7 +219,7 @@ namespace Grunt.Core
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -231,7 +231,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyArmorCoreCustomization(string player, string coreId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors/{coreId}",
@@ -250,7 +250,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyArmorCoresCustomization(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors",
@@ -269,7 +269,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetActiveBoosts(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/boosts",
@@ -288,7 +288,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetAwardedRewards(string player, string rewardId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewards/{rewardId}",
@@ -307,7 +307,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetBoostsStore(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/boosts",
@@ -326,7 +326,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetEventsStore(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/events",
@@ -345,7 +345,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetGiveawayRewards(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/giveaways",
@@ -364,7 +364,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetHCSStore(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/hcs",
@@ -383,7 +383,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetInventoryItems(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/inventory",
@@ -402,7 +402,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetMainStore(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/main",
@@ -421,7 +421,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetMultiplePlayersCustomization()
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/customization",
@@ -440,7 +440,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetOperationRewardLevelsStore(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/operationrewardlevels",
@@ -459,7 +459,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetOperationsStore(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/operations",
@@ -478,7 +478,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetRewardTrack(string player, string rewardTrackType, string trackId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewardtracks/{rewardTrackType}s/{trackId}",
@@ -497,7 +497,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetVirtualCurrencyBalances(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/currencies",
@@ -516,7 +516,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyGetXpGrantsStore(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/xpgrants",
@@ -535,7 +535,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyOwnedCoreDetails(string player, string coreId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/cores/{coreId}",
@@ -554,7 +554,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyPlayerAppearanceCustomization(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/appearance",
@@ -573,7 +573,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyPlayerCustomization(string player, string viewType)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization?view={viewType}",
@@ -592,7 +592,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyPlayerOperations(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewardtracks/operations",
@@ -611,7 +611,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyPostCurrencyTransaction(string player, string currencyId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/currencies/{currencyId}/transactions",
@@ -630,7 +630,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyPurchaseStorefrontOfferingTransaction(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/storetransactions",
@@ -649,7 +649,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyScheduledStorefrontOfferings(string player, string storeId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/{storeId}",
@@ -668,7 +668,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomySpartanBodyCustomization(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/spartanbody",
@@ -687,7 +687,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyVehicleCoreCustomization(string player, string coreId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/vehicles/{coreId}",
@@ -706,7 +706,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyVehicleCoresCustomization(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/vehicles",
@@ -725,7 +725,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyWeaponCoreCustomization(string player, string coreId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/weapons/{coreId}",
@@ -744,7 +744,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> EconomyWeaponCoresCustomization(string player)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/weapons",
@@ -766,7 +766,7 @@ namespace Grunt.Core
         //================================================
         // GameCms
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetAchievements()
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Multiplayer/file/Live/Achievements.json",
@@ -785,7 +785,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetArmorCoreManifest(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/Inventory/Manifest/armorcores.json?flight={flightId}",
@@ -804,7 +804,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetAsyncComputeOverrides()
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Specs/file/graphics/AsyncComputeOverrides.json",
@@ -823,7 +823,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetBanMessage(string messageIdentity, string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Banning/file/BanMessages/{messageIdentity}.json?flight={flightId}",
@@ -842,7 +842,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetChallenge(string challengePath, string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/{challengePath}?flight={flightId}",
@@ -861,7 +861,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetChallengeDeck(string challengeDeckPath, string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/{challengeDeckPath}?flight={flightId}",
@@ -880,7 +880,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetClawAccess(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/TitleAuthorization/file/claw/access.json?flight={flightId}",
@@ -899,7 +899,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetCpuPresets()
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Specs/file/cpu/presets.json",
@@ -918,7 +918,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetCustomGameDefaults()
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Multiplayer/file/NonMatchmaking/customgame.json",
@@ -937,7 +937,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetCustomizationCatalog(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/inventory/catalog/inventory_catalog.json?flight={flightId}",
@@ -956,7 +956,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetDevicePresetOverrides()
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Specs/file/graphics/DevicePresetOverrides.json",
@@ -975,7 +975,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetEvent(string eventPath, string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/{eventPath}?flight={flightId}",
@@ -994,7 +994,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetEventManifest(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/RewardTracks/Manifest/eventmanifest.json?flight={flightId}",
@@ -1013,6 +1013,7 @@ namespace Grunt.Core
             }
         }
 
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGraphicsSpecControlOverrides()
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
@@ -1031,7 +1032,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGraphicSpecs()
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Specs/file/graphics/overrides.json",
@@ -1050,7 +1051,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetImage(string filePath)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/images/file/{filePath}",
@@ -1069,7 +1070,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetItem(string itemPath, string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/{itemPath}?flight={flightId}",
@@ -1088,7 +1089,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetLobbyErrorMessages(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Multiplayer/file/gameStartErrorMessages/LobbyHoppperErrorMessageList.json?flight={flightId}",
@@ -1107,7 +1108,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetMetadata(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/metadata/metadata.json?flight={flightId}",
@@ -1126,7 +1127,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetNetworkConfiguration(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Multiplayer/file/network/config.json?flight={flightId}",
@@ -1145,7 +1146,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetNews(string filePath)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/news/file/{filePath}",
@@ -1164,7 +1165,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetNotAllowedInTitleMessage()
         {
             var response = await ExecuteAPIRequest($"https://gamecms-hacs.svc.halowaypoint.com:443/branches/hi/OEConfiguration/data/authfail/Default.json",
@@ -1183,7 +1184,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetProgressionFile(string filePath)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/{filePath}",
@@ -1212,7 +1213,7 @@ namespace Grunt.Core
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -1224,26 +1225,34 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> GameCmsGetSeasonRewardTrack(string seasonPath, string flightId)
+        /// <summary>
+        /// Returns information about a given Halo Infinite season.
+        /// </summary>
+        /// <remarks>
+        /// Keep in mind that the season numbers do not align cleanly with the public season numbers. For example, public Season 2 is Season 7 in this API. That is caused by a number of test season that 343 added to the product ahead of release.
+        /// </remarks>
+        /// <param name="seasonPath">The path to the season. Typical example is "Seasons/Season7.json" for the Lone Wolves season.</param>
+        /// <param name="flightId"></param>
+        /// <returns></returns>
+        public async Task<SeasonRewardTrack> GameCmsGetSeasonRewardTrack(string seasonPath, string flightId)
         {
-            var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/{seasonPath}?flight={flightId}",
+            var response = await ExecuteAPIRequest($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{seasonPath}?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<SeasonRewardTrack>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetSeasonRewardTrackManifest(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/RewardTracks/Manifest/seasonmanifest.json?flight={flightId}",
@@ -1262,7 +1271,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetStorefronts(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/file/Store/storefronts.json?flight={flightId}",
@@ -1281,7 +1290,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetUiConfigurationJson()
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/branches/oly/UI-Settings/data/Settings.json",
@@ -1300,7 +1309,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsOrigin(string path)
         {
             var response = await ExecuteAPIRequest($"https://gamecms-hacs.svc.halowaypoint.com:443://{path}",
@@ -1322,7 +1331,7 @@ namespace Grunt.Core
         //================================================
         // GameCmsGetGuide
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideImages(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/images/guide/xo?flight={flightId}",
@@ -1341,7 +1350,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideMultiplayer(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Multiplayer/guide/xo?flight={flightId}",
@@ -1360,7 +1369,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideNews(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/News/guide/xo?flight={flightId}",
@@ -1379,7 +1388,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideProgression(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Progression/guide/xo?flight={flightId}",
@@ -1398,7 +1407,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideSpecs(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/Specs/guide/xo?flight={flightId}",
@@ -1417,7 +1426,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideTitleAuthorization(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://gamecms:/hi/TitleAuthorization/guide/xo?flight={flightId}",
@@ -1439,7 +1448,7 @@ namespace Grunt.Core
         //================================================
         // HIUGC
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCCheckAssetPlayerBookmark(string title, string player, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/players/{player}/favorites/{assetType}/{assetId}",
@@ -1458,7 +1467,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCCreateAssetVersionAgnostic(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
@@ -1477,7 +1486,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDeleteAllVersions(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
@@ -1496,7 +1505,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDeleteAsset(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}",
@@ -1515,7 +1524,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDeleteVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
@@ -1534,7 +1543,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCEndSession(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions/active",
@@ -1553,7 +1562,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCFavoriteAnAsset(string player, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites/{assetType}/{assetId}",
@@ -1572,7 +1581,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCGetAsset(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}",
@@ -1591,7 +1600,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCGetBlob()
         {
             var response = await ExecuteAPIRequest($"https://blobs-infiniteugc.svc.halowaypoint.com:443",
@@ -1610,7 +1619,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCGetLatestAssetVersion(string title, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/films/{assetId}/versions/latest",
@@ -1629,7 +1638,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCGetLatestAssetVersionAgnostic(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/latest",
@@ -1648,7 +1657,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCGetPublishedVersion(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/published",
@@ -1667,7 +1676,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCGetSessionBlob()
         {
             var response = await ExecuteAPIRequest($"https://s3infiniteugcsessions.blob.core.windows.net:443",
@@ -1687,7 +1696,7 @@ namespace Grunt.Core
         }
 
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCGetSpecificAssetVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
@@ -1706,7 +1715,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCListAllVersions(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
@@ -1725,7 +1734,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCListPlayerAssets(string title, string player)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/players/{player}/assets",
@@ -1744,7 +1753,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCListPlayerFavorites(string player, string assetType)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites/{assetType}",
@@ -1763,7 +1772,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCListPlayerFavoritesAgnostic(string player)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites",
@@ -1782,7 +1791,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCPatchAssetVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
@@ -1801,7 +1810,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCPublishAssetVersion(string assetType, string assetId, string versionId, string clearanceId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/{assetType}/{assetId}/publish/{versionId}?clearanceId={clearanceId}",
@@ -1820,7 +1829,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCRateAnAsset(string player, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/ratings/{assetType}/{assetId}",
@@ -1839,7 +1848,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCReportAnAsset(string player, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/reports/{assetType}/{assetId}",
@@ -1858,7 +1867,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCSpawnAsset(string title, string assetType)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}",
@@ -1877,7 +1886,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCSpectateFilm(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/films/{assetId}/spectate",
@@ -1896,7 +1905,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, string includeContainerSas)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
@@ -1915,7 +1924,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCStringValidation(string title)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/validation/strings",
@@ -1934,7 +1943,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCUndeleteAsset(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}",
@@ -1953,7 +1962,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCUndeleteVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}/recover",
@@ -1972,7 +1981,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCUnpublishAsset(string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/{assetType}/{assetId}/unpublish",
@@ -1991,7 +2000,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCUploadImage(string title, string assetType, string assetId, string sessionId, string filePath, string player)
         {
             var response = await ExecuteAPIRequest($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions/{sessionId}/Image/{filePath}?player={player}",
@@ -2013,7 +2022,7 @@ namespace Grunt.Core
         //================================================
         // HIUGCDiscovery
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetCustomGameManifest()
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/a9dc0785-2a99-4fec-ba6e-0216feaaf041",
@@ -2032,7 +2041,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetEngineGameVariant(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}/versions/{versionId}",
@@ -2051,7 +2060,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetEngineGameVariantWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}",
@@ -2070,7 +2079,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetManifest(string assetId, string versionId, string clearanceId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
@@ -2089,7 +2098,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetManifestByBranch(string branchName)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/branches/{branchName}/game",
@@ -2108,7 +2117,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetManifestByBuild(string buildNumber)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/builds/{buildNumber}/game",
@@ -2127,7 +2136,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetManifestWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/{assetId}",
@@ -2146,7 +2155,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetMap(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}/versions/{versionId}",
@@ -2165,7 +2174,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetMapModePair(string assetId, string versionId, string clearanceId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
@@ -2184,7 +2193,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetMapModePairWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}",
@@ -2203,7 +2212,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetMapWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}",
@@ -2222,7 +2231,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetPlaylist(string assetId, string versionId, string clearanceId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
@@ -2241,7 +2250,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetPlaylistWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}",
@@ -2260,7 +2269,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetPrefab(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}/versions/{versionId}",
@@ -2279,7 +2288,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetPrefabWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}",
@@ -2298,7 +2307,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetProject(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}/versions/{versionId}",
@@ -2317,7 +2326,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetProjectWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}",
@@ -2336,7 +2345,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetTagsInfo()
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/info/tags",
@@ -2355,7 +2364,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetUgcGameVariant(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}/versions/{versionId}",
@@ -2374,7 +2383,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetUgcGameVariantWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}",
@@ -2393,7 +2402,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoverySearch()
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/search",
@@ -2412,7 +2421,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoverySpectateByMatchId(string matchId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/films/matches/{matchId}/spectate",
@@ -2434,7 +2443,7 @@ namespace Grunt.Core
         //================================================
         // Lobby
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> LobbyGameConnection()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/",
@@ -2453,7 +2462,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> LobbyGetQosServers()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/titles/hi/qosservers",
@@ -2472,7 +2481,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> LobbyJoinLobby(string lobbyId, string player)
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/hi/lobbies/{lobbyId}/players/{player}?auth=st",
@@ -2491,7 +2500,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> LobbyLobbyConnection()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/",
@@ -2510,7 +2519,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> LobbyLobbyConnectionPublish()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/",
@@ -2529,7 +2538,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> LobbyLobbyConnectionSubscribe()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/",
@@ -2548,7 +2557,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> LobbyLobbyPresence()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/hi/presence",
@@ -2567,7 +2576,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> LobbyRegisterJoinLobbyHandle(string handleId, string player)
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/hi/handles/{handleId}/players/{player}?auth=st",
@@ -2586,7 +2595,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> LobbyThirdPartyJoinHandle(string lobbyId, string player, string handleAudience, string handlePlatform)
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/hi/lobbies/{lobbyId}/players/{player}/thirdPartyJoinHandle?audience={handleAudience}&platform={handlePlatform}",
@@ -2608,7 +2617,7 @@ namespace Grunt.Core
         //================================================
         // Setting
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> SettingGetFeatureFlags(string platform, string version)
         {
             var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/featureflags/{platform}/{version}",
@@ -2627,7 +2636,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> SettingGetFlightedFeatureFlags(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/featureflags/hi?flight={flightId}",
@@ -2649,7 +2658,7 @@ namespace Grunt.Core
         //================================================
         // Settings
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> SettingsActiveFlight(string sandbox, string buildNumber)
         {
             var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/oban/flight-configurations/titles/hi/audiences/RETAIL/active?sandbox={sandbox}&build={buildNumber}",
@@ -2668,22 +2677,28 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
-        public async Task<string> SettingsGetClearance(string audience, string sandbox, string buildNumber)
+        /// <summary>
+        /// Gets the currently assigned clearance/flight ID.
+        /// </summary>
+        /// <param name="audience">Audience that the request is targeting. Standard value is RETAIL.</param>
+        /// <param name="sandbox">Identifier associated with the sandbox. Typical value is UNUSED.</param>
+        /// <param name="buildNumber">Number of the game build the data is requested for. Example value is 211755.22.01.23.0549-0.</param>
+        /// <returns>An instance of PlayerClearance if the request is successful. Otherwise, returns null.</returns>
+        public async Task<PlayerClearance> SettingsGetClearance(string audience, string sandbox, string buildNumber)
         {
             var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/oban/flight-configurations/titles/hi/audiences/{audience}/active?sandbox={sandbox}&build={buildNumber}",
                                    HttpMethod.Get,
                                    true,
                                    false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<PlayerClearance>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -2691,7 +2706,7 @@ namespace Grunt.Core
         /// Gets the the player clearance/flight ID.
         /// </summary>
         /// <param name="audience">Audience that the request is targeting. Standard value is RETAIL.</param>
-        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <param name="player">The player identifier in the format "xuid(000000)".</param>
         /// <param name="sandbox">Identifier associated with the sandbox. Typical value is UNUSED.</param>
         /// <param name="buildNumber">Number of the game build the data is requested for. Example value is 211755.22.01.23.0549-0.</param>
         /// <returns>An instance of PlayerClearance if the request is successful. Otherwise, returns null.</returns>
@@ -2713,7 +2728,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> SettingsPlayerClearance(string player, string sandbox, string buildNumber)
         {
             var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/oban/flight-configurations/titles/hi/audiences/RETAIL/players/{player}/active?sandbox={sandbox}&build={buildNumber}",
@@ -2732,7 +2747,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> SettingsSpartanTokenV4()
         {
             var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/spartan-token",
@@ -2754,7 +2769,7 @@ namespace Grunt.Core
         //================================================
         // Skill
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> SkillGetMatchResult(string matchId)
         {
             var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill",
@@ -2773,6 +2788,7 @@ namespace Grunt.Core
             }
         }
 
+        //TODO: This function requires manual intervention/checks.
         public async Task<PlayerSkillResultValue> SkillGetMatchPlayerResult(string matchId, string playerId)
         {
             var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players={playerId}",
@@ -2791,7 +2807,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> SkillGetPlaylistCsr(string playlistId)
         {
             var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/playlist/{playlistId}/csrs",
@@ -2813,7 +2829,7 @@ namespace Grunt.Core
         //================================================
         // Stats
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> StatsBanSummary(string targetlist)
         {
             var response = await ExecuteAPIRequest($"https://banprocessor.svc.halowaypoint.com:443/hi/bansummary?auth=st&targets={targetlist}",
@@ -2971,7 +2987,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> StatsProcessPlayerChallengeAction(string player, string deckId, string challengeId)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/decks/{deckId}/challenges/{challengeId}",
@@ -2990,7 +3006,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> StatsPutCampaignProgress(string player)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/campaign/progress",
@@ -3009,7 +3025,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> StatsPutPlayerPresenceInMatch(string player, string matchId)
         {
             var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches/{matchId}/present-in-match",
@@ -3031,7 +3047,7 @@ namespace Grunt.Core
         //================================================
         // Telemetry
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> TelemetryHighPriority()
         {
             var response = await ExecuteAPIRequest($"https://telemetry-clients.svc.halowaypoint.com:443/",
@@ -3050,7 +3066,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> TelemetryLowPriority()
         {
             var response = await ExecuteAPIRequest($"https://telemetry-clients.svc.halowaypoint.com:443/",
@@ -3072,7 +3088,7 @@ namespace Grunt.Core
         //================================================
         // TextModeration
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> TextModerationGetSigningKey(string keyId)
         {
             var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/moderation-proof-keys/{keyId}",
@@ -3091,7 +3107,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> TextModerationGetSigningKeys()
         {
             var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/moderation-proof-keys",
@@ -3110,7 +3126,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> TextModerationPostInappropriateMessageReport(string player)
         {
             var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/players/{player}/text-message-reports",
@@ -3129,7 +3145,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> TextModerationPostTextForModeration(string player)
         {
             var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/players/{player}/text-messages",
@@ -3151,7 +3167,7 @@ namespace Grunt.Core
         //================================================
         // Xbl
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> XblGetProfileSettingsForSpeechAccessibility()
         {
             var response = await ExecuteAPIRequest($"https://profile.xboxlive.com:443/users/me/profile/settings?settings=SpeechAccessibility",
@@ -3173,7 +3189,7 @@ namespace Grunt.Core
         //================================================
         // XboxLive
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> XboxLiveTitleManagedStorage(string xuid, string scid)
         {
             var response = await ExecuteAPIRequest($"https://titlestorage.xboxlive.com:443/trustedplatform/users/xuid({xuid})/scids/{scid}/data/thunderhead_campaign_saves",
@@ -3192,7 +3208,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> XboxLiveTitleManagedStorageFile(string xuid, string scid, string filename, string type)
         {
             var response = await ExecuteAPIRequest($"https://titlestorage.xboxlive.com:443/trustedplatform/users/xuid({xuid})/scids/{scid}/data/thunderhead_campaign_saves/{filename},{type}",
@@ -3214,7 +3230,7 @@ namespace Grunt.Core
         //================================================
         // Xboxlive
         //================================================
-        //TODO: This function requires manual invtervention/checks.
+        //TODO: This function requires manual intervention/checks.
         public async Task<string> XboxliveQoSEndpoints()
         {
             var response = await ExecuteAPIRequest($"https://gameserverds.xboxlive.com:443/xplatqosservers",
@@ -3245,7 +3261,7 @@ namespace Grunt.Core
         /// <param name="userAgent">User agent to be used for the request.</param>
         /// <param name="content">If the request contains data to be sent to the Halo Waypoint service, include it here. Expected format is JSON.</param>
         /// <returns>Response string in case of a successful request. Null if request failed.</returns>
-        private async Task<string> ExecuteAPIRequest(string endpoint, HttpMethod method, bool useSpartanToken, bool useClearance, string content = "")
+        private async Task<string> ExecuteAPIRequest(string endpoint, HttpMethod method, bool useSpartanToken, bool useClearance, string userAgent, string content = "")
         {
             var client = new HttpClient(new HttpClientHandler
             {
@@ -3273,7 +3289,7 @@ namespace Grunt.Core
                 request.Headers.Add("343-clearance", this._clearanceToken);
             }
             
-            request.Headers.Add("User-Agent", GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            request.Headers.Add("User-Agent", userAgent);
             request.Headers.Add("Accept", "application/json");
             request.Headers.Add("Accept-Encoding", "gzip, deflate, br");
 
