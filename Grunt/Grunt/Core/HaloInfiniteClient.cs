@@ -2818,22 +2818,27 @@ namespace Grunt.Core
         //================================================
         // Stats
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> StatsBanSummary(string targetlist)
+        /// <summary>
+        /// Gets the summary information for applicable bans to players and devices.
+        /// </summary>
+        /// <param name="targetlist">A list of targets that need to be checked. Authenticated devices can be included as "Authenticated(Device)". Individual players can be specified as "xuid(XUID_VALUE)".</param>
+        /// <returns>An instance of BanSummary containing applicable ban information if request was successful. Return value is null otherwise.</returns>
+        public async Task<BanSummary> StatsBanSummary(List<string> targetlist)
         {
-            var response = await ExecuteAPIRequest($"https://banprocessor.svc.halowaypoint.com:443/hi/bansummary?auth=st&targets={targetlist}",
+            var formattedTargetList = string.Join(",", targetlist);
+            var response = await ExecuteAPIRequest($"https://banprocessor.svc.halowaypoint.com:443/hi/bansummary?auth=st&targets={formattedTargetList}",
                                    HttpMethod.Get,
                                    false,
                                    false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<BanSummary>(response); ;
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
