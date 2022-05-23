@@ -2637,46 +2637,32 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> SettingGetFlightedFeatureFlags(string flightId)
+        /// <summary>
+        /// Get a list of features enables for a given flight.
+        /// </summary>
+        /// <param name="flightId">Clearance ID/flight that is being used.</param>
+        /// <returns>An instance of FlightedFeatureFlags containing a list of enabled and disabled features if the request is successful. Otherwise, returns null.</returns>
+        public async Task<FlightedFeatureFlags> SettingGetFlightedFeatureFlags(string flightId)
         {
             var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/featureflags/hi?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_PC_USER_AGENT);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<FlightedFeatureFlags>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
         //================================================
         // Settings
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> SettingsActiveFlight(string sandbox, string buildNumber)
-        {
-            var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/oban/flight-configurations/titles/hi/audiences/RETAIL/active?sandbox={sandbox}&build={buildNumber}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
 
         /// <summary>
         /// Gets the currently assigned clearance/flight ID.
@@ -2726,44 +2712,6 @@ namespace Grunt.Core
             else
             {
                 return null;
-            }
-        }
-
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> SettingsPlayerClearance(string player, string sandbox, string buildNumber)
-        {
-            var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/oban/flight-configurations/titles/hi/audiences/RETAIL/players/{player}/active?sandbox={sandbox}&build={buildNumber}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> SettingsSpartanTokenV4()
-        {
-            var response = await ExecuteAPIRequest($"https://settings.svc.halowaypoint.com:443/spartan-token",
-                                   HttpMethod.Get,
-                                   false,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
             }
         }
 
@@ -2823,6 +2771,7 @@ namespace Grunt.Core
         /// </summary>
         /// <param name="targetlist">A list of targets that need to be checked. Authenticated devices can be included as "Authenticated(Device)". Individual players can be specified as "xuid(XUID_VALUE)".</param>
         /// <returns>An instance of BanSummary containing applicable ban information if request was successful. Return value is null otherwise.</returns>
+        /// <remarks>In some quick tests, it seems that including Authenticated(Device) in the request results in 401 Unauthorized if called outside the game. Additional work might be required to understand how to validate the device.</remarks>
         public async Task<BanSummary> StatsBanSummary(List<string> targetlist)
         {
             var formattedTargetList = string.Join(",", targetlist);
