@@ -30,6 +30,10 @@ namespace Grunt.Core
             EndpointData = JsonConvert.DeserializeObject<ApiSettingsContainer>(File.ReadAllText("endpoints.json"));
         }
 
+        /// <summary>
+        /// Gets the list of API settings as provided by the official Halo API. This is the latest version of all available endpoints.
+        /// </summary>
+        /// <returns>An instance of ApiSettingsContainer if the call is successful. Otherwise, returns null.</returns>
         public async Task<ApiSettingsContainer> GetApiSettingsContainer()
         {
             var response = await ExecuteAPIRequest(SettingsEndpoints.HIPC,
