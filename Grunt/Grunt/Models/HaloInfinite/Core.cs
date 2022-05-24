@@ -7,6 +7,6 @@
         public CoreTheme[] Themes { get; set; }
         public string CoreId { get; set; }
         public string CoreType { get; set; }
-        public WaypointDate FirstAcquiredDate { get; set; }
+        public SpartanDate FirstAcquiredDate { get; set; }
     }
 }

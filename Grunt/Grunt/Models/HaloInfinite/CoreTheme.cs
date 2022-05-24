@@ -2,8 +2,8 @@
 {
     public class CoreTheme
     {
-        public WaypointDate FirstModifiedDateUtc { get; set; }
-        public WaypointDate LastModifiedDateUtc { get; set; }
+        public SpartanDate FirstModifiedDateUtc { get; set; }
+        public SpartanDate LastModifiedDateUtc { get; set; }
         public bool IsEquipped { get; set; }
         public bool IsDefault { get; set; }
         public string ThemePath { get; set; }

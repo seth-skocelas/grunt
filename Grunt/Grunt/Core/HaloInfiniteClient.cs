@@ -2023,24 +2023,6 @@ namespace Grunt.Core
         //================================================
         // HIUGCDiscovery
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetCustomGameManifest()
-        {
-            var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/a9dc0785-2a99-4fec-ba6e-0216feaaf041",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
 
         //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCDiscoveryGetEngineGameVariant(string assetId, string versionId)
@@ -2327,8 +2309,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetProjectWithoutVersion(string assetId)
+        /// <summary>
+        /// Returns information on a project (collection of game modes and maps).
+        /// </summary>
+        /// <param name="assetId">Unique asset ID representing the project. Example asset ID currently active is the custom game manifest ID: "a9dc0785-2a99-4fec-ba6e-0216feaaf041".</param>
+        /// <returns>An instance of Project containing current game project information if request is successful. Otherwise, returns null.</returns>
+        public async Task<Project> HIUGCDiscoveryGetProjectWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}",
                                    HttpMethod.Get,
@@ -2338,16 +2324,19 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Project>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetTagsInfo()
+        /// <summary>
+        /// Returns information about available tags that can be associated with game assets.
+        /// </summary>
+        /// <returns>An instance of TagInfo containing a list of tags if the request is successful. Otherwise, returns null.</returns>
+        public async Task<TagInfo> HIUGCDiscoveryGetTagsInfo()
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/info/tags",
                                    HttpMethod.Get,
@@ -2357,16 +2346,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<TagInfo>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetUgcGameVariant(string assetId, string versionId)
+        /// <summary>
+        /// Returns information about a game asset version. This information is specific only to the version specified and does not contain general asset metadata. To get general asset metadata, use HIUGCDiscoveryGetUgcGameVariantWithoutVersion.
+        /// </summary>
+        /// <param name="assetId">Unique ID for the game asset. For example, for "Arena:Attrition" game mode, the asset ID is "cefd4723-7bf2-4784-91bb-7c7c3dc9e324".</param>
+        /// <param name="versionId">Version for the asset to obtain. Example value is "latest".</param>
+        /// <returns>An instance of GameAssetVariantVersion containing game variant metadata if the request is successful. Otherwise, returns null.</returns>
+        public async Task<GameAssetVariantVersion> HIUGCDiscoveryGetUgcGameVariant(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}/versions/{versionId}",
                                    HttpMethod.Get,
@@ -2376,16 +2370,20 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<GameAssetVariantVersion>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetUgcGameVariantWithoutVersion(string assetId)
+        /// <summary>
+        /// Returns general asset metadata related to a game asset.
+        /// </summary>
+        /// <param name="assetId">Unique ID for the game asset. For example, for "Arena:Attrition" game mode, the asset ID is "cefd4723-7bf2-4784-91bb-7c7c3dc9e324".</param>
+        /// <returns>An instance of GameAssetVariant containing asset metadata if the request is successful. Otherwise, returns null.</returns>
+        public async Task<GameAssetVariant> HIUGCDiscoveryGetUgcGameVariantWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}",
                                    HttpMethod.Get,
@@ -2395,11 +2393,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<GameAssetVariant>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -2422,8 +2420,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoverySpectateByMatchId(string matchId)
+        /// <summary>
+        /// Returns information about available film chunks that are used to reconstruct the entire match.
+        /// </summary>
+        /// <param name="matchId">Unique ID for the match.</param>
+        /// <returns>An instance of Film containing film metadata if the request is successful. Otherwise, returns null.</returns>
+        /// <remarks>Despite the name of this request, the data captured here is not actually a movie but rather a full re-creation of the match, using in-game assets and player positions.</remarks>
+        public async Task<Film> HIUGCDiscoverySpectateByMatchId(string matchId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/films/matches/{matchId}/spectate",
                                    HttpMethod.Get,
@@ -2433,11 +2436,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Film>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -2463,8 +2466,11 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyGetQosServers()
+        /// <summary>
+        /// Gets a list of available lobby servers.
+        /// </summary>
+        /// <returns>A list of Server instances if the request is successful. Otherwise, returns null.</returns>
+        public async Task<List<Server>> LobbyGetQosServers()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/titles/hi/qosservers",
                                    HttpMethod.Get,
@@ -2474,16 +2480,16 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<List<Server>>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
         //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyJoinLobby(string lobbyId, string player)
+        public async Task<string> JoinLobby(string lobbyId, string player)
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/hi/lobbies/{lobbyId}/players/{player}?auth=st",
                                    HttpMethod.Get,
@@ -2502,7 +2508,7 @@ namespace Grunt.Core
         }
 
         //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyLobbyConnection()
+        public async Task<string> LobbyConnection()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
@@ -2521,7 +2527,7 @@ namespace Grunt.Core
         }
 
         //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyLobbyConnectionPublish()
+        public async Task<string> LobbyConnectionPublish()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
@@ -2540,7 +2546,7 @@ namespace Grunt.Core
         }
 
         //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyLobbyConnectionSubscribe()
+        public async Task<string> LobbyConnectionSubscribe()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
@@ -2559,7 +2565,7 @@ namespace Grunt.Core
         }
 
         //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyLobbyPresence()
+        public async Task<string> LobbyPresence()
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/hi/presence",
                                    HttpMethod.Get,
@@ -2596,8 +2602,16 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyThirdPartyJoinHandle(string lobbyId, string player, string handleAudience, string handlePlatform)
+        /// <summary>
+        /// Gets a third-party join handle for a lobby.
+        /// </summary>
+        /// <param name="lobbyId">Unique lobby ID.</param>
+        /// <param name="player">Player ID in the format of "xuid(XUID_VALUE)".</param>
+        /// <param name="handleAudience">Audience for the join handle. Example value is "Friends".</param>
+        /// <param name="handlePlatform">Platform for the join handle. Example value is "Discord".</param>
+        /// <returns>An instance of LobbyJoinHandle if the request is successful. Otherwise, returns null.</returns>
+        /// <remarks>It seems that this request requires a more "broad access" Spartan token that is generated by the game, and is not open to third-party apps. Additional investigation is required.</remarks>
+        public async Task<LobbyJoinHandle> LobbyThirdPartyJoinHandle(string lobbyId, string player, string handleAudience, string handlePlatform)
         {
             var response = await ExecuteAPIRequest($"https://lobby-hi.svc.halowaypoint.com:443/hi/lobbies/{lobbyId}/players/{player}/thirdPartyJoinHandle?audience={handleAudience}&platform={handlePlatform}",
                                    HttpMethod.Get,
@@ -2607,11 +2621,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<LobbyJoinHandle>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
