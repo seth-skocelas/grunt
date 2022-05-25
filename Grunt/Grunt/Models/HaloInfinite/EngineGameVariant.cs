@@ -1,9 +1,9 @@
-﻿namespace Grunt.Models.HaloInfinite
-{
-    public class EngineGameVariant
-    {
-        public string TargetAssetId { get; set; }
-        public string TargetAssetVersionId { get; set; }
-    }
+﻿using Grunt.Models.HaloInfinite.Foundation;
 
+namespace Grunt.Models.HaloInfinite
+{
+    public class EngineGameVariant : Asset
+    {
+        
+    }
 }

@@ -1,10 +1,10 @@
-﻿namespace Grunt.Models.HaloInfinite
-{
-    public class UGCGameVariant
-    {
-        public int AssetKind { get; set; }
-        public string AssetId { get; set; }
-        public string VersionId { get; set; }
-    }
+﻿using Grunt.Models.HaloInfinite.Foundation;
 
+namespace Grunt.Models.HaloInfinite
+{
+    public class UGCGameVariant : Asset
+    {
+        public object CustomData { get; set; }
+        public PlayAssetStats AssetStats { get; set; }
+    }
 }

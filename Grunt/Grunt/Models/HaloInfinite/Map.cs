@@ -2,8 +2,10 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    public class AssetLink : Asset
+    public class Map : Asset
     {
+        public CustomMapData CustomData { get; set; }
+        public object[] PrefabLinks { get; set; }
         public PlayAssetStats AssetStats { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-    public class AssetVersionFiles
+    public class AssetVersionFile
     {
         public string Prefix { get; set; }
         public string[] FileRelativePaths { get; set; }

@@ -10,9 +10,6 @@ namespace Grunt.Models.HaloInfinite
         public object[] PrefabLinks { get; set; }
         public AssetLink[] UgcGameVariantLinks { get; set; }
         public object[] MapModePairLinks { get; set; }
-        public object[] Tags { get; set; }
-        public AssetVersionFiles Files { get; set; }
-        public object[] Contributors { get; set; }
         public PlayAssetStats AssetStats { get; set; }
     }
 }

@@ -149,8 +149,12 @@ namespace Grunt.Core
         //================================================
         // Crashes
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> CrashesUpload()
+
+        /// <summary>
+        /// Uploads crash information. Have not yet seen this live in the game, and have no information on how it works at this time.
+        /// </summary>
+        /// <returns>Uknown.</returns>
+        private async Task<string> CrashesUpload()
         {
             var response = await ExecuteAPIRequest($"https://crashes.svc.halowaypoint.com:443/crashes/hipc/bf05b320-ee8f-4be5-879d-505b669654c9",
                                    HttpMethod.Get,
@@ -171,8 +175,14 @@ namespace Grunt.Core
         //================================================
         // Economy
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyAiCoreCustomization(string player, string coreId)
+
+        /// <summary>
+        /// Gets information about an individual AI Core.
+        /// </summary>
+        /// <param name="player">The player identifier in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="coreId">Unique AI Core ID.</param>
+        /// <returns>An instance of Core containing AI core customization metadata if request was successful. Return value is null otherwise.</returns>
+        public async Task<Models.HaloInfinite.Core> EconomyAiCoreCustomization(string player, string coreId)
         {
             var response = await ExecuteAPIRequest($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais/{coreId}",
                                    HttpMethod.Get,
@@ -182,18 +192,18 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Models.HaloInfinite.Core>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
         /// <summary>
         /// Get AI core customization for a player.
         /// </summary>
-        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <param name="player">The player identifier in the format "xuid(XUID_VALUE)".</param>
         /// <returns>An instance of AiCores containing AI core customization metadata if request was successful. Return value is null otherwise.</returns>
         public async Task<AiCores> EconomyAiCoresCustomization(string player)
         {
@@ -2086,6 +2096,7 @@ namespace Grunt.Core
         }
 
         //TODO: This function requires manual intervention/checks.
+        // Example branch is HIREL according to HIUGCDiscoveryGetManifestByBuild, but that needs to be validated.
         public async Task<string> HIUGCDiscoveryGetManifestByBranch(string branchName)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/branches/{branchName}/game",
@@ -2104,8 +2115,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetManifestByBuild(string buildNumber)
+        /// <summary>
+        /// Gets the current game manifest.
+        /// </summary>
+        /// <param name="buildNumber">Build for which the manifest needs to be obtained. Maps to official Halo builds, such as 6.10022.10499.</param>
+        /// <returns>An instance of Manifest containing game manifest information if request is successful. Otherwise, returns null.</returns>
+        public async Task<Manifest> HIUGCDiscoveryGetManifestByBuild(string buildNumber)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/builds/{buildNumber}/game",
                                    HttpMethod.Get,
@@ -2115,11 +2130,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Manifest>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -2142,8 +2157,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetMap(string assetId, string versionId)
+        /// <summary>
+        /// Returns information about a given map at a specific release version.
+        /// </summary>
+        /// <param name="assetId">Unique map ID. For example, the ID for the Recharge map is "8420410b-044d-44d7-80b6-98a766c8c39f".</param>
+        /// <param name="versionId">Unique version ID for a map. For example, for the Recharge map a version is "068c0974-f748-41ba-b457-b8fed603576e".</param>
+        /// <returns>An instance of Map containing map metadata if request is successful. Otherwise, returns null.</returns>
+        public async Task<Map> HIUGCDiscoveryGetMap(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}/versions/{versionId}",
                                    HttpMethod.Get,
@@ -2153,11 +2173,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Map>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -2199,8 +2219,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetMapWithoutVersion(string assetId)
+        /// <summary>
+        /// Returns information about a given map.
+        /// </summary>
+        /// <param name="assetId">Unique map ID. For example, the ID for the Recharge map is "8420410b-044d-44d7-80b6-98a766c8c39f".</param>
+        /// <returns>An instance of Map containing map metadata if request is successful. Otherwise, returns null.</returns>
+        public async Task<Map> HIUGCDiscoveryGetMapWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}",
                                    HttpMethod.Get,
@@ -2210,11 +2234,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Map>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -2294,8 +2318,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetProject(string assetId, string versionId)
+        /// <summary>
+        /// Returns the project details that are associated with a given version of a manifest. This manifest contains all the maps and modes to show in the custom game menus.
+        /// </summary>
+        /// <param name="assetId">Unique asset ID representing the project. Example asset ID currently active is the custom game manifest ID: "a9dc0785-2a99-4fec-ba6e-0216feaaf041".</param>
+        /// <param name="versionId">Version ID for the project. As an example, a version of a production manifest is "a4e68648-f994-44bb-853e-d09ee224d799".</param>
+        /// <returns>An instance of Project containing current game project information if request is successful. Otherwise, returns null.</returns>
+        public async Task<Project> HIUGCDiscoveryGetProject(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}/versions/{versionId}",
                                    HttpMethod.Get,
@@ -2305,16 +2334,16 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Project>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
         /// <summary>
-        /// Returns information on a project (collection of game modes and maps).
+        /// Returns information on a project (collection of game modes and maps). This manifest contains all the maps and modes to show in the custom game menus.
         /// </summary>
         /// <param name="assetId">Unique asset ID representing the project. Example asset ID currently active is the custom game manifest ID: "a9dc0785-2a99-4fec-ba6e-0216feaaf041".</param>
         /// <returns>An instance of Project containing current game project information if request is successful. Otherwise, returns null.</returns>
@@ -2363,8 +2392,8 @@ namespace Grunt.Core
         /// </summary>
         /// <param name="assetId">Unique ID for the game asset. For example, for "Arena:Attrition" game mode, the asset ID is "cefd4723-7bf2-4784-91bb-7c7c3dc9e324".</param>
         /// <param name="versionId">Version for the asset to obtain. Example value is "latest".</param>
-        /// <returns>An instance of GameAssetVariantVersion containing game variant metadata if the request is successful. Otherwise, returns null.</returns>
-        public async Task<GameAssetVariantVersion> HIUGCDiscoveryGetUgcGameVariant(string assetId, string versionId)
+        /// <returns>An instance of UGCGameVariant containing game variant metadata if the request is successful. Otherwise, returns null.</returns>
+        public async Task<UGCGameVariant> HIUGCDiscoveryGetUgcGameVariant(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}/versions/{versionId}",
                                    HttpMethod.Get,
@@ -2374,7 +2403,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<GameAssetVariantVersion>(response);
+                return JsonConvert.DeserializeObject<UGCGameVariant>(response);
             }
             else
             {
@@ -2385,9 +2414,9 @@ namespace Grunt.Core
         /// <summary>
         /// Returns general asset metadata related to a game asset.
         /// </summary>
-        /// <param name="assetId">Unique ID for the game asset. For example, for "Arena:Attrition" game mode, the asset ID is "cefd4723-7bf2-4784-91bb-7c7c3dc9e324".</param>
+        /// <param name="assetId">Unique ID for the game asset. For example, for "LandGrab-DefaultFiesta" game mode, the asset ID is "6d10405f-6d8d-406d-af8a-56c0d6caa73d".</param>
         /// <returns>An instance of GameAssetVariant containing asset metadata if the request is successful. Otherwise, returns null.</returns>
-        public async Task<GameAssetVariant> HIUGCDiscoveryGetUgcGameVariantWithoutVersion(string assetId)
+        public async Task<UGCGameVariant> HIUGCDiscoveryGetUgcGameVariantWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}",
                                    HttpMethod.Get,
@@ -2397,7 +2426,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<GameAssetVariant>(response);
+                return JsonConvert.DeserializeObject<UGCGameVariant>(response);
             }
             else
             {
@@ -3008,8 +3037,11 @@ namespace Grunt.Core
         //================================================
         // Telemetry
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> TelemetryHighPriority()
+        /// <summary>
+        /// Likely deals with in-game telemetry. Early investigations point to WebSockets communication, so additional work is required for full context.
+        /// </summary>
+        /// <returns>Unknown</returns>
+        private async Task<string> TelemetryHighPriority()
         {
             var response = await ExecuteAPIRequest($"https://telemetry-clients.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
@@ -3027,8 +3059,11 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> TelemetryLowPriority()
+        /// <summary>
+        /// Likely deals with in-game telemetry. Early investigations point to WebSockets communication, so additional work is required for full context.
+        /// </summary>
+        /// <returns>Unknown</returns>
+        private async Task<string> TelemetryLowPriority()
         {
             var response = await ExecuteAPIRequest($"https://telemetry-clients.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
@@ -3094,8 +3129,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> TextModerationPostInappropriateMessageReport(string player)
+        /// <summary>
+        /// Likely posts text for moderation. Have not yet seen this live in the game, and have no information on how it works at this time.
+        /// </summary>
+        /// <param name="player">Player ID likely in "xuid(XUID_VALUE)" format.</param>
+        /// <returns>Unknown</returns>
+        private async Task<string> TextModerationPostInappropriateMessageReport(string player)
         {
             var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/players/{player}/text-message-reports",
                                    HttpMethod.Get,
@@ -3113,8 +3152,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> TextModerationPostTextForModeration(string player)
+        /// <summary>
+        /// Likely posts text for moderation. Have not yet seen this live in the game, and have no information on how it works at this time.
+        /// </summary>
+        /// <param name="player">Player ID likely in "xuid(XUID_VALUE)" format.</param>
+        /// <returns>Unknown</returns>
+        private async Task<string> TextModerationPostTextForModeration(string player)
         {
             var response = await ExecuteAPIRequest($"https://text.svc.halowaypoint.com:443/hi/players/{player}/text-messages",
                                    HttpMethod.Get,
