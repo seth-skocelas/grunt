@@ -827,7 +827,7 @@ namespace Grunt.Core
         /// <returns>If successful, returns an instance of AchievementCollection that contains the list of available achievements. Otherwise, returns null.</returns>
         public async Task<AchievementCollection> GameCmsGetAchievements()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Multiplayer/file/Live/Achievements.json",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/Live/Achievements.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -846,7 +846,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetArmorCoreManifest(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/Inventory/Manifest/armorcores.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/Inventory/Manifest/armorcores.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -865,7 +865,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetAsyncComputeOverrides()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Specs/file/graphics/AsyncComputeOverrides.json",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/AsyncComputeOverrides.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -884,7 +884,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetBanMessage(string messageIdentity, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Banning/file/BanMessages/{messageIdentity}.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Banning/file/BanMessages/{messageIdentity}.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -903,7 +903,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetChallenge(string challengePath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/{challengePath}?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengePath}?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -922,7 +922,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetChallengeDeck(string challengeDeckPath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/{challengeDeckPath}?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengeDeckPath}?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -941,7 +941,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetClawAccess(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/TitleAuthorization/file/claw/access.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/TitleAuthorization/file/claw/access.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -960,7 +960,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetCpuPresets()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Specs/file/cpu/presets.json",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/cpu/presets.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -979,7 +979,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetCustomGameDefaults()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Multiplayer/file/NonMatchmaking/customgame.json",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/NonMatchmaking/customgame.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -998,7 +998,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetCustomizationCatalog(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/inventory/catalog/inventory_catalog.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/inventory/catalog/inventory_catalog.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1023,7 +1023,7 @@ namespace Grunt.Core
         /// <returns>If successful, and instance of DevicePresetOverrides. Otherwise, returs null.</returns>
         public async Task<DevicePresetOverrides> GameCmsGetDevicePresetOverrides()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Specs/file/graphics/DevicePresetOverrides.json",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/DevicePresetOverrides.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1042,7 +1042,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetEvent(string eventPath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/{eventPath}?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{eventPath}?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1061,7 +1061,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetEventManifest(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/RewardTracks/Manifest/eventmanifest.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/RewardTracks/Manifest/eventmanifest.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1080,7 +1080,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGraphicsSpecControlOverrides()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1099,7 +1099,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGraphicSpecs()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Specs/file/graphics/overrides.json",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/overrides.json",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1145,11 +1145,11 @@ namespace Grunt.Core
         /// For example, you may find that you can get the data about an armor emblem with the path "/inventory/armor/emblems/013-001-363f4a25.json".
         /// </remarks>
         /// <param name="itemPath">Path to the item to be obtained. Example is "/inventory/armor/emblems/013-001-363f4a25.json".</param>
-        /// <param name="flightId">ID for the currently active flight.</param>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
         /// <returns>If successful, an instance of InGameItem. Otherwise, null.</returns>
         public async Task<InGameItem> GameCmsGetItem(string itemPath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/{itemPath}?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{itemPath}?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1172,7 +1172,7 @@ namespace Grunt.Core
         /// <returns>If successful, returns an instance of LobbyHopperErrorMessageList that contains possible errors. Otherwise, returns null.</returns>
         public async Task<LobbyHopperErrorMessageList> GameCmsGetLobbyErrorMessages(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Multiplayer/file/gameStartErrorMessages/LobbyHoppperErrorMessageList.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/gameStartErrorMessages/LobbyHoppperErrorMessageList.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1191,7 +1191,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetMetadata(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/metadata/metadata.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/metadata/metadata.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1207,10 +1207,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetNetworkConfiguration(string flightId)
+        /// <summary>
+        /// Returns the network configuration for the current flight.
+        /// </summary>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <returns>If successful, returns an instance of NetworkConfiguration. Otherwise, returns null.</returns>
+        public async Task<NetworkConfiguration> GameCmsGetNetworkConfiguration(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Multiplayer/file/network/config.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/network/config.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1218,18 +1222,18 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<NetworkConfiguration>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetNews(string filePath)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/news/file/{filePath}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/news/file/{filePath}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1267,7 +1271,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetProgressionFile(string filePath)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/{filePath}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{filePath}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1335,7 +1339,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetSeasonRewardTrackManifest(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/RewardTracks/Manifest/seasonmanifest.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/RewardTracks/Manifest/seasonmanifest.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1354,7 +1358,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetStorefronts(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/Store/storefronts.json?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/Store/storefronts.json?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1373,7 +1377,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetUiConfigurationJson()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/branches/oly/UI-Settings/data/Settings.json",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/branches/oly/UI-Settings/data/Settings.json",
                                    HttpMethod.Get,
                                    true,
                                    false,
@@ -1414,7 +1418,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideImages(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/images/guide/xo?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/images/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1433,7 +1437,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideMultiplayer(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Multiplayer/guide/xo?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1452,7 +1456,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideNews(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/News/guide/xo?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/News/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1471,7 +1475,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideProgression(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/guide/xo?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1490,7 +1494,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideSpecs(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Specs/guide/xo?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -1509,7 +1513,7 @@ namespace Grunt.Core
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetGuideTitleAuthorization(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/TitleAuthorization/guide/xo?flight={flightId}",
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/TitleAuthorization/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
                                    true,
                                    true,
