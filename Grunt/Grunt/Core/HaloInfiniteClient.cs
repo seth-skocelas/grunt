@@ -1328,8 +1328,8 @@ namespace Grunt.Core
         /// Keep in mind that the season numbers do not align cleanly with the public season numbers. For example, public Season 2 is Season 7 in this API. That is caused by a number of test season that 343 added to the product ahead of release.
         /// </remarks>
         /// <param name="seasonPath">The path to the season. Typical example is "Seasons/Season7.json" for the Lone Wolves season.</param>
-        /// <param name="flightId"></param>
-        /// <returns></returns>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <returns>If successful, an instance of SeasonRewardTrack containing season information.</returns>
         public async Task<SeasonRewardTrack> GameCmsGetSeasonRewardTrack(string seasonPath, string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{seasonPath}?flight={flightId}",
@@ -1348,8 +1348,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetSeasonRewardTrackManifest(string flightId)
+        /// <summary>
+        /// This API currently returns a 404, and is not active. Additional investigation required.
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <returns></returns>
+        private async Task<string> GameCmsGetSeasonRewardTrackManifest(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/RewardTracks/Manifest/seasonmanifest.json?flight={flightId}",
                                    HttpMethod.Get,
