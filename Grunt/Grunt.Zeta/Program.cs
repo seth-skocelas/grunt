@@ -4,6 +4,7 @@ using Grunt.Models;
 using Grunt.Util;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -93,13 +94,15 @@ namespace Grunt.Zeta
                 if (clearance != null)
                 {
                     localClearance = clearance.FlightConfigurationId;
-                    Console.WriteLine($"Your clearance is {localClearance}");
+                    client.ClearanceToken = localClearance;
+                    Console.WriteLine($"Your clearance is {localClearance} and it's set in the client.");
                 }
                 else
                 {
                     Console.WriteLine("Could not obtain the clearance.");
                 }
             }).GetAwaiter().GetResult();
+            
 
             // Test getting the season data.
             Task.Run(async () =>
@@ -114,6 +117,22 @@ namespace Grunt.Zeta
                 List<string> sampleXuids = "xuid(2533274793272155),xuid(2533274814715980),xuid(2533274855333605),xuid(2535435749594170),xuid(2535448099228893),xuid(2535457135464780),xuid(2535466738529606),xuid(2535472868898775)".Split(',').ToList();
                 var performanceData = await client.SkillGetMatchPlayerResult("ad6a3d46-9320-44ee-94cd-c5cb39c7aedd", sampleXuids);
                 Console.WriteLine("Got player performance data.");
+            }).GetAwaiter().GetResult();
+
+            // Get an example image and store it locally.
+            Task.Run(async () =>
+            {
+                var imageData = await client.GameCmsGetImage("progression/inventory/armor/gloves/003-001-olympus-8e7c9dff-sm.png");
+                Console.WriteLine("Got image data.");
+                if (imageData != null)
+                {
+                    File.WriteAllBytes("image.png", imageData);
+                    Console.WriteLine("Wrote sample image to file.");
+                }
+                else
+                {
+                    Console.WriteLine("Image could not be written. There was an error.");
+                }
             }).GetAwaiter().GetResult();
 
             Console.ReadLine();

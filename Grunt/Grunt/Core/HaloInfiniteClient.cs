@@ -30,6 +30,43 @@ namespace Grunt.Core
             EndpointData = JsonConvert.DeserializeObject<ApiSettingsContainer>(File.ReadAllText("endpoints.json"));
         }
 
+        public string SpartanToken
+        {
+            get
+            {
+                return _spartanToken;
+            }
+            set
+            {
+                _spartanToken = value;
+            }
+        }
+
+        public string Xuid
+        {
+            get
+            {
+                return _xuid;
+            }
+            set
+            {
+                _xuid = value;
+            }
+        }
+
+        public string ClearanceToken
+        {
+            get
+            {
+                return _clearanceToken;
+            }
+            set
+            {
+                _clearanceToken = value;
+            }
+        }
+
+
         /// <summary>
         /// Gets the list of API settings as provided by the official Halo API. This is the latest version of all available endpoints.
         /// </summary>
@@ -1067,13 +1104,13 @@ namespace Grunt.Core
         }
 
         /// <summary>
-        /// Gets an image for an associated game CMS asset. Example path is /progression/inventory/armor/gloves/003-001-olympus-8e7c9dff-sm.png.
+        /// Gets an image for an associated game CMS asset. Example path is "progression/inventory/armor/gloves/003-001-olympus-8e7c9dff-sm.png".
         /// </summary>
         /// <param name="filePath">Path to the CMS image.</param>
         /// <returns>If successful, returns the byte array for the requested image. Otherwise, returns null.</returns>
         public async Task<byte[]> GameCmsGetImage(string filePath)
         {
-            var response = await ExecuteAPIRequest<byte[]>($"https://gamecms:/hi/images/file/{filePath}",
+            var response = await ExecuteAPIRequest<byte[]>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/images/file/{filePath}",
                                    HttpMethod.Get,
                                    true,
                                    true,
