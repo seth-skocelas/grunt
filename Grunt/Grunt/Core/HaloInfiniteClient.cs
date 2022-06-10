@@ -2181,8 +2181,18 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetMapModePair(string assetId, string versionId, string clearanceId)
+        /// <summary>
+        /// Returns information about a given map and mode combination. For example, the Breaker map can be used in Big Team Battle (BTB).
+        /// </summary>
+        /// <remarks>
+        /// An example fully constructed HTTP request to the API is: https://discovery-infiniteugc.svc.halowaypoint.com/hi/mapModePairs/9e056bcc-b9bc-4845-9fe3-6d667f018463/versions/37b8cd75-d1ce-4abf-9349-a76673503410.
+        /// This request represents the BTB game mode on the Breaker map.
+        /// </remarks>
+        /// <param name="assetId">Unique ID for the map and mode combination.</param>
+        /// <param name="versionId">Unique version ID for the map and mode combination.</param>
+        /// <param name="clearanceId">ID of the currently active flight.</param>
+        /// <returns>An instance of Map containing map metadata if request is successful. Otherwise, returns null.</returns>
+        public async Task<MapModePair> HIUGCDiscoveryGetMapModePair(string assetId, string versionId, string clearanceId)
         {
             var response = await ExecuteAPIRequest($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
                                    HttpMethod.Get,
@@ -2192,11 +2202,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<MapModePair>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 

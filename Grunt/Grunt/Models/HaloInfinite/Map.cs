@@ -7,5 +7,7 @@ namespace Grunt.Models.HaloInfinite
         public CustomMapData CustomData { get; set; }
         public object[] PrefabLinks { get; set; }
         public PlayAssetStats AssetStats { get; set; }
+
+        public int Order { get; set; }
     }
 }
