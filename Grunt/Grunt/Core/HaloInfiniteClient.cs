@@ -190,6 +190,7 @@ namespace Grunt.Core
         /// <summary>
         /// Uploads crash information. Have not yet seen this live in the game, and have no information on how it works at this time.
         /// </summary>
+        /// <remarks>INACTIVE API</remarks>
         /// <returns>Uknown.</returns>
         private async Task<string> CrashesUpload()
         {
@@ -359,8 +360,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetBoostsStore(string player)
+        /// <summary>
+        /// Gets information about boosts offering in the store for a given player.
+        /// </summary>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns></returns>
+        public async Task<StoreItem> EconomyGetBoostsStore(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/boosts",
                                    HttpMethod.Get,
@@ -370,11 +375,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<StoreItem>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -1351,8 +1356,9 @@ namespace Grunt.Core
         /// <summary>
         /// This API currently returns a 404, and is not active. Additional investigation required.
         /// </summary>
-        /// <param name="flightId"></param>
-        /// <returns></returns>
+        /// <remarks>INACTIVE API</remarks>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <returns>Unknown.</returns>
         private async Task<string> GameCmsGetSeasonRewardTrackManifest(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/RewardTracks/Manifest/seasonmanifest.json?flight={flightId}",
@@ -3135,6 +3141,7 @@ namespace Grunt.Core
         /// <summary>
         /// Likely deals with in-game telemetry. Early investigations point to WebSockets communication, so additional work is required for full context.
         /// </summary>
+        /// <remarks>INACTIVE API</remarks>
         /// <returns>Unknown</returns>
         private async Task<string> TelemetryHighPriority()
         {
@@ -3157,6 +3164,7 @@ namespace Grunt.Core
         /// <summary>
         /// Likely deals with in-game telemetry. Early investigations point to WebSockets communication, so additional work is required for full context.
         /// </summary>
+        /// <remarks>INACTIVE API</remarks>
         /// <returns>Unknown</returns>
         private async Task<string> TelemetryLowPriority()
         {
@@ -3227,6 +3235,7 @@ namespace Grunt.Core
         /// <summary>
         /// Likely posts text for moderation. Have not yet seen this live in the game, and have no information on how it works at this time.
         /// </summary>
+        /// <remarks>INACTIVE API</remarks>
         /// <param name="player">Player ID likely in "xuid(XUID_VALUE)" format.</param>
         /// <returns>Unknown</returns>
         private async Task<string> TextModerationPostInappropriateMessageReport(string player)
@@ -3250,6 +3259,7 @@ namespace Grunt.Core
         /// <summary>
         /// Likely posts text for moderation. Have not yet seen this live in the game, and have no information on how it works at this time.
         /// </summary>
+        /// <remarks>INACTIVE API</remarks>
         /// <param name="player">Player ID likely in "xuid(XUID_VALUE)" format.</param>
         /// <returns>Unknown</returns>
         private async Task<string> TextModerationPostTextForModeration(string player)
