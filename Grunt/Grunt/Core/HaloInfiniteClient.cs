@@ -818,8 +818,14 @@ namespace Grunt.Core
         //================================================
         // GameCms
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetAchievements()
+        /// <summary>
+        /// Returns the collection of available achievements to unlock in the game.
+        /// </summary>
+        /// <remarks>
+        /// Keep in mind that this is not a list of achievements that the player has unlocked - it's just an aggregation of all available achievements in Halo Infinite.
+        /// </remarks>
+        /// <returns>If successful, returns an instance of AchievementCollection that contains the list of available achievements. Otherwise, returns null.</returns>
+        public async Task<AchievementCollection> GameCmsGetAchievements()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Multiplayer/file/Live/Achievements.json",
                                    HttpMethod.Get,
@@ -829,11 +835,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AchievementCollection>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -1008,8 +1014,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetDevicePresetOverrides()
+        /// <summary>
+        /// Gets information about graphic device preset overrides.
+        /// </summary>
+        /// <remarks>
+        /// The exact purpose of this function is unknown at this time, and requires additional investigation.
+        /// </remarks>
+        /// <returns>If successful, and instance of DevicePresetOverrides. Otherwise, returs null.</returns>
+        public async Task<DevicePresetOverrides> GameCmsGetDevicePresetOverrides()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Specs/file/graphics/DevicePresetOverrides.json",
                                    HttpMethod.Get,
@@ -1019,11 +1031,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<DevicePresetOverrides>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -1145,8 +1157,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetLobbyErrorMessages(string flightId)
+        /// <summary>
+        /// Gets the list of possible error messages that a player can get when attempting to join multiplayer games.
+        /// </summary>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <returns>If successful, returns an instance of LobbyHopperErrorMessageList that contains possible errors. Otherwise, returns null.</returns>
+        public async Task<LobbyHopperErrorMessageList> GameCmsGetLobbyErrorMessages(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Multiplayer/file/gameStartErrorMessages/LobbyHoppperErrorMessageList.json?flight={flightId}",
                                    HttpMethod.Get,
@@ -1156,11 +1172,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<LobbyHopperErrorMessageList>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
