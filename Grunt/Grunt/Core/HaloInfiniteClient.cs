@@ -1138,8 +1138,16 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetItem(string itemPath, string flightId)
+        /// <summary>
+        /// Gets a specific item from the Game CMS, such as armor emplems, weapon cores, vehicle cores, and others.
+        /// </summary>
+        /// <remarks>
+        /// For example, you may find that you can get the data about an armor emblem with the path "/inventory/armor/emblems/013-001-363f4a25.json".
+        /// </remarks>
+        /// <param name="itemPath">Path to the item to be obtained. Example is "/inventory/armor/emblems/013-001-363f4a25.json".</param>
+        /// <param name="flightId">ID for the currently active flight.</param>
+        /// <returns>If successful, an instance of InGameItem. Otherwise, null.</returns>
+        public async Task<InGameItem> GameCmsGetItem(string itemPath, string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms:/hi/Progression/file/{itemPath}?flight={flightId}",
                                    HttpMethod.Get,
@@ -1149,11 +1157,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<InGameItem>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
