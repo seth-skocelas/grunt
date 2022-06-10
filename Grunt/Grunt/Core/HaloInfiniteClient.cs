@@ -1188,8 +1188,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetMetadata(string flightId)
+        /// <summary>
+        /// Returns metadata on currently available in-game manufacturers and currencies.
+        /// </summary>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <returns>If successful, an instance of Metadata containing the information about in-game manufacturers and currencies. Otherwise, null.</returns>
+        public async Task<Metadata> GameCmsGetMetadata(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/metadata/metadata.json?flight={flightId}",
                                    HttpMethod.Get,
@@ -1199,11 +1203,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Metadata>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -1230,8 +1234,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetNews(string filePath)
+        /// <summary>
+        /// Returns the currently relevant news.
+        /// </summary>
+        /// <param name="filePath">Path to the news collection. Example is "/articles/articles.json".</param>
+        /// <returns>If successful, returns a News instance containing the currently active news. Otherwise, returns null.</returns>
+        public async Task<News> GameCmsGetNews(string filePath)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/news/file/{filePath}",
                                    HttpMethod.Get,
@@ -1241,16 +1249,20 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<News>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetNotAllowedInTitleMessage()
+        /// <summary>
+        /// Returns information about a message that is displayed when, I assume, authentication fails.
+        /// </summary>
+        /// <remarks>It's unclear where this is actually used because the sample response is a test one, without any relevant context.</remarks>
+        /// <returns>If successful, an instance of OEConfiguration containing the message. Otherwise, null.</returns>
+        public async Task<OEConfiguration> GameCmsGetNotAllowedInTitleMessage()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/branches/hi/OEConfiguration/data/authfail/Default.json",
                                    HttpMethod.Get,
@@ -1260,11 +1272,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<OEConfiguration>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
