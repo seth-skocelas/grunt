@@ -2,8 +2,8 @@
 {
     public class CoreTheme
     {
-        public SpartanDate FirstModifiedDateUtc { get; set; }
-        public SpartanDate LastModifiedDateUtc { get; set; }
+        public APIFormattedDate FirstModifiedDateUtc { get; set; }
+        public APIFormattedDate LastModifiedDateUtc { get; set; }
         public bool IsEquipped { get; set; }
         public bool IsDefault { get; set; }
         public string ThemePath { get; set; }

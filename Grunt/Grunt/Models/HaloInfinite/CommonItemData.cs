@@ -8,7 +8,7 @@
         public DisplayString Description { get; set; }
         public bool FeatureFlag { get; set; }
         public DisplayString ItemAvailability { get; set; }
-        public SpartanDate DateReleased { get; set; }
+        public APIFormattedDate DateReleased { get; set; }
         public DisplayString AltName { get; set; }
         public IdentifierName IconStringId { get; set; }
         public int SpriteBitmap { get; set; }

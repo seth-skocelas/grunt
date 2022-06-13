@@ -2,7 +2,7 @@
 
 namespace Grunt.Models
 {
-    public class SpartanDate
+    public class APIFormattedDate
     {
         public DateTime ISO8601Date { get; set; }
     }

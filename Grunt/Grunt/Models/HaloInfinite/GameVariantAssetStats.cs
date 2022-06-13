@@ -7,7 +7,7 @@
         public int Likes { get; set; }
         public AssetRating Ratings { get; set; }
         public int ParentAssetCount { get; set; }
-        public SpartanDate LastModifiedDateUtc { get; set; }
+        public APIFormattedDate LastModifiedDateUtc { get; set; }
         public bool IgnoreReports { get; set; }
     }
 

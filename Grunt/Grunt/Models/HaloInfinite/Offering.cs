@@ -5,7 +5,7 @@
         public string OfferingId { get; set; }
         public string OfferingDisplayPath { get; set; }
         public object OfferingExpirationDate { get; set; }
-        public object[] IncludedItems { get; set; }
+        public PlayerItem[] IncludedItems { get; set; }
         public Price[] Prices { get; set; }
         public object[] IncludedCurrencies { get; set; }
         public object[] IncludedRewardTracks { get; set; }
@@ -14,5 +14,4 @@
         public int EventXp { get; set; }
         public object MatchBoosts { get; set; }
     }
-
 }

@@ -383,8 +383,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetEventsStore(string player)
+        /// <summary>
+        /// Returns information about store events. The endpoint currently returns a 404, which is either transient (no events) or no longer relevant. Additional investigation is necessary.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>Unknown</returns>
+        private async Task<string> EconomyGetEventsStore(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/events",
                                    HttpMethod.Get,
@@ -402,8 +407,20 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetGiveawayRewards(string player)
+        /// <summary>
+        /// Gets the information about giveaways available for a given player.
+        /// </summary>
+        /// <example>
+        /// Here is an example response from the API, as snapshotted on 6/13/2022:
+        /// <code>
+        /// {
+        ///     "GiveawayResults": []
+        /// }
+        /// </code>
+        /// </example>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of PlayerGiveaways containing available giveaways. Otherwise, returns null.</returns>
+        public async Task<PlayerGiveaways> EconomyGetGiveawayRewards(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/giveaways",
                                    HttpMethod.Get,
@@ -413,16 +430,20 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<PlayerGiveaways>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetHCSStore(string player)
+        /// <summary>
+        /// Gets information about items available for sale in the Halo Championship Series (HCS) store.
+        /// </summary>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, an instance of StoreItem containing store offerings. Otherwise, returns null.</returns>
+        public async Task<StoreItem> EconomyGetHCSStore(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/hcs",
                                    HttpMethod.Get,
@@ -432,16 +453,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<StoreItem>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetInventoryItems(string player)
+        /// <summary>
+        /// Gets information about items available in the current player's inventory.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetInventoryItems.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of PlayerInventory that contains a list of items in the player's inventory. Otherwise, returns null.</returns>
+        public async Task<PlayerInventory> EconomyGetInventoryItems(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/inventory",
                                    HttpMethod.Get,
@@ -451,16 +477,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<PlayerInventory>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetMainStore(string player)
+        /// <summary>
+        /// Gets the information about all available items in the main store.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetMainStore.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of StoreItem that contains information about items available in the main store. Otherwise, returns null.</returns>
+        public async Task<StoreItem> EconomyGetMainStore(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/main",
                                    HttpMethod.Get,
@@ -470,18 +501,24 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<StoreItem>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetMultiplePlayersCustomization()
+        /// <summary>
+        /// Gets information about customizations for multiple players.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetMultiplePlayersCustomization.xml' path='//example'/>
+        /// <param name="playerIds">Array of player IDs. Each ID string should be in the format of "xuid(XUID_VALUE)."</param>
+        /// <returns>If successful, returns an instance of PlayerCustomizationCollection that contains player customizations. Otherwise, returns null.</returns>
+        public async Task<PlayerCustomizationCollection> EconomyGetMultiplePlayersCustomization(List<string> playerIds)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/customization",
+            var formattedPlayerList = string.Join(",", playerIds);
+            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/customization?players={formattedPlayerList}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -489,11 +526,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<PlayerCustomizationCollection>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
