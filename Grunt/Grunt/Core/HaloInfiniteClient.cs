@@ -1043,6 +1043,31 @@ namespace Grunt.Core
             }
         }
 
+        /// <summary>
+        /// Gets the information about a specific currency type.
+        /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetCurrency.xml' path='//example'/>
+        /// <param name="currencyPath">Path to the currency. An example is "currency/currencies/cr.json".</param>
+        /// <param name="flightId">Unique identifier for the currently active flight.</param>
+        /// <returns>If successful, returns an instance of CurrencyDefinition containing information about the specified currency. Otherwise, returns null.</returns>
+        public async Task<CurrencyDefinition> GameCmsGetCurrency(string currencyPath, string flightId)
+        {
+            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{currencyPath}?flight={flightId}",
+                                   HttpMethod.Get,
+                                   true,
+                                   true,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return JsonConvert.DeserializeObject<CurrencyDefinition>(response);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //TODO: This function requires manual intervention/checks.
         public async Task<string> GameCmsGetClawAccess(string flightId)
         {

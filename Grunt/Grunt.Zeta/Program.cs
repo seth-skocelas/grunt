@@ -149,6 +149,20 @@ namespace Grunt.Zeta
                 }
             }).GetAwaiter().GetResult();
 
+            // Get currency data
+            Task.Run(async () =>
+            {
+                var currencyData = await client.GameCmsGetCurrency("currency/currencies/cr.json", localClearance);
+                if (currencyData != null)
+                {
+                    Console.WriteLine("Got currency data.");
+                }
+                else
+                {
+                    Console.WriteLine("Could not get currency data.");
+                }
+            }).GetAwaiter().GetResult();
+
             Console.ReadLine();
         }
     }
