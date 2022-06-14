@@ -582,8 +582,15 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetRewardTrack(string player, string rewardTrackType, string trackId)
+        /// <summary>
+        /// Gets information about rewards associated with a given reward track, such as a season or special event.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetRewardTrack.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="rewardTrackType">Type of reward track. For seasons, this is usually "operation". This parameter is a singular noun, and is pluralized automatically in the function (the "s" character is appended).</param>
+        /// <param name="trackId">Unique identifier for the reward track. An example value is "battlepass-noblesacrifice.json".</param>
+        /// <returns>If successful, returns an instance of RewardTrack containing information for reward track tiers. Otherwise, returns null.</returns>
+        public async Task<RewardTrack> EconomyGetRewardTrack(string player, string rewardTrackType, string trackId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewardtracks/{rewardTrackType}s/{trackId}",
                                    HttpMethod.Get,
@@ -593,11 +600,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<RewardTrack>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
