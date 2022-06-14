@@ -699,8 +699,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyPlayerCustomization(string player, string viewType)
+        /// <summary>
+        /// Gets information about available player customizations.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_PlayerCustomization.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="viewType">Determines which view into customizations is shown. Available values are "public" and "private". The private view enables showing all available cores, while the public view only shows equipped cores.</param>
+        /// <returns>If successful, returns an instance of CustomizationData containing player customizations. Otherwise, returns null.</returns>
+        public async Task<CustomizationData> EconomyPlayerCustomization(string player, string viewType)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization?view={viewType}",
                                    HttpMethod.Get,
@@ -710,16 +716,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<CustomizationData>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyPlayerOperations(string player)
+        /// <summary>
+        /// Gets available reward tracks for a player based on current and past battle passes.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_PlayerOperations.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of OperationRewardTrackSnapshot containing battle pass information. Otherwise, returns null.</returns>
+        public async Task<OperationRewardTrackSnapshot> EconomyPlayerOperations(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewardtracks/operations",
                                    HttpMethod.Get,
@@ -729,11 +740,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<OperationRewardTrackSnapshot>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -813,8 +824,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyVehicleCoreCustomization(string player, string coreId)
+        /// <summary>
+        /// Gets information about a vehicle core.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_VehicleCoreCustomization.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="coreId">Unique vehicle core ID. Example value is "409-304-olympus-e8b8a8b3".</param>
+        /// <returns>If successful, returns an instance of VehicleCore. Otherwise, returns null.</returns>
+        public async Task<VehicleCore> EconomyVehicleCoreCustomization(string player, string coreId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/vehicles/{coreId}",
                                    HttpMethod.Get,
@@ -824,16 +841,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<VehicleCore>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyVehicleCoresCustomization(string player)
+        /// <summary>
+        /// Gets information about the vehicle core customizations availale to a player.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_VehicleCoresCustomization.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of VehicleCoreCollection containing a list of available vehicle cores. Otherwise, returns null.</returns>
+        public async Task<VehicleCoreCollection> EconomyVehicleCoresCustomization(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/vehicles",
                                    HttpMethod.Get,
@@ -843,11 +865,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<VehicleCoreCollection>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
