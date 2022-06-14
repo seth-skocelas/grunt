@@ -1,0 +1,23 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/14/2022:
+	<code>
+{
+    "Transactions": [],
+    "ContinuationToken": "",
+    "MarketplaceLastSuccessfulDates": [
+        {
+            "MarketplaceSource": "MicrosoftStore",
+            "ProductsLastCheckedDate": {
+                "ISO8601Date": "2022-06-14T21:45:49.273Z"
+            },
+            "WorkflowEntitiesLastCreatedDate": {
+                "ISO8601Date": "1601-01-01T00:00:00Z"
+            },
+            "ProductsLastConsumedDate": {
+                "ISO8601Date": "1601-01-01T00:00:00Z"
+            }
+        }
+    ]
+}
+	</code>
+</example>

@@ -748,8 +748,17 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyPostCurrencyTransaction(string player, string currencyId)
+        /// <summary>
+        /// Gets information about transactions that the player executed.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_PostCurrencyTransaction.xml' path='//example'/>
+        /// <remarks>
+        /// This function is likely used as a POST as well (hence the name - right now we're only using GET). Once we discover how this API works, we can extend the functionality further.
+        /// </remarks>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="currencyId">The unique identifier for the currency. Valid values include "cr", "rerollcurrency", "xpboost", and "xpgrant".</param>
+        /// <returns>If successful, returns an instance of TransactionSnapshot listing all existing transactions. Otherwise, returns null.</returns>
+        public async Task<TransactionSnapshot> EconomyPostCurrencyTransaction(string player, string currencyId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/currencies/{currencyId}/transactions",
                                    HttpMethod.Get,
@@ -759,11 +768,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<TransactionSnapshot>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
