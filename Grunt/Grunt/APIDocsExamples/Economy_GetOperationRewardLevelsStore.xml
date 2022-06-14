@@ -1,0 +1,50 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/13/2022:
+	<code>
+{
+    "StoreId": "OperationRewardLevels",
+    "StorefrontExpirationDate": {
+        "ISO8601Date": "2031-06-23T17:00:00Z"
+    },
+    "StorefrontDisplayPath": "StoreContent/Display/Storefront/OperationRewardLevels-20210623-00.json",
+    "Offerings": [
+        {
+            "OfferingId": "20210623-06",
+            "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-06.json",
+            "OfferingExpirationDate": null,
+            "IncludedItems": [],
+            "Prices": [
+                {
+                    "Cost": 200,
+                    "CurrencyPath": "Currency/Currencies/cR.json"
+                }
+            ],
+            "IncludedCurrencies": [],
+            "IncludedRewardTracks": [],
+            "BoostPath": null,
+            "OperationXp": 1000,
+            "EventXp": 0,
+            "MatchBoosts": null
+        },
+        {
+            "OfferingId": "20210623-08",
+            "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-08.json",
+            "OfferingExpirationDate": null,
+            "IncludedItems": [],
+            "Prices": [
+                {
+                    "Cost": 2000,
+                    "CurrencyPath": "Currency/Currencies/cR.json"
+                }
+            ],
+            "IncludedCurrencies": [],
+            "IncludedRewardTracks": [],
+            "BoostPath": null,
+            "OperationXp": 10000,
+            "EventXp": 0,
+            "MatchBoosts": null
+        }
+    ]
+}
+	</code>
+</example>

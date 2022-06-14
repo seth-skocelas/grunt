@@ -534,8 +534,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetOperationRewardLevelsStore(string player)
+        /// <summary>
+        /// Gets information about the operations reward levels store.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetOperationRewardLevelsStore.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of StoreItem that contains information about items available in the operations reward levels store. Otherwise, returns null.</returns>
+        public async Task<StoreItem> EconomyGetOperationRewardLevelsStore(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/operationrewardlevels",
                                    HttpMethod.Get,
@@ -545,11 +550,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<StoreItem>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
