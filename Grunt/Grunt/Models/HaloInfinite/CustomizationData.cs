@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-
-namespace Grunt.Models.HaloInfinite
+﻿namespace Grunt.Models.HaloInfinite
 {
     public class CustomizationData
     {
         public SpartanBody SpartanBody { get; set; }
         public Appearance Appearance { get; set; }
-        public List<Core> ArmorCores { get; set; }
-        public List<Core> WeaponCores { get; set; }
-        public List<Core> AiCores { get; set; }
-        public List<Core> VehicleCores { get; set; }
+        public ArmorCoreCollection ArmorCores { get; set; }
+        public WeaponCoreCollection WeaponCores { get; set; }
+        public AiCoreCollection AiCores { get; set; }
+        public VehicleCoreCollection VehicleCores { get; set; }
     }
 }

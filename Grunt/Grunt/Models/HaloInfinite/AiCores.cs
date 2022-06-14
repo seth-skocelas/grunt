@@ -2,6 +2,6 @@
 {
     public class AiCores
     {
-        public Core[] Cores { get; set; }
+        public AiCore[] Cores { get; set; }
     }
 }

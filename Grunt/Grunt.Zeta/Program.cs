@@ -1,6 +1,7 @@
 ﻿using Grunt.Authentication;
 using Grunt.Core;
 using Grunt.Models;
+using Grunt.Models.HaloInfinite;
 using Grunt.Util;
 using System;
 using System.Collections.Generic;
@@ -73,24 +74,11 @@ namespace Grunt.Zeta
             
             HaloInfiniteClient client = new(haloToken.Token, extendedTicket.DisplayClaims.Xui[0].Xid, gruntConfig.ClearanceToken);
 
-            // Try getting actual Halo Infinite data.
-            Task.Run(async () =>
-            {
-                var example = await client.StatsGetMatchStats("21416434-4717-4966-9902-af7097469f74");
-                Console.WriteLine("You have stats.");
-            }).GetAwaiter().GetResult();
-
-            Task.Run(async () =>
-            {
-                var academyData = await client.AcademyGetContent();
-                Console.WriteLine("Got academy data.");
-            }).GetAwaiter().GetResult();
-
             // Test getting the clearance for local execution.
             string localClearance = string.Empty;
             Task.Run(async () =>
             {
-                var clearance = await client.SettingsGetClearance("RETAIL", "UNUSED", "211755.22.01.23.0549-0");
+                var clearance = await client.SettingsGetClearance("RETAIL", "UNUSED", "222249.22.06.08.1730-0");
                 if (clearance != null)
                 {
                     localClearance = clearance.FlightConfigurationId;
@@ -102,7 +90,19 @@ namespace Grunt.Zeta
                     Console.WriteLine("Could not obtain the clearance.");
                 }
             }).GetAwaiter().GetResult();
-            
+
+            // Try getting actual Halo Infinite data.
+            Task.Run(async () =>
+            {
+                var example = await client.StatsGetMatchStats("21416434-4717-4966-9902-af7097469f74");
+                Console.WriteLine("You have stats.");
+            }).GetAwaiter().GetResult();
+
+            Task.Run(async () =>
+            {
+                var academyData = await client.AcademyGetContent();
+                Console.WriteLine("Got academy data.");
+            }).GetAwaiter().GetResult();           
 
             // Test getting the season data.
             Task.Run(async () =>
@@ -132,6 +132,20 @@ namespace Grunt.Zeta
                 else
                 {
                     Console.WriteLine("Image could not be written. There was an error.");
+                }
+            }).GetAwaiter().GetResult();
+
+            // Get bot customization data
+            Task.Run(async () =>
+            {
+                var seasonData = await client.AcademyGetBotCustomization(localClearance);
+                if (seasonData != null)
+                {
+                    Console.WriteLine("Got but customization data.");
+                }
+                else
+                {
+                    Console.WriteLine("Could not get bot customization data.");
                 }
             }).GetAwaiter().GetResult();
 

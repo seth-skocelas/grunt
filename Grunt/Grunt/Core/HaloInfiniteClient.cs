@@ -217,10 +217,11 @@ namespace Grunt.Core
         /// <summary>
         /// Gets information about an individual AI Core.
         /// </summary>
+        /// <include file='../APIDocsExamples/Economy_AiCoreCustomization.xml' path='//example'/>
         /// <param name="player">The player identifier in the format "xuid(XUID_VALUE)".</param>
-        /// <param name="coreId">Unique AI Core ID.</param>
+        /// <param name="coreId">Unique AI Core ID. Example ID is "304-100-ai-core-debb20e3".</param>
         /// <returns>An instance of Core containing AI core customization metadata if request was successful. Return value is null otherwise.</returns>
-        public async Task<Models.HaloInfinite.Core> EconomyAiCoreCustomization(string player, string coreId)
+        public async Task<Models.HaloInfinite.AiCore> EconomyAiCoreCustomization(string player, string coreId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais/{coreId}",
                                    HttpMethod.Get,
@@ -230,7 +231,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Models.HaloInfinite.Core>(response);
+                return JsonConvert.DeserializeObject<Models.HaloInfinite.AiCore>(response);
             }
             else
             {
@@ -656,7 +657,7 @@ namespace Grunt.Core
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <param name="coreId">The unque core ID. An example is "017-001-eag-c13d0b38".</param>
         /// <returns>If successful, returns an instance of Core containing core information. Otherwise, returns null.</returns>
-        public async Task<Models.HaloInfinite.Core> EconomyOwnedCoreDetails(string player, string coreId)
+        public async Task<Models.HaloInfinite.Foundation.Core> EconomyOwnedCoreDetails(string player, string coreId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/cores/{coreId}",
                                    HttpMethod.Get,
@@ -666,7 +667,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Models.HaloInfinite.Core>(response);
+                return JsonConvert.DeserializeObject<Models.HaloInfinite.Foundation.Core>(response);
             }
             else
             {

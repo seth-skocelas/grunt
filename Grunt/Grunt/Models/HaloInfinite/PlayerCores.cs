@@ -8,6 +8,6 @@ namespace Grunt.Models.HaloInfinite
 {
     public class PlayerCores
     {
-        public Core[] Cores { get; set; }
+        public Models.HaloInfinite.Foundation.Core[] Cores { get; set; }
     }
 }
