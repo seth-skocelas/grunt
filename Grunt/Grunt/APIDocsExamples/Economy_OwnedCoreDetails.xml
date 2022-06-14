@@ -1,0 +1,13 @@
+﻿<example>
+    Here is an example response from the API, as snapshotted on 6/14/2022:
+    <code>
+{
+    "CorePath": "Cores/ArmorCores/017-001-eag-c13d0b38.json",
+    "CoreType": "Armor",
+    "CoreId": "017-001-eag-c13d0b38",
+    "FirstAcquiredDate": {
+        "ISO8601Date": "2022-05-26T00:30:24.044Z"
+    }
+}
+    </code>
+</example>

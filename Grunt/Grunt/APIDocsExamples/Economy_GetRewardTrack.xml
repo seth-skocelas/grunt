@@ -51,7 +51,8 @@
                 "InventoryRewards": [],
                 "CurrencyRewards": [
                     {
-                        "CurrencyPath": "Currency/Currencies/rerollcurrency.json",
+                        "CurrencyPath": "Currency/
+						/rerollcurrency.json",
                         "Amount": 1
                     }
                 ]

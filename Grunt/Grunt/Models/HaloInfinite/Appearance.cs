@@ -8,5 +8,6 @@
         public string StancePath { get; set; }
         public string BackdropImagePath { get; set; }
         public Emblem Emblem { get; set; }
+        public string IntroEmotePath { get; set; }
     }
 }

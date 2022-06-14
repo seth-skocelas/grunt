@@ -410,14 +410,7 @@ namespace Grunt.Core
         /// <summary>
         /// Gets the information about giveaways available for a given player.
         /// </summary>
-        /// <example>
-        /// Here is an example response from the API, as snapshotted on 6/13/2022:
-        /// <code>
-        /// {
-        ///     "GiveawayResults": []
-        /// }
-        /// </code>
-        /// </example>
+        /// <include file='../APIDocsExamples/Economy_GetGiveawayRewards.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, returns an instance of PlayerGiveaways containing available giveaways. Otherwise, returns null.</returns>
         public async Task<PlayerGiveaways> EconomyGetGiveawayRewards(string player)
@@ -608,8 +601,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetVirtualCurrencyBalances(string player)
+        /// <summary>
+        /// Gets the amount of currencies that the player has in their account.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetVirtualCurrencyBalances.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of CurrencySnapshot that contains the balances. Otherwise, returns null.</returns>
+        public async Task<CurrencySnapshot> EconomyGetVirtualCurrencyBalances(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/currencies",
                                    HttpMethod.Get,
@@ -619,16 +617,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<CurrencySnapshot>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetXpGrantsStore(string player)
+        /// <summary>
+        /// Gets information about items on sale in the XP grants store.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetXpGrantsStore.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of StoreItem that contains information about items in the store. Otherwise, returns null.</returns>
+        public async Task<StoreItem> EconomyGetXpGrantsStore(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/xpgrants",
                                    HttpMethod.Get,
@@ -638,16 +641,22 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<StoreItem>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyOwnedCoreDetails(string player, string coreId)
+        /// <summary>
+        /// Gets information about a specific owned core.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_OwnedCoreDetails.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="coreId">The unque core ID. An example is "017-001-eag-c13d0b38".</param>
+        /// <returns>If successful, returns an instance of Core containing core information. Otherwise, returns null.</returns>
+        public async Task<Models.HaloInfinite.Core> EconomyOwnedCoreDetails(string player, string coreId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/cores/{coreId}",
                                    HttpMethod.Get,
@@ -657,16 +666,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Models.HaloInfinite.Core>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyPlayerAppearanceCustomization(string player)
+        /// <summary>
+        /// Gets the current player appearance customization state.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_PlayerAppearanceCustomization.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of AppearanceCustomization containing customization information. Otherwise, returns null.</returns>
+        public async Task<AppearanceCustomization> EconomyPlayerAppearanceCustomization(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/appearance",
                                    HttpMethod.Get,
@@ -676,11 +690,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AppearanceCustomization>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 

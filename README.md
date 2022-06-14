@@ -170,6 +170,8 @@ Task.Run(async () =>
 
 The code above doesn't account for token refreshes that don't require visiting the login URL every single time you want to plan for an API call - I will be working on showing how it works in `Grunt.Zeta` in the near future.
 
+> **NOTE:** This is worth additional investigation, but it seems that if the clearance (`343-clearance` header) is used, it needs to be activated at least once with the game before the API access is granted. That is, you need to launch the game at the latest build on your account before you can start querying the API. If you are running into issues with the API and are getting 403 Forbidden errors, make sure that you start Halo Infinite at least once before retrying.
+
 Once you have the Spartan token, you are good to go and can start issuing API requests.
 
 ## Endpoints
