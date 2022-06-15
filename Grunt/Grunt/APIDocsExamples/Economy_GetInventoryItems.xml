@@ -1,27 +1,27 @@
 ﻿<example>
 	Here is an example response from the API, as snapshotted on 6/13/2022:
 	<code>
-{
-	"Items": [
-		{
-		    "Amount": 2,
-		    "ItemId": "301-100-base-cyan-899ff22a",
-		    "ItemPath": "Inventory/Ai/Colors/301-100-base-cyan-899ff22a.json",
-		    "ItemType": "AiColor",
-		    "FirstAcquiredDate": {
-		        "ISO8601Date": "2021-11-20T05:41:32.354Z"
-		    }
-		},
-		{
-		    "Amount": 2,
-		    "ItemId": "301-100-base-orange-58e3a39b",
-		    "ItemPath": "Inventory/Ai/Colors/301-100-base-orange-58e3a39b.json",
-		    "ItemType": "AiColor",
-		    "FirstAcquiredDate": {
-		        "ISO8601Date": "2021-11-20T05:41:32.355Z"
-		    }
-		}
-	]
-}
+	{
+		"Items": [
+			{
+			    "Amount": 2,
+			    "ItemId": "301-100-base-cyan-899ff22a",
+			    "ItemPath": "Inventory/Ai/Colors/301-100-base-cyan-899ff22a.json",
+			    "ItemType": "AiColor",
+			    "FirstAcquiredDate": {
+			        "ISO8601Date": "2021-11-20T05:41:32.354Z"
+			    }
+			},
+			{
+			    "Amount": 2,
+			    "ItemId": "301-100-base-orange-58e3a39b",
+			    "ItemPath": "Inventory/Ai/Colors/301-100-base-orange-58e3a39b.json",
+			    "ItemType": "AiColor",
+			    "FirstAcquiredDate": {
+			        "ISO8601Date": "2021-11-20T05:41:32.355Z"
+			    }
+			}
+		]
+	}
 	</code>
 </example>
