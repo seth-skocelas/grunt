@@ -1,0 +1,34 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/15/2022:
+	<code>
+{
+    "Nvidia": {},
+    "AMD": {
+        "26560": false,
+        "26561": false,
+        "26562": false,
+        "26564": false,
+        "26567": false,
+        "26576": false,
+        "26591": false,
+        "26592": false,
+        "26595": false,
+        "26600": false,
+        "26603": false,
+        "26607": false,
+        "26623": false,
+        "27008": false,
+        "27009": false,
+        "27012": false,
+        "27013": false,
+        "27014": false,
+        "27015": false,
+        "27029": false,
+        "27031": false,
+        "27039": false,
+        "28639": false
+    },
+    "Intel": {}
+}
+	</code>
+</example>

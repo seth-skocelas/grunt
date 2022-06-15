@@ -915,8 +915,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyWeaponCoreCustomization(string player, string coreId)
+        /// <summary>
+        /// Gets information about a specific weapon core.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_WeaponCoreCustomization.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="coreId">The unique ID of the weapon core.</param>
+        /// <returns>If successful, returns an instance of WeaponCore containing information about the weapon core. Otherwise, returns null.</returns>
+        public async Task<WeaponCore> EconomyWeaponCoreCustomization(string player, string coreId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/weapons/{coreId}",
                                    HttpMethod.Get,
@@ -926,16 +932,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<WeaponCore>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyWeaponCoresCustomization(string player)
+        /// <summary>
+        /// Gets information about weapon cores equipped on a player.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_WeaponCoresCustomization.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of WeaponCoreCollection. Otherwise, returns null.</returns>
+        public async Task<WeaponCoreCollection> EconomyWeaponCoresCustomization(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/weapons",
                                    HttpMethod.Get,
@@ -945,11 +956,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<WeaponCoreCollection>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -981,8 +992,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetArmorCoreManifest(string flightId)
+        /// <summary>
+        /// The API doesn't seem to exist anymore.
+        /// Tracked in: https://github.com/dend/grunt/issues/10
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <param name="flightId">The unique ID for the currently active flight.</param>
+        /// <returns>Unknown</returns>
+        private async Task<string> GameCmsGetArmorCoreManifest(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/Inventory/Manifest/armorcores.json?flight={flightId}",
                                    HttpMethod.Get,
@@ -1000,8 +1017,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetAsyncComputeOverrides()
+        /// <summary>
+        /// Gets information about active async compute overrides. Unknown what the concrete purpose of this API is yet.
+        /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetAsyncComputeOverrides.xml' path='//example'/>
+        /// <returns>If successful, returns an instance of AsyncComputeOverrides containing override metadata. Otherwise, returns null.</returns>
+        public async Task<AsyncComputeOverrides> GameCmsGetAsyncComputeOverrides()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/AsyncComputeOverrides.json",
                                    HttpMethod.Get,
@@ -1011,16 +1032,23 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AsyncComputeOverrides>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetBanMessage(string messageIdentity, string flightId)
+        /// <summary>
+        /// The API likely obtains a specific ban message, but unless someone banned can confirm what this looks like, can't tell what the data is.
+        /// Tracked in: https://github.com/dend/grunt/issues/9
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <param name="messageIdentity">The unique ID for the ban message.</param>
+        /// <param name="flightId">The unique ID for the currently active flight.</param>
+        /// <returns>Unknown.</returns>
+        private async Task<string> GameCmsGetBanMessage(string messageIdentity, string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Banning/file/BanMessages/{messageIdentity}.json?flight={flightId}",
                                    HttpMethod.Get,
@@ -1057,8 +1085,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetChallengeDeck(string challengeDeckPath, string flightId)
+        /// <summary>
+        /// Gets the information about a specific challenge deck.
+        /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetChallengeDeck.xml' path='//example'/>
+        /// <param name="challengeDeckPath">Path to the challenge deck. An example value is "ChallengeContent/ClientChallengeDeckDefinitions/S2EntrenchedWeeklyDeck2.json".</param>
+        /// <param name="flightId">Unique identifier for the currently active flight.</param>
+        /// <returns>If successful, returns an instance of ChallengeDeckDefinition containing challenge deck metadata. Otherwise, returns null.</returns>
+        public async Task<ChallengeDeckDefinition> GameCmsGetChallengeDeck(string challengeDeckPath, string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengeDeckPath}?flight={flightId}",
                                    HttpMethod.Get,
@@ -1068,11 +1102,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<ChallengeDeckDefinition>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
