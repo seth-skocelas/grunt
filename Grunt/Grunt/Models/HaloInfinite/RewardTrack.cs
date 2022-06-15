@@ -2,16 +2,13 @@
 {
     public class RewardTrack
     {
-        public string TrackId { get; set; }
-        public int XpPerRank { get; set; }
-        public RankSnapshot[] Ranks { get; set; }
-        public DisplayString Name { get; set; }
-        public DisplayString Description { get; set; }
-        public int OperationNumber { get; set; }
-        public DisplayString DateRange { get; set; }
-        public bool IsRitual { get; set; }
-        public string SummaryImagePath { get; set; }
-        public int WeekNumber { get; set; }
-        public string BackgroundImagePath { get; set; }
+        public string RewardTrackPath { get; set; }
+        public string TrackType { get; set; }
+        public RewardTrackProgress CurrentProgress { get; set; }
+        public RewardTrackProgress PreviousProgress { get; set; }
+        public bool IsOwned { get; set; }
+        public object BaseXp { get; set; }
+        public object BoostXp { get; set; }
     }
+
 }

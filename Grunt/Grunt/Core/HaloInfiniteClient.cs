@@ -265,7 +265,7 @@ namespace Grunt.Core
         /// <summary>
         /// Get details about all owned cores for a player.
         /// </summary>
-        /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>An instance of PlayerCores containing player core customization metadata if request was successful. Return value is null otherwise.</returns>
         public async Task<PlayerCores> EconomyAllOwnedCoresDetails(string player)
         {
@@ -285,8 +285,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyArmorCoreCustomization(string player, string coreId)
+        /// <summary>
+        /// Gets information about a specific armor core a player owns.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_ArmorCoreCustomization.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="coreId">The unique identifier for an armor core. An example value is "017-001-eag-c13d0b38".</param>
+        /// <returns>If successful, returns an instance of ArmorCore containing customization information. Otherwise, returns null.</returns>
+        public async Task<ArmorCore> EconomyArmorCoreCustomization(string player, string coreId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors/{coreId}",
                                    HttpMethod.Get,
@@ -296,16 +302,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<ArmorCore>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyArmorCoresCustomization(string player)
+        /// <summary>
+        /// Gets information about all armor cores a player owns.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_ArmorCoresCustomization.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of ArmorCoreCollection that contains the list of armor cores. Otherwise, returns null.</returns>
+        public async Task<ArmorCoreCollection> EconomyArmorCoresCustomization(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors",
                                    HttpMethod.Get,
@@ -315,11 +326,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<ArmorCoreCollection>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -342,8 +353,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetAwardedRewards(string player, string rewardId)
+        /// <summary>
+        /// Gets information about a reward given to a player.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetAwardedRewards.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="rewardId">The unique ID for the reward given to a player. Example value is "Challenges-35a86ae3-017c-4b5a-b633-b2802a770e0a".</param>
+        /// <returns></returns>
+        public async Task<RewardSnapshot> EconomyGetAwardedRewards(string player, string rewardId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewards/{rewardId}",
                                    HttpMethod.Get,
@@ -353,11 +370,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<RewardSnapshot>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -365,7 +382,7 @@ namespace Grunt.Core
         /// Gets information about boosts offering in the store for a given player.
         /// </summary>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
-        /// <returns></returns>
+        /// <returns>If successful, returns an instance of StoreItem containing boost information. Otherwise, returns null.</returns>
         public async Task<StoreItem> EconomyGetBoostsStore(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/boosts",
@@ -584,7 +601,7 @@ namespace Grunt.Core
         /// <param name="rewardTrackType">Type of reward track. For seasons, this is usually "operation". This parameter is a singular noun, and is pluralized automatically in the function (the "s" character is appended).</param>
         /// <param name="trackId">Unique identifier for the reward track. An example value is "battlepass-noblesacrifice.json".</param>
         /// <returns>If successful, returns an instance of RewardTrack containing information for reward track tiers. Otherwise, returns null.</returns>
-        public async Task<RewardTrack> EconomyGetRewardTrack(string player, string rewardTrackType, string trackId)
+        public async Task<RewardTrackMetadata> EconomyGetRewardTrack(string player, string rewardTrackType, string trackId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewardtracks/{rewardTrackType}s/{trackId}",
                                    HttpMethod.Get,
@@ -594,7 +611,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<RewardTrack>(response);
+                return JsonConvert.DeserializeObject<RewardTrackMetadata>(response);
             }
             else
             {

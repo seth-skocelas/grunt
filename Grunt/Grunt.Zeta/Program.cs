@@ -163,6 +163,20 @@ namespace Grunt.Zeta
                 }
             }).GetAwaiter().GetResult();
 
+            // Get reward data.
+            Task.Run(async () =>
+            {
+                var rewardData = await client.EconomyGetAwardedRewards("xuid(2533274855333605)", "Challenges-35a86ae3-017c-4b5a-b633-b2802a770e0a");
+                if (rewardData != null)
+                {
+                    Console.WriteLine("Got reward data.");
+                }
+                else
+                {
+                    Console.WriteLine("Could not get reward data.");
+                }
+            }).GetAwaiter().GetResult();
+
             Console.ReadLine();
         }
     }
