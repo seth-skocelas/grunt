@@ -1135,8 +1135,17 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetClawAccess(string flightId)
+        /// <summary>
+        /// Returns XUIDs with special access.
+        /// </summary>
+        /// <remarks>
+        /// Based on the "claw" terminology, these are likely accounts with access to clawback services (for transaction refunds).
+        /// At least one of the accounts returned for this API call is flagged as a member of the Xbox Scarlett team, so it's likely these are accounts that have a more direct access to Halo services.
+        /// </remarks>
+        /// <include file='../APIDocsExamples/GameCms_GetClawAccess.xml' path='//example'/>
+        /// <param name="flightId">Unique identifier for the currently active flight.</param>
+        /// <returns>If successful, returns an instance of ClawAccessSnapshot containing relevant XUID lists. Otherwise, returns null.</returns>
+        public async Task<ClawAccessSnapshot> GameCmsGetClawAccess(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/TitleAuthorization/file/claw/access.json?flight={flightId}",
                                    HttpMethod.Get,
@@ -1146,16 +1155,20 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<ClawAccessSnapshot>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetCpuPresets()
+        /// <summary>
+        /// Gets the pre-defined CPU presets for different game performance configurations.
+        /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetCPUPresets.xml' path='//example'/>
+        /// <returns>If successful, returns an instance of CPUPresetSnapshot containing preset information. Otherwise, returns null.</returns>
+        public async Task<CPUPresetSnapshot> GameCmsGetCpuPresets()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/cpu/presets.json",
                                    HttpMethod.Get,
@@ -1165,11 +1178,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<CPUPresetSnapshot>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
