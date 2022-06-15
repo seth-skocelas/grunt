@@ -18,6 +18,7 @@ on:
 
 jobs:
   build:
+    environment: Production
     runs-on: windows-latest
     timeout-minutes: 15
     steps:
