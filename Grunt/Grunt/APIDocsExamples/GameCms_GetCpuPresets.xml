@@ -1,35 +1,35 @@
 ﻿<example>
 	Here is an example response from the API, as snapshotted on 6/15/2022:
 	<code>
-{
-    "low": {
-        "PhysicalCores": 4,
-        "LogicalCores": 4,
-        "L3CacheSizeMB": 6,
-        "RAMSizeGB": 8,
-        "BaseFreqMHz": 3000
-    },
-    "medium": {
-        "PhysicalCores": 4,
-        "LogicalCores": 6,
-        "L3CacheSizeMB": 9,
-        "RAMSizeGB": 8,
-        "BaseFreqMHz": 3000
-    },
-    "high": {
-        "PhysicalCores": 8,
-        "LogicalCores": 8,
-        "L3CacheSizeMB": 12,
-        "RAMSizeGB": 16,
-        "BaseFreqMHz": 3000
-    },
-    "ultra": {
-        "PhysicalCores": 8,
-        "LogicalCores": 16,
-        "L3CacheSizeMB": 16,
-        "RAMSizeGB": 16,
-        "BaseFreqMHz": 3200
+    {
+        "low": {
+            "PhysicalCores": 4,
+            "LogicalCores": 4,
+            "L3CacheSizeMB": 6,
+            "RAMSizeGB": 8,
+            "BaseFreqMHz": 3000
+        },
+        "medium": {
+            "PhysicalCores": 4,
+            "LogicalCores": 6,
+            "L3CacheSizeMB": 9,
+            "RAMSizeGB": 8,
+            "BaseFreqMHz": 3000
+        },
+        "high": {
+            "PhysicalCores": 8,
+            "LogicalCores": 8,
+            "L3CacheSizeMB": 12,
+            "RAMSizeGB": 16,
+            "BaseFreqMHz": 3000
+        },
+        "ultra": {
+            "PhysicalCores": 8,
+            "LogicalCores": 16,
+            "L3CacheSizeMB": 16,
+            "RAMSizeGB": 16,
+            "BaseFreqMHz": 3200
+        }
     }
-}
 	</code>
 </example>

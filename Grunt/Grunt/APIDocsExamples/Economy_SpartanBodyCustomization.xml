@@ -1,16 +1,16 @@
 ﻿<example>
 	Here is an example response from the API, as snapshotted on 6/15/2022:
 	<code>
-{
-    "LastModifiedDateUtc": {
-        "ISO8601Date": "2022-06-05T20:51:56.085Z"
-    },
-    "LeftArm": "None",
-    "RightArm": "None",
-    "LeftLeg": "None",
-    "RightLeg": "None",
-    "BodyType": "Medium",
-    "VoicePath": "Inventory/Spartan/Voices/105-000-voice-000-ebb64d1f.json"
-}
+    {
+        "LastModifiedDateUtc": {
+            "ISO8601Date": "2022-06-05T20:51:56.085Z"
+        },
+        "LeftArm": "None",
+        "RightArm": "None",
+        "LeftLeg": "None",
+        "RightLeg": "None",
+        "BodyType": "Medium",
+        "VoicePath": "Inventory/Spartan/Voices/105-000-voice-000-ebb64d1f.json"
+    }
 	</code>
 </example>

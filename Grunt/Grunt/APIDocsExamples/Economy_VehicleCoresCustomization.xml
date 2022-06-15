@@ -1,195 +1,195 @@
 ﻿<example>
 	Here is an example response from the API, as snapshotted on 6/14/2022:
 	<code>
-{
-    "VehicleCores": [
-        {
-            "CoreId": "409-300-olympus-aa30213b",
-            "CorePath": "Cores/Vehicle/409-300-olympus-aa30213b.json",
-            "Themes": [
-                {
-                    "FirstModifiedDateUtc": {
-                        "ISO8601Date": "2021-12-04T05:56:02.156Z"
-                    },
-                    "LastModifiedDateUtc": {
-                        "ISO8601Date": "2022-03-12T02:07:32.747Z"
-                    },
-                    "IsEquipped": true,
-                    "IsDefault": true,
-                    "ThemePath": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
-                    "CoatingPath": "Inventory/Vehicle/Coatings/404-300-olympus-75e62d67.json",
-                    "HornPath": "",
-                    "VehicleFxPath": "",
-                    "VehicleCharmPath": "",
-                    "Emblems": [
-                        {
-                            "Path": "Inventory/Vehicle/Emblems/405-305-c2daae95.json",
-                            "LocationId": -1140904703,
-                            "ConfigurationId": -128011187
-                        }
-                    ],
-                    "AlternateGeometryRegionPath": ""
-                }
-            ],
-            "CoreType": "VehicleWarthog"
-        },
-        {
-            "CoreId": "409-301-olympus-aa30213b",
-            "CorePath": "Cores/Vehicle/409-301-olympus-aa30213b.json",
-            "Themes": [
-                {
-                    "FirstModifiedDateUtc": {
-                        "ISO8601Date": "2022-03-12T02:07:21.72Z"
-                    },
-                    "LastModifiedDateUtc": {
-                        "ISO8601Date": "2022-03-12T02:07:21.721Z"
-                    },
-                    "IsEquipped": true,
-                    "IsDefault": true,
-                    "ThemePath": "Inventory/Vehicle/Themes/408-301-olympus-aa30213b.json",
-                    "CoatingPath": "Inventory/Vehicle/Coatings/404-301-olympus-5129f5cc.json",
-                    "HornPath": "",
-                    "VehicleFxPath": "",
-                    "VehicleCharmPath": "",
-                    "Emblems": [],
-                    "AlternateGeometryRegionPath": ""
-                }
-            ],
-            "CoreType": "VehicleMongoose"
-        },
-        {
-            "CoreId": "409-302-olympus-aa30213b",
-            "CorePath": "Cores/Vehicle/409-302-olympus-aa30213b.json",
-            "Themes": [
-                {
-                    "FirstModifiedDateUtc": {
-                        "ISO8601Date": "2022-01-30T23:21:41.406Z"
-                    },
-                    "LastModifiedDateUtc": {
-                        "ISO8601Date": "2022-01-30T23:21:59.313Z"
-                    },
-                    "IsEquipped": true,
-                    "IsDefault": true,
-                    "ThemePath": "Inventory/Vehicle/Themes/408-302-olympus-aa30213b.json",
-                    "CoatingPath": "Inventory/Vehicle/Coatings/404-302-olympus-75e62d67.json",
-                    "HornPath": "",
-                    "VehicleFxPath": "",
-                    "VehicleCharmPath": "",
-                    "Emblems": [
-                        {
-                            "Path": "Inventory/Vehicle/Emblems/405-305-c2daae95.json",
-                            "LocationId": -1140904703,
-                            "ConfigurationId": -1897428325
-                        }
-                    ],
-                    "AlternateGeometryRegionPath": ""
-                }
-            ],
-            "CoreType": "VehicleScorpion"
-        },
-        {
-            "CoreId": "409-303-olympus-aa30213b",
-            "CorePath": "Cores/Vehicle/409-303-olympus-aa30213b.json",
-            "Themes": [
-                {
-                    "FirstModifiedDateUtc": {
-                        "ISO8601Date": "2022-02-01T02:16:26.995Z"
-                    },
-                    "LastModifiedDateUtc": {
-                        "ISO8601Date": "2022-02-01T02:16:41.315Z"
-                    },
-                    "IsEquipped": true,
-                    "IsDefault": true,
-                    "ThemePath": "Inventory/Vehicle/Themes/408-303-olympus-aa30213b.json",
-                    "CoatingPath": "Inventory/Vehicle/Coatings/404-303-olympus-d28fc5df.json",
-                    "HornPath": "",
-                    "VehicleFxPath": "",
-                    "VehicleCharmPath": "",
-                    "Emblems": [
-                        {
-                            "Path": "Inventory/Vehicle/Emblems/405-305-e5396cee.json",
-                            "LocationId": -1140904703,
-                            "ConfigurationId": 1874182241
-                        }
-                    ],
-                    "AlternateGeometryRegionPath": ""
-                }
-            ],
-            "CoreType": "VehicleWasp"
-        },
-        {
-            "CoreId": "409-304-olympus-e8b8a8b3",
-            "CorePath": "Cores/Vehicle/409-304-olympus-e8b8a8b3.json",
-            "Themes": [
-                {
-                    "FirstModifiedDateUtc": {
-                        "ISO8601Date": "2022-01-30T11:04:30.276Z"
-                    },
-                    "LastModifiedDateUtc": {
-                        "ISO8601Date": "2022-06-14T21:46:23.874Z"
-                    },
-                    "IsEquipped": true,
-                    "IsDefault": true,
-                    "ThemePath": "Inventory/Vehicle/Themes/408-304-olympus-aa30213b.json",
-                    "CoatingPath": "Inventory/Vehicle/Coatings/404-304-olympus-e41a4ccc.json",
-                    "HornPath": "",
-                    "VehicleFxPath": "",
-                    "VehicleCharmPath": "",
-                    "Emblems": [],
-                    "AlternateGeometryRegionPath": ""
-                }
-            ],
-            "CoreType": "VehicleRazorBack"
-        },
-        {
-            "CoreId": "409-305-olympus-90c5035c",
-            "CorePath": "Cores/Vehicle/409-305-olympus-90c5035c.json",
-            "Themes": [
-                {
-                    "FirstModifiedDateUtc": {
-                        "ISO8601Date": "2022-03-12T02:07:42.657Z"
-                    },
-                    "LastModifiedDateUtc": {
-                        "ISO8601Date": "2022-03-12T02:07:42.658Z"
-                    },
-                    "IsEquipped": true,
-                    "IsDefault": true,
-                    "ThemePath": "Inventory/Vehicle/Themes/408-305-olympus-aa30213b.json",
-                    "CoatingPath": "Inventory/Vehicle/Coatings/404-305-olympus-75e62d67.json",
-                    "HornPath": "",
-                    "VehicleFxPath": "",
-                    "VehicleCharmPath": "",
-                    "Emblems": [],
-                    "AlternateGeometryRegionPath": ""
-                }
-            ],
-            "CoreType": "VehicleGungoose"
-        },
-        {
-            "CoreId": "409-306-olympus-174b9a04",
-            "CorePath": "Cores/Vehicle/409-306-olympus-174b9a04.json",
-            "Themes": [
-                {
-                    "FirstModifiedDateUtc": {
-                        "ISO8601Date": "2022-01-30T11:04:46.46Z"
-                    },
-                    "LastModifiedDateUtc": {
-                        "ISO8601Date": "2022-03-12T02:07:50.582Z"
-                    },
-                    "IsEquipped": true,
-                    "IsDefault": true,
-                    "ThemePath": "Inventory/Vehicle/Themes/408-306-olympus-aa30213b.json",
-                    "CoatingPath": "Inventory/Vehicle/Coatings/404-306-olympus-75e62d67.json",
-                    "HornPath": "",
-                    "VehicleFxPath": "",
-                    "VehicleCharmPath": "",
-                    "Emblems": [],
-                    "AlternateGeometryRegionPath": ""
-                }
-            ],
-            "CoreType": "VehicleRockethog"
-        }
-    ]
-}
+    {
+        "VehicleCores": [
+            {
+                "CoreId": "409-300-olympus-aa30213b",
+                "CorePath": "Cores/Vehicle/409-300-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2021-12-04T05:56:02.156Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-03-12T02:07:32.747Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-300-olympus-75e62d67.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [
+                            {
+                                "Path": "Inventory/Vehicle/Emblems/405-305-c2daae95.json",
+                                "LocationId": -1140904703,
+                                "ConfigurationId": -128011187
+                            }
+                        ],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleWarthog"
+            },
+            {
+                "CoreId": "409-301-olympus-aa30213b",
+                "CorePath": "Cores/Vehicle/409-301-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-03-12T02:07:21.72Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-03-12T02:07:21.721Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-301-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-301-olympus-5129f5cc.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleMongoose"
+            },
+            {
+                "CoreId": "409-302-olympus-aa30213b",
+                "CorePath": "Cores/Vehicle/409-302-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-01-30T23:21:41.406Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-01-30T23:21:59.313Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-302-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-302-olympus-75e62d67.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [
+                            {
+                                "Path": "Inventory/Vehicle/Emblems/405-305-c2daae95.json",
+                                "LocationId": -1140904703,
+                                "ConfigurationId": -1897428325
+                            }
+                        ],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleScorpion"
+            },
+            {
+                "CoreId": "409-303-olympus-aa30213b",
+                "CorePath": "Cores/Vehicle/409-303-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-02-01T02:16:26.995Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-02-01T02:16:41.315Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-303-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-303-olympus-d28fc5df.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [
+                            {
+                                "Path": "Inventory/Vehicle/Emblems/405-305-e5396cee.json",
+                                "LocationId": -1140904703,
+                                "ConfigurationId": 1874182241
+                            }
+                        ],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleWasp"
+            },
+            {
+                "CoreId": "409-304-olympus-e8b8a8b3",
+                "CorePath": "Cores/Vehicle/409-304-olympus-e8b8a8b3.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-01-30T11:04:30.276Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-06-14T21:46:23.874Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-304-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-304-olympus-e41a4ccc.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleRazorBack"
+            },
+            {
+                "CoreId": "409-305-olympus-90c5035c",
+                "CorePath": "Cores/Vehicle/409-305-olympus-90c5035c.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-03-12T02:07:42.657Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-03-12T02:07:42.658Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-305-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-305-olympus-75e62d67.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleGungoose"
+            },
+            {
+                "CoreId": "409-306-olympus-174b9a04",
+                "CorePath": "Cores/Vehicle/409-306-olympus-174b9a04.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-01-30T11:04:46.46Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-03-12T02:07:50.582Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-306-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-306-olympus-75e62d67.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleRockethog"
+            }
+        ]
+    }
 	</code>
 </example>

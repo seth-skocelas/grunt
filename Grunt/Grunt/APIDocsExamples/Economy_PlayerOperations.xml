@@ -1,63 +1,63 @@
 ﻿<example>
 	Here is an example response from the API, as snapshotted on 6/14/2022:
 	<code>
-{
-    "ActiveOperationRewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
-    "OperationRewardTracks": [
-        {
-            "RewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
-            "TrackType": "Operation",
-            "CurrentProgress": {
-                "Rank": 77,
-                "PartialProgress": 600,
-                "IsOwned": false
+    {
+        "ActiveOperationRewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
+        "OperationRewardTracks": [
+            {
+                "RewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
+                "TrackType": "Operation",
+                "CurrentProgress": {
+                    "Rank": 77,
+                    "PartialProgress": 600,
+                    "IsOwned": false
+                },
+                "PreviousProgress": null,
+                "IsOwned": false,
+                "BaseXp": null,
+                "BoostXp": null
             },
-            "PreviousProgress": null,
-            "IsOwned": false,
-            "BaseXp": null,
-            "BoostXp": null
-        },
-        {
-            "RewardTrackPath": "RewardTracks/Operations/battlepass-noblesacrifice.json",
-            "TrackType": "Operation",
-            "CurrentProgress": {
-                "Rank": 100,
-                "PartialProgress": 0,
-                "IsOwned": false
+            {
+                "RewardTrackPath": "RewardTracks/Operations/battlepass-noblesacrifice.json",
+                "TrackType": "Operation",
+                "CurrentProgress": {
+                    "Rank": 100,
+                    "PartialProgress": 0,
+                    "IsOwned": false
+                },
+                "PreviousProgress": null,
+                "IsOwned": false,
+                "BaseXp": null,
+                "BoostXp": null
             },
-            "PreviousProgress": null,
-            "IsOwned": false,
-            "BaseXp": null,
-            "BoostXp": null
-        },
-        {
-            "RewardTrackPath": "RewardTracks/Operations/Flighting.json",
-            "TrackType": "Operation",
-            "CurrentProgress": {
-                "Rank": 0,
-                "PartialProgress": 0,
-                "IsOwned": false
+            {
+                "RewardTrackPath": "RewardTracks/Operations/Flighting.json",
+                "TrackType": "Operation",
+                "CurrentProgress": {
+                    "Rank": 0,
+                    "PartialProgress": 0,
+                    "IsOwned": false
+                },
+                "PreviousProgress": null,
+                "IsOwned": false,
+                "BaseXp": null,
+                "BoostXp": null
             },
-            "PreviousProgress": null,
-            "IsOwned": false,
-            "BaseXp": null,
-            "BoostXp": null
-        },
-        {
-            "RewardTrackPath": "RewardTracks/Operations/UITest.json",
-            "TrackType": "Operation",
-            "CurrentProgress": {
-                "Rank": 0,
-                "PartialProgress": 0,
-                "IsOwned": false
-            },
-            "PreviousProgress": null,
-            "IsOwned": false,
-            "BaseXp": null,
-            "BoostXp": null
-        }
-    ],
-    "ScheduledOperationRewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json"
-}
+            {
+                "RewardTrackPath": "RewardTracks/Operations/UITest.json",
+                "TrackType": "Operation",
+                "CurrentProgress": {
+                    "Rank": 0,
+                    "PartialProgress": 0,
+                    "IsOwned": false
+                },
+                "PreviousProgress": null,
+                "IsOwned": false,
+                "BaseXp": null,
+                "BoostXp": null
+            }
+        ],
+        "ScheduledOperationRewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json"
+    }
 	</code>
 </example>

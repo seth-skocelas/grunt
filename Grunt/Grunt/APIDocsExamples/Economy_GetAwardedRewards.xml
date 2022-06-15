@@ -1,86 +1,86 @@
 ﻿<example>
 	Here is an example response from the API, as snapshotted on 6/14/2022:
 	<code>
-{
-    "RewardsSummary": {
-        "UpdatedRewardTracks": [
-            {
-                "RewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
-                "TrackType": "Operation",
-                "CurrentProgress": {
-                    "Rank": 78,
-                    "PartialProgress": 100,
-                    "IsOwned": false
+    {
+        "RewardsSummary": {
+            "UpdatedRewardTracks": [
+                {
+                    "RewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
+                    "TrackType": "Operation",
+                    "CurrentProgress": {
+                        "Rank": 78,
+                        "PartialProgress": 100,
+                        "IsOwned": false
+                    },
+                    "PreviousProgress": {
+                        "Rank": 77,
+                        "PartialProgress": 600,
+                        "IsOwned": false
+                    },
+                    "IsOwned": false,
+                    "BaseXp": 500,
+                    "BoostXp": 0
+                }
+            ],
+            "AwardedRewards": [
+                {
+                    "Reward": {
+                        "EventXp": 0,
+                        "OperationXp": 200,
+                        "InventoryItems": [],
+                        "TrackingId": "a6719b8c-bbb2-4840-934c-984c0c1d311c",
+                        "Currencies": [],
+                        "RewardTrackProgression": []
+                    },
+                    "Status": "Granted"
                 },
-                "PreviousProgress": {
-                    "Rank": 77,
-                    "PartialProgress": 600,
-                    "IsOwned": false
-                },
-                "IsOwned": false,
-                "BaseXp": 500,
-                "BoostXp": 0
-            }
-        ],
-        "AwardedRewards": [
-            {
-                "Reward": {
-                    "EventXp": 0,
-                    "OperationXp": 200,
-                    "InventoryItems": [],
-                    "TrackingId": "a6719b8c-bbb2-4840-934c-984c0c1d311c",
-                    "Currencies": [],
-                    "RewardTrackProgression": []
-                },
-                "Status": "Granted"
-            },
-            {
-                "Reward": {
-                    "EventXp": 0,
-                    "OperationXp": 300,
-                    "InventoryItems": [],
-                    "TrackingId": "38593d8e-2750-46d0-9a13-8e59eeee3c2d",
-                    "Currencies": [],
-                    "RewardTrackProgression": []
-                },
-                "Status": "Granted"
-            }
-        ],
-        "GrantedCurrencies": [
-            {
-                "CurrencyPath": "Currency/Currencies/rerollcurrency.json",
-                "Amount": 1,
-                "Source": "OperationRankUp"
-            }
-        ],
-        "GrantedItems": []
-    },
-    "PlayerState": {
-        "RewardTracks": [
-            {
-                "RewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
-                "TrackType": "Operation",
-                "CurrentProgress": {
-                    "Rank": 78,
-                    "PartialProgress": 100,
-                    "IsOwned": false
-                },
-                "PreviousProgress": null,
-                "IsOwned": false,
-                "BaseXp": null,
-                "BoostXp": null
-            }
-        ],
-        "ItemBalances": [],
-        "CurrencyBalances": [
-            {
-                "Amount": 4,
-                "CurrencyPath": "Currency/Currencies/rerollcurrency.json"
-            }
-        ],
-        "RefreshNeeded": false,
-        "Boosts": []
+                {
+                    "Reward": {
+                        "EventXp": 0,
+                        "OperationXp": 300,
+                        "InventoryItems": [],
+                        "TrackingId": "38593d8e-2750-46d0-9a13-8e59eeee3c2d",
+                        "Currencies": [],
+                        "RewardTrackProgression": []
+                    },
+                    "Status": "Granted"
+                }
+            ],
+            "GrantedCurrencies": [
+                {
+                    "CurrencyPath": "Currency/Currencies/rerollcurrency.json",
+                    "Amount": 1,
+                    "Source": "OperationRankUp"
+                }
+            ],
+            "GrantedItems": []
+        },
+        "PlayerState": {
+            "RewardTracks": [
+                {
+                    "RewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
+                    "TrackType": "Operation",
+                    "CurrentProgress": {
+                        "Rank": 78,
+                        "PartialProgress": 100,
+                        "IsOwned": false
+                    },
+                    "PreviousProgress": null,
+                    "IsOwned": false,
+                    "BaseXp": null,
+                    "BoostXp": null
+                }
+            ],
+            "ItemBalances": [],
+            "CurrencyBalances": [
+                {
+                    "Amount": 4,
+                    "CurrencyPath": "Currency/Currencies/rerollcurrency.json"
+                }
+            ],
+            "RefreshNeeded": false,
+            "Boosts": []
+        }
     }
-}
 	</code>
 </example>

@@ -1,169 +1,169 @@
 ﻿<example>
 	Here is an example response from the API, as snapshotted on 6/14/2022:
 	<code>
-{
-    "Id": "cR",
-    "InitialBalanceAmount": 0,
-    "MSStoreProducts": [
-        {
-            "ProductId": "9PDDT96D1BP2",
-            "Path": "Currency/Offerings/smallest.json"
-        },
-        {
-            "ProductId": "9NVMHSH9C861",
-            "Path": "Currency/Offerings/small.json"
-        },
-        {
-            "ProductId": "9PCVVJG31SN6",
-            "Path": "Currency/Offerings/medium.json"
-        },
-        {
-            "ProductId": "9P32N72RVM66",
-            "Path": "Currency/Offerings/large.json"
-        },
-        {
-            "ProductId": "9NHVQZF3NNF7",
-            "Path": "Currency/Offerings/largest.json"
-        }
-    ],
-    "SteamStoreProducts": [
-        {
-            "ItemDef": 500,
-            "Path": "Currency/Offerings/smallest.json"
-        },
-        {
-            "ItemDef": 1000,
-            "Path": "Currency/Offerings/small.json"
-        },
-        {
-            "ItemDef": 2200,
-            "Path": "Currency/Offerings/medium.json"
-        },
-        {
-            "ItemDef": 5600,
-            "Path": "Currency/Offerings/large.json"
-        },
-        {
-            "ItemDef": 11500,
-            "Path": "Currency/Offerings/largest.json"
-        }
-    ],
-    "MicrosoftStore": {
-        "TitleConfiguration": {
-            "hi343": {
-                "ProductMapping": [
-                    {
-                        "ProductId": "9PDDT96D1BP2",
-                        "Sku": "0010",
-                        "VCQuantity": 500
-                    },
-                    {
-                        "ProductId": "9NVMHSH9C861",
-                        "Sku": "0010",
-                        "VCQuantity": 1000
-                    },
-                    {
-                        "ProductId": "9PCVVJG31SN6",
-                        "Sku": "0010",
-                        "VCQuantity": 2200
-                    },
-                    {
-                        "ProductId": "9P32N72RVM66",
-                        "Sku": "0010",
-                        "VCQuantity": 5600
-                    },
-                    {
-                        "ProductId": "9NHVQZF3NNF7",
-                        "Sku": "0010",
-                        "VCQuantity": 11500
-                    }
-                ],
-                "ContainerId": "9MVHDM9S60GW"
+    {
+        "Id": "cR",
+        "InitialBalanceAmount": 0,
+        "MSStoreProducts": [
+            {
+                "ProductId": "9PDDT96D1BP2",
+                "Path": "Currency/Offerings/smallest.json"
             },
-            "hi": {
-                "ProductMapping": [
-                    {
-                        "ProductId": "9PDDT96D1BP2",
-                        "Sku": "0010",
-                        "VCQuantity": 500
-                    },
-                    {
-                        "ProductId": "9NVMHSH9C861",
-                        "Sku": "0010",
-                        "VCQuantity": 1000
-                    },
-                    {
-                        "ProductId": "9PCVVJG31SN6",
-                        "Sku": "0010",
-                        "VCQuantity": 2200
-                    },
-                    {
-                        "ProductId": "9P32N72RVM66",
-                        "Sku": "0010",
-                        "VCQuantity": 5600
-                    },
-                    {
-                        "ProductId": "9NHVQZF3NNF7",
-                        "Sku": "0010",
-                        "VCQuantity": 11500
-                    }
-                ],
-                "ContainerId": "9PP5G1F0C2B6"
+            {
+                "ProductId": "9NVMHSH9C861",
+                "Path": "Currency/Offerings/small.json"
+            },
+            {
+                "ProductId": "9PCVVJG31SN6",
+                "Path": "Currency/Offerings/medium.json"
+            },
+            {
+                "ProductId": "9P32N72RVM66",
+                "Path": "Currency/Offerings/large.json"
+            },
+            {
+                "ProductId": "9NHVQZF3NNF7",
+                "Path": "Currency/Offerings/largest.json"
             }
-        }
-    },
-    "SteamInventory": {
-        "TitleConfiguration": {
-            "hi343": {
-                "ItemDefMapping": [
-                    {
-                        "ItemDef": "500",
-                        "VCQuantity": 500
-                    },
-                    {
-                        "ItemDef": "1000",
-                        "VCQuantity": 1000
-                    },
-                    {
-                        "ItemDef": "2200",
-                        "VCQuantity": 2200
-                    },
-                    {
-                        "ItemDef": "5600",
-                        "VCQuantity": 5600
-                    },
-                    {
-                        "ItemDef": "11500",
-                        "VCQuantity": 11500
-                    }
-                ]
+        ],
+        "SteamStoreProducts": [
+            {
+                "ItemDef": 500,
+                "Path": "Currency/Offerings/smallest.json"
             },
-            "hi": {
-                "ItemDefMapping": [
-                    {
-                        "ItemDef": "500",
-                        "VCQuantity": 500
-                    },
-                    {
-                        "ItemDef": "1000",
-                        "VCQuantity": 1000
-                    },
-                    {
-                        "ItemDef": "2200",
-                        "VCQuantity": 2200
-                    },
-                    {
-                        "ItemDef": "5600",
-                        "VCQuantity": 5600
-                    },
-                    {
-                        "ItemDef": "11500",
-                        "VCQuantity": 11500
-                    }
-                ]
+            {
+                "ItemDef": 1000,
+                "Path": "Currency/Offerings/small.json"
+            },
+            {
+                "ItemDef": 2200,
+                "Path": "Currency/Offerings/medium.json"
+            },
+            {
+                "ItemDef": 5600,
+                "Path": "Currency/Offerings/large.json"
+            },
+            {
+                "ItemDef": 11500,
+                "Path": "Currency/Offerings/largest.json"
+            }
+        ],
+        "MicrosoftStore": {
+            "TitleConfiguration": {
+                "hi343": {
+                    "ProductMapping": [
+                        {
+                            "ProductId": "9PDDT96D1BP2",
+                            "Sku": "0010",
+                            "VCQuantity": 500
+                        },
+                        {
+                            "ProductId": "9NVMHSH9C861",
+                            "Sku": "0010",
+                            "VCQuantity": 1000
+                        },
+                        {
+                            "ProductId": "9PCVVJG31SN6",
+                            "Sku": "0010",
+                            "VCQuantity": 2200
+                        },
+                        {
+                            "ProductId": "9P32N72RVM66",
+                            "Sku": "0010",
+                            "VCQuantity": 5600
+                        },
+                        {
+                            "ProductId": "9NHVQZF3NNF7",
+                            "Sku": "0010",
+                            "VCQuantity": 11500
+                        }
+                    ],
+                    "ContainerId": "9MVHDM9S60GW"
+                },
+                "hi": {
+                    "ProductMapping": [
+                        {
+                            "ProductId": "9PDDT96D1BP2",
+                            "Sku": "0010",
+                            "VCQuantity": 500
+                        },
+                        {
+                            "ProductId": "9NVMHSH9C861",
+                            "Sku": "0010",
+                            "VCQuantity": 1000
+                        },
+                        {
+                            "ProductId": "9PCVVJG31SN6",
+                            "Sku": "0010",
+                            "VCQuantity": 2200
+                        },
+                        {
+                            "ProductId": "9P32N72RVM66",
+                            "Sku": "0010",
+                            "VCQuantity": 5600
+                        },
+                        {
+                            "ProductId": "9NHVQZF3NNF7",
+                            "Sku": "0010",
+                            "VCQuantity": 11500
+                        }
+                    ],
+                    "ContainerId": "9PP5G1F0C2B6"
+                }
+            }
+        },
+        "SteamInventory": {
+            "TitleConfiguration": {
+                "hi343": {
+                    "ItemDefMapping": [
+                        {
+                            "ItemDef": "500",
+                            "VCQuantity": 500
+                        },
+                        {
+                            "ItemDef": "1000",
+                            "VCQuantity": 1000
+                        },
+                        {
+                            "ItemDef": "2200",
+                            "VCQuantity": 2200
+                        },
+                        {
+                            "ItemDef": "5600",
+                            "VCQuantity": 5600
+                        },
+                        {
+                            "ItemDef": "11500",
+                            "VCQuantity": 11500
+                        }
+                    ]
+                },
+                "hi": {
+                    "ItemDefMapping": [
+                        {
+                            "ItemDef": "500",
+                            "VCQuantity": 500
+                        },
+                        {
+                            "ItemDef": "1000",
+                            "VCQuantity": 1000
+                        },
+                        {
+                            "ItemDef": "2200",
+                            "VCQuantity": 2200
+                        },
+                        {
+                            "ItemDef": "5600",
+                            "VCQuantity": 5600
+                        },
+                        {
+                            "ItemDef": "11500",
+                            "VCQuantity": 11500
+                        }
+                    ]
+                }
             }
         }
     }
-}
 	</code>
 </example>

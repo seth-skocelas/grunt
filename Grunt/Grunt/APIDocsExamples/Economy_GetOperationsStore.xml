@@ -1,104 +1,104 @@
 ﻿<example>
 	Here is an example response from the API, as snapshotted on 6/13/2022:
 	<code>
-{
-    "StoreId": "Operations",
-    "StorefrontExpirationDate": {
-        "ISO8601Date": "2031-06-23T17:00:00Z"
-    },
-    "StorefrontDisplayPath": "StoreContent/Display/Storefront/Operations-20210623-01.json",
-    "Offerings": [
-        {
-            "OfferingId": "20210623-10",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-10.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [
-                "RewardTracks/Operations/battlepass-noblesacrifice.json"
-            ],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
+    {
+        "StoreId": "Operations",
+        "StorefrontExpirationDate": {
+            "ISO8601Date": "2031-06-23T17:00:00Z"
         },
-        {
-            "OfferingId": "20210623-12",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-12.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [],
-            "Prices": [
-                {
-                    "Cost": 2800,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [
-                {
-                    "Amount": 100,
-                    "CurrencyPath": "Currency/Currencies/xpgrant.json"
-                }
-            ],
-            "IncludedRewardTracks": [
-                "RewardTracks/Operations/battlepass-noblesacrifice.json"
-            ],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "Season2BPTest",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/Season2BPTestDisplay.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [
-                "RewardTracks/Operations/battlepass-lonewolves.json"
-            ],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20220310-00",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220310-00.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [],
-            "Prices": [
-                {
-                    "Cost": 2800,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [
-                {
-                    "Amount": 100,
-                    "CurrencyPath": "Currency/Currencies/xpgrant.json"
-                }
-            ],
-            "IncludedRewardTracks": [
-                "RewardTracks/Operations/battlepass-lonewolves.json"
-            ],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        }
-    ]
-}
+        "StorefrontDisplayPath": "StoreContent/Display/Storefront/Operations-20210623-01.json",
+        "Offerings": [
+            {
+                "OfferingId": "20210623-10",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-10.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [
+                    "RewardTracks/Operations/battlepass-noblesacrifice.json"
+                ],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20210623-12",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-12.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [],
+                "Prices": [
+                    {
+                        "Cost": 2800,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [
+                    {
+                        "Amount": 100,
+                        "CurrencyPath": "Currency/Currencies/xpgrant.json"
+                    }
+                ],
+                "IncludedRewardTracks": [
+                    "RewardTracks/Operations/battlepass-noblesacrifice.json"
+                ],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "Season2BPTest",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/Season2BPTestDisplay.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [
+                    "RewardTracks/Operations/battlepass-lonewolves.json"
+                ],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20220310-00",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220310-00.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [],
+                "Prices": [
+                    {
+                        "Cost": 2800,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [
+                    {
+                        "Amount": 100,
+                        "CurrencyPath": "Currency/Currencies/xpgrant.json"
+                    }
+                ],
+                "IncludedRewardTracks": [
+                    "RewardTracks/Operations/battlepass-lonewolves.json"
+                ],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            }
+        ]
+    }
 	</code>
 </example>

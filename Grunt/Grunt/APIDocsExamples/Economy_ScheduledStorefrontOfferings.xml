@@ -1,665 +1,665 @@
 ﻿<example>
 	Here is an example response from the API, as snapshotted on 6/15/2022:
 	<code>
-{
-    "StoreId": "HCS",
-    "StorefrontExpirationDate": {
-        "ISO8601Date": "2032-03-31T17:00:00Z"
-    },
-    "StorefrontDisplayPath": "StoreContent/Display/Storefront/HCS-20220331-00.json",
-    "Offerings": [
-        {
-            "OfferingId": "20220316-00",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220316-00.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-cloud9-ccf87f8c.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-cloud9-efcde9a6.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-cc26934c.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-cc26934c.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-cc26934c.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Charms/201-201-6bc59041.json",
-                    "ItemType": "WeaponCharm"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
+    {
+        "StoreId": "HCS",
+        "StorefrontExpirationDate": {
+            "ISO8601Date": "2032-03-31T17:00:00Z"
         },
-        {
-            "OfferingId": "20220316-01",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220316-01.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-eunited-ccf87f8c.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-eunited-efcde9a6.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-1bf3c172.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-1bf3c172.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-1bf3c172.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Charms/201-201-5d7908a2.json",
-                    "ItemType": "WeaponCharm"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20220316-02",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220316-02.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-faze-clan-ccf87f8c.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-faze-clan-efcde9a6.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-2843ac03.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-2843ac03.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-2843ac03.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Charms/201-201-ba88d107.json",
-                    "ItemType": "WeaponCharm"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20220316-03",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220316-03.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-fnatic-ccf87f8c.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-fnatic-efcde9a6.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-3c9898f5.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-3c9898f5.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-3c9898f5.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Charms/201-201-3e7eeab4.json",
-                    "ItemType": "WeaponCharm"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20220317-00",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-00.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-g2-esports-ccf87f8c.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-g2-esports-efcde9a6.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-d32b24ed.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-d32b24ed.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-d32b24ed.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Charms/201-201-943783af.json",
-                    "ItemType": "WeaponCharm"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20220317-01",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-01.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-navi-ccf87f8c.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-navi-efcde9a6.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-1dc54702.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-1dc54702.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-1dc54702.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Charms/201-201-d731634e.json",
-                    "ItemType": "WeaponCharm"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20220317-02",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-02.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-optic-gaming-24fe39cf.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-optic-gaming-ccf87f8c.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-0085e68b.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-0085e68b.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-0085e68b.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Charms/201-201-9a0f09d9.json",
-                    "ItemType": "WeaponCharm"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20220317-03",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-03.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-sentinels-ccf87f8c.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-sentinels-efcde9a6.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-81647ac6.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-81647ac6.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-81647ac6.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Charms/201-201-c1540a26.json",
-                    "ItemType": "WeaponCharm"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20220317-04",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-04.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-spacestation-ccf87f8c.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Themes/207-000-spacestation-efcde9a6.json",
-                    "ItemType": "WeaponTheme"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-d820ccd3.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-d820ccd3.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-d820ccd3.json",
-                    "ItemType": "VehicleCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Charms/201-201-1b6755be.json",
-                    "ItemType": "WeaponCharm"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 1000,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20210626-09",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20210626-09.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Coatings/002-001-olympus-69513c5d.json",
-                    "ItemType": "ArmorCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Coatings/002-001-reach-69513c5d.json",
-                    "ItemType": "ArmorCoating"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Coatings/002-001-samurai-69513c5d.json",
-                    "ItemType": "ArmorCoating"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 0,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20210627-00",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20210627-00.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Visors/012-001-83bc93ef.json",
-                    "ItemType": "ArmorVisor"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Spartan/Emblems/104-001-hcs-branded-r-e1c18f9f.json",
-                    "ItemType": "SpartanEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Emblems/013-001-e1c18f9f.json",
-                    "ItemType": "ArmorEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Emblems/205-201-e1c18f9f.json",
-                    "ItemType": "WeaponEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Coatings/203-205-olympus-1c4849e3.json",
-                    "ItemType": "WeaponCoating"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 900,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20210627-01",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20210627-01.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Visors/012-001-40d97848.json",
-                    "ItemType": "ArmorVisor"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Spartan/Emblems/104-001-hcs-branded-r-74673216.json",
-                    "ItemType": "SpartanEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Emblems/013-001-74673216.json",
-                    "ItemType": "ArmorEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Emblems/205-201-74673216.json",
-                    "ItemType": "WeaponEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Coatings/203-205-olympus-c27c7ed8.json",
-                    "ItemType": "WeaponCoating"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 900,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20210627-02",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20210627-02.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Visors/012-001-e1fe4a07.json",
-                    "ItemType": "ArmorVisor"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Spartan/Emblems/104-001-hcs-branded-r-20e1ae6e.json",
-                    "ItemType": "SpartanEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Emblems/013-001-20e1ae6e.json",
-                    "ItemType": "ArmorEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Emblems/205-201-20e1ae6e.json",
-                    "ItemType": "WeaponEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Coatings/203-205-olympus-02980f6f.json",
-                    "ItemType": "WeaponCoating"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 900,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        },
-        {
-            "OfferingId": "20210627-03",
-            "OfferingDisplayPath": "StoreContent/Display/Offerings/20210627-03.json",
-            "OfferingExpirationDate": null,
-            "IncludedItems": [
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Visors/012-001-bc9e240b.json",
-                    "ItemType": "ArmorVisor"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Spartan/Emblems/104-001-hcs-branded-r-27722f73.json",
-                    "ItemType": "SpartanEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Armor/Emblems/013-001-27722f73.json",
-                    "ItemType": "ArmorEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Emblems/205-201-27722f73.json",
-                    "ItemType": "WeaponEmblem"
-                },
-                {
-                    "Amount": 1,
-                    "ItemPath": "Inventory/Weapon/Coatings/203-205-olympus-30e55611.json",
-                    "ItemType": "WeaponCoating"
-                }
-            ],
-            "Prices": [
-                {
-                    "Cost": 900,
-                    "CurrencyPath": "Currency/Currencies/cR.json"
-                }
-            ],
-            "IncludedCurrencies": [],
-            "IncludedRewardTracks": [],
-            "BoostPath": null,
-            "OperationXp": 0,
-            "EventXp": 0,
-            "MatchBoosts": null
-        }
-    ]
-}
+        "StorefrontDisplayPath": "StoreContent/Display/Storefront/HCS-20220331-00.json",
+        "Offerings": [
+            {
+                "OfferingId": "20220316-00",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220316-00.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-cloud9-ccf87f8c.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-cloud9-efcde9a6.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-cc26934c.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-cc26934c.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-cc26934c.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Charms/201-201-6bc59041.json",
+                        "ItemType": "WeaponCharm"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20220316-01",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220316-01.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-eunited-ccf87f8c.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-eunited-efcde9a6.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-1bf3c172.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-1bf3c172.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-1bf3c172.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Charms/201-201-5d7908a2.json",
+                        "ItemType": "WeaponCharm"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20220316-02",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220316-02.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-faze-clan-ccf87f8c.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-faze-clan-efcde9a6.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-2843ac03.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-2843ac03.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-2843ac03.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Charms/201-201-ba88d107.json",
+                        "ItemType": "WeaponCharm"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20220316-03",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220316-03.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-fnatic-ccf87f8c.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-fnatic-efcde9a6.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-3c9898f5.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-3c9898f5.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-3c9898f5.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Charms/201-201-3e7eeab4.json",
+                        "ItemType": "WeaponCharm"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20220317-00",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-00.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-g2-esports-ccf87f8c.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-g2-esports-efcde9a6.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-d32b24ed.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-d32b24ed.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-d32b24ed.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Charms/201-201-943783af.json",
+                        "ItemType": "WeaponCharm"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20220317-01",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-01.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-navi-ccf87f8c.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-navi-efcde9a6.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-1dc54702.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-1dc54702.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-1dc54702.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Charms/201-201-d731634e.json",
+                        "ItemType": "WeaponCharm"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20220317-02",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-02.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-optic-gaming-24fe39cf.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-optic-gaming-ccf87f8c.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-0085e68b.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-0085e68b.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-0085e68b.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Charms/201-201-9a0f09d9.json",
+                        "ItemType": "WeaponCharm"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20220317-03",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-03.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-sentinels-ccf87f8c.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-sentinels-efcde9a6.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-81647ac6.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-81647ac6.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-81647ac6.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Charms/201-201-c1540a26.json",
+                        "ItemType": "WeaponCharm"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20220317-04",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20220317-04.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-spacestation-ccf87f8c.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Themes/207-000-spacestation-efcde9a6.json",
+                        "ItemType": "WeaponTheme"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-d820ccd3.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-d820ccd3.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-d820ccd3.json",
+                        "ItemType": "VehicleCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Charms/201-201-1b6755be.json",
+                        "ItemType": "WeaponCharm"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 1000,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20210626-09",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210626-09.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Coatings/002-001-olympus-69513c5d.json",
+                        "ItemType": "ArmorCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Coatings/002-001-reach-69513c5d.json",
+                        "ItemType": "ArmorCoating"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Coatings/002-001-samurai-69513c5d.json",
+                        "ItemType": "ArmorCoating"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 0,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20210627-00",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210627-00.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Visors/012-001-83bc93ef.json",
+                        "ItemType": "ArmorVisor"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Spartan/Emblems/104-001-hcs-branded-r-e1c18f9f.json",
+                        "ItemType": "SpartanEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Emblems/013-001-e1c18f9f.json",
+                        "ItemType": "ArmorEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Emblems/205-201-e1c18f9f.json",
+                        "ItemType": "WeaponEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Coatings/203-205-olympus-1c4849e3.json",
+                        "ItemType": "WeaponCoating"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 900,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20210627-01",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210627-01.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Visors/012-001-40d97848.json",
+                        "ItemType": "ArmorVisor"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Spartan/Emblems/104-001-hcs-branded-r-74673216.json",
+                        "ItemType": "SpartanEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Emblems/013-001-74673216.json",
+                        "ItemType": "ArmorEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Emblems/205-201-74673216.json",
+                        "ItemType": "WeaponEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Coatings/203-205-olympus-c27c7ed8.json",
+                        "ItemType": "WeaponCoating"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 900,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20210627-02",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210627-02.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Visors/012-001-e1fe4a07.json",
+                        "ItemType": "ArmorVisor"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Spartan/Emblems/104-001-hcs-branded-r-20e1ae6e.json",
+                        "ItemType": "SpartanEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Emblems/013-001-20e1ae6e.json",
+                        "ItemType": "ArmorEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Emblems/205-201-20e1ae6e.json",
+                        "ItemType": "WeaponEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Coatings/203-205-olympus-02980f6f.json",
+                        "ItemType": "WeaponCoating"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 900,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20210627-03",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210627-03.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Visors/012-001-bc9e240b.json",
+                        "ItemType": "ArmorVisor"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Spartan/Emblems/104-001-hcs-branded-r-27722f73.json",
+                        "ItemType": "SpartanEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Armor/Emblems/013-001-27722f73.json",
+                        "ItemType": "ArmorEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Emblems/205-201-27722f73.json",
+                        "ItemType": "WeaponEmblem"
+                    },
+                    {
+                        "Amount": 1,
+                        "ItemPath": "Inventory/Weapon/Coatings/203-205-olympus-30e55611.json",
+                        "ItemType": "WeaponCoating"
+                    }
+                ],
+                "Prices": [
+                    {
+                        "Cost": 900,
+                        "CurrencyPath": "Currency/Currencies/cR.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            }
+        ]
+    }
 	</code>
 </example>
