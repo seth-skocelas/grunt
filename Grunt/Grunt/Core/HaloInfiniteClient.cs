@@ -793,8 +793,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyPurchaseStorefrontOfferingTransaction(string player)
+        /// <summary>
+        /// This API does not work with GET requests and is likely used to post transactions. Additional investigation is required.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>Unknown.</returns>
+        private async Task<string> EconomyPurchaseStorefrontOfferingTransaction(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/storetransactions",
                                    HttpMethod.Get,
@@ -812,8 +817,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyScheduledStorefrontOfferings(string player, string storeId)
+        /// <summary>
+        /// Gets information about offerings for a player in a given store.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_ScheduledStorefrontOfferings.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="storeId">The unique store identifier. An example value is "hcs".</param>
+        /// <returns>If successful, returns an instance of StoreItem containing offerings. Otherwise, returns null.</returns>
+        public async Task<StoreItem> EconomyScheduledStorefrontOfferings(string player, string storeId)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/{storeId}",
                                    HttpMethod.Get,
@@ -823,16 +834,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<StoreItem>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomySpartanBodyCustomization(string player)
+        /// <summary>
+        /// Gets the currently active Spartan body customization.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_SpartanBodyCustomization.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of SpartanBody containing the customization information. Otherwise, returns null.</returns>
+        public async Task<SpartanBody> EconomySpartanBodyCustomization(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/spartanbody",
                                    HttpMethod.Get,
@@ -842,11 +858,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<SpartanBody>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
