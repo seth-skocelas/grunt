@@ -6,6 +6,7 @@
         public string ItemId { get; set; }
         public string ItemPath { get; set; }
         public string ItemType { get; set; }
+        public string CoreType { get; set; }
         public APIFormattedDate FirstAcquiredDate { get;set; }
     }
 }

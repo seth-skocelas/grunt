@@ -1,0 +1,22 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/16/2022:
+	<code>
+    {
+        "MaxPlayerCount": 28,
+        "MaxPlayersPerClient": 4,
+        "RulesId": "customGameRules",
+        "DefaultMaxFireteamSizeSliderValue": 28,
+        "MaxTeamCount": 24,
+        "MaxPlayersInMediumVmInstance": 28,
+        "DefaultObserversAllowed": true,
+        "DefaultMap": {
+            "AssetId": "298d5036-cd43-47b3-a4bd-31e127566593",
+            "VersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        "DefaultGameVariant": {
+            "AssetId": "1e8cd10b-1496-423b-8699-f98f6f5db67e",
+            "VersionId": "00000000-0000-0000-0000-000000000000"
+        }
+    }
+	</code>
+</example>

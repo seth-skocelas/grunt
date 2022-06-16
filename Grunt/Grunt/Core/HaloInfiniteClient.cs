@@ -1186,8 +1186,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetCustomGameDefaults()
+        /// <summary>
+        /// Returns the parameters for new custom games started in Halo Infinite.
+        /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetCustomGameDefaults.xml' path='//example'/>
+        /// <returns>If successful, returns an instance of CustomGameDefinition containing game parameters. Otherwise, returns null.</returns>
+        public async Task<CustomGameDefinition> GameCmsGetCustomGameDefaults()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/NonMatchmaking/customgame.json",
                                    HttpMethod.Get,
@@ -1197,16 +1201,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<CustomGameDefinition>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetCustomizationCatalog(string flightId)
+        /// <summary>
+        /// Gets the full list of existing in-game items.
+        /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetCustomizationCatalog.xml' path='//example'/>
+        /// <param name="flightId">Unique identifier for the currently active flight.</param>
+        /// <returns>If successful, returns an instance of InventoryDefinition containing the full list of available items. Otherwise, returns null.</returns>
+        public async Task<InventoryDefinition> GameCmsGetCustomizationCatalog(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/inventory/catalog/inventory_catalog.json?flight={flightId}",
                                    HttpMethod.Get,
@@ -1216,11 +1225,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<InventoryDefinition>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -1287,8 +1296,11 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetGraphicsSpecControlOverrides()
+        /// <summary>
+        /// Gets the queries used to obtain override values for graphic device specifications.
+        /// </summary>
+        /// <returns>If successful, returns an instance of OverrideQueryDefinition containing query definitions. Otherwise, returns null.</returns>
+        public async Task<OverrideQueryDefinition> GameCmsGetGraphicsSpecControlOverrides()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
                                    HttpMethod.Get,
@@ -1298,11 +1310,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<OverrideQueryDefinition>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
