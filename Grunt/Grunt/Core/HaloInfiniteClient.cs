@@ -1236,6 +1236,7 @@ namespace Grunt.Core
         /// <summary>
         /// Gets information about graphic device preset overrides.
         /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetDevicePresetOverrides.xml' path='//example'/>
         /// <remarks>
         /// The exact purpose of this function is unknown at this time, and requires additional investigation.
         /// </remarks>
@@ -1299,6 +1300,7 @@ namespace Grunt.Core
         /// <summary>
         /// Gets the queries used to obtain override values for graphic device specifications.
         /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetGraphicsSpecControlOverrides.xml' path='//example'/>
         /// <returns>If successful, returns an instance of OverrideQueryDefinition containing query definitions. Otherwise, returns null.</returns>
         public async Task<OverrideQueryDefinition> GameCmsGetGraphicsSpecControlOverrides()
         {
