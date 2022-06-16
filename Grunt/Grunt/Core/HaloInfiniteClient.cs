@@ -1526,6 +1526,7 @@ namespace Grunt.Core
         /// <summary>
         /// Get recommended drivers for the current version of Halo Infinite.
         /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetRecommendedDrivers.xml' path='//example'/>
         /// <returns>If successful, returns an instance of DriverManifest that contains details on supported drivers. Otherwise, returns null.</returns>
         public async Task<DriverManifest> GameCmsGetRecommendedDrivers()
         {
