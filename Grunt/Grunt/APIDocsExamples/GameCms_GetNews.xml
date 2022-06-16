@@ -960,7 +960,7 @@
             },
             {
                 "ShortHeadline": {
-                    "value": "Juneteenth Emblem & Nameplate",
+                    "value": "Juneteenth Emblem &amp; Nameplate",
                     "status": "Test",
                     "translations": {
                         "cs-CZ": "Emblém a jmenovka Den nezávislosti černochů",
@@ -972,7 +972,7 @@
                         "fr-FR": "Emblème et plaque nominative Jour de l'émancipation",
                         "hu-HU": "Juneteenth embléma és névtábla",
                         "it-IT": "Emblema e targa identificativa 10giugno",
-                        "ja-JP": "ジューンティーンスのエンブレム & ネームプレート",
+                        "ja-JP": "ジューンティーンスのエンブレム &amp; ネームプレート",
                         "ko-KR": "노예 해방 기념일 휘장 및 명판",
                         "nb-NO": "Junteenth-emblem og -navneskilt",
                         "nl-NL": "Juneteenth-embleem en -naamplaatje",
@@ -983,13 +983,13 @@
                         "tr-TR": "On Dokuz Haziran Amblemi ve İsim Plakası",
                         "zh-CN": "六月独立日名牌和徽章",
                         "zh-TW": "六月獨立日名牌和徽章",
-                        "qps-ploc": "Јúňзţēêήŧћ Эmвłēm & Ńαmëρļàŧĕ !!! !!! !!!",
-                        "qps-ploca": "Јúπěťеèñŧħ Ėmьłем & Ñâмєφĺāтє !!! !!! !!!",
-                        "qps-plocm": "Ĵџήёŧěëпτђ Ëmъŀéм & Йàmėрłâťє !!! !!! !!!"
+                        "qps-ploc": "Јúňзţēêήŧћ Эmвłēm &amp; Ńαmëρļàŧĕ !!! !!! !!!",
+                        "qps-ploca": "Јúπěťеèñŧħ Ėmьłем &amp; Ñâмєφĺāтє !!! !!! !!!",
+                        "qps-plocm": "Ĵџήёŧěëпτђ Ëmъŀéм &amp; Йàmėрłâťє !!! !!! !!!"
                     }
                 },
                 "FullHeadline": {
-                    "value": "Juneteenth Emblem & Nameplate",
+                    "value": "Juneteenth Emblem &amp; Nameplate",
                     "status": "Test",
                     "translations": {
                         "cs-CZ": "Emblém a jmenovka Den nezávislosti černochů",
@@ -1001,7 +1001,7 @@
                         "fr-FR": "Emblème et plaque nominative Jour de l'émancipation",
                         "hu-HU": "Juneteenth embléma és névtábla",
                         "it-IT": "Emblema e targa identificativa 10giugno",
-                        "ja-JP": "ジューンティーンスのエンブレム & ネームプレート",
+                        "ja-JP": "ジューンティーンスのエンブレム &amp; ネームプレート",
                         "ko-KR": "노예 해방 기념일 휘장 및 명판",
                         "nb-NO": "Junteenth-emblem og -navneskilt",
                         "nl-NL": "Juneteenth-embleem en -naamplaatje",
@@ -1012,9 +1012,9 @@
                         "tr-TR": "On Dokuz Haziran Amblemi ve İsim Plakası",
                         "zh-CN": "六月独立日名牌和徽章",
                         "zh-TW": "六月獨立日名牌和徽章",
-                        "qps-ploc": "Јúňзţēêήŧћ Эmвłēm & Ńαmëρļàŧĕ !!! !!! !!!",
-                        "qps-ploca": "Јúπěťеèñŧħ Ėmьłем & Ñâмєφĺāтє !!! !!! !!!",
-                        "qps-plocm": "Ĵџήёŧěëпτђ Ëmъŀéм & Йàmėрłâťє !!! !!! !!!"
+                        "qps-ploc": "Јúňзţēêήŧћ Эmвłēm &amp; Ńαmëρļàŧĕ !!! !!! !!!",
+                        "qps-ploca": "Јúπěťеèñŧħ Ėmьłем &amp; Ñâмєφĺāтє !!! !!! !!!",
+                        "qps-plocm": "Ĵџήёŧěëпτђ Ëmъŀéм &amp; Йàmėрłâťє !!! !!! !!!"
                     }
                 },
                 "Body": {
@@ -1622,7 +1622,7 @@
             },
             {
                 "ShortHeadline": {
-                    "value": "Unity Emblem & Nameplate",
+                    "value": "Unity Emblem &amp; Nameplate",
                     "status": "Test",
                     "translations": {
                         "cs-CZ": "Emblém a jmenovka Jednota",
@@ -1646,13 +1646,13 @@
                         "tr-TR": "Birlik Amblemi ve İsim Plakası",
                         "zh-CN": "“团结 ”名牌和徽章",
                         "zh-TW": "「團結」名牌和徽章",
-                        "qps-ploc": "Ûņïтў Еmъĺém & Ňăмēρļαťэ !!! !!! !",
-                        "qps-ploca": "Ųňΐτў Ёmвℓěм & Ñάмĕрĺåτé !!! !!! !",
-                        "qps-plocm": "Ũⁿΐŧў ∑mвŀзm & Ňǻmĕρľąτё !!! !!! !"
+                        "qps-ploc": "Ûņïтў Еmъĺém &amp; Ňăмēρļαťэ !!! !!! !",
+                        "qps-ploca": "Ųňΐτў Ёmвℓěм &amp; Ñάмĕрĺåτé !!! !!! !",
+                        "qps-plocm": "Ũⁿΐŧў ∑mвŀзm &amp; Ňǻmĕρľąτё !!! !!! !"
                     }
                 },
                 "FullHeadline": {
-                    "value": "Unity Emblem & Nameplate",
+                    "value": "Unity Emblem &amp; Nameplate",
                     "status": "Test",
                     "translations": {
                         "cs-CZ": "Emblém a jmenovka Jednota",
@@ -1676,9 +1676,9 @@
                         "tr-TR": "Birlik Amblemi ve İsim Plakası",
                         "zh-CN": "“团结 ”名牌和徽章",
                         "zh-TW": "「團結」名牌和徽章",
-                        "qps-ploc": "Ûņïтў Еmъĺém & Ňăмēρļαťэ !!! !!! !",
-                        "qps-ploca": "Ųňΐτў Ёmвℓěм & Ñάмĕрĺåτé !!! !!! !",
-                        "qps-plocm": "Ũⁿΐŧў ∑mвŀзm & Ňǻmĕρľąτё !!! !!! !"
+                        "qps-ploc": "Ûņïтў Еmъĺém &amp; Ňăмēρļαťэ !!! !!! !",
+                        "qps-ploca": "Ųňΐτў Ёmвℓěм &amp; Ñάмĕрĺåτé !!! !!! !",
+                        "qps-plocm": "Ũⁿΐŧў ∑mвŀзm &amp; Ňǻmĕρľąτё !!! !!! !"
                     }
                 },
                 "Body": {
