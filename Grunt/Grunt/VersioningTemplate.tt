@@ -10,5 +10,5 @@ using System.Reflection;
 [assembly: AssemblyFileVersion("0.0.1.<#= this.RevisionNumber #>")]
 [assembly: AssemblyInformationalVersion("0.0.1.<#= this.RevisionNumber #>")]
 <#+
-    int RevisionNumber = (int)(DateTime.UtcNow - new DateTime(2022,1,1)).TotalDays;
+    string RevisionNumber = DateTime.Now.ToString("ddMMyyHHmm");
 #>
