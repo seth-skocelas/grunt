@@ -1,0 +1,593 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/16/2022:
+	<code>
+	{
+        "TrackId": "ritualEagleStrike",
+        "XpPerRank": 1,
+        "Ranks": [
+            {
+                "Rank": 1,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Spartan/BackdropImages/103-000-ui-s2-backgro-698bc71e.json",
+                            "Amount": 1,
+                            "Type": "SpartanBackdropImage"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 2,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Vehicle/Emblems/405-305-2950cbb7.json",
+                            "Amount": 1,
+                            "Type": "VehicleEmblem"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 3,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-i-ab33d992.json",
+                            "Amount": 1,
+                            "Type": "SpartanActionPose"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 4,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Weapon/Coatings/203-200-olympus-e90ac8a6.json",
+                            "Amount": 1,
+                            "Type": "WeaponCoating"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 5,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
+                            "Amount": 1,
+                            "Type": "ArmorTheme"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 6,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Weapon/Emblems/205-201-2950cbb7.json",
+                            "Amount": 1,
+                            "Type": "WeaponEmblem"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 7,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Vehicle/Coatings/404-301-olympus-c1bab58c.json",
+                            "Amount": 1,
+                            "Type": "VehicleCoating"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 8,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/KneePads/006-001-eag-1e0b6037.json",
+                            "Amount": 1,
+                            "Type": "ArmorKneePad"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 9,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/Visors/012-001-3d73ffb9.json",
+                            "Amount": 1,
+                            "Type": "ArmorVisor"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 10,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/HelmetAttachments/004-001-eag-9fe0269f.json",
+                            "Amount": 1,
+                            "Type": "ArmorHelmetAttachment"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 11,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/Emblems/013-001-2950cbb7.json",
+                            "Amount": 1,
+                            "Type": "ArmorEmblem"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 12,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Vehicle/Coatings/404-303-olympus-c1bab58c.json",
+                            "Amount": 1,
+                            "Type": "VehicleCoating"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 13,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/ShouldersLeft/008-001-eag-352633f4.json",
+                            "Amount": 1,
+                            "Type": "ArmorLeftShoulderPad"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 14,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/ShouldersRight/009-001-eag-352633f4.json",
+                            "Amount": 1,
+                            "Type": "ArmorRightShoulderPad"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 15,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/KneePads/006-001-eag-2c3d02b5.json",
+                            "Amount": 1,
+                            "Type": "ArmorKneePad"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 16,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Spartan/Emblems/104-001-entrenched-bi-2950cbb7.json",
+                            "Amount": 1,
+                            "Type": "SpartanEmblem"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 17,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/Coatings/002-001-eag-c1bab58c.json",
+                            "Amount": 1,
+                            "Type": "ArmorCoating"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 18,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/ChestAttachments/001-001-eag-abfbe498.json",
+                            "Amount": 1,
+                            "Type": "ArmorChestAttachment"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 19,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/HipAttachments/010-001-eag-e0765c1e.json",
+                            "Amount": 1,
+                            "Type": "ArmorHipAttachment"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 20,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/Helmets/005-001-eag-352633f4.json",
+                            "Amount": 1,
+                            "Type": "ArmorHelmet"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 21,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Spartan/BackdropImages/103-000-ui-s2-backgro-d74c86f0.json",
+                            "Amount": 1,
+                            "Type": "SpartanBackdropImage"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 22,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/Coatings/002-001-eag-9bfe78f6.json",
+                            "Amount": 1,
+                            "Type": "ArmorCoating"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 23,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/Visors/012-001-8a7c6e5a.json",
+                            "Amount": 1,
+                            "Type": "ArmorVisor"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 24,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/HelmetAttachments/004-001-eag-74d79d9c.json",
+                            "Amount": 1,
+                            "Type": "ArmorHelmetAttachment"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 25,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/ChestAttachments/001-001-eag-99cd861a.json",
+                            "Amount": 1,
+                            "Type": "ArmorChestAttachment"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 26,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/ShouldersLeft/008-001-eag-1e0b6037.json",
+                            "Amount": 1,
+                            "Type": "ArmorLeftShoulderPad"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 27,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/ShouldersRight/009-001-eag-1e0b6037.json",
+                            "Amount": 1,
+                            "Type": "ArmorRightShoulderPad"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 28,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-i-1ab2c67c.json",
+                            "Amount": 1,
+                            "Type": "SpartanActionPose"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 29,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/Coatings/002-001-eag-9cba828e.json",
+                            "Amount": 1,
+                            "Type": "ArmorCoating"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            },
+            {
+                "Rank": 30,
+                "FreeRewards": {
+                    "InventoryRewards": [
+                        {
+                            "InventoryItemPath": "Inventory/Armor/WristAttachments/011-001-eag-58d438a3.json",
+                            "Amount": 1,
+                            "Type": "ArmorWristAttachment"
+                        }
+                    ],
+                    "CurrencyRewards": []
+                },
+                "PaidRewards": {
+                    "InventoryRewards": [],
+                    "CurrencyRewards": []
+                }
+            }
+        ],
+        "Name": {
+            "status": "Ready",
+            "value": "Fracture: Entrenched",
+            "translations": {
+                "cs-CZ": "Trhlina: Opevnění",
+                "da-DK": "Fracture: Entrenched",
+                "de-DE": "Fraktur: Eingegraben",
+                "el-GR": "Fracture: Entrenched",
+                "es-ES": "Fracture: Atrincherados",
+                "es-MX": "Fracture: Atrincherado",
+                "fi-FI": "Murtuma: Juurtunut",
+                "fr-FR": "Fracture de tranchées",
+                "hu-HU": "Töredék: Lövészárkok",
+                "it-IT": "Fracture: Entrenched",
+                "ja-JP": "フラクチャー: エントレンチト",
+                "ko-KR": "균열: 참호",
+                "nb-NO": "Brudd: Forskanset",
+                "nl-NL": "Fracture: Entrenched",
+                "pl-PL": "Fracture: Okopani",
+                "pt-BR": "Fracture: Entrincheirado",
+                "pt-PT": "Fratura: Entrincheirado",
+                "ru-RU": "Разлом: Неистребимые",
+                "sv-SE": "Spricka: Befäst",
+                "tr-TR": "Çatlak: Sağlamlaştırılmış",
+                "zh-CN": "裂隙事件：根深蒂固",
+                "zh-TW": "斷裂：根深蒂固",
+                "qps-ploc": "₣яàćţųгêď: Ěиţѓēņçĥéď !!! !!!",
+                "qps-ploca": "₣яа¢ţϋѓĕď: Έηтґěπčђеδ !!! !!!",
+                "qps-plocm": "₣ŕªċтύřєđ: Ėπтґзиčнėð !!! !!!"
+            }
+        },
+        "Description": {
+            "status": "Test",
+            "value": "",
+            "translations": {}
+        },
+        "OperationNumber": 2,
+        "DateRange": {
+            "status": "Ready",
+            "value": "Week 1: May 24th, 2022 - May 30th, 2022\nWeek 2: June 14th, 2022 - June 20th, 2022\nWeek 3: July 5th, 2022 - July 11th, 2022\nWeek 4: August 16th, 2022 - August 22nd, 2022",
+            "translations": {
+                "cs-CZ": "1. týden: 24. května 2022 – 30. května 2022\n2. týden: 14. června 2022 – 20. června 2022\n3. týden: 5. července 2022 – 11. července 2022\n4. týden: 16. srpna 2022 – 22. srpna 2022",
+                "da-DK": "Uge 1: 24. maj 2022 - 30. maj 2022\nUge 2: 14. juni 2022 - 20. juni 2022\nUge 3: 5. juli 2022 - 11. juli 2022\nUge 4: 16. august 2022 - 22. august 2022",
+                "de-DE": "Woche 1: 24. Mai 2022 – 30. Mai 2022\nWoche 2: 14. Juni 2022 – 20. Juni 2022\nWoche 3: 5. Juli 2022 – 11. Juli 2022\nWoche 4: 16. August 2022 – 22. August 2022",
+                "el-GR": "Εβδομάδα 1: 24 Μαΐου 2022 - 30 Μαΐου 2022\nΕβδομάδα 2: 14 Ιουνίου 2022 - 20 Ιουνίου 2022\nΕβδομάδα 3: 5 Ιουλίου 2022 - 11 Ιουλίου 2022\nΕβδομάδα 4: 16 Αυγούστου 2022 - 22 Αυγούστου 2022",
+                "es-ES": "Semana 1: Del 24 al 30 de mayo de 2022\nSemana 2: Del 14 al 20 de junio de 2022\nSemana 3: Del 5 al 11 de julio de 2022\nSemana 4: Del 16 al 22 de agosto de 2022",
+                "es-MX": "Semana 1: Del 24 al 30 de mayo de 2022\nSemana 2: Del 14 al 20 de junio de 2022\nSemana 3: Del 5 al 11 de julio de 2022\nSemana 4: Del 16 al 22 de agosto de 2022",
+                "fi-FI": "Viikko 1: 24. oukokuuta 2022 - 30. toukokuuta 2022\nViikko 2: 14. kesäkuuta 2022 - 20. kesäkuuta 2022\nViikko 3: 5. heinäkuuta 2022 - 11. heinäkuuta 2022\nViikko 4: 16. elokuuta 2022 - 22. elokuuta 2022",
+                "fr-FR": "Semaine 1 : 24 mai 2022 - 30 mai 2022\nSemaine 2 : 14 juin 2022 - 20 juin 2022\nSemaine 3 : 5 juillet 2022 - 11 juillet 2022\nSemaine 4 : 16 août 2022 - 22 août 2022",
+                "hu-HU": "1. hét: 2022. május 24. – 2022. május 30.\n2. hét: 2022. június 14. – 2022. június 20.\n3. hét: 2022. július 5. – 2022. július 11.\n4. hét: 2022. augusztus 16. – 2022. augusztus 22.",
+                "it-IT": "Settimana 1: 24 maggio 2022 - 30 maggio 2022\nSettimana 2: 14 giugno 2022 - 20 giugno 2022\nSettimana 3: 5 luglio 2022 - 11 luglio 2022\nSettimana 4: 16 agosto 2022 - 22 agosto 2022",
+                "ja-JP": "第 1 週: 2022 年 5 月 24 日 ~ 2022 年 5 月 30 日\n第 2 週: 2022 年 6 月 14 日 ~ 2022 年 6月 20 日\n第 3 週: 2022 年 7 月 5 日 ~ 2022 年 7 月 11 日\n第 4 週: 2022 年 8 月 16 日 ~ 2022 年 8 月 22 日",
+                "ko-KR": "1주차: 2022년 5월 24일- 2022년 5월 30일\n2주차: 2022년 6월 14일 - 2022년 6월 20일\n3주차: 2022년 7월 5일 - 2022년 7월 11일\n4주차: 2022년 8월 16일 - 2022년 8월 22일",
+                "nb-NO": "Uke 1: 24. mai 2022 til 30. mai 2022\nUke 2: 14. juni 2022 til 20. juni 2022\nUke 3: 5. juli 2022 til 11. juli 2022\nUke 4: 16. august 2022 til 22. august 2022",
+                "nl-NL": "Week 1: 24 mei 2022 - 30 mei 2022\nWeek 2: 14 juni 2022 - 20 juni 2022\nWeek 3: 5 juli 2022 - 11 juli 2022\nWeek 4: 16 augustus 2022 - 22 augustus 2022",
+                "pl-PL": "Tydzień 1: 24 maja 2022 – 30 maja 2022\nTydzień 2: 14 czerwca 2022 – 20 czerwca 2022\nTydzień 3: 5 lipca 2022 – 11 lipca 2022\nTydzień 4: 16 sierpnia 2022 – 22 sierpnia 2022",
+                "pt-BR": "Semana 1: 24 de maio de 2022 a 30 de maio de 2022\nSemana 2: 14 de junho de 2022 a 20 de junho de 2022\nSemana 3: 5 de julho de 2022 a 11 de julho de 2022\nSemana 4: 16 de agosto de 2022 a 22 de agosto de 2022",
+                "pt-PT": "Semana 1: 24 de maio de 2022 – 30 de maio de 2022\nSemana 2: 14 de junho de 2022 – 20 de junho de 2022\nSemana 3: 5 de julho de 2022 – 11 de julho de 2022\nSemana 4: 16 de agosto de 2022 – 22 de agosto de 2022",
+                "ru-RU": "1 неделя: 24 мая 2022 г. — 30 мая 2022 г.\n2 неделя: 14 июня 2022 г. — 20 июня 2022 г.\n3 неделя: 5 июля 2022 г. — 11 июля 2022 г.\n4 неделя: 16 августа 2022 г. — 22 августа 2022 г.",
+                "sv-SE": "Vecka 1: 24–30 maj 2022\nVecka 2: 14–20 juni 2022\nVecka 3: 5–11 juli 2022\nVecka 4: 16–22 augusti 2022",
+                "tr-TR": "1. Hafta: 24 Mayıs 2022 - 30 Mayıs 2022\n2. Hafta: 14 Haziran 2022 - 20 Haziran 2022\n3. Hafta: 5 Temmuz 2022 - 11 Temmuz 2022\n4. Hafta: 16 Ağustos 2022 - 22 Ağustos 2022",
+                "zh-CN": "第 1 周：2022 年 5 月 24 日 - 2022 年 5 月 30 日\n第 2 周：2022 年 6 月 14 日 - 2022 年 6 月 20 日\n第 3 周：2022 年 7 月 5 日 - 2022 年 7 月 11 日\n第 4 周：2022 年 8 月 16 日 - 2022 年 8 月 22 日",
+                "zh-TW": "第 1 週：2022 年 5 月 24 日 - 2022 年 5 月 30 日\n第 2 週：2022 年 6 月 14 日 - 2022 年 6 月 20 日\n第 3 週：2022 年 7 月 5 日 - 2022 年 7 月 11 日\n第 4 週：2022 年 8 月 16 日 - 2022 年 8 月 22 日",
+                "qps-ploc": "Ŵèêќ 1: Маý 24ŧђ, 2022 - Μāý 30τн, 2022 !!! !!! !!! !!!\nŴêзќ 2: Ĵυńê 14ŧĥ, 2022 - Јύήé 20ţћ, 2022 !!! !!! !!! !!!\nŴĕęќ 3: Ĵűľў 5тн, 2022 - Ĵûļý 11тн, 2022 !!! !!! !!! !!!\nШēéк 4: Âυģùšт 16ŧĥ, 2022 - Áμğµŝţ 22иð, 2022 !!! !!! !!! !!! !",
+                "qps-ploca": "Ẁéěќ 1: Μаỳ 24ŧђ, 2022 - Мąÿ 30τђ, 2022 !!! !!! !!! !!!\nẂεêк 2: Јцие 14ťђ, 2022 - Ĵŭⁿė 20τћ, 2022 !!! !!! !!! !!!\nŴεεκ 3: Ĵůŀγ 5ţђ, 2022 - Јúļý 11τћ, 2022 !!! !!! !!! !!!\nЩèėĸ 4: Áμġúşт 16тћ, 2022 - Άџġūѕţ 22ŉð, 2022 !!! !!! !!! !!! !",
+                "qps-plocm": "Щеêĸ 1: Маỳ 24тн, 2022 - Мăγ 30ţĥ, 2022 !!! !!! !!! !!!\nШĕєк 2: Ĵцŉе 14ţħ, 2022 - Ĵûπέ 20ŧђ, 2022 !!! !!! !!! !!!\nŴэєķ 3: Јųļу 5тћ, 2022 - Ĵΰŀỳ 11тђ, 2022 !!! !!! !!! !!!\nẀĕêķ 4: Ăΰĝμѕτ 16ŧћ, 2022 - Ãūġûşŧ 22ńđ, 2022 !!! !!! !!! !!! !"
+            }
+        },
+        "IsRitual": true,
+        "SummaryImagePath": "progression/RewardTracks/HIMPS2_ENTRENCHED_UI_BP_PROGRESSION_CARD_346x1068.png",
+        "WeekNumber": null,
+        "BackgroundImagePath": ""
+    }
+	</code>
+</example>

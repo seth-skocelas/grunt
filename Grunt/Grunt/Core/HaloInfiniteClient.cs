@@ -1259,8 +1259,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetEvent(string eventPath, string flightId)
+        /// <summary>
+        /// Gets information about an in-game event.
+        /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetEvent.xml' path='//example'/>
+        /// <param name="eventPath">The path to the event file. An example value is "RewardTracks/Events/Rituals/ritualEagleStrike.json".</param>
+        /// <param name="flightId">Unique identifier for the currently active flight.</param>
+        /// <returns></returns>
+        public async Task<RewardTrackMetadata> GameCmsGetEvent(string eventPath, string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{eventPath}?flight={flightId}",
                                    HttpMethod.Get,
@@ -1270,11 +1276,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<RewardTrackMetadata>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -1597,8 +1603,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetStorefronts(string flightId)
+        /// <summary>
+        /// API currently returns a 403 Forbidden even though the correct Spartan token and clearance are used. Haven't seen this API in the logs either, so not sure if it's still active.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <returns>Unknown.</returns>
+        private async Task<string> GameCmsGetStorefronts(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/Store/storefronts.json?flight={flightId}",
                                    HttpMethod.Get,
@@ -1616,7 +1627,11 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
+        /// <summary>
+        /// This API currently returns a 400 Bad Request with a "Title mismatch between path and flight" message. Assuming because the branch is pre-cooked in the URL 
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Unknown.</returns>
         public async Task<string> GameCmsGetUiConfigurationJson()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/branches/oly/UI-Settings/data/Settings.json",
@@ -2666,6 +2681,7 @@ namespace Grunt.Core
         /// <summary>
         /// Returns information on a project (collection of game modes and maps). This manifest contains all the maps and modes to show in the custom game menus.
         /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetProjectWithoutVersion.xml' path='//example'/>
         /// <param name="assetId">Unique asset ID representing the project. Example asset ID currently active is the custom game manifest ID: "a9dc0785-2a99-4fec-ba6e-0216feaaf041".</param>
         /// <returns>An instance of Project containing current game project information if request is successful. Otherwise, returns null.</returns>
         public async Task<Project> HIUGCDiscoveryGetProjectWithoutVersion(string assetId)
