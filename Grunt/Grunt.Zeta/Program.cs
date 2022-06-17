@@ -3,6 +3,7 @@ using Grunt.Core;
 using Grunt.Models;
 using Grunt.Models.HaloInfinite;
 using Grunt.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,13 +25,7 @@ namespace Grunt.Zeta
 
             HaloAuthenticationClient haloAuthClient = new();
 
-            Console.WriteLine("Provide account authorization and grab the code from the URL:");
-            Console.WriteLine(url);
-
-            Console.WriteLine("Your code:");
-            var code = Console.ReadLine();
-
-            var accessToken = string.Empty;
+            OAuthToken currentOAuthToken = null;
 
             var ticket = new XboxTicket();
             var haloTicket = new XboxTicket();
@@ -39,15 +34,47 @@ namespace Grunt.Zeta
             var xblToken = string.Empty;
             var haloToken = new SpartanToken();
 
-            Task.Run(async () =>
+            if (File.Exists("tokens.json"))
             {
-                var tokens = await manager.RequestOAuthToken(clientConfig.ClientId, code, clientConfig.RedirectUrl, clientConfig.ClientSecret);
-                accessToken = tokens.AccessToken;
-            }).GetAwaiter().GetResult();
+                // If a local token file exists, load the file.
+                currentOAuthToken = clientConfigReader.ReadConfiguration<OAuthToken>("tokens.json");
+            }
+            else
+            {
+                Console.WriteLine("Provide account authorization and grab the code from the URL:");
+                Console.WriteLine(url);
+
+                Console.WriteLine("Your code:");
+                var code = Console.ReadLine();
+
+                // If no local token file exists, request a new set of tokens.
+                Task.Run(async () =>
+                {
+                    currentOAuthToken = await manager.RequestOAuthToken(clientConfig.ClientId, code, clientConfig.RedirectUrl, clientConfig.ClientSecret);
+                    var storeTokenResult = StoreTokens(currentOAuthToken, "tokens.json");
+                    if (storeTokenResult)
+                    {
+                        Console.WriteLine("Stored the tokens locally.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("There was an issue storing tokens locally. A new token will be requested on the next run.");
+                    }
+                }).GetAwaiter().GetResult();
+            }
 
             Task.Run(async () =>
             {
-                ticket = await manager.RequestUserToken(accessToken);
+                ticket = await manager.RequestUserToken(currentOAuthToken.AccessToken);
+                if (ticket == null)
+                {
+                    // There was a failure to obtain the user token, so likely we need to refresh.
+                    currentOAuthToken = await manager.RequestOAuthToken(clientConfig.ClientId, currentOAuthToken.RefreshToken, clientConfig.RedirectUrl, clientConfig.ClientSecret);
+                    if (currentOAuthToken == null)
+                    {
+                        Console.WriteLine("Could not get the token even with the refresh token.");
+                    }
+                }
             }).GetAwaiter().GetResult();
 
             Task.Run(async () =>
@@ -178,6 +205,20 @@ namespace Grunt.Zeta
             }).GetAwaiter().GetResult();
 
             Console.ReadLine();
+        }
+
+        private static bool StoreTokens(OAuthToken token, string path)
+        {
+            string json = JsonConvert.SerializeObject(token);
+            try
+            {
+                System.IO.File.WriteAllText(path, json);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
