@@ -30,7 +30,7 @@ jobs:
       run: dotnet test --configuration Release -p:Version=${VERSION} -p:TransformOnBuild="false" -p:IsGitHubActions="true" --no-build
     - name: Pack
       working-directory: ./Grunt/Grunt
-      run: dotnet pack --configuration Release -p:Version=${VERSION} --no-build --output .
+      run: dotnet pack --configuration Release -p:Version=${VERSION} -p:TransformOnBuild="false" -p:IsGitHubActions="true" --no-build --output .
     - name: Push
       working-directory: ./Grunt/Grunt
       run: dotnet nuget push Grunt.SDK.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
