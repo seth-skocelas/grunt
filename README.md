@@ -7,7 +7,7 @@
 	<br>
 </div>
 
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://den.dev/ukraine) [![Publish API Documentation](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml)
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://den.dev/ukraine) [![Publish API Documentation](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml) [![Publish In-Repo NuGet Package](https://github.com/dend/grunt/actions/workflows/publish-inrepo-package.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-inrepo-package.yml) [![Publish NuGet Package](https://github.com/dend/grunt/actions/workflows/publish-nuget-package.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-nuget-package.yml)
 
 Welcome to **Grunt API** - the unofficial way to use official Halo Infinite APIs. Here be **a lot of dragons** and this is not yet ready to be a standalone package, since the changes will be frequent and large. That said, you can use it as a test pad for your own explorations.
 
