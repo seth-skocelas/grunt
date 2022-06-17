@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -9,6 +9,7 @@
     <PackageTags>halo,halo-api</PackageTags>
     <PackageIcon>grunt-logo.png</PackageIcon>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Version>$(TargetPackageVersion)</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -53,4 +54,12 @@
     </Compile>
   </ItemGroup>
 
+  <Target Name="AfterBuild">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+        <Output TaskParameter="Assemblies" ItemName="AssemblyVersion" />
+    </GetAssemblyIdentity>
+    <PropertyGroup>
+      <TargetPackageVersion>%(AssemblyVersion.Version)</TargetPackageVersion>
+    </PropertyGroup>
+</Target>
 </Project>
