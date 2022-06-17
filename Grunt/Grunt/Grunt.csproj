@@ -18,7 +18,10 @@
 		<PackageIcon>grunt-logo.png</PackageIcon>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<Version>$(AssemblyVersionMajor).$(AssemblyVersionMinor).$(AssemblyVersionPatch).$(AssemblyVersionPreRelease)</Version>
+    <TransformOnBuild>true</TransformOnBuild>
 	</PropertyGroup>
+
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TextTemplating\Microsoft.TextTemplating.targets" />
 
 	<ItemGroup>
 		<None Include="..\..\media\grunt-logo.png">
