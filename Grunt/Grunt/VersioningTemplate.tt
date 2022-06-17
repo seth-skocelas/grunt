@@ -6,10 +6,10 @@
 
 using System.Reflection;
 
-[assembly: AssemblyVersion("0.1.<#= this.RevisionNumber #>.<#= this.BuildId #>")]
-[assembly: AssemblyFileVersion("0.1.<#= this.RevisionNumber #>.<#= this.BuildId #>")]
-[assembly: AssemblyInformationalVersion("0.1.<#= this.RevisionNumber #>.<#= this.BuildId #>")]
+[assembly: AssemblyVersion("0.1.<#= this.RevisionNumber #>-<#= this.BuildId #>")]
+[assembly: AssemblyFileVersion("0.1.<#= this.RevisionNumber #>-<#= this.BuildId #>")]
+[assembly: AssemblyInformationalVersion("0.1.<#= this.RevisionNumber #>-<#= this.BuildId #>")]
 <#+
     string RevisionNumber = DateTime.Now.ToString("ddMMyyHHmm");
-    int BuildId = (int)(DateTime.UtcNow - new DateTime(2022,1,1)).TotalDays;
+    string BuildId = "alpha";
 #>
