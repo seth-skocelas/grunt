@@ -28,9 +28,12 @@ jobs:
       run: |
         git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
         git branch --remote --contains | grep origin/main
+    - name: Update Version
+      working-directory: ./Grunt/Grunt
+      run: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\TextTransform.exe VersioningTemplate.tt -out VersioningTemplate.cs
     - name: Build
       working-directory: ./Grunt/Grunt
-      run: dotnet build --configuration Release -p:CustomPathToTransforms="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Msbuild\"
+      run: dotnet build --configuration Release -p:TransformOnBuild="false"
     - name: Test
       working-directory: ./Grunt/Grunt
       run: dotnet test --configuration Release --no-build
