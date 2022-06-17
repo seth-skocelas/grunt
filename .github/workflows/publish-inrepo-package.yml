@@ -37,7 +37,7 @@ jobs:
       run: dotnet build --configuration Release -p:TransformOnBuild="false" -p:IsGitHubActions="true"
     - name: Test
       working-directory: ./Grunt/Grunt
-      run: dotnet test --configuration Release --no-build
+      run: dotnet test --configuration Release --no-build -p:TransformOnBuild="false" -p:IsGitHubActions="true"
     - name: Pack
       working-directory: ./Grunt/Grunt
       run: dotnet pack --configuration Release --no-build --output .
