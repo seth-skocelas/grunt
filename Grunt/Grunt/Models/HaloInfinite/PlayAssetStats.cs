@@ -4,5 +4,11 @@
     {
         public int PlaysRecent { get; set; }
         public int PlaysAllTime { get; set; }
+        public int Favorites { get; set; }
+        public int Likes { get; set; }
+        public int Bookmarks { get; set; }
+        public int ParentAssetCount { get; set; }
+        public int AverageRating { get; set; }
+        public int NumberOfRatings { get; set; }
     }
 }
