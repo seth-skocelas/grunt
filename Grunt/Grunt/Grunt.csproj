@@ -9,7 +9,8 @@
     <PackageTags>halo,halo-api</PackageTags>
     <PackageIcon>grunt-logo.png</PackageIcon>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Version>$(AssemblyVersion)</Version>
+    <VersionPrefix>$(AssemblyVersion)</VersionPrefix>
+    <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
 
   <ItemGroup>
