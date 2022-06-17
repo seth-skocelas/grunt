@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -9,8 +8,8 @@
     <PackageTags>halo,halo-api</PackageTags>
     <PackageIcon>grunt-logo.png</PackageIcon>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <VersionPrefix>$(AssemblyVersion)</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
+    <VersionFile>VersioningTemplate.cs</VersionFile>
   </PropertyGroup>
 
   <ItemGroup>
