@@ -9,7 +9,7 @@
     <PackageTags>halo,halo-api</PackageTags>
     <PackageIcon>grunt-logo.png</PackageIcon>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Version>$(TargetPackageVersion)</Version>
+    <Version>$(AssemblyVersion)</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -53,13 +53,4 @@
       <DependentUpon>VersioningTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-
-  <Target Name="AfterBuild">
-    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
-        <Output TaskParameter="Assemblies" ItemName="AssemblyVersion" />
-    </GetAssemblyIdentity>
-    <PropertyGroup>
-      <TargetPackageVersion>%(AssemblyVersion.Version)</TargetPackageVersion>
-    </PropertyGroup>
-</Target>
 </Project>
