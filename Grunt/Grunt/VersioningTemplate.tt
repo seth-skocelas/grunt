@@ -10,6 +10,6 @@ using System.Reflection;
 [assembly: AssemblyFileVersion("0.1.<#= this.RevisionNumber #>.<#= this.BuildId #>")]
 [assembly: AssemblyInformationalVersion("0.1.<#= this.RevisionNumber #>.<#= this.BuildId #>")]
 <#+
-    string RevisionNumber = DateTime.Now.ToString("ddMMyy");
-    string BuildId = DateTime.Now.ToString("HHmm");
+    string RevisionNumber = DateTime.Now.ToString("MMyy");
+    string BuildId = DateTime.Now.ToString("ddHH");
 #>
