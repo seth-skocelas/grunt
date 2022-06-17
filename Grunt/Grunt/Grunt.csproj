@@ -1,5 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
+		<CustomPathToTransforms>$(MSBuildExtensionsPath)</CustomPathToTransforms>
+	</PropertyGroup>
+	
+	<Import Project="$(CustomPathToTransforms)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TextTemplating\Microsoft.TextTemplating.targets" />
+	
+	<PropertyGroup>
 		<In>$([System.IO.File]::ReadAllText('$(MSBuildProjectDirectory)\VersioningTemplate.cs'))</In>
 		<Pattern>\[assembly: AssemblyInformationalVersion\("(?&lt;Major&gt;\d+)\.(?&lt;Minor&gt;\d+)\.(?&lt;Patch&gt;[\d]+).(?&lt;PreReleaseInfo&gt;[0-9A-Za-z-.]+)?</Pattern>
 		<AssemblyVersionMajor>$([System.Text.RegularExpressions.Regex]::Match($(In), $(Pattern), System.Text.RegularExpressions.RegexOptions.Multiline).Groups["Major"].Value)</AssemblyVersionMajor>
@@ -18,10 +24,9 @@
 		<PackageIcon>grunt-logo.png</PackageIcon>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<Version>$(AssemblyVersionMajor).$(AssemblyVersionMinor).$(AssemblyVersionPatch).$(AssemblyVersionPreRelease)</Version>
-    <TransformOnBuild>true</TransformOnBuild>
+		<TransformOnBuild>true</TransformOnBuild>
+		<TransformOutOfDateOnly>false</TransformOutOfDateOnly>
 	</PropertyGroup>
-
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TextTemplating\Microsoft.TextTemplating.targets" />
 
 	<ItemGroup>
 		<None Include="..\..\media\grunt-logo.png">
