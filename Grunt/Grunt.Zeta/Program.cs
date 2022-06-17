@@ -36,6 +36,7 @@ namespace Grunt.Zeta
 
             if (File.Exists("tokens.json"))
             {
+                Console.WriteLine("Trying to use local tokens...");
                 // If a local token file exists, load the file.
                 currentOAuthToken = clientConfigReader.ReadConfiguration<OAuthToken>("tokens.json");
             }
@@ -69,10 +70,14 @@ namespace Grunt.Zeta
                 if (ticket == null)
                 {
                     // There was a failure to obtain the user token, so likely we need to refresh.
-                    currentOAuthToken = await manager.RequestOAuthToken(clientConfig.ClientId, currentOAuthToken.RefreshToken, clientConfig.RedirectUrl, clientConfig.ClientSecret);
+                    currentOAuthToken = await manager.RefreshOAuthToken(clientConfig.ClientId, currentOAuthToken.RefreshToken, clientConfig.RedirectUrl, clientConfig.ClientSecret);
                     if (currentOAuthToken == null)
                     {
                         Console.WriteLine("Could not get the token even with the refresh token.");
+                    }
+                    else
+                    {
+                        ticket = await manager.RequestUserToken(currentOAuthToken.AccessToken);
                     }
                 }
             }).GetAwaiter().GetResult();
