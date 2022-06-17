@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<CustomPathToTransforms>$(MSBuildExtensionsPath)</CustomPathToTransforms>
+		<IsGitHubActions>false</IsGitHubActions>
 	</PropertyGroup>
 	
-	<Import Project="$(CustomPathToTransforms)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TextTemplating\Microsoft.TextTemplating.targets" />
+	<Import Project="$(CustomPathToTransforms)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TextTemplating\Microsoft.TextTemplating.targets" Condition="$(IsGitHubActions) == 'false'" />
 	
 	<PropertyGroup>
 		<In>$([System.IO.File]::ReadAllText('$(MSBuildProjectDirectory)\VersioningTemplate.cs'))</In>

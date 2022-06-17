@@ -34,7 +34,7 @@ jobs:
         . "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\TextTransform.exe" VersioningTemplate.tt -out VersioningTemplate.cs
     - name: Build
       working-directory: ./Grunt/Grunt
-      run: dotnet build --configuration Release -p:TransformOnBuild="false"
+      run: dotnet build --configuration Release -p:TransformOnBuild="false" -p:IsGitHubActions="true"
     - name: Test
       working-directory: ./Grunt/Grunt
       run: dotnet test --configuration Release --no-build
