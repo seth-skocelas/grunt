@@ -19,15 +19,11 @@ namespace Grunt.Core
         private string _xuid = string.Empty;
         private string _clearanceToken = string.Empty;
 
-        public ApiSettingsContainer EndpointData { get; private set; }
-
         public HaloInfiniteClient(string spartanToken, string xuid, string clearanceToken = "")
         {
             this._spartanToken = spartanToken;
             this._xuid = xuid;
             this._clearanceToken = clearanceToken;
-
-            EndpointData = JsonConvert.DeserializeObject<ApiSettingsContainer>(File.ReadAllText("endpoints.json"));
         }
 
         public string SpartanToken
