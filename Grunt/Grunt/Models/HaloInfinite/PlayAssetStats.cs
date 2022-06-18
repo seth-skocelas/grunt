@@ -8,7 +8,7 @@
         public int Likes { get; set; }
         public int Bookmarks { get; set; }
         public int ParentAssetCount { get; set; }
-        public int AverageRating { get; set; }
+        public float AverageRating { get; set; }
         public int NumberOfRatings { get; set; }
     }
 }
