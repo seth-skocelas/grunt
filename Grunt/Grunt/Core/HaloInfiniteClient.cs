@@ -2685,7 +2685,7 @@ namespace Grunt.Core
 
         public async Task<PlayerSkillResultValue> SkillGetMatchPlayerResult(string matchId, string playerId)
         {
-            var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players={playerId}",
+            var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players=xuid({playerId})",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -2693,7 +2693,29 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerSkillResultValue>(response);
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                };
+                return JsonConvert.DeserializeObject<PlayerSkillResultValue>(response, settings);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<String> SkillGetMatchPlayerResultString(string matchId, string playerId)
+        {
+            var response = await ExecuteAPIRequest($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players=xuid({playerId})",
+                                   HttpMethod.Get,
+                                   true,
+                                   true,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+               return response;
             }
             else
             {
@@ -2795,7 +2817,7 @@ namespace Grunt.Core
         /// <returns>An instance of MatchContainer containing match metadata if request was successful. Return value is null otherwise.</returns>
         public async Task<MatchContainer> StatsGetMatchHistory(string player)
         {
-            var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches",
+            var response = await ExecuteAPIRequest($"https://halostats.svc.halowaypoint.com:443/hi/players/xuid({player})/matches",
                                    HttpMethod.Get,
                                    true,
                                    false,

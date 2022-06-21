@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace Grunt.Models.HaloInfinite
@@ -10,7 +11,9 @@ namespace Grunt.Models.HaloInfinite
         public StatPerformances StatPerformances { get; set; }
         public int TeamId { get; set; }
         public Dictionary<String, Double> TeamMmrs { get; set; }
-        public string RankedRewards { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public RankedRewards RankedRewards { get; set; }
         public Counterfactuals Counterfactuals { get; set; }
 
     }
