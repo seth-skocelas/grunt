@@ -1,9 +1,10 @@
-﻿namespace Grunt.Models.HaloInfinite
+﻿using Grunt.Models.HaloInfinite.Foundation;
+using Newtonsoft.Json;
+
+namespace Grunt.Models.HaloInfinite
 {
-    public class PlayerSkillResult
+    public class PlayerSkillResult : ResultContainer
     {
-        public string Id { get; set; }
-        public int ResultCode { get; set; }
-        public Result Result { get; set; }
+        public SkillResult Result { get; set; }
     }
 }

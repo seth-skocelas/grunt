@@ -1,12 +1,11 @@
-﻿namespace Grunt.Models.HaloInfinite
+﻿namespace Grunt.Models.HaloInfinite.Foundation
 {
-    public class Core
+    public abstract class Core
     {
         public string CorePath { get; set; }
         public bool IsEquipped { get; set; }
-        public CoreTheme[] Themes { get; set; }
         public string CoreId { get; set; }
         public string CoreType { get; set; }
-        public WaypointDate FirstAcquiredDate { get; set; }
+        public APIFormattedDate FirstAcquiredDate { get; set; }
     }
 }

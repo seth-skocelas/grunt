@@ -7,7 +7,7 @@
 	<br>
 </div>
 
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://den.dev/ukraine)
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://den.dev/ukraine) [![Publish API Documentation](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml) [![Publish In-Repo NuGet Package](https://github.com/dend/grunt/actions/workflows/publish-inrepo-package.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-inrepo-package.yml) [![Publish NuGet Package](https://github.com/dend/grunt/actions/workflows/publish-nuget-package.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-nuget-package.yml)
 
 Welcome to **Grunt API** - the unofficial way to use official Halo Infinite APIs. Here be **a lot of dragons** and this is not yet ready to be a standalone package, since the changes will be frequent and large. That said, you can use it as a test pad for your own explorations.
 
@@ -169,6 +169,8 @@ Task.Run(async () =>
 ```
 
 The code above doesn't account for token refreshes that don't require visiting the login URL every single time you want to plan for an API call - I will be working on showing how it works in `Grunt.Zeta` in the near future.
+
+> **NOTE:** This is worth additional investigation, but it seems that if the clearance (`343-clearance` header) is used, it needs to be activated at least once with the game before the API access is granted. That is, you need to launch the game at the latest build on your account before you can start querying the API. If you are running into issues with the API and are getting 403 Forbidden errors, make sure that you start Halo Infinite at least once before retrying.
 
 Once you have the Spartan token, you are good to go and can start issuing API requests.
 

@@ -1,0 +1,11 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/16/2022:
+	<code>
+	{
+		"Version": 6,
+		"Nvidia": {},
+		"AMD": {},
+		"Intel": {}
+	}
+	</code>
+</example>

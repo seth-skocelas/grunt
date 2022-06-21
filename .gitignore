@@ -349,10 +349,13 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# Custom for Slipspace
+# Custom for Grunt
 
 ## Contains token information for the registered client.
 client.json
 
 ## Contains information about the Halo Waypoint communication tokens.
 grunt.json
+
+## Contains token information
+tokens.json

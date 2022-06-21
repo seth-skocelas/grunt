@@ -1,0 +1,29 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/14/2022:
+	<code>
+    {
+        "CoreId": "409-304-olympus-e8b8a8b3",
+        "CorePath": "Cores/Vehicle/409-304-olympus-e8b8a8b3.json",
+        "Themes": [
+            {
+                "FirstModifiedDateUtc": {
+                    "ISO8601Date": "2022-01-30T11:04:30.276Z"
+                },
+                "LastModifiedDateUtc": {
+                    "ISO8601Date": "2022-06-14T21:46:23.874Z"
+                },
+                "IsEquipped": true,
+                "IsDefault": true,
+                "ThemePath": "Inventory/Vehicle/Themes/408-304-olympus-aa30213b.json",
+                "CoatingPath": "Inventory/Vehicle/Coatings/404-304-olympus-e41a4ccc.json",
+                "HornPath": "",
+                "VehicleFxPath": "",
+                "VehicleCharmPath": "",
+                "Emblems": [],
+                "AlternateGeometryRegionPath": ""
+            }
+        ],
+        "CoreType": "VehicleRazorBack"
+    }
+	</code>
+</example>

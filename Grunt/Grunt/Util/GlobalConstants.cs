@@ -6,6 +6,7 @@ namespace Grunt.Util
     internal class GlobalConstants
     {
         internal static readonly string HALO_WAYPOINT_USER_AGENT = "HaloWaypoint/2021112313511900 CFNetwork/1327.0.4 Darwin/21.2.0";
+        internal static readonly string HALO_PC_USER_AGENT = "SHIVA-2043073184/6.10021.18539.0 (release; PC)";
         // Game UA: SHIVA-2043073184/6.10021.10921.0 (release; PC)
 
         // Settings: https://settings.svc.halowaypoint.com/featureflags/hi?flight=c1178956-c7c8-4860-a3a7-da5caa55faad
@@ -19,7 +20,6 @@ namespace Grunt.Util
         internal static readonly string HALO_INFINITE_PROGRESSION_ENDPOINT = "https://economy.svc.halowaypoint.com/hi/players/xuid({0})/rewardtracks/operations?view=all";
         internal static readonly string HALO_INFINITE_SPARTAN_BODY_ENDPOINT = "https://economy.svc.halowaypoint.com/hi/players/xuid({0})/customization/spartanbody";
         internal static readonly string HALO_INFINITE_INVENTORY_ENDPOINT = "https://economy.svc.halowaypoint.com/hi/players/xuid({0})/inventory";
-        // Multiple customizations: https://economy.svc.halowaypoint.com/hi/customization?players=xuid(2533274793169437),xuid(2533274797884506),xuid(2533274806844870),xuid(2533274807250450),xuid(2533274817089123),xuid(2533274855333605),xuid(2533274954128835),xuid(2535409745798140),xuid(2535412441833191),xuid(2535419995966444),xuid(2535420805198593),xuid(2535422775654238),xuid(2535431085200789),xuid(2535431118792304),xuid(2535436790295634),xuid(2535441147639501),xuid(2535455727296516),xuid(2535467171093546),xuid(2535468068211506),xuid(2535470336873357),xuid(2535472151733864),xuid(2535472559863415),xuid(2757784593267542)
         // Operation reward levels https://economy.svc.halowaypoint.com/hi/players/xuid(2533274855333605)/stores/operationrewardlevels?flight=c1178956-c7c8-4860-a3a7-da5caa55faad
         // Boosts: https://economy.svc.halowaypoint.com/hi/players/xuid(2533274855333605)/boosts?flight=c1178956-c7c8-4860-a3a7-da5caa55faad
         // XXP Grants: https://economy.svc.halowaypoint.com/hi/players/xuid(2533274855333605)/stores/xpgrants?flight=c1178956-c7c8-4860-a3a7-da5caa55faad

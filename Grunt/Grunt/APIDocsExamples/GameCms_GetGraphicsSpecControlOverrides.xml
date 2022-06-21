@@ -1,0 +1,92 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/16/2022:
+	<code>
+	{
+        "schema_version": 1,
+        "version": 1,
+        "overrides": [
+            {
+                "query": [
+                    {
+                        "key": "gpu_vendor",
+                        "op": "eq",
+                        "value": "amd"
+                    },
+                    {
+                        "key": "gpu_device",
+                        "op": "in",
+                        "value": [
+                            "67c0:00",
+                            "67c0:80",
+                            "67c1:00",
+                            "67c2:00",
+                            "67c2:01",
+                            "67c2:02",
+                            "67c2:03",
+                            "67c4:00",
+                            "67c7:00",
+                            "67d0:01",
+                            "67d0:02",
+                            "67df:04",
+                            "67df:05",
+                            "67df:c4",
+                            "67df:c5",
+                            "67df:c7",
+                            "67df:cf",
+                            "c7df:ff",
+                            "67df:c0",
+                            "67df:c1",
+                            "67df:c2",
+                            "67df:c3",
+                            "67df:c6",
+                            "67df:cc",
+                            "67df:cd",
+                            "67df:d7",
+                            "67df:e0",
+                            "67df:e1",
+                            "67df:e3",
+                            "67df:e7",
+                            "67df:eb",
+                            "67df:ef",
+                            "67df:f7",
+                            "67df:ff",
+                            "6fdf:e7",
+                            "6fdf:ef",
+                            "6fdf:ff",
+                            "67e0:00",
+                            "67e3:00",
+                            "67e8:00",
+                            "67e8:01",
+                            "67e8:80",
+                            "67eb:00",
+                            "67ef:c0",
+                            "67ef:c1",
+                            "67ef:c5",
+                            "67ef:c7",
+                            "67ef:cf",
+                            "67ef:ef",
+                            "67ef:c2",
+                            "67ef:c3",
+                            "67ef:e2",
+                            "67ef:e3",
+                            "67ef:e5",
+                            "67ef:e7",
+                            "67ef:e0",
+                            "67ef:ff",
+                            "67ff:c0",
+                            "67ff:c1",
+                            "67ff:08",
+                            "67ff:cf",
+                            "67ff:ef",
+                            "67ff:ff"
+                        ]
+                    }
+                ],
+                "settings": {
+                    "spec_control_async_compute": false
+                }
+            }
+        ]
+    }
+	</code>
+</example>

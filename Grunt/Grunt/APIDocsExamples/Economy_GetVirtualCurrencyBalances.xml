@@ -1,0 +1,25 @@
+﻿<example>
+    Here is an example response from the API, as snapshotted on 6/14/2022:
+    <code>
+    {
+        "Currencies": [
+            {
+                "Amount": 0,
+                "CurrencyPath": "Currency/Currencies/cR.json"
+            },
+            {
+                "Amount": 3,
+                "CurrencyPath": "Currency/Currencies/rerollcurrency.json"
+            },
+            {
+                "Amount": 9,
+                "CurrencyPath": "Currency/Currencies/xpboost.json"
+            },
+            {
+                "Amount": 0,
+                "CurrencyPath": "Currency/Currencies/xpgrant.json"
+            }
+        ]
+    }
+    </code>
+</example>

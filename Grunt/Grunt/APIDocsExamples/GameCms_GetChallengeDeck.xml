@@ -1,0 +1,10 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/15/2022:
+	<code>
+	{
+		"CapstoneChallengePath": "ChallengeContent/ClientChallengeDefinitions/S2CapstoneChallenges/CLandGrabCapture.json",
+		"DeckType": "Weekly",
+		"Type": "weekly"
+	}
+	</code>
+</example>

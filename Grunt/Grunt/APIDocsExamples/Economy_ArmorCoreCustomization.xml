@@ -1,0 +1,44 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/14/2022:
+	<code>
+    {
+        "CorePath": "Cores/ArmorCores/017-001-eag-c13d0b38.json",
+        "IsEquipped": true,
+        "Themes": [
+            {
+                "FirstModifiedDateUtc": {
+                    "ISO8601Date": "2022-05-26T18:42:05.81Z"
+                },
+                "LastModifiedDateUtc": {
+                    "ISO8601Date": "2022-06-15T01:07:00.656Z"
+                },
+                "IsEquipped": true,
+                "IsDefault": true,
+                "ThemePath": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
+                "CoatingPath": "Inventory/Armor/Coatings/002-001-eag-892d1fa5.json",
+                "GlovePath": "Inventory/Armor/Gloves/003-001-eag-1e0b6037.json",
+                "HelmetPath": "Inventory/Armor/Helmets/005-001-eag-1e0b6037.json",
+                "HelmetAttachmentPath": "Inventory/Armor/HelmetAttachments/004-001-eag-9fe0269f.json",
+                "ChestAttachmentPath": "",
+                "KneePadPath": "Inventory/Armor/KneePads/006-001-eag-1e0b6037.json",
+                "LeftShoulderPadPath": "",
+                "RightShoulderPadPath": "",
+                "Emblems": [
+                    {
+                        "Path": "Inventory/Armor/Emblems/013-001-79c5fbd5.json",
+                        "LocationId": -142056143,
+                        "ConfigurationId": 1142869586
+                    }
+                ],
+                "ArmorFxPath": "Inventory/Armor/FXArmor/015-000-synthawk-51f52302.json",
+                "MythicFxPath": "",
+                "VisorPath": "Inventory/Armor/Visors/012-001-3d73ffb9.json",
+                "HipAttachmentPath": "",
+                "WristAttachmentPath": ""
+            }
+        ],
+        "CoreId": "017-001-eag-c13d0b38",
+        "CoreType": "Armor"
+    }
+	</code>
+</example>

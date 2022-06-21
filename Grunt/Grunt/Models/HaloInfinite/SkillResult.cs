@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Grunt.Models.HaloInfinite
 {
-    public class Result
+    public class SkillResult
     {
         public double TeamMmr { get; set; }
         public RankRecap RankRecap { get; set; }

@@ -1,0 +1,23 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/16/2022:
+	<code>
+    {
+        "Version": 1,
+        "Nvidia": {
+            "minimum": "30.0.14.9729",
+            "downloadLink": "https://support.halowaypoint.com/hc/en-us/articles/4408731548180-PC-hardware-specs-and-drivers-for-Halo-Infinite-",
+            "blocklist": []
+        },
+        "AMD": {
+            "minimum": "30.0.14011.3017",
+            "downloadLink": "https://support.halowaypoint.com/hc/en-us/articles/4408731548180-PC-hardware-specs-and-drivers-for-Halo-Infinite-",
+            "blocklist": []
+        },
+        "Intel": {
+            "minimum": "30.0.101.1191",
+            "downloadLink": "https://support.halowaypoint.com/hc/en-us/articles/4408731548180-PC-hardware-specs-and-drivers-for-Halo-Infinite-",
+            "blocklist": []
+        }
+    }
+	</code>
+</example>

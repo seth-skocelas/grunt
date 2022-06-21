@@ -1,0 +1,68 @@
+﻿<example>
+    Here is an example response from the API, as snapshotted on 6/14/2022:
+    <code>
+    {
+        "StoreId": "XpGrants",
+        "StorefrontExpirationDate": {
+            "ISO8601Date": "2031-06-23T17:00:00Z"
+        },
+        "StorefrontDisplayPath": "StoreContent/Display/Storefront/XpGrants-20210623-00.json",
+        "Offerings": [
+            {
+                "OfferingId": "20210623-01",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-01.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [],
+                "Prices": [
+                    {
+                        "Cost": 1,
+                        "CurrencyPath": "Currency/Currencies/xpgrant.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 250,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20210623-03",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-03.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [],
+                "Prices": [
+                    {
+                        "Cost": 10,
+                        "CurrencyPath": "Currency/Currencies/xpgrant.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 2500,
+                "EventXp": 0,
+                "MatchBoosts": null
+            },
+            {
+                "OfferingId": "20210623-05",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-05.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [],
+                "Prices": [
+                    {
+                        "Cost": 100,
+                        "CurrencyPath": "Currency/Currencies/xpgrant.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": null,
+                "OperationXp": 25000,
+                "EventXp": 0,
+                "MatchBoosts": null
+            }
+        ]
+    }
+    </code>
+</example>

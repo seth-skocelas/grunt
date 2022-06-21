@@ -91,6 +91,15 @@
         0
       ]
     },
+    "iUgcSessionFiles": {
+      "AuthorityId": "iUgcSessionFiles",
+      "Scheme": 2,
+      "Hostname": "s3infiniteugcsessions.blob.core.windows.net",
+      "Port": 443,
+      "AuthenticationMethods": [
+        0
+      ]
+    },
     "lobbyamqp": {
       "AuthorityId": "lobbyamqp",
       "Scheme": 8,
@@ -403,7 +412,7 @@
     }
   },
   "Settings": {
-    "CELLConfig": "{\"TelemetryManagerArray\":[{\"ID\":1,\"PriorityThreshold\":\"message\",\"EnabledCategories\":[2,15,23,24,26,37,38,39,40,41,1,4,5,6,7,8,9,10,12,14,16,17,18,19,20,21,22,25,27,28,29,30,31,32,33,34,35,36,42,43,44,45,46,47,48,49,50,11], \"EndPoints\":[{\"ID\": 5, \"EnabledCategories\":[{\"Category\":13,\"SubCategories\":[{\"SubCategory\":0,\"PriorityThreshold\":\"message\"},{\"SubCategory\":1,\"PriorityThreshold\":\"message\"},{\"SubCategory\":2,\"PriorityThreshold\":\"message\"},{\"SubCategory\":3,\"PriorityThreshold\":\"message\"},{\"SubCategory\":4,\"PriorityThreshold\":\"message\"},{\"SubCategory\":5,\"PriorityThreshold\":\"message\"},{\"SubCategory\":6,\"PriorityThreshold\":\"message\"}]}]}]}]}",
+    "CELLConfig": "{\"TelemetryManagerArray\":[{\"ID\":1,\"PriorityThreshold\":\"message\",\"EnabledCategories\":[2,15,23,24,26,37,38,39,40,41,1,4,5,6,7,8,9,10,12,13,14,16,17,18,19,20,21,22,25,27,28,29,30,31,32,33,34,35,36,42,43,44,45,46,47,48,49,50,11], \"EndPoints\":[{\"ID\": 5, \"EnabledCategories\":[{\"Category\":13,\"SubCategories\":[{\"SubCategory\":0,\"PriorityThreshold\":\"message\"},{\"SubCategory\":1,\"PriorityThreshold\":\"message\"},{\"SubCategory\":2,\"PriorityThreshold\":\"message\"},{\"SubCategory\":3,\"PriorityThreshold\":\"message\"},{\"SubCategory\":4,\"PriorityThreshold\":\"message\"},{\"SubCategory\":5,\"PriorityThreshold\":\"message\"},{\"SubCategory\":6,\"PriorityThreshold\":\"message\"}]}]}]}]}",
     "ClientQoSTimeoutMs": "3000",
     "ClearanceAudience": "RETAIL",
     "GameCMS_GuideEndpoints": "GameCms_GetGuide_Images, GameCms_GetGuide_Multiplayer, GameCms_GetGuide_News, GameCms_GetGuide_Progression, GameCms_GetGuide_Specs, GameCms_GetGuide_TitleAuthorization",
@@ -811,7 +820,7 @@
     },
     "GameCms_GetBanMessage": {
       "AuthorityId": "gamecms",
-      "Path": "/hi/Banning/file/BanMessages/{messageIdentity}.json",
+      "Path": "/hi/Banning/file/{banMessagePath}",
       "QueryString": "?flight={flightId}",
       "RetryPolicyId": "linearretry_3",
       "TopicName": "",
@@ -903,6 +912,16 @@
       "AuthorityId": "gamecms",
       "Path": "/hi/Progression/file/RewardTracks/Manifest/eventmanifest.json",
       "QueryString": "?flight={flightId}",
+      "RetryPolicyId": "linearretry_3",
+      "TopicName": "",
+      "AcknowledgementTypeId": 0,
+      "AuthenticationLifetimeExtensionSupported": false,
+      "ClearanceAware": true
+    },
+    "GameCms_GetGraphicsSpecControlOverrides": {
+      "AuthorityId": "gamecms",
+      "Path": "/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
+      "QueryString": "",
       "RetryPolicyId": "linearretry_3",
       "TopicName": "",
       "AcknowledgementTypeId": 0,
@@ -1059,6 +1078,16 @@
       "AuthenticationLifetimeExtensionSupported": false,
       "ClearanceAware": true
     },
+    "GameCms_GetRecommendedDrivers": {
+      "AuthorityId": "gamecms",
+      "Path": "/hi/Specs/file/graphics/RecommendedDrivers.json",
+      "QueryString": "",
+      "RetryPolicyId": "linearretry_3",
+      "TopicName": "",
+      "AcknowledgementTypeId": 0,
+      "AuthenticationLifetimeExtensionSupported": false,
+      "ClearanceAware": true
+    },
     "GameCms_GetSeasonRewardTrack": {
       "AuthorityId": "gamecms",
       "Path": "/hi/Progression/file/{seasonPath}",
@@ -1198,6 +1227,16 @@
       "AcknowledgementTypeId": 0,
       "AuthenticationLifetimeExtensionSupported": false,
       "ClearanceAware": true
+    },
+    "HIUGC_Discovery_GetManifestByBranch": {
+      "AuthorityId": "HIUGC_Discovery_Authority",
+      "Path": "/hi/manifests/branches/{branchName}/game",
+      "QueryString": "",
+      "RetryPolicyId": "linearretry",
+      "TopicName": "",
+      "AcknowledgementTypeId": 0,
+      "AuthenticationLifetimeExtensionSupported": false,
+      "ClearanceAware": false
     },
     "HIUGC_Discovery_GetManifestByBuild": {
       "AuthorityId": "HIUGC_Discovery_Authority",
@@ -1434,6 +1473,16 @@
       "Path": "/{title}/{assetType}/{assetId}/versions/published",
       "QueryString": "",
       "RetryPolicyId": "linearretry",
+      "TopicName": "",
+      "AcknowledgementTypeId": 0,
+      "AuthenticationLifetimeExtensionSupported": false,
+      "ClearanceAware": false
+    },
+    "HIUGC_GetSessionBlob": {
+      "AuthorityId": "iUgcSessionFiles",
+      "Path": "",
+      "QueryString": "",
+      "RetryPolicyId": "cdnretry",
       "TopicName": "",
       "AcknowledgementTypeId": 0,
       "AuthenticationLifetimeExtensionSupported": false,
@@ -1872,6 +1921,16 @@
     "Stats_PutCampaignProgress": {
       "AuthorityId": "halostats",
       "Path": "/hi/players/{player}/campaign/progress",
+      "QueryString": "",
+      "RetryPolicyId": "linearretry_3x50",
+      "TopicName": "",
+      "AcknowledgementTypeId": 0,
+      "AuthenticationLifetimeExtensionSupported": false,
+      "ClearanceAware": false
+    },
+    "Stats_PutPlayerPresenceInMatch": {
+      "AuthorityId": "halostats",
+      "Path": "/hi/players/{player}/matches/{matchId}/present-in-match",
       "QueryString": "",
       "RetryPolicyId": "linearretry_3x50",
       "TopicName": "",

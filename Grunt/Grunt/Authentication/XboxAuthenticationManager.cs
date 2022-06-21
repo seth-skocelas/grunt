@@ -79,6 +79,42 @@ namespace Grunt.Authentication
             }
         }
 
+        public async Task<OAuthToken> RefreshOAuthToken(string clientId, string refreshToken, string redirectUrl, string clientSecret = "", string[] scopes = null)
+        {
+            Dictionary<string, string> tokenRequestContent = new();
+
+            tokenRequestContent.Add("grant_type", "refresh_token");
+            tokenRequestContent.Add("refresh_token", refreshToken);
+
+            if (scopes != null && scopes.Length > 0)
+            {
+                tokenRequestContent.Add("scope", String.Join(" ", scopes));
+            }
+            else
+            {
+                tokenRequestContent.Add("scope", String.Join(" ", GlobalConstants.DEFAULT_AUTH_SCOPES));
+            }
+
+            tokenRequestContent.Add("redirect_uri", redirectUrl);
+            tokenRequestContent.Add("client_id", clientId);
+            if (!string.IsNullOrEmpty(clientSecret))
+            {
+                tokenRequestContent.Add("client_secret", clientSecret);
+            }
+
+            var client = new HttpClient();
+            var response = await client.PostAsync(XboxEndpoints.XboxLiveToken, new FormUrlEncodedContent(tokenRequestContent));
+
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<OAuthToken>(response.Content.ReadAsStringAsync().Result);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public async Task<XboxTicket> RequestUserToken(string accessToken)
         {
             XboxTicketRequest ticketData = new();

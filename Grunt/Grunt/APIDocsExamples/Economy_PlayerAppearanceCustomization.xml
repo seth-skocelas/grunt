@@ -1,0 +1,21 @@
+﻿<example>
+    Here is an example response from the API, as snapshotted on 6/14/2022:
+    <code>
+    {
+        "Status": "Success",
+        "Appearance": {
+            "LastModifiedDateUtc": {
+                "ISO8601Date": "2022-06-05T20:54:35.279Z"
+            },
+            "ActionPosePath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-o-d849bc84.json",
+            "BackdropImagePath": "Inventory/Spartan/BackdropImages/103-000-ui-s2-backgro-5c565f83.json",
+            "Emblem": {
+                "EmblemPath": "Inventory/Spartan/Emblems/104-001-343other-prop-79c5fbd5.json",
+                "ConfigurationId": 1142869586
+            },
+            "ServiceTag": "TACO",
+            "IntroEmotePath": null
+        }
+    }
+    </code>
+</example>

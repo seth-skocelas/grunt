@@ -1,0 +1,46 @@
+name: Publish In-Repo NuGet Package
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+  workflow_dispatch:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+
+jobs:
+  build:
+    environment: Production
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Verify commit exists in origin/main
+      run: |
+        git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+        git branch --remote --contains | grep origin/main
+    - name: Update Version
+      working-directory: ./Grunt/Grunt
+      run: >
+        . "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\TextTransform.exe" VersioningTemplate.tt -out VersioningTemplate.cs
+    - name: Build
+      working-directory: ./Grunt/Grunt
+      run: dotnet build --configuration Release -p:TransformOnBuild="false" -p:IsGitHubActions="true"
+    - name: Test
+      working-directory: ./Grunt/Grunt
+      run: dotnet test --configuration Release --no-build -p:TransformOnBuild="false" -p:IsGitHubActions="true"
+    - name: Pack
+      working-directory: ./Grunt/Grunt
+      run: dotnet pack --configuration Release --no-build -p:TransformOnBuild="false" -p:IsGitHubActions="true" --output .
+    - name: Push
+      working-directory: ./Grunt/Grunt
+      run: dotnet nuget push *.nupkg --source https://nuget.pkg.github.com/dend/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate

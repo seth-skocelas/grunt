@@ -1,0 +1,165 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/14/2022:
+	<code>
+    {
+        "ArmorCores": [
+            {
+                "CorePath": "Cores/ArmorCores/017-001-eag-c13d0b38.json",
+                "IsEquipped": true,
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-05-26T18:42:05.81Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-06-15T01:07:00.656Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
+                        "CoatingPath": "Inventory/Armor/Coatings/002-001-eag-892d1fa5.json",
+                        "GlovePath": "Inventory/Armor/Gloves/003-001-eag-1e0b6037.json",
+                        "HelmetPath": "Inventory/Armor/Helmets/005-001-eag-1e0b6037.json",
+                        "HelmetAttachmentPath": "Inventory/Armor/HelmetAttachments/004-001-eag-9fe0269f.json",
+                        "ChestAttachmentPath": "",
+                        "KneePadPath": "Inventory/Armor/KneePads/006-001-eag-1e0b6037.json",
+                        "LeftShoulderPadPath": "",
+                        "RightShoulderPadPath": "",
+                        "Emblems": [
+                            {
+                                "Path": "Inventory/Armor/Emblems/013-001-79c5fbd5.json",
+                                "LocationId": -142056143,
+                                "ConfigurationId": 1142869586
+                            }
+                        ],
+                        "ArmorFxPath": "Inventory/Armor/FXArmor/015-000-synthawk-51f52302.json",
+                        "MythicFxPath": "",
+                        "VisorPath": "Inventory/Armor/Visors/012-001-3d73ffb9.json",
+                        "HipAttachmentPath": "",
+                        "WristAttachmentPath": ""
+                    }
+                ],
+                "CoreId": "017-001-eag-c13d0b38",
+                "CoreType": "Armor"
+            },
+            {
+                "CorePath": "Cores/ArmorCores/017-001-olympus-c13d0b38.json",
+                "IsEquipped": false,
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2021-12-04T05:54:56.403Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-06-12T09:04:59.991Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+                        "CoatingPath": "Inventory/Armor/Coatings/002-001-olympus-ff28d026.json",
+                        "GlovePath": "Inventory/Armor/Gloves/003-001-olympus-bc4aff7d.json",
+                        "HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-36c0fa9a.json",
+                        "HelmetAttachmentPath": "",
+                        "ChestAttachmentPath": "Inventory/Armor/ChestAttachments/001-001-olympus-975822a4.json",
+                        "KneePadPath": "Inventory/Armor/KneePads/006-001-olympus-8e7c9dff.json",
+                        "LeftShoulderPadPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-c13d0b38.json",
+                        "RightShoulderPadPath": "Inventory/Armor/ShouldersRight/009-001-olympus-c13d0b38.json",
+                        "Emblems": [
+                            {
+                                "Path": "Inventory/Armor/Emblems/013-001-79c5fbd5.json",
+                                "LocationId": -142056143,
+                                "ConfigurationId": 717587286
+                            }
+                        ],
+                        "ArmorFxPath": "Inventory/Armor/FXArmor/015-000-synthawk-51f52302.json",
+                        "MythicFxPath": "",
+                        "VisorPath": "Inventory/Armor/Visors/012-001-60c9bbf4.json",
+                        "HipAttachmentPath": "Inventory/Armor/HipAttachments/010-001-olympus-3f3bfd13.json",
+                        "WristAttachmentPath": "Inventory/Armor/WristAttachments/011-001-olympus-f7e6ca39.json"
+                    }
+                ],
+                "CoreId": "017-001-olympus-c13d0b38",
+                "CoreType": "Armor"
+            },
+            {
+                "CorePath": "Cores/ArmorCores/017-001-samurai-55badb14.json",
+                "IsEquipped": false,
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-01-10T04:32:48.367Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-04-09T06:02:51.319Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
+                        "CoatingPath": "Inventory/Armor/Coatings/002-001-samurai-2930a86a.json",
+                        "GlovePath": "Inventory/Armor/Gloves/003-001-samurai-55badb14.json",
+                        "HelmetPath": "Inventory/Armor/Helmets/005-001-samurai-678cb996.json",
+                        "HelmetAttachmentPath": "Inventory/Armor/HelmetAttachments/004-001-samurai-89d21f63.json",
+                        "ChestAttachmentPath": "Inventory/Armor/ChestAttachments/001-001-samurai-ae203a49.json",
+                        "KneePadPath": "Inventory/Armor/KneePads/006-001-samurai-678cb996.json",
+                        "LeftShoulderPadPath": "Inventory/Armor/ShouldersLeft/008-001-samurai-55badb14.json",
+                        "RightShoulderPadPath": "Inventory/Armor/ShouldersRight/009-001-samurai-55badb14.json",
+                        "Emblems": [
+                            {
+                                "Path": "Inventory/Armor/Emblems/013-001-c2daae95.json",
+                                "LocationId": -142056143,
+                                "ConfigurationId": -128011187
+                            }
+                        ],
+                        "ArmorFxPath": "Inventory/Armor/FXArmor/015-000-synthawk-51f52302.json",
+                        "MythicFxPath": "",
+                        "VisorPath": "Inventory/Armor/Visors/012-001-4e1ac050.json",
+                        "HipAttachmentPath": "Inventory/Armor/HipAttachments/010-001-samurai-6065d8ba.json",
+                        "WristAttachmentPath": ""
+                    }
+                ],
+                "CoreId": "017-001-samurai-55badb14",
+                "CoreType": "Armor"
+            },
+            {
+                "CorePath": "Cores/ArmorCores/017-001-wlv-c13d0b38.json",
+                "IsEquipped": false,
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-05-14T00:56:37.5Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-05-21T04:42:48.788Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json",
+                        "CoatingPath": "Inventory/Armor/Coatings/002-001-wlv-892d1fa5.json",
+                        "GlovePath": "Inventory/Armor/Gloves/003-001-wlv-c9e3523f.json",
+                        "HelmetPath": "Inventory/Armor/Helmets/005-001-wlv-fbd530bd.json",
+                        "HelmetAttachmentPath": "",
+                        "ChestAttachmentPath": "Inventory/Armor/ChestAttachments/001-001-wlv-d980fae9.json",
+                        "KneePadPath": "Inventory/Armor/KneePads/006-001-wlv-1821e976.json",
+                        "LeftShoulderPadPath": "Inventory/Armor/ShouldersLeft/008-001-wlv-c9e3523f.json",
+                        "RightShoulderPadPath": "Inventory/Armor/ShouldersRight/009-001-wlv-c9e3523f.json",
+                        "Emblems": [
+                            {
+                                "Path": "Inventory/Armor/Emblems/013-001-79c5fbd5.json",
+                                "LocationId": -142056143,
+                                "ConfigurationId": 717587286
+                            }
+                        ],
+                        "ArmorFxPath": "Inventory/Armor/FXArmor/015-000-synthawk-51f52302.json",
+                        "MythicFxPath": "",
+                        "VisorPath": "Inventory/Armor/Visors/012-001-55599c7b.json",
+                        "HipAttachmentPath": "",
+                        "WristAttachmentPath": ""
+                    }
+                ],
+                "CoreId": "017-001-wlv-c13d0b38",
+                "CoreType": "Armor"
+            }
+        ]
+    }
+	</code>
+</example>

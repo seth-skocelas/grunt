@@ -6,7 +6,7 @@
         public string Path { get; set; }
         public ActiveChallenge[] ActiveChallenges { get; set; }
         public UpcomingChallenge[] UpcomingChallenges { get; set; }
-        public WaypointDate Expiration { get; set; }
+        public APIFormattedDate Expiration { get; set; }
         public CompletedChallenge[] CompletedChallenges { get; set; }
     }
 

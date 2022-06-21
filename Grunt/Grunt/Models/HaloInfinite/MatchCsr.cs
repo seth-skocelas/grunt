@@ -9,6 +9,7 @@
         public int SubTier { get; set; }
         public string NextTier { get; set; }
         public int NextTierStart { get; set; }
+        public int NextSubTier { get; set; }
         public int InitialMeasurementMatches { get; set; }
     }
 }

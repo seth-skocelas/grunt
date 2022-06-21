@@ -1,0 +1,36 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
+jobs:
+  build:
+    environment: Production
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Verify commit exists in origin/main
+      run: |
+        git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+        git branch --remote --contains | grep origin/main
+    - name: Set VERSION variable from tag
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - name: Update Version
+      working-directory: ./Grunt/Grunt
+      run: >
+        . "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\TextTransform.exe" VersioningTemplate.tt -out VersioningTemplate.cs
+    - name: Build
+      working-directory: ./Grunt/Grunt
+      run: dotnet build --configuration Release -p:Version=${VERSION} -p:TransformOnBuild="false" -p:IsGitHubActions="true"
+    - name: Test
+      working-directory: ./Grunt/Grunt
+      run: dotnet test --configuration Release -p:Version=${VERSION} -p:TransformOnBuild="false" -p:IsGitHubActions="true" --no-build
+    - name: Pack
+      working-directory: ./Grunt/Grunt
+      run: dotnet pack --configuration Release -p:Version=${VERSION} -p:TransformOnBuild="false" -p:IsGitHubActions="true" --no-build --output .
+    - name: Push
+      working-directory: ./Grunt/Grunt
+      run: dotnet nuget push Grunt.SDK.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
