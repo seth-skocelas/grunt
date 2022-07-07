@@ -1646,25 +1646,6 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsOrigin(string path)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443://{path}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
         //================================================
         // GameCmsGetGuide
         //================================================
