@@ -1628,7 +1628,7 @@ namespace Grunt.Core
         /// </summary>
         /// <remarks>INACTIVE API</remarks>
         /// <returns>Unknown.</returns>
-        public async Task<string> GameCmsGetUiConfigurationJson()
+        private async Task<string> GameCmsGetUiConfigurationJson()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/branches/oly/UI-Settings/data/Settings.json",
                                    HttpMethod.Get,
