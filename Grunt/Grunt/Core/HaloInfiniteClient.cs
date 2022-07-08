@@ -330,8 +330,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> EconomyGetActiveBoosts(string player)
+        /// <summary>
+        /// Gets information about currently active boosts for the player.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetActiveBoosts.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of ActiveBoostsContainer that contains the list of active boosts. Otherwise, returns null.</returns>
+        public async Task<ActiveBoostsContainer> EconomyGetActiveBoosts(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/boosts",
                                    HttpMethod.Get,
@@ -341,11 +346,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<ActiveBoostsContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
