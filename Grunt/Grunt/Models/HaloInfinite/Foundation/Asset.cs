@@ -13,7 +13,6 @@
         public object[] Contributors { get; set; }
         public AssetVersionFile Files { get; set; }
         public string VersionId { get; set; }
-
         public int AssetKind { get; set; }
     }
 }

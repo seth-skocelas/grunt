@@ -1828,8 +1828,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCCreateAssetVersionAgnostic(string title, string assetType, string assetId)
+        /// <summary>
+        /// Seems to be the global API for creating new assets. Currently unknown that this does or what information is required. Judging from other calls, this is likely a PUT request too.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCCreateAssetVersionAgnostic(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
                                    HttpMethod.Get,
@@ -1847,8 +1851,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDeleteAllVersions(string title, string assetType, string assetId)
+        /// <summary>
+        /// Seems to be the global API for deleting all assets. Currently unknown that this does or what information is required. Judging from other calls, this is likely a PUT request too.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCDeleteAllVersions(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
                                    HttpMethod.Get,
@@ -1866,8 +1874,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDeleteAsset(string title, string assetType, string assetId)
+        /// <summary>
+        /// Seems to be the global API for deleting assets. Currently unknown that this does or what information is required. Judging from other calls, this is likely a PUT request too.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCDeleteAsset(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}",
                                    HttpMethod.Get,
@@ -1885,8 +1897,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDeleteVersion(string title, string assetType, string assetId, string versionId)
+        /// <summary>
+        /// Seems to be the global API for deleting a version of an asset. Currently unknown that this does or what information is required. Judging from other calls, this is likely a PUT request too.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCDeleteVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
                                    HttpMethod.Get,
@@ -1904,8 +1920,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCEndSession(string title, string assetType, string assetId)
+        /// <summary>
+        /// Seems to be the global API for managing sessions connected to an asset. Currently unknown that this does or what information is required. Judging from other calls, this is likely a PUT request too.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCEndSession(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions/active",
                                    HttpMethod.Get,
@@ -1927,7 +1947,7 @@ namespace Grunt.Core
         public async Task<string> HIUGCFavoriteAnAsset(string player, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites/{assetType}/{assetId}",
-                                   HttpMethod.Get,
+                                   HttpMethod.Put,
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
@@ -1942,8 +1962,15 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCGetAsset(string title, string assetType, string assetId)
+        /// <summary>
+        /// Gets authoring metadata about a specific asset.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_GetAsset.xml' path='//example'/>
+        /// <param name="title">Title which contains the asset. An example value here is "hi".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
+        /// <returns>If successful, returns an instance of AuthoringAsset containing authoring metadata. Otherwise, returns null.</returns>
+        public async Task<AuthoringAsset> HIUGCGetAsset(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}",
                                    HttpMethod.Get,
@@ -1953,11 +1980,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AuthoringAsset>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -1999,7 +2026,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
+        //TODO: API Coverage: https://authoring-infiniteugc.svc.halowaypoint.com/hi/UgcGameVariants/f96f57e2-9f15-45c5-83ac-5775a48d2ba8/versions
         public async Task<string> HIUGCGetLatestAssetVersionAgnostic(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/latest",
@@ -2018,8 +2045,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCGetPublishedVersion(string title, string assetType, string assetId)
+        /// <summary>
+        /// Seems to be the global API for getting asset information. API returns a 403 currently, meaning that the requirements are special that go beyond standard player scope.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCGetPublishedVersion(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/published",
                                    HttpMethod.Get,
@@ -2057,7 +2088,7 @@ namespace Grunt.Core
         }
 
 
-        //TODO: This function requires manual intervention/checks.
+        //TODO: API Coverage example: https://authoring-infiniteugc.svc.halowaypoint.com/hi/UgcGameVariants/f96f57e2-9f15-45c5-83ac-5775a48d2ba8/versions
         public async Task<string> HIUGCGetSpecificAssetVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
@@ -2076,7 +2107,7 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
+        //TODO: API Coverage example: https://authoring-infiniteugc.svc.halowaypoint.com/hi/UgcGameVariants/f96f57e2-9f15-45c5-83ac-5775a48d2ba8/versions
         public async Task<string> HIUGCListAllVersions(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
@@ -2152,11 +2183,15 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCPatchAssetVersion(string title, string assetType, string assetId, string versionId)
+        /// <summary>
+        /// Seems to be the global API for patching asset information. Unknown what the behavior here is.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCPatchAssetVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
-                                   HttpMethod.Get,
+                                   HttpMethod.Patch,
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
@@ -2171,8 +2206,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCPublishAssetVersion(string assetType, string assetId, string versionId, string clearanceId)
+        /// <summary>
+        /// Seems to be the global API for publishing asset information. Unknown what the behavior here is.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCPublishAssetVersion(string assetType, string assetId, string versionId, string clearanceId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/{assetType}/{assetId}/publish/{versionId}?clearanceId={clearanceId}",
                                    HttpMethod.Get,
@@ -2228,11 +2267,15 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCSpawnAsset(string title, string assetType)
+        /// <summary>
+        /// Seems to be the global API for spawning asset information. Unknown what the behavior here is.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCSpawnAsset(string title, string assetType)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}",
-                                   HttpMethod.Get,
+                                   HttpMethod.Put,
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
