@@ -34,7 +34,7 @@ namespace Grunt.Zeta
             var xblToken = string.Empty;
             var haloToken = new SpartanToken();
 
-            if (File.Exists("tokens.json"))
+            if (System.IO.File.Exists("tokens.json"))
             {
                 Console.WriteLine("Trying to use local tokens...");
                 // If a local token file exists, load the file.
@@ -137,7 +137,7 @@ namespace Grunt.Zeta
                 Console.WriteLine("Got image data.");
                 if (imageData != null)
                 {
-                    File.WriteAllBytes("image.png", imageData);
+                    System.IO.File.WriteAllBytes("image.png", imageData);
                     Console.WriteLine("Wrote sample image to file.");
                 }
                 else

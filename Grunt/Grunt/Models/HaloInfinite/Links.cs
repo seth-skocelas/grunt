@@ -1,8 +1,10 @@
-﻿namespace Grunt.Models.HaloInfinite
+﻿using Grunt.Models.HaloInfinite.ApiIngress;
+
+namespace Grunt.Models.HaloInfinite
 {
     public class Links
     {
-        public Link Self { get; set; }
+        public ApiEndpoint Self { get; set; }
     }
 
 }

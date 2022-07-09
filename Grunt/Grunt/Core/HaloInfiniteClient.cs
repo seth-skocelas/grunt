@@ -1561,7 +1561,7 @@ namespace Grunt.Core
         /// </remarks>
         /// <param name="seasonPath">The path to the season. Typical example is "Seasons/Season7.json" for the Lone Wolves season.</param>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
-        /// <returns>If successful, an instance of SeasonRewardTrack containing season information.</returns>
+        /// <returns>If successful, an instance of SeasonRewardTrack containing season information. Otherwise, returns null.</returns>
         public async Task<SeasonRewardTrack> GameCmsGetSeasonRewardTrack(string seasonPath, string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{seasonPath}?flight={flightId}",
@@ -1654,8 +1654,13 @@ namespace Grunt.Core
         //================================================
         // GameCmsGetGuide
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetGuideImages(string flightId)
+        /// <summary>
+        /// Gets a list of all available image files currently used by the multiplayer service.
+        /// </summary>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <include file='../APIDocsExamples/GameCms_GetGuideImages.xml' path='//example'/>
+        /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
+        public async Task<GuideContainer> GameCmsGetGuideImages(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/images/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
@@ -1665,16 +1670,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<GuideContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetGuideMultiplayer(string flightId)
+        /// <summary>
+        /// Gets a list of all available multiplayer files currently used by the multiplayer service.
+        /// </summary>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <include file='../APIDocsExamples/GameCms_GetGuideMultiplayer.xml' path='//example'/>
+        /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
+        public async Task<GuideContainer> GameCmsGetGuideMultiplayer(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
@@ -1684,16 +1694,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<GuideContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetGuideNews(string flightId)
+        /// <summary>
+        /// Gets a list of all available news files currently used by the multiplayer service.
+        /// </summary>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <include file='../APIDocsExamples/GameCms_GetGuideNews.xml' path='//example'/>
+        /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
+        public async Task<GuideContainer> GameCmsGetGuideNews(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/News/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
@@ -1703,16 +1718,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<GuideContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetGuideProgression(string flightId)
+        /// <summary>
+        /// Gets a list of all available progression files currently used by the multiplayer service.
+        /// </summary>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <include file='../APIDocsExamples/GameCms_GetGuideProgression.xml' path='//example'/>
+        /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
+        public async Task<GuideContainer> GameCmsGetGuideProgression(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
@@ -1722,16 +1742,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<GuideContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetGuideSpecs(string flightId)
+        /// <summary>
+        /// Gets a list of all available spec files currently used by the multiplayer service.
+        /// </summary>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <include file='../APIDocsExamples/GameCms_GetGuideSpecs.xml' path='//example'/>
+        /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
+        public async Task<GuideContainer> GameCmsGetGuideSpecs(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
@@ -1741,16 +1766,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<GuideContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetGuideTitleAuthorization(string flightId)
+        /// <summary>
+        /// Gets a list of all available title authorization files currently used by the multiplayer service.
+        /// </summary>
+        /// <param name="flightId">Unique ID for the currently active flight.</param>
+        /// <include file='../APIDocsExamples/GameCms_GetGuideTitleAuthorization.xml' path='//example'/>
+        /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
+        public async Task<GuideContainer> GameCmsGetGuideTitleAuthorization(string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/TitleAuthorization/guide/xo?flight={flightId}",
                                    HttpMethod.Get,
@@ -1760,11 +1790,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<GuideContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
