@@ -1658,7 +1658,7 @@ namespace Grunt.Core
         /// Gets a list of all available image files currently used by the multiplayer service.
         /// </summary>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
-        /// <include file='../APIDocsExamples/GameCms_GetGuideImages.xml' path='//example'/>
+        /// <include file='../APIDocsExamples/GameCms_GetGuide_Images.xml' path='//example'/>
         /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
         public async Task<GuideContainer> GameCmsGetGuideImages(string flightId)
         {
@@ -1682,7 +1682,7 @@ namespace Grunt.Core
         /// Gets a list of all available multiplayer files currently used by the multiplayer service.
         /// </summary>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
-        /// <include file='../APIDocsExamples/GameCms_GetGuideMultiplayer.xml' path='//example'/>
+        /// <include file='../APIDocsExamples/GameCms_GetGuide_Multiplayer.xml' path='//example'/>
         /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
         public async Task<GuideContainer> GameCmsGetGuideMultiplayer(string flightId)
         {
@@ -1706,7 +1706,7 @@ namespace Grunt.Core
         /// Gets a list of all available news files currently used by the multiplayer service.
         /// </summary>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
-        /// <include file='../APIDocsExamples/GameCms_GetGuideNews.xml' path='//example'/>
+        /// <include file='../APIDocsExamples/GameCms_GetGuide_News.xml' path='//example'/>
         /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
         public async Task<GuideContainer> GameCmsGetGuideNews(string flightId)
         {
@@ -1730,7 +1730,7 @@ namespace Grunt.Core
         /// Gets a list of all available progression files currently used by the multiplayer service.
         /// </summary>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
-        /// <include file='../APIDocsExamples/GameCms_GetGuideProgression.xml' path='//example'/>
+        /// <include file='../APIDocsExamples/GameCms_GetGuide_Progression.xml' path='//example'/>
         /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
         public async Task<GuideContainer> GameCmsGetGuideProgression(string flightId)
         {
@@ -1754,7 +1754,7 @@ namespace Grunt.Core
         /// Gets a list of all available spec files currently used by the multiplayer service.
         /// </summary>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
-        /// <include file='../APIDocsExamples/GameCms_GetGuideSpecs.xml' path='//example'/>
+        /// <include file='../APIDocsExamples/GameCms_GetGuide_Specs.xml' path='//example'/>
         /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
         public async Task<GuideContainer> GameCmsGetGuideSpecs(string flightId)
         {
@@ -1778,7 +1778,7 @@ namespace Grunt.Core
         /// Gets a list of all available title authorization files currently used by the multiplayer service.
         /// </summary>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
-        /// <include file='../APIDocsExamples/GameCms_GetGuideTitleAuthorization.xml' path='//example'/>
+        /// <include file='../APIDocsExamples/GameCms_GetGuide_TitleAuthorization.xml' path='//example'/>
         /// <returns>If successful, an instance of GuideContainer containing file information. Otherwise, returns null.</returns>
         public async Task<GuideContainer> GameCmsGetGuideTitleAuthorization(string flightId)
         {
@@ -1801,8 +1801,16 @@ namespace Grunt.Core
         //================================================
         // HIUGC
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCCheckAssetPlayerBookmark(string title, string player, string assetType, string assetId)
+        /// <summary>
+        /// Checks whether the player has favorited a specific asset.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_CheckAssetPlayerBookmark.xml' path='//example'/>
+        /// <param name="title">Title for which the asset should be obtained. An example value is "hi".</param>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique ID for the asset. Example value is "373f3d27-cb4c-4d7b-b6c9-7757de3c1133" for "Arena:King of the Hill".</param>
+        /// <returns>If successful, returns an instance of FavoriteAsset containing asset information. Otherwise, returns null.</returns>
+        public async Task<FavoriteAsset> HIUGCCheckAssetPlayerBookmark(string title, string player, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/players/{player}/favorites/{assetType}/{assetId}",
                                    HttpMethod.Get,
@@ -1812,11 +1820,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<FavoriteAsset>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
