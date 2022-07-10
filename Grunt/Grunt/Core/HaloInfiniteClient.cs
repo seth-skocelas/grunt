@@ -2298,6 +2298,35 @@ namespace Grunt.Core
             }
         }
 
+        /// <summary>
+        /// Gets player-assigned ratings for an asset.
+        /// </summary>
+        /// <remarks>
+        /// This API is actually not captured in the endpoint catalog, but it seems to return values anyway.
+        /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_GetAssetRatings.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
+        /// <returns>If successful, returns an instance of AuthoringAssetRating containing rating information. Otherwise, returns null.</returns>
+        public async Task<AuthoringAssetRating> HIUGCGetAssetRatings(string player, string assetType, string assetId)
+        {
+            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/ratings/{assetType}/{assetId}",
+                                   HttpMethod.Get,
+                                   true,
+                                   false,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return JsonConvert.DeserializeObject<AuthoringAssetRating>(response);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCRateAnAsset(string player, string assetType, string assetId)
         {

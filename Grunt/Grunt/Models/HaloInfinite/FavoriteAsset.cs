@@ -1,4 +1,5 @@
 ﻿using Grunt.Models.HaloInfinite.Foundation;
+using System.Collections.Generic;
 
 namespace Grunt.Models.HaloInfinite
 {
@@ -10,7 +11,6 @@ namespace Grunt.Models.HaloInfinite
         public string Description { get; set; }
         //TODO: Figure out what the type is here.
         public object CustomData { get; set; }
-        //TODO: Figure out what the type is here.
-        public object VersionRatings { get; set; }
+        public List<VersionRating> VersionRatings { get; set; }
     }
 }
