@@ -11,12 +11,12 @@ namespace Grunt.Models.HaloInfinite
         public int LifecycleMode { get; set; }
         public int GameVariantCategory { get; set; }
         public string LevelId { get; set; }
-        public Asset MapVariant { get; set; }
+        public GenericAsset MapVariant { get; set; }
         public UGCGameVariant UgcGameVariant { get; set; }
         public string ClearanceId { get; set; }
-        public Asset Playlist { get; set; }
+        public GenericAsset Playlist { get; set; }
         public int PlaylistExperience { get; set; }
-        public Asset PlaylistMapModePair { get; set; }
+        public GenericAsset PlaylistMapModePair { get; set; }
         public string SeasonId { get; set; }
         public string PlayableDuration { get; set; }
         public bool TeamsEnabled { get; set; }

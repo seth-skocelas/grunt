@@ -1,0 +1,61 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/10/2022:
+	<code>
+    {
+        "CustomData": {
+            "KeyValues": {}
+        },
+        "AssetVersionFiles": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/f96f57e2-9f15-45c5-83ac-5775a48d2ba8/2674c887-7aa1-42ab-a6cd-4a2c60611d0e/",
+            "FileRelativePaths": [
+                "images/hero.png",
+                "images/screenshot1.png",
+                "images/screenshot2.png",
+                "images/screenshot3.png",
+                "images/thumbnail.png"
+            ],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/ugcgamevariant/f96f57e2-9f15-45c5-83ac-5775a48d2ba8/2674c887-7aa1-42ab-a6cd-4a2c60611d0e/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Links": {
+            "EngineGameVariant": [
+                {
+                    "TargetAssetId": "5308a91a-4499-4a04-8764-861ad5803a21",
+                    "TargetAssetVersionId": null,
+                    "Order": 0
+                }
+            ]
+        },
+        "AssetId": "f96f57e2-9f15-45c5-83ac-5775a48d2ba8",
+        "AssetVersionId": "2674c887-7aa1-42ab-a6cd-4a2c60611d0e",
+        "PublicName": "Arena:Attrition",
+        "Description": "Deplete the enemy’s respawns and then wipe them out.",
+        "CreatedDate": {
+            "ISO8601Date": "2022-05-23T23:59:02.154Z"
+        },
+        "LastModifiedDate": {
+            "ISO8601Date": "2022-05-23T23:59:18.306Z"
+        },
+        "VersionNumber": 1,
+        "Note": "",
+        "AssetState": 1,
+        "Tags": [],
+        "Contributors": [],
+        "AssetHome": 2,
+        "ExemptFromAutoDelete": false,
+        "InspectionResult": 0,
+        "CloneBehavior": 0,
+        "Player": "xuid(2533274855333605)",
+        "StringCulture": "",
+        "PreviousAssetVersionId": null
+    }
+	</code>
+</example>

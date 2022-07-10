@@ -1988,27 +1988,36 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCGetBlob()
+        /// <summary>
+        /// Returns a binary blob using it's path as a reference.
+        /// </summary>
+        /// <param name="blobPath">Path to the blob to be obtained.</param>
+        /// <returns>If successful, returns a binary blob containing file data. Otherwise, returns null.</returns>
+        public async Task<byte[]> HIUGCGetBlob(string blobPath)
         {
-            var response = await ExecuteAPIRequest<string>($"https://blobs-infiniteugc.svc.halowaypoint.com:443",
+            var response = await ExecuteAPIRequest<byte[]>($"https://blobs-infiniteugc.svc.halowaypoint.com:443/{blobPath}",
                                    HttpMethod.Get,
                                    false,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
+            if (response != null)
             {
                 return response;
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCGetLatestAssetVersion(string title, string assetId)
+        /// <summary>
+        /// API seems to be related to films, but is currently returning 403 regardless of the asset ID. Entirely possible that it's something that is not accessible to players, as I
+        /// have not seen actual API calls with this URL to be triggered in-game.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCGetLatestAssetVersion(string title, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/films/{assetId}/versions/latest",
                                    HttpMethod.Get,
@@ -2026,8 +2035,18 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: API Coverage: https://authoring-infiniteugc.svc.halowaypoint.com/hi/UgcGameVariants/f96f57e2-9f15-45c5-83ac-5775a48d2ba8/versions
-        public async Task<string> HIUGCGetLatestAssetVersionAgnostic(string title, string assetType, string assetId)
+        /// <summary>
+        /// Gets metadata related to the latest version of a specified asset.
+        /// </summary>
+        /// <remarks>
+        /// Certain asset types, such as engine game variants, might return a 403 response code for the API, therefore you will not get a real version here.
+        /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_GetLatestAssetVersionAgnostic.xml' path='//example'/>
+        /// <param name="title">Title which contains the asset. An example value here is "hi".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
+        /// <returns>If successful, returns an instance of AuthoringAssetVersion containing version metadata for an asset. Otherwise, returns null.</returns>
+        public async Task<AuthoringAssetVersion> HIUGCGetLatestAssetVersionAgnostic(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/latest",
                                    HttpMethod.Get,
@@ -2037,16 +2056,17 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AuthoringAssetVersion>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
         /// <summary>
         /// Seems to be the global API for getting asset information. API returns a 403 currently, meaning that the requirements are special that go beyond standard player scope.
+        /// In certain cases, like with the "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" asset ID for "Attrition-Default-UGC" this returns a 404.
         /// </summary>
         /// <remarks>INACTIVE API</remarks>
         /// <returns>Uknown.</returns>
@@ -2068,8 +2088,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCGetSessionBlob()
+        /// <summary>
+        /// Seems to be some kind of storage API that obtains session-related blobs. Unclear what this does or where it's used, as I have not seen it triggered
+        /// from the game.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCGetSessionBlob()
         {
             var response = await ExecuteAPIRequest<string>($"https://s3infiniteugcsessions.blob.core.windows.net:443",
                                    HttpMethod.Get,
@@ -2088,8 +2113,16 @@ namespace Grunt.Core
         }
 
 
-        //TODO: API Coverage example: https://authoring-infiniteugc.svc.halowaypoint.com/hi/UgcGameVariants/f96f57e2-9f15-45c5-83ac-5775a48d2ba8/versions
-        public async Task<string> HIUGCGetSpecificAssetVersion(string title, string assetType, string assetId, string versionId)
+        /// <summary>
+        /// Gets metadata related to a concrete version of a specified asset.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_GetSpecificAssetVersion.xml' path='//example'/>
+        /// <param name="title">Title which contains the asset. An example value here is "hi".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
+        /// <param name="versionId">Unique ID for the version of the asset. Example value is "2674c887-7aa1-42ab-a6cd-4a2c60611d0e" for the "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" asset.</param>
+        /// <returns>If successful, returns an instance of AuthoringAssetVersion that contains asset version information. Otherwise, returns null.</returns>
+        public async Task<AuthoringAssetVersion> HIUGCGetSpecificAssetVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
                                    HttpMethod.Get,
@@ -2099,16 +2132,26 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AuthoringAssetVersion>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: API Coverage example: https://authoring-infiniteugc.svc.halowaypoint.com/hi/UgcGameVariants/f96f57e2-9f15-45c5-83ac-5775a48d2ba8/versions
-        public async Task<string> HIUGCListAllVersions(string title, string assetType, string assetId)
+        /// <summary>
+        /// Gets information about all versions for a specified asset.
+        /// </summary>
+        /// <remarks>
+        /// The underlying request supports specifying parameters that limit the search, such as ?start=number, however that is not yet implemented in this version of the API wrapper.
+        /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_ListAllVersions.xml' path='//example'/>
+        /// <param name="title">Title which contains the asset. An example value here is "hi".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
+        /// <returns>If successful, returns an instance of AuthoringAssetVersionContainer that contains information about all available versions for an asset. Otherwise, returns null.</returns>
+        public async Task<AuthoringAssetVersionContainer> HIUGCListAllVersions(string title, string assetType, string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
                                    HttpMethod.Get,
@@ -2118,16 +2161,25 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AuthoringAssetVersionContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCListPlayerAssets(string title, string player)
+        /// <summary>
+        /// Gets information about all authored assets that a player owns.
+        /// </summary>
+        /// <remarks>
+        /// The underlying request supports specifying parameters that limit the search, such as ?start=number, however that is not yet implemented in this version of the API wrapper.
+        /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_ListPlayerAssets.xml' path='//example'/>
+        /// <param name="title">Title which contains the asset. An example value here is "hi".</param>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of AuthoringAssetContainer containing information about assets a player owns. Otherwise, returns null.</returns>
+        public async Task<AuthoringAssetContainer> HIUGCListPlayerAssets(string title, string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/players/{player}/assets",
                                    HttpMethod.Get,
@@ -2137,11 +2189,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AuthoringAssetContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
