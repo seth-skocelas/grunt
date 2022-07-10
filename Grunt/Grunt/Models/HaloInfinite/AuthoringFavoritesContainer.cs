@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Grunt.Models.HaloInfinite
 {
 
-    public class AuthoringAssetContainer : AuthoringResultContainer
+    public class AuthoringFavoritesContainer : AuthoringResultContainer
     {
-        public List<AuthoringAsset> Results { get; set; }
+        public List<FavoriteAsset> Results { get; set; }
     }
 }

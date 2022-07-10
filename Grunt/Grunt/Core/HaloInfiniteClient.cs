@@ -2197,8 +2197,17 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCListPlayerFavorites(string player, string assetType)
+        /// <summary>
+        /// Gets information about favorite assets of a specific type a player has registered on their account.
+        /// </summary>
+        /// <remarks>
+        /// The underlying request supports specifying parameters that limit the search, such as ?start=number, however that is not yet implemented in this version of the API wrapper.
+        /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_ListPlayerFavorites.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <returns>If successful, returns an instance of AuthoringFavoritesContainer containing the list of favorites. Otherwise, returns null.</returns>
+        public async Task<AuthoringFavoritesContainer> HIUGCListPlayerFavorites(string player, string assetType)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites/{assetType}",
                                    HttpMethod.Get,
@@ -2208,16 +2217,24 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AuthoringFavoritesContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCListPlayerFavoritesAgnostic(string player)
+        /// <summary>
+        /// Gets authored favorites a player has registered on their account.
+        /// </summary>
+        /// <remarks>
+        /// The underlying request supports specifying parameters that limit the search, such as ?start=number, however that is not yet implemented in this version of the API wrapper.
+        /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_ListPlayerFavoritesAgnostic.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <returns>If successful, returns an instance of AuthoringFavoritesContainer containing the list of favorites. Otherwise, returns null.</returns>
+        public async Task<AuthoringFavoritesContainer> HIUGCListPlayerFavoritesAgnostic(string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites",
                                    HttpMethod.Get,
@@ -2227,11 +2244,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AuthoringFavoritesContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 

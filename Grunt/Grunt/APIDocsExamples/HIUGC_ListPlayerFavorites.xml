@@ -1,0 +1,54 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/10/2022:
+	<code>
+    {
+        "EstimatedTotal": 4,
+        "Start": 0,
+        "Count": 13,
+        "ResultCount": 4,
+        "Results": [
+            {
+                "Links": {},
+                "Name": "Arena:King of the Hill",
+                "Description": "Hold the Hill. Hail to the King.",
+                "AssetId": "373f3d27-cb4c-4d7b-b6c9-7757de3c1133",
+                "AssetVersionId": "ad7c1591-fe57-4ef7-8b0b-a4ba861fd8d7",
+                "CustomData": {},
+                "VersionRatings": null,
+                "AssetKind": 6
+            },
+            {
+                "Links": {},
+                "Name": "Arena:Attrition",
+                "Description": "Deplete the enemy’s respawns and then wipe them out.",
+                "AssetId": "4d0f6e15-cc3f-46e0-9d06-22de6311c4cb",
+                "AssetVersionId": "d6a43d27-9a54-4873-b7b5-fb2c22539fdc",
+                "CustomData": {},
+                "VersionRatings": null,
+                "AssetKind": 6
+            },
+            {
+                "Links": {},
+                "Name": "Arena:Land Grab",
+                "Description": "Capture and claim zones to score!",
+                "AssetId": "8d6e16cd-7e95-4166-92fd-d280163b7ab7",
+                "AssetVersionId": "6ce17bcf-6af5-4d26-9181-9583ed35af56",
+                "CustomData": {},
+                "VersionRatings": null,
+                "AssetKind": 6
+            },
+            {
+                "Links": {},
+                "Name": "BTB:Slayer",
+                "Description": "Slay the enemy team.",
+                "AssetId": "920d628c-9eae-47a6-b96c-d141cf36ade2",
+                "AssetVersionId": "457cbadd-5650-44fb-b749-88ca50e89746",
+                "CustomData": {},
+                "VersionRatings": null,
+                "AssetKind": 6
+            }
+        ],
+        "Links": {}
+    }
+	</code>
+</example>
