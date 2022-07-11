@@ -2397,8 +2397,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCSpectateFilm(string assetId)
+        /// <summary>
+        /// This API is likely superseded by the match-bound film spectating API, but that is yet to be determined. I haven't
+        /// seen this API be actively used.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCSpectateFilm(string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/films/{assetId}/spectate",
                                    HttpMethod.Get,
@@ -2416,8 +2421,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, string includeContainerSas)
+        /// <summary>
+        /// API returns 404s regardless of what the asset type or ID is. Currently unknown where this is used.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, string includeContainerSas)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
                                    HttpMethod.Get,
@@ -2435,8 +2444,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCStringValidation(string title)
+        /// <summary>
+        /// API returns 404s regardless of what the asset type or ID is. Currently unknown where this is used.
+        /// </summary>
+        /// <remarks>INACTIVE API</remarks>
+        /// <returns>Uknown.</returns>
+        private async Task<string> HIUGCStringValidation(string title)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/validation/strings",
                                    HttpMethod.Get,
