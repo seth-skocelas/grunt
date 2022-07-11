@@ -2327,22 +2327,31 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCRateAnAsset(string player, string assetType, string assetId)
+        /// <summary>
+        /// Rates an asset the player has access to.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_RateAnAsset.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
+        /// <param name="rating">An object containing asset rating information. Rating should be set in CustomData.</param>
+        /// <returns>If successful, returns an instance of AuthoringAssetRating containing the updated rating. Otherwise, returns null.</returns>
+        public async Task<AuthoringAssetRating> HIUGCRateAnAsset(string player, string assetType, string assetId, AuthoringAssetRating rating)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/ratings/{assetType}/{assetId}",
-                                   HttpMethod.Get,
+                                   HttpMethod.Put,
                                    true,
                                    false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT,
+                                   JsonConvert.SerializeObject(rating));
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<AuthoringAssetRating>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 

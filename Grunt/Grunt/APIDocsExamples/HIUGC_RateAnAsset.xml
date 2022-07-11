@@ -1,0 +1,32 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/8/2022:
+	<code>
+    {
+        "Links": {},
+        "Name": "",
+        "Description": "",
+        "AssetId": "4d0f6e15-cc3f-46e0-9d06-22de6311c4cb",
+        "AssetVersionId": "d6a43d27-9a54-4873-b7b5-fb2c22539fdc",
+        "CustomData": {
+            "Score": 3
+        },
+        "VersionRatings": [
+            {
+                "AssetVersionId": "ad7c1591-fe57-4ef7-8b0b-a4ba861fd8d7",
+                "Score": 0,
+                "LastModified": {
+                    "ISO8601Date": "2022-07-10T21:40:56.308Z"
+                }
+            },
+            {
+                "AssetVersionId": "d6a43d27-9a54-4873-b7b5-fb2c22539fdc",
+                "Score": 3,
+                "LastModified": {
+                    "ISO8601Date": "2022-07-10T23:31:44.187Z"
+                }
+            }
+        ],
+        "AssetKind": 6
+    }
+	</code>
+</example>
