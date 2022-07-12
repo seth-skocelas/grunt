@@ -36,7 +36,7 @@ namespace Grunt.Zeta
             var xblToken = string.Empty;
             var haloToken = new SpartanToken();
 
-            if (File.Exists("tokens.json"))
+            if (System.IO.File.Exists("tokens.json"))
             {
                 Console.WriteLine("Trying to use local tokens...");
                 // If a local token file exists, load the file.
@@ -44,26 +44,7 @@ namespace Grunt.Zeta
             }
             else
             {
-                Console.WriteLine("Provide account authorization and grab the code from the URL:");
-                Console.WriteLine(url);
-
-                Console.WriteLine("Your code:");
-                var code = Console.ReadLine();
-
-                // If no local token file exists, request a new set of tokens.
-                Task.Run(async () =>
-                {
-                    currentOAuthToken = await manager.RequestOAuthToken(clientConfig.ClientId, code, clientConfig.RedirectUrl, clientConfig.ClientSecret);
-                    var storeTokenResult = StoreTokens(currentOAuthToken, "tokens.json");
-                    if (storeTokenResult)
-                    {
-                        Console.WriteLine("Stored the tokens locally.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("There was an issue storing tokens locally. A new token will be requested on the next run.");
-                    }
-                }).GetAwaiter().GetResult();
+                currentOAuthToken = RequestNewToken(url, manager, clientConfig);
             }
 
             Task.Run(async () =>
@@ -76,11 +57,9 @@ namespace Grunt.Zeta
                     if (currentOAuthToken == null)
                     {
                         Console.WriteLine("Could not get the token even with the refresh token.");
+                        currentOAuthToken = RequestNewToken(url, manager, clientConfig);
                     }
-                    else
-                    {
-                        ticket = await manager.RequestUserToken(currentOAuthToken.AccessToken);
-                    }
+                    ticket = await manager.RequestUserToken(currentOAuthToken.AccessToken);
                 }
             }).GetAwaiter().GetResult();
 
@@ -160,7 +139,7 @@ namespace Grunt.Zeta
                 Console.WriteLine("Got image data.");
                 if (imageData != null)
                 {
-                    File.WriteAllBytes("image.png", imageData);
+                    System.IO.File.WriteAllBytes("image.png", imageData);
                     Console.WriteLine("Wrote sample image to file.");
                 }
                 else
@@ -212,6 +191,40 @@ namespace Grunt.Zeta
             }).GetAwaiter().GetResult();
 
             Console.ReadLine();
+        }
+
+        private static OAuthToken RequestNewToken(string url, XboxAuthenticationManager manager, ClientConfiguration clientConfig)
+        {
+            Console.WriteLine("Provide account authorization and grab the code from the URL:");
+            Console.WriteLine(url);
+
+            Console.WriteLine("Your code:");
+            var code = Console.ReadLine();
+            var currentOAuthToken = new OAuthToken();
+
+            // If no local token file exists, request a new set of tokens.
+            Task.Run(async () =>
+            {
+                currentOAuthToken = await manager.RequestOAuthToken(clientConfig.ClientId, code, clientConfig.RedirectUrl, clientConfig.ClientSecret);
+                if (currentOAuthToken != null)
+                {
+                    var storeTokenResult = StoreTokens(currentOAuthToken, "tokens.json");
+                    if (storeTokenResult)
+                    {
+                        Console.WriteLine("Stored the tokens locally.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("There was an issue storing tokens locally. A new token will be requested on the next run.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No token was obtained. There is no valid token to be used right now.");
+                }
+            }).GetAwaiter().GetResult();
+
+            return currentOAuthToken;
         }
 
         private static bool StoreTokens(OAuthToken token, string path)

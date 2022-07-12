@@ -1,0 +1,87 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/8/2022:
+	<code>
+    {
+        "Accept": "application/json",
+        "AcceptEncoding": "gzip",
+        "AcceptLanguage": "en-US",
+        "Files": [
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/specs/file/graphics/overrides.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"jvjz4hNHb6fwjmbPKEROrvBfaUlwU+ywI6Cn0Q==\"",
+                "ContentLength": 22,
+                "Usage": 1
+            },
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/specs/file/graphics/AsyncComputeOverrides.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"OLhBAWhFx4/oJww9IRGC6W9vRp6yjcP9/wh0gA==\"",
+                "ContentLength": 132,
+                "Usage": 1
+            },
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/specs/file/graphics/DevicePresetOverrides.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"PWmU1bQfDbyc6MluV/n2GQDpsS41VUFWWjVv+Q==\"",
+                "ContentLength": 58,
+                "Usage": 1
+            },
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/specs/file/graphics/RecommendedDrivers.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"nhjxHAS+CA34yaLOubi9IbDCQCoo9nuicBbk4Q==\"",
+                "ContentLength": 219,
+                "Usage": 1
+            },
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/specs/file/cpu/presets.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"qugwWNU1ERFtXjTB0Mk9dPSP3pXoSUg0tbE11A==\"",
+                "ContentLength": 155,
+                "Usage": 1
+            }
+        ]
+    }
+	</code>
+</example>

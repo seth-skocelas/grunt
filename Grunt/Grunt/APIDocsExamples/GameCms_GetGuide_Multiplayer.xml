@@ -1,0 +1,87 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/8/2022:
+	<code>
+    {
+        "Accept": "application/x-bond-compact-binary",
+        "AcceptEncoding": "gzip",
+        "AcceptLanguage": "en-US",
+        "Files": [
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/multiplayer/file/Live/Achievements.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"Tmexw+WngYPxn3qo0pvtkPFxnsyfyNY/ItQi4g==\"",
+                "ContentLength": 894,
+                "Usage": 1
+            },
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/multiplayer/file/gameStartErrorMessages/LobbyHoppperErrorMessageList.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"Ieb/xH8TXlB58Vnt/qkp/WXhywy7vo5XISj/Rg==\"",
+                "ContentLength": 1487,
+                "Usage": 1
+            },
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/multiplayer/file/network/config.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"AodW/xIw1z8MqE3BN/8UQJzKpR9arc+A3j47FQ==\"",
+                "ContentLength": 525,
+                "Usage": 1
+            },
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/multiplayer/file/Academy/AcademyClientManifest.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"iG1jk1otVWLvTQl+iNJqbOno0QyDdse6deP7xw==\"",
+                "ContentLength": 3470,
+                "Usage": 1
+            },
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/multiplayer/file/Academy/AcademyStarGUIDDefinitions.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"/D10cDdqidZRMds2f+WlBpmube5L44zrWUr+mw==\"",
+                "ContentLength": 256,
+                "Usage": 1
+            }
+        ]
+    }
+	</code>
+</example>

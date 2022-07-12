@@ -1,0 +1,149 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/10/2022:
+	<code>
+    {
+        "EstimatedTotal": 3,
+        "Start": 0,
+        "Count": 13,
+        "ResultCount": 3,
+        "Results": [
+            {
+                "Images": [],
+                "LatestVersionId": "46e10e8e-38d0-4098-8588-1afc8a5cad14",
+                "PublicName": "TestNameValidation",
+                "AssetId": "5327af52-98c0-472a-b02f-733c9b43ff93",
+                "Kind": 6,
+                "OriginalOwner": "xuid(2533274855333605)",
+                "Admin": "xuid(2533274855333605)",
+                "LastModifiedDateUtc": {
+                    "ISO8601Date": "2022-07-09T01:08:17.694Z"
+                },
+                "CreatedDateUtc": {
+                    "ISO8601Date": "2022-05-23T23:58:50.532Z"
+                },
+                "InternalName": "Attrition-Default-UGC",
+                "Description": "",
+                "HardDeleteTimeUtc": null,
+                "Permissions": [
+                    {
+                        "CanonicalToken": "xuid(2533274855333605)",
+                        "AuthoringRole": 6,
+                        "GrantedBy": "the_guardians",
+                        "GrantedOnDateUtc": {
+                            "ISO8601Date": "2022-05-23T23:58:50.532Z"
+                        }
+                    }
+                ],
+                "AssetStats": {
+                    "Favorites": 0,
+                    "FilmBookmarks": 0,
+                    "Likes": 0,
+                    "Ratings": {
+                        "AverageRating": 0.0,
+                        "TotalCount": 0,
+                        "Ratings": []
+                    },
+                    "ParentAssetCount": 0,
+                    "LastModifiedDateUtc": {
+                        "ISO8601Date": "2022-05-24T00:08:40.58Z"
+                    },
+                    "IgnoreReports": false
+                },
+                "AssetHome": 2,
+                "IsCurrentlyBeingEdited": false
+            },
+            {
+                "Images": [],
+                "LatestVersionId": "2674c887-7aa1-42ab-a6cd-4a2c60611d0e",
+                "PublicName": "Arena:Attrition",
+                "AssetId": "f96f57e2-9f15-45c5-83ac-5775a48d2ba8",
+                "Kind": 6,
+                "OriginalOwner": "xuid(2533274855333605)",
+                "Admin": "xuid(2533274855333605)",
+                "LastModifiedDateUtc": {
+                    "ISO8601Date": "2022-05-23T23:59:18.306Z"
+                },
+                "CreatedDateUtc": {
+                    "ISO8601Date": "2022-05-23T23:59:02.154Z"
+                },
+                "InternalName": "Attrition-Default-UGC",
+                "Description": "",
+                "HardDeleteTimeUtc": null,
+                "Permissions": [
+                    {
+                        "CanonicalToken": "xuid(2533274855333605)",
+                        "AuthoringRole": 6,
+                        "GrantedBy": "the_guardians",
+                        "GrantedOnDateUtc": {
+                            "ISO8601Date": "2022-05-23T23:59:02.154Z"
+                        }
+                    }
+                ],
+                "AssetStats": {
+                    "Favorites": 0,
+                    "FilmBookmarks": 0,
+                    "Likes": 0,
+                    "Ratings": {
+                        "AverageRating": 0.0,
+                        "TotalCount": 0,
+                        "Ratings": []
+                    },
+                    "ParentAssetCount": 0,
+                    "LastModifiedDateUtc": {
+                        "ISO8601Date": ""
+                    },
+                    "IgnoreReports": false
+                },
+                "AssetHome": 2,
+                "IsCurrentlyBeingEdited": false
+            },
+            {
+                "Images": [],
+                "LatestVersionId": "998b36ee-2250-40b9-be61-04316b90610d",
+                "PublicName": "Arena:Attrition",
+                "AssetId": "cefd4723-7bf2-4784-91bb-7c7c3dc9e324",
+                "Kind": 6,
+                "OriginalOwner": "xuid(2533274855333605)",
+                "Admin": "xuid(2533274855333605)",
+                "LastModifiedDateUtc": {
+                    "ISO8601Date": "2022-04-28T01:06:41.468Z"
+                },
+                "CreatedDateUtc": {
+                    "ISO8601Date": "2022-01-27T19:09:09.877Z"
+                },
+                "InternalName": "Attrition-Default-UGC",
+                "Description": "",
+                "HardDeleteTimeUtc": null,
+                "Permissions": [
+                    {
+                        "CanonicalToken": "xuid(2533274855333605)",
+                        "AuthoringRole": 6,
+                        "GrantedBy": "the_guardians",
+                        "GrantedOnDateUtc": {
+                            "ISO8601Date": "2022-01-27T19:09:09.877Z"
+                        }
+                    }
+                ],
+                "AssetStats": {
+                    "Favorites": 0,
+                    "FilmBookmarks": 0,
+                    "Likes": 0,
+                    "Ratings": {
+                        "AverageRating": 0.0,
+                        "TotalCount": 0,
+                        "Ratings": []
+                    },
+                    "ParentAssetCount": 0,
+                    "LastModifiedDateUtc": {
+                        "ISO8601Date": ""
+                    },
+                    "IgnoreReports": false
+                },
+                "AssetHome": 2,
+                "IsCurrentlyBeingEdited": false
+            }
+        ],
+        "Links": {}
+    }
+	</code>
+</example>

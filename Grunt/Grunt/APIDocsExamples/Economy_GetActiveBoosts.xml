@@ -1,0 +1,18 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/8/2022:
+	<code>
+	{
+        "Boosts": [
+            {
+                "ExpirationDate": {
+                    "ISO8601Date": "2022-07-08T21:22:02.151Z"
+                },
+                "State": "Active",
+                "BoostPath": "Consumables/Boosts/xpboost.json",
+                "EffectiveMultiplier": 2.0,
+                "Matches": 0
+            }
+        ]
+    }
+	</code>
+</example>

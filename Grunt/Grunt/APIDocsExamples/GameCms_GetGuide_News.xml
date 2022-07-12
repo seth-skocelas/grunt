@@ -1,0 +1,27 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/8/2022:
+	<code>
+    {
+        "Accept": "application/x-bond-compact-binary",
+        "AcceptEncoding": "gzip",
+        "AcceptLanguage": "en-US",
+        "Files": [
+            {
+                "Uri": {
+                    "AuthorityId": "gamecms",
+                    "Path": "/hi/news/file/articles/articles.json",
+                    "QueryString": "",
+                    "RetryPolicyId": "",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": true
+                },
+                "ETag": "\"E9RoQvYUSyNBry50MWUkXyayUScThmrMX+XDvQ==\"",
+                "ContentLength": 3187,
+                "Usage": 4
+            }
+        ]
+    }
+	</code>
+</example>

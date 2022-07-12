@@ -1,8 +1,10 @@
-﻿namespace Grunt.Models.HaloInfinite
+﻿using Grunt.Models.HaloInfinite.ApiIngress;
+
+namespace Grunt.Models.HaloInfinite
 {
     public class Media
     {
-        public Link MediaUrl { get; set; }
+        public ApiEndpoint MediaUrl { get; set; }
         public string MimeType { get; set; }
         public DisplayString Caption { get; set; }
         public DisplayString AlternateText { get; set; }
