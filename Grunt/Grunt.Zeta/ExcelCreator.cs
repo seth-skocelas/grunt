@@ -22,6 +22,7 @@ namespace Grunt.Zeta
                     worksheet.Cell("G1").Value = "Deaths - Std Dev";
                     worksheet.Cell("H1").Value = "PreMatchCSR";
                     worksheet.Cell("I1").Value = "PostMatchCSR";
+                    worksheet.Cell("J1").Value = "CSR Change";
 
                     var i = 2;
                     foreach (var p in entry.Value)
@@ -36,6 +37,7 @@ namespace Grunt.Zeta
                         worksheet.Cell($"G{i}").Value = $"{result.StatPerformances.Deaths.StdDev}";
                         worksheet.Cell($"H{i}").Value = $"{result.RankRecap.PreMatchCsr.Value}";
                         worksheet.Cell($"I{i}").Value = $"{result.RankRecap.PostMatchCsr.Value}";
+                        worksheet.Cell($"J{i}").Value = $"{result.RankRecap.PostMatchCsr.Value - result.RankRecap.PreMatchCsr.Value}";
                         i += 1;
                     }
                     worksheet.Columns().AdjustToContents();
