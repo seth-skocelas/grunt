@@ -3303,7 +3303,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-               return response;
+                return JsonConvert.DeserializeObject<PlayerSkillResultValue>(response);
             }
             else
             {

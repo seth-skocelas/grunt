@@ -85,7 +85,7 @@ namespace Grunt.Zeta
                 Console.WriteLine(haloToken.Token);
             }).GetAwaiter().GetResult();
             
-            HaloInfiniteClient client = new(haloToken.Token, extendedTicket.DisplayClaims.Xui[0].Xid, gruntConfig.ClearanceToken);
+            HaloInfiniteClient client = new(haloToken.Token, extendedTicket.DisplayClaims.Xui[0].Xid, "");
 
             // Test getting the clearance for local execution.
             string localClearance = string.Empty;
