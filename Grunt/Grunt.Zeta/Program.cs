@@ -87,109 +87,57 @@ namespace Grunt.Zeta
             
             HaloInfiniteClient client = new(haloToken.Token, extendedTicket.DisplayClaims.Xui[0].Xid, "");
 
-            // Test getting the clearance for local execution.
-            string localClearance = string.Empty;
-            Task.Run(async () =>
+            var xuidDict = new Dictionary<string, string>();
+
+            using (var reader = new StreamReader(@"C:\ReportCard\xuids.csv"))
             {
-                var clearance = await client.SettingsGetClearance("RETAIL", "UNUSED", "222249.22.06.08.1730-0");
-                if (clearance != null)
+                while (!reader.EndOfStream)
                 {
-                    localClearance = clearance.FlightConfigurationId;
-                    client.ClearanceToken = localClearance;
-                    Console.WriteLine($"Your clearance is {localClearance} and it's set in the client.");
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+
+                    xuidDict[values[0]] = values[1];
                 }
-                else
-                {
-                    Console.WriteLine("Could not obtain the clearance.");
-                }
-            }).GetAwaiter().GetResult();
+
+            }
+
+            var resultsDict = new Dictionary<string, List<PlayerSkillResultValue>>();
+            var matchesDict = new Dictionary<string, List<string>>();
 
             // Try getting actual Halo Infinite data.
             Task.Run(async () =>
             {
-                var example = await client.StatsGetMatchStats("21416434-4717-4966-9902-af7097469f74");
-                Console.WriteLine("You have stats.");
+                var matchIds = new List<string>();
+                foreach (KeyValuePair<string, string> entry in xuidDict)
+                {
+                    var xuid = entry.Value;
+
+                    var test = await client.StatsGetMatchHistory("xuid(" + xuid + ")");
+
+                    matchIds = new List<string>();
+
+                    foreach (var r in test.Results)
+                    {
+                        matchIds.Add(r.MatchId);
+                    }
+
+                    var playerSkillResultList = new List<PlayerSkillResultValue>();
+
+                    foreach (var id in matchIds)
+                    {
+                        var xuidList = new List<string>();
+                        xuidList.Add(xuid);
+                        playerSkillResultList.Add(await client.SkillGetMatchPlayerResult(id, xuidList));
+                        //Console.WriteLine(await client.SkillGetMatchPlayerResultString(id, xuid));
+                    }
+                    resultsDict[entry.Key] = playerSkillResultList;
+                    matchesDict[entry.Key] = matchIds;
+                    Console.WriteLine(entry.Key + " is done");
+                }
+                ExcelCreator.WriteAllPlayersSkillResultValue(resultsDict, matchesDict);
             }).GetAwaiter().GetResult();
 
-            Task.Run(async () =>
-            {
-                var academyData = await client.AcademyGetContent();
-                Console.WriteLine("Got academy data.");
-            }).GetAwaiter().GetResult();           
-
-            // Test getting the season data.
-            Task.Run(async () =>
-            {
-                var seasonData = await client.GameCmsGetSeasonRewardTrack("Seasons/Season7.json", localClearance);
-                Console.WriteLine("Got season data.");
-            }).GetAwaiter().GetResult();
-
-            // Try getting skill qualifications with SkillGetMatchPlayerResult.
-            Task.Run(async () =>
-            {
-                List<string> sampleXuids = "xuid(2533274793272155),xuid(2533274814715980),xuid(2533274855333605),xuid(2535435749594170),xuid(2535448099228893),xuid(2535457135464780),xuid(2535466738529606),xuid(2535472868898775)".Split(',').ToList();
-                var performanceData = await client.SkillGetMatchPlayerResult("ad6a3d46-9320-44ee-94cd-c5cb39c7aedd", sampleXuids);
-                Console.WriteLine("Got player performance data.");
-            }).GetAwaiter().GetResult();
-
-            // Get an example image and store it locally.
-            Task.Run(async () =>
-            {
-                var imageData = await client.GameCmsGetImage("progression/inventory/armor/gloves/003-001-olympus-8e7c9dff-sm.png");
-                Console.WriteLine("Got image data.");
-                if (imageData != null)
-                {
-                    System.IO.File.WriteAllBytes("image.png", imageData);
-                    Console.WriteLine("Wrote sample image to file.");
-                }
-                else
-                {
-                    Console.WriteLine("Image could not be written. There was an error.");
-                }
-            }).GetAwaiter().GetResult();
-
-            // Get bot customization data
-            Task.Run(async () =>
-            {
-                var seasonData = await client.AcademyGetBotCustomization(localClearance);
-                if (seasonData != null)
-                {
-                    Console.WriteLine("Got but customization data.");
-                }
-                else
-                {
-                    Console.WriteLine("Could not get bot customization data.");
-                }
-            }).GetAwaiter().GetResult();
-
-            // Get currency data
-            Task.Run(async () =>
-            {
-                var currencyData = await client.GameCmsGetCurrency("currency/currencies/cr.json", localClearance);
-                if (currencyData != null)
-                {
-                    Console.WriteLine("Got currency data.");
-                }
-                else
-                {
-                    Console.WriteLine("Could not get currency data.");
-                }
-            }).GetAwaiter().GetResult();
-
-            // Get reward data.
-            Task.Run(async () =>
-            {
-                var rewardData = await client.EconomyGetAwardedRewards("xuid(2533274855333605)", "Challenges-35a86ae3-017c-4b5a-b633-b2802a770e0a");
-                if (rewardData != null)
-                {
-                    Console.WriteLine("Got reward data.");
-                }
-                else
-                {
-                    Console.WriteLine("Could not get reward data.");
-                }
-            }).GetAwaiter().GetResult();
-
+            Console.WriteLine("This is it.");
             Console.ReadLine();
         }
 
