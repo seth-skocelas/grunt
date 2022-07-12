@@ -126,9 +126,8 @@ namespace Grunt.Zeta
                     foreach (var id in matchIds)
                     {
                         var xuidList = new List<string>();
-                        xuidList.Add(xuid);
+                        xuidList.Add("xuid(" + xuid + ")");
                         playerSkillResultList.Add(await client.SkillGetMatchPlayerResult(id, xuidList));
-                        //Console.WriteLine(await client.SkillGetMatchPlayerResultString(id, xuid));
                     }
                     resultsDict[entry.Key] = playerSkillResultList;
                     matchesDict[entry.Key] = matchIds;

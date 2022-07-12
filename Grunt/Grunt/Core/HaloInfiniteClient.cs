@@ -3287,7 +3287,7 @@ namespace Grunt.Core
         //================================================
 
         /// <summary>
-        /// Returns individual player stats for a given match.
+        /// Returns player stats for a given match.
         /// </summary>
         /// <param name="matchId">The unique match ID.</param>
         /// <param name="playerIds">Array of player IDs. Each ID string should be in the format of "xuid(XUID_VALUE)."</param>
@@ -3304,6 +3304,35 @@ namespace Grunt.Core
             if (!string.IsNullOrEmpty(response))
             {
                 return JsonConvert.DeserializeObject<PlayerSkillResultValue>(response);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Returns individual player stats for a given match.
+        /// </summary>
+        /// <param name="matchId">The unique match ID.</param>
+        /// <param name="playerId">String for player ID. Each ID string should be in the format of "xuid(XUID_VALUE)."</param>
+        /// <returns></returns>
+
+        public async Task<PlayerSkillResultValue> SkillGetMatchIndividualPlayerResult(string matchId, string playerId)
+        {
+            var response = await ExecuteAPIRequest<string>($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players={playerId}",
+                                   HttpMethod.Get,
+                                   true,
+                                   true,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                };
+                return JsonConvert.DeserializeObject<PlayerSkillResultValue>(response, settings);
             }
             else
             {
