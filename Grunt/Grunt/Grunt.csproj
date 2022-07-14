@@ -19,7 +19,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageProjectUrl>https://gruntapi.com</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/dend/grunt</RepositoryUrl>
+		<RepositoryUrl>https://github.com/openspartan/grunt</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags>halo,halo-api</PackageTags>
 		<PackageIcon>grunt-logo.png</PackageIcon>
