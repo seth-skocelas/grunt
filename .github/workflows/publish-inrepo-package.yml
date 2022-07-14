@@ -43,4 +43,4 @@ jobs:
       run: dotnet pack --configuration Release --no-build -p:TransformOnBuild="false" -p:IsGitHubActions="true" --output .
     - name: Push
       working-directory: ./Grunt/Grunt
-      run: dotnet nuget push *.nupkg --source https://nuget.pkg.github.com/dend/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
+      run: dotnet nuget push *.nupkg --source https://nuget.pkg.github.com/openspartan/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
