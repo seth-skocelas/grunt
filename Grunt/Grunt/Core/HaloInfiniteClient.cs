@@ -1852,7 +1852,7 @@ namespace Grunt.Core
         }
 
         /// <summary>
-        /// Seems to be the global API for deleting all assets. Currently unknown that this does or what information is required. Judging from other calls, this is likely a PUT request too.
+        /// Seems to be the global API for deleting all assets. Currently unknown that this does or what information is required. Judging from other calls, this is likely a DELETE request too.
         /// </summary>
         /// <remarks>INACTIVE API</remarks>
         /// <returns>Uknown.</returns>
@@ -1875,7 +1875,7 @@ namespace Grunt.Core
         }
 
         /// <summary>
-        /// Seems to be the global API for deleting assets. Currently unknown that this does or what information is required. Judging from other calls, this is likely a PUT request too.
+        /// Seems to be the global API for deleting assets. Currently unknown that this does or what information is required. Judging from other calls, this is likely a DELETE request too.
         /// </summary>
         /// <remarks>INACTIVE API</remarks>
         /// <returns>Uknown.</returns>
@@ -1921,7 +1921,7 @@ namespace Grunt.Core
         }
 
         /// <summary>
-        /// Seems to be the global API for managing sessions connected to an asset. Currently unknown that this does or what information is required. Judging from other calls, this is likely a PUT request too.
+        /// Seems to be the global API for managing sessions connected to an asset. Currently unknown that this does or what information is required. Judging from other calls, this is likely a DELETE request too.
         /// </summary>
         /// <remarks>INACTIVE API</remarks>
         /// <returns>Uknown.</returns>
@@ -2424,12 +2424,22 @@ namespace Grunt.Core
         /// <summary>
         /// API returns 404s regardless of what the asset type or ID is. Currently unknown where this is used.
         /// </summary>
+        /// <remarks>
+        /// Was successful with a POST to https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/UgcGameVariants/9bc31094-8326-42ee-85d5-12e48ee1b129/sessions
+        /// Game variant has to be local to the account
+        /// POSTed content is like this:
+        /// {
+        ///    "PreviousVersionId": "974c6f1a-9e86-4719-8b70-d055d370bc75",
+        ///    "SessionOrigin": "xuid(XUID_VALUE)"
+        /// }
+        /// It also seems that using `includeContainerSas` results in a 403 response, but without it a session can be created.
+        /// </remarks>
         /// <remarks>INACTIVE API</remarks>
         /// <returns>Uknown.</returns>
-        private async Task<string> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, string includeContainerSas)
+        private async Task<string> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
-                                   HttpMethod.Get,
+                                   HttpMethod.Post,
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
