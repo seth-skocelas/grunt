@@ -101,7 +101,8 @@ namespace Grunt.Zeta
 
             }
 
-            var resultsDict = new Dictionary<string, List<PlayerSkillResultValue>>();
+            var skillsDict = new Dictionary<string, List<PlayerSkillResultValue>>();
+            var coresDict = new Dictionary<string, List<CoreStats>>();
             var matchesDict = new Dictionary<string, List<string>>();
 
             // Try getting actual Halo Infinite data.
@@ -122,18 +123,25 @@ namespace Grunt.Zeta
                     }
 
                     var playerSkillResultList = new List<PlayerSkillResultValue>();
+                    var coreStatsList = new List<CoreStats>();
+
 
                     foreach (var id in matchIds)
                     {
                         var xuidList = new List<string>();
                         xuidList.Add("xuid(" + xuid + ")");
                         playerSkillResultList.Add(await client.SkillGetMatchPlayerResult(id, xuidList));
+                        var matchStats = await client.StatsGetMatchStats(id);
+                        var player = matchStats.Players.First(n => n.PlayerId == "xuid("+xuid+")");
+                        var coreStats = player.PlayerTeamStats[0].Stats.CoreStats;
+                        coreStatsList.Add(coreStats);
                     }
-                    resultsDict[entry.Key] = playerSkillResultList;
+                    coresDict[entry.Key] = coreStatsList;
+                    skillsDict[entry.Key] = playerSkillResultList;
                     matchesDict[entry.Key] = matchIds;
                     Console.WriteLine(entry.Key + " is done");
                 }
-                ExcelCreator.WriteAllPlayersSkillResultValue(resultsDict, matchesDict);
+                ExcelCreator.WriteAllPlayersSkillResultValue(skillsDict, coresDict, matchesDict);
             }).GetAwaiter().GetResult();
 
             Console.WriteLine("This is it.");

@@ -6,7 +6,7 @@ namespace Grunt.Zeta
 {
     public static class ExcelCreator
     {
-        public static void WriteAllPlayersSkillResultValue(Dictionary<string, List<PlayerSkillResultValue>> dict, Dictionary<string, List<string>> matchIds)
+        public static void WriteAllPlayersSkillResultValue(Dictionary<string, List<PlayerSkillResultValue>> dict, Dictionary<string, List<CoreStats>> coreDict, Dictionary<string, List<string>> matchIds)
         {
             using (var workbook = new XLWorkbook())
             {
@@ -23,10 +23,14 @@ namespace Grunt.Zeta
                     worksheet.Cell("H1").Value = "PreMatchCSR";
                     worksheet.Cell("I1").Value = "PostMatchCSR";
                     worksheet.Cell("J1").Value = "CSR Change";
+                    worksheet.Cell("K1").Value = "Damage Dealt";
+                    worksheet.Cell("L1").Value = "Damage Taken";
 
+                    var cores = coreDict[entry.Key];
                     var i = 2;
                     foreach (var p in entry.Value)
                     {
+                        var core = cores[i - 2];
                         var result = p.Value[0].Result;
                         worksheet.Cell($"A{i}").Value = $"{matchIds[entry.Key][i - 2]}";
                         worksheet.Cell($"B{i}").Value = $"{result.StatPerformances.Kills.Count}";
@@ -38,6 +42,8 @@ namespace Grunt.Zeta
                         worksheet.Cell($"H{i}").Value = $"{result.RankRecap.PreMatchCsr.Value}";
                         worksheet.Cell($"I{i}").Value = $"{result.RankRecap.PostMatchCsr.Value}";
                         worksheet.Cell($"J{i}").Value = $"{result.RankRecap.PostMatchCsr.Value - result.RankRecap.PreMatchCsr.Value}";
+                        worksheet.Cell($"K{i}").Value = $"{core.DamageDealt}";
+                        worksheet.Cell($"L{i}").Value = $"{core.DamageTaken}";
                         i += 1;
                     }
                     worksheet.Columns().AdjustToContents();
