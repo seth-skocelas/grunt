@@ -2460,22 +2460,54 @@ namespace Grunt.Core
             }
         }
 
-        public async Task<string> HIUGCExtendSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas)
+        /// <summary>
+        /// Extends an existing authoring session.
+        /// </summary>
+        /// <remarks>
+        /// For now, an empty JSON is passed to the PATCH request. In the future, analysis needs to be done to understand more about how the request actually
+        /// can be used to modify the data, since that's what a PATCH is usually about.
+        /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_ExtendSessionAgnostic.xml' path='//example'/>
+        /// <param name="title">Title for the game for which the authoring session needs to be spawned. Example variant is "hi" for "Halo Infinite".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique asset ID for the asset type specified earlier.</param>
+        /// <param name="includeContainerSas">Determines whether to include the container SAS in the response or not. Setting this value to "true" will result in a 403 Forbidden error.</param>
+        /// <returns>If successful, returns an instance of AssetAuthoringSession with details about the created session. Otherwise, returns null.</returns>
+        public async Task<AssetAuthoringSession> HIUGCExtendSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
-                                   HttpMethod.Post,
+                                   HttpMethod.Patch,
+                                   true,
+                                   false,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT,
+                                   "{}");
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return JsonConvert.DeserializeObject<AssetAuthoringSession>(response);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Deletes an existing authoring session.
+        /// </summary>
+        /// <param name="title">Title for the game for which the authoring session needs to be spawned. Example variant is "hi" for "Halo Infinite".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique asset ID for the asset type specified earlier.</param>
+        /// <returns>If the request to delete the session is successful, returns true. Otherwise, returns false.</returns>
+        public async Task<bool> HIUGCDeleteSessionAgnostic(string title, string assetType, string assetId)
+        {
+            var response = await ExecuteAPIRequest<bool>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions",
+                                   HttpMethod.Delete,
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return response;
         }
 
         /// <summary>
@@ -2501,30 +2533,33 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCUndeleteAsset(string title, string assetType, string assetId)
+        /// <summary>
+        /// Undeletes a previously deleted asset.
+        /// </summary>
+        /// <remarks>
+        /// Interestingly enough, the API itself, as seen in the settings endpoint, does not contain the `/recover` suffix. I had to add it manually
+        /// in this specific implementation.
+        /// </remarks>
+        /// <param name="title">Title for the game for which the authoring session needs to be spawned. Example variant is "hi" for "Halo Infinite".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique asset ID for the asset type specified earlier.</param>
+        /// <returns>If the request to undelete an asset was successful, returns true. Otherwise, returns false.</returns>
+        public async Task<bool> HIUGCUndeleteAsset(string title, string assetType, string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}",
-                                   HttpMethod.Get,
+            var response = await ExecuteAPIRequest<bool>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/recover",
+                                   HttpMethod.Post,
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return response;
         }
 
         //TODO: This function requires manual intervention/checks.
         public async Task<string> HIUGCUndeleteVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}/recover",
-                                   HttpMethod.Get,
+                                   HttpMethod.Post,
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
@@ -3877,6 +3912,10 @@ namespace Grunt.Core
                         response.Content.ReadAsStreamAsync().Result.CopyTo(dataStream);
                         return (T)Convert.ChangeType(dataStream.ToArray(), typeof(T));
                     }
+                }
+                else if (typeof(T) == typeof(bool))
+                {
+                    return (T)(object)response.IsSuccessStatusCode;
                 }
                 else
                 {

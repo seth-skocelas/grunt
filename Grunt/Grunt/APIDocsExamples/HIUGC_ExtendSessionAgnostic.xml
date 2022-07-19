@@ -1,0 +1,47 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/18/2022:
+	<code>
+    {
+        "ContainerUri": "https://s3infiniteugcsessions.blob.core.windows.net/z-74ccd1d0-ebec-4a52-a848-4edab1a0a8d2",
+        "ContainerSas": "",
+        "ExpirationTime": {
+            "ISO8601Date": "2022-07-19T03:25:00.432Z"
+        },
+        "ReadOnly": false,
+        "SessionId": "74ccd1d0-ebec-4a52-a848-4edab1a0a8d2",
+        "AssetId": "b5ed517c-ce50-4919-95b2-41197f644ad6",
+        "CustomData": {
+            "KeyValues": {}
+        },
+        "PublicName": "MultiTeam",
+        "Description": "",
+        "Tags": [],
+        "Links": {
+            "EngineGameVariant": [
+                {
+                    "TargetAssetId": "6ada47c6-fedd-4a46-9761-e6c4a8ed11bd",
+                    "TargetAssetVersionId": null,
+                    "Order": 0
+                }
+            ]
+        },
+        "Contributors": [],
+        "StringCulture": "",
+        "PreviousAssetVersionId": "3deff683-01e4-4e2a-927b-33a77c12d5fe",
+        "ContainerFiles": {
+            "Prefix": "https://s3infiniteugcsessions.blob.core.windows.net/z-74ccd1d0-ebec-4a52-a848-4edab1a0a8d2/",
+            "FileRelativePaths": [],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcSessionFiles",
+                "Path": "/z-74ccd1d0-ebec-4a52-a848-4edab1a0a8d2/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        }
+    }
+	</code>
+</example>
