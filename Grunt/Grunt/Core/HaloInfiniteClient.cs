@@ -2422,8 +2422,9 @@ namespace Grunt.Core
         }
 
         /// <summary>
-        /// API returns 404s regardless of what the asset type or ID is. Currently unknown where this is used.
+        /// Starts a new authoring session to edit an asset.
         /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_StartSessionAgnostic.xml' path='//example'/>
         /// <remarks>
         /// Was successful with a POST to https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/UgcGameVariants/9bc31094-8326-42ee-85d5-12e48ee1b129/sessions
         /// Game variant has to be local to the account
@@ -2434,9 +2435,32 @@ namespace Grunt.Core
         /// }
         /// It also seems that using `includeContainerSas` results in a 403 response, but without it a session can be created.
         /// </remarks>
-        /// <remarks>INACTIVE API</remarks>
-        /// <returns>Uknown.</returns>
-        private async Task<string> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas)
+        /// <param name="title">Title for the game for which the authoring session needs to be spawned. Example variant is "hi" for "Halo Infinite".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique asset ID for the asset type specified earlier.</param>
+        /// <param name="includeContainerSas">Determines whether to include the container SAS in the response or not. Setting this value to "true" will result in a 403 Forbidden error.</param>
+        /// <param name="starter">Starter object that describes who is starting the session and the previous version of the asset.</param>
+        /// <returns>If successful, returns an instance of AssetAuthoringSession with details about the created session. Otherwise, returns null.</returns>
+        public async Task<AssetAuthoringSession> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas, AuthoringSessionStarter starter)
+        {
+            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
+                                   HttpMethod.Post,
+                                   true,
+                                   false,
+                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT,
+                                   JsonConvert.SerializeObject(starter));
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return JsonConvert.DeserializeObject<AssetAuthoringSession>(response);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> HIUGCExtendSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas)
         {
             var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
                                    HttpMethod.Post,
