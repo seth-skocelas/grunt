@@ -1,0 +1,120 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/19/2022:
+	<code>
+    {
+        "CustomData": {},
+        "Tags": [],
+        "MapLink": {
+            "AssetId": "e859cf75-9b8a-429a-91be-2376681c8537",
+            "VersionId": "d13e5fc9-6af1-4c9d-a583-2264bee98fe6",
+            "PublicName": "Catalyst",
+            "Description": "Spent shells rain like water in this ancient sanctuary.",
+            "Files": {
+                "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/e859cf75-9b8a-429a-91be-2376681c8537/d13e5fc9-6af1-4c9d-a583-2264bee98fe6/",
+                "FileRelativePaths": [
+                    "images/hero.png",
+                    "images/screenshot1.png",
+                    "images/thumbnail.png"
+                ],
+                "PrefixEndpoint": {
+                    "AuthorityId": "iUgcFiles",
+                    "Path": "/ugcstorage/map/e859cf75-9b8a-429a-91be-2376681c8537/d13e5fc9-6af1-4c9d-a583-2264bee98fe6/",
+                    "QueryString": null,
+                    "RetryPolicyId": "linearretry",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": false
+                }
+            },
+            "Contributors": [],
+            "AssetHome": 1,
+            "AssetStats": {
+                "PlaysRecent": 203288,
+                "PlaysAllTime": 3024115,
+                "Favorites": 300,
+                "Likes": 0,
+                "Bookmarks": 0,
+                "ParentAssetCount": 50,
+                "AverageRating": 3.8413793103448275,
+                "NumberOfRatings": 290
+            },
+            "InspectionResult": 50,
+            "CloneBehavior": 0,
+            "Order": 0
+        },
+        "UgcGameVariantLink": {
+            "AssetId": "c6e811cc-2037-493f-8f57-eb8e039b9bca",
+            "VersionId": "bc37a41a-ca39-4372-97ac-0c351e74429f",
+            "PublicName": "Arena:Shotty Snipes Slayer",
+            "Description": "S7 Sniper Rifle and CQS48 Bulldog loadouts. Slay the enemy team.",
+            "Files": {
+                "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/c6e811cc-2037-493f-8f57-eb8e039b9bca/bc37a41a-ca39-4372-97ac-0c351e74429f/",
+                "FileRelativePaths": [
+                    "images/hero.png",
+                    "images/screenshot1.Png",
+                    "images/thumbnail.png"
+                ],
+                "PrefixEndpoint": {
+                    "AuthorityId": "iUgcFiles",
+                    "Path": "/ugcstorage/ugcgamevariant/c6e811cc-2037-493f-8f57-eb8e039b9bca/bc37a41a-ca39-4372-97ac-0c351e74429f/",
+                    "QueryString": null,
+                    "RetryPolicyId": "linearretry",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": false
+                }
+            },
+            "Contributors": [],
+            "AssetHome": 1,
+            "AssetStats": {
+                "PlaysRecent": 42204,
+                "PlaysAllTime": 331905,
+                "Favorites": 703,
+                "Likes": 0,
+                "Bookmarks": 0,
+                "ParentAssetCount": 22,
+                "AverageRating": 4.448516579406632,
+                "NumberOfRatings": 573
+            },
+            "InspectionResult": 0,
+            "CloneBehavior": 0,
+            "Order": 0
+        },
+        "AssetId": "95018e68-41fc-4d5f-b627-15590feb7469",
+        "VersionId": "fad19fca-afa8-41c4-a3d9-3da96c248a1e",
+        "PublicName": "Arena:Shotty Snipes Slayer on Catalyst",
+        "Description": "",
+        "Files": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/mapmodepair/95018e68-41fc-4d5f-b627-15590feb7469/fad19fca-afa8-41c4-a3d9-3da96c248a1e/",
+            "FileRelativePaths": [],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/mapmodepair/95018e68-41fc-4d5f-b627-15590feb7469/fad19fca-afa8-41c4-a3d9-3da96c248a1e/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Contributors": [],
+        "AssetHome": 1,
+        "AssetStats": {
+            "PlaysRecent": 6526,
+            "PlaysAllTime": 36323,
+            "Favorites": 0,
+            "Likes": 0,
+            "Bookmarks": 0,
+            "ParentAssetCount": 1,
+            "AverageRating": 0.0,
+            "NumberOfRatings": 0
+        },
+        "InspectionResult": 0,
+        "CloneBehavior": 0,
+        "Order": 0
+    }
+	</code>
+</example>

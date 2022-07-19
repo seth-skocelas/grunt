@@ -1045,7 +1045,9 @@ namespace Grunt.Core
         /// The API likely obtains a specific ban message, but unless someone banned can confirm what this looks like, can't tell what the data is.
         /// Tracked in: https://github.com/dend/grunt/issues/9
         /// </summary>
-        /// <remarks>INACTIVE API</remarks>
+        /// <remarks>
+        /// TODO: Figure out what the content for the response here actually. is.
+        /// </remarks>
         /// <param name="messageIdentity">The unique ID for the ban message.</param>
         /// <param name="flightId">The unique ID for the currently active flight.</param>
         /// <returns>Unknown.</returns>
@@ -1067,8 +1069,14 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetChallenge(string challengePath, string flightId)
+        /// <summary>
+        /// Returns information about an existing challenge.
+        /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetChallenge.xml' path='//example'/>
+        /// <param name="challengePath">Path to the challenge file. Example is "ChallengeContent/ClientChallengeDefinitions/S1RotationalSet1Challenges/Normal/NTeamSlayerPlay.json".</param>
+        /// <param name="flightId">The unique ID for the currently active flight.</param>
+        /// <returns>If successful, returns an instance of Challenge containing challenge information. Otherwise, returns null.</returns>
+        public async Task<Challenge> GameCmsGetChallenge(string challengePath, string flightId)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengePath}?flight={flightId}",
                                    HttpMethod.Get,
@@ -1078,11 +1086,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Challenge>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -1327,7 +1335,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
+        /// <summary>
+        /// Unknown what this API specifically returns, but the assumption is that it's configuration for graphic setting overrides.
+        /// </summary>
+        /// <remarks>
+        /// TODO: Need to figure out what the API response here is. Haven't seen this actually activated in-game.
+        /// </remarks>
+        /// <returns>Returns a string containing the response.</returns>
         public async Task<string> GameCmsGetGraphicSpecs()
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/overrides.json",
@@ -1336,14 +1350,7 @@ namespace Grunt.Core
                                    true,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return response;
         }
 
         /// <summary>
@@ -1511,8 +1518,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetProgressionFile(string filePath)
+        /// <summary>
+        /// Returns a progression file. This method is using a generic parameter due to the fact that there are multiple progression file variants.
+        /// </summary>
+        /// <typeparam name="T">Type of progression file to be obtained.</typeparam>
+        /// <param name="filePath">Path to the progression file.</param>
+        /// <returns>If successful, returns an instance of T, where T is the type of the progression file. Otherwise, returns null.</returns>
+        public async Task<T> GameCmsGetProgressionFile<T>(string filePath)
         {
             var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{filePath}",
                                    HttpMethod.Get,
@@ -1520,13 +1532,14 @@ namespace Grunt.Core
                                    true,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
+
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<T>(response);
             }
             else
             {
-                return string.Empty;
+                return default(T);
             }
         }
 
@@ -2771,6 +2784,7 @@ namespace Grunt.Core
         /// <summary>
         /// Returns information about a given map and mode combination. For example, the Breaker map can be used in Big Team Battle (BTB).
         /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_DiscoveryGetMapModePair.xml' path='//example'/>
         /// <remarks>
         /// An example fully constructed HTTP request to the API is: https://discovery-infiniteugc.svc.halowaypoint.com/hi/mapModePairs/9e056bcc-b9bc-4845-9fe3-6d667f018463/versions/37b8cd75-d1ce-4abf-9349-a76673503410.
         /// This request represents the BTB game mode on the Breaker map.
@@ -2797,8 +2811,15 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetMapModePairWithoutVersion(string assetId)
+        /// <summary>
+        /// Should return a map and mode combination without the version.
+        /// </summary>
+        /// <remarks>
+        /// Currently the API seems to return a 404 response, so not sure whether this is even supposed to worl.
+        /// </remarks>
+        /// <param name="assetId">Unique ID for the map and mode combination.</param>
+        /// <returns>Unknown.</returns>
+        private async Task<string> HIUGCDiscoveryGetMapModePairWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}",
                                    HttpMethod.Get,

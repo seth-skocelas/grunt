@@ -1,0 +1,83 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 6/14/2022:
+	<code>
+    {
+        "Description": {
+            "status": "Ready",
+            "value": "Kill Enemy Spartans in PvP",
+            "translations": {
+                "cs-CZ": "Zabijte nepřátelské Sparťany v PvP",
+                "da-DK": "Dræb fjendtlige spartanere i PvP",
+                "de-DE": "Im PvP gegnerische Spartans ausschalten",
+                "el-GR": "Σκότωσε εχθρικούς Spartan στο PvP",
+                "es-ES": "Mata a Spartan enemigos en JcJ.",
+                "es-MX": "Mata a Spartans enemigos en JcJ",
+                "fi-FI": "Tapa vihollisen spartalaisia PvP:ssä",
+                "fr-FR": "Tuez des Spartans ennemis en JcJ.",
+                "hu-HU": "Ölj meg ellenséges Spartanokat PvP-ben",
+                "it-IT": "Uccidi Spartan nemici nel PvP",
+                "ja-JP": "PvP で敵スパルタン複数をキルする",
+                "ko-KR": "PVP에서 적 스파르탄들을 사살하십시오",
+                "nb-NO": "Drep fiendtlige spartanere i PvP",
+                "nl-NL": "Dood vijandelijke Spartans in PvP",
+                "pl-PL": "Zabij wrogich spartan w PvP",
+                "pt-BR": "Abata Spartans Inimigos no modo JvJ",
+                "pt-PT": "Mata Spartans inimigos em PvP",
+                "ru-RU": "Убейте вражеских Спартанцев в PvP.",
+                "sv-SE": "Döda fientliga spartaner i PvP",
+                "tr-TR": "OkO’da Düşman Spartanlar’ı Öldürün",
+                "zh-CN": "在 PvP 中消灭敌方斯巴达战士",
+                "zh-TW": "在 PvP 中殺死敵方超級戰士",
+                "qps-ploc": "Ķіℓŀ Зŋ℮mỳ Ŝрąřťªŉş ĩπ ΡνΡ !!! !!! !",
+                "qps-ploca": "Кìŀľ Êйемў Śρăяτąňş ïŋ ΡνΡ !!! !!! !",
+                "qps-plocm": "Ќïŀŀ Éиĕmў Şрдяτãňš ĭň РνР !!! !!! !"
+            }
+        },
+        "Difficulty": "mythic",
+        "Category": "Capstone",
+        "Reward": {
+            "OperationExperience": 400,
+            "InventoryItems": [],
+            "InventoryRewards": [
+                {
+                    "InventoryItemPath": "inventory/Armor/Visors/012-001-d372cb1b.json",
+                    "Amount": 1,
+                    "Type": "ArmorVisor"
+                }
+            ]
+        },
+        "ThresholdForSuccess": 30,
+        "Title": {
+            "status": "Ready",
+            "value": "Regicide",
+            "translations": {
+                "cs-CZ": "Královražda",
+                "da-DK": "Kongemord",
+                "de-DE": "Königsmord",
+                "el-GR": "Βασιλοκτονία",
+                "es-ES": "Regicidio",
+                "es-MX": "Regicidio",
+                "fi-FI": "Kuninkaanmurha",
+                "fr-FR": "Régicide",
+                "hu-HU": "Királygyilkosság",
+                "it-IT": "Regicidio",
+                "ja-JP": "下剋上",
+                "ko-KR": "반역",
+                "nb-NO": "Kongemord",
+                "nl-NL": "Regicide",
+                "pl-PL": "Królobójstwo",
+                "pt-BR": "Regicídio",
+                "pt-PT": "Regicídio",
+                "ru-RU": "Цареубийство",
+                "sv-SE": "Kungamord",
+                "tr-TR": "Kral Katli",
+                "zh-CN": "弒君者",
+                "zh-TW": "弒君",
+                "qps-ploc": "Яéğίĉίδ℮ !!",
+                "qps-ploca": "Ѓєğíсїđе !!",
+                "qps-plocm": "Γĕģí¢їđё !!"
+            }
+        }
+    }
+	</code>
+</example>

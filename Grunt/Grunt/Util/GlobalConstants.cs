@@ -7,10 +7,6 @@ namespace Grunt.Util
     {
         internal static readonly string HALO_WAYPOINT_USER_AGENT = "HaloWaypoint/2021112313511900 CFNetwork/1327.0.4 Darwin/21.2.0";
         internal static readonly string HALO_PC_USER_AGENT = "SHIVA-2043073184/6.10021.18539.0 (release; PC)";
-        // Game UA: SHIVA-2043073184/6.10021.10921.0 (release; PC)
-
-        // Settings: https://settings.svc.halowaypoint.com/featureflags/hi?flight=c1178956-c7c8-4860-a3a7-da5caa55faad
-
         internal static readonly string[] DEFAULT_AUTH_SCOPES = new string[] { "Xboxlive.signin", "Xboxlive.offline_access" };
 
 
