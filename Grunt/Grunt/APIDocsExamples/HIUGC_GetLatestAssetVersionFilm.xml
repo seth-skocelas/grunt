@@ -1,0 +1,60 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/18/2022:
+	<code>
+	{
+        "CustomData": {
+            "FilmLength": 0,
+            "Chunks": [],
+            "HasGameEnded": false,
+            "ManifestRefreshSeconds": 30,
+            "MatchId": "00000000-0000-0000-0000-000000000000",
+            "FilmMajorVersion": 0
+        },
+        "AssetVersionFiles": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/film/b5ed517c-ce50-4919-95b2-41197f644ad6/b583ff12-40f3-44e5-9471-186ee8332e74/",
+            "FileRelativePaths": [],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/film/b5ed517c-ce50-4919-95b2-41197f644ad6/b583ff12-40f3-44e5-9471-186ee8332e74/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Links": {
+            "EngineGameVariant": [
+                {
+                    "TargetAssetId": "6ada47c6-fedd-4a46-9761-e6c4a8ed11bd",
+                    "TargetAssetVersionId": null,
+                    "Order": 0
+                }
+            ]
+        },
+        "AssetId": "b5ed517c-ce50-4919-95b2-41197f644ad6",
+        "AssetVersionId": "b583ff12-40f3-44e5-9471-186ee8332e74",
+        "PublicName": "MultiTeam",
+        "Description": "",
+        "CreatedDate": {
+            "ISO8601Date": "2022-07-19T04:38:25.872Z"
+        },
+        "LastModifiedDate": {
+            "ISO8601Date": "2022-07-19T04:38:25.876Z"
+        },
+        "VersionNumber": 12,
+        "Note": "Autosaved",
+        "AssetState": 1,
+        "Tags": [],
+        "Contributors": [],
+        "AssetHome": 2,
+        "ExemptFromAutoDelete": false,
+        "InspectionResult": 0,
+        "CloneBehavior": 0,
+        "Player": "xuid(2533274837773602)",
+        "StringCulture": "",
+        "PreviousAssetVersionId": "c77f607f-4c21-4359-a4ee-cbe617324474"
+    }
+	</code>
+</example>

@@ -1,0 +1,55 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/18/2022:
+	<code>
+    {
+        "CustomData": {
+            "KeyValues": {}
+        },
+        "AssetVersionFiles": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/b5ed517c-ce50-4919-95b2-41197f644ad6/b75ff80c-dd0f-40be-880a-b8f2e9cb4fa8/",
+            "FileRelativePaths": [],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/ugcgamevariant/b5ed517c-ce50-4919-95b2-41197f644ad6/b75ff80c-dd0f-40be-880a-b8f2e9cb4fa8/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Links": {
+            "EngineGameVariant": [
+                {
+                    "TargetAssetId": "6ada47c6-fedd-4a46-9761-e6c4a8ed11bd",
+                    "TargetAssetVersionId": null,
+                    "Order": 0
+                }
+            ]
+        },
+        "AssetId": "b5ed517c-ce50-4919-95b2-41197f644ad6",
+        "AssetVersionId": "b75ff80c-dd0f-40be-880a-b8f2e9cb4fa8",
+        "PublicName": "MultiTeam",
+        "Description": "",
+        "CreatedDate": {
+            "ISO8601Date": "2022-07-19T03:25:00.826Z"
+        },
+        "LastModifiedDate": {
+            "ISO8601Date": "2022-07-19T04:10:02.027Z"
+        },
+        "VersionNumber": 8,
+        "Note": "Not autosaved",
+        "AssetState": 1,
+        "Tags": [],
+        "Contributors": [],
+        "AssetHome": 2,
+        "ExemptFromAutoDelete": true,
+        "InspectionResult": 0,
+        "CloneBehavior": 0,
+        "Player": "xuid(2533274837773602)",
+        "StringCulture": "en-us",
+        "PreviousAssetVersionId": "3deff683-01e4-4e2a-927b-33a77c12d5fe"
+    }
+	</code>
+</example>

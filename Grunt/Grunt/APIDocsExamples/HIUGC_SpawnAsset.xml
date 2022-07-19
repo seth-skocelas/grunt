@@ -1,0 +1,47 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/18/2022:
+	<code>
+    {
+        "AssetId": "935cb8fb-d39c-40aa-9704-4c54a5346145",
+        "Kind": 6,
+        "OriginalOwner": "xuid(2533274837773602)",
+        "Admin": "xuid(2533274837773602)",
+        "LastModifiedDateUtc": {
+            "ISO8601Date": "2022-07-19T05:23:41.041Z"
+        },
+        "CreatedDateUtc": {
+            "ISO8601Date": "2022-07-19T05:23:41.036Z"
+        },
+        "InternalName": "Attrition-AttritionFFAS2EventShottySnipes-UGC",
+        "Description": "",
+        "HardDeleteTimeUtc": null,
+        "Permissions": [
+            {
+                "CanonicalToken": "xuid(2533274837773602)",
+                "AuthoringRole": 6,
+                "GrantedBy": "the_guardians",
+                "GrantedOnDateUtc": {
+                    "ISO8601Date": "2022-07-19T05:23:41.036Z"
+                }
+            }
+        ],
+        "AssetStats": {
+            "Favorites": 0,
+            "FilmBookmarks": 0,
+            "Likes": 0,
+            "Ratings": {
+                "AverageRating": 0.0,
+                "TotalCount": 0,
+                "Ratings": []
+            },
+            "ParentAssetCount": 0,
+            "LastModifiedDateUtc": {
+                "ISO8601Date": ""
+            },
+            "IgnoreReports": false
+        },
+        "AssetHome": 2,
+        "IsCurrentlyBeingEdited": false
+    }
+	</code>
+</example>

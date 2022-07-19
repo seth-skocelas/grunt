@@ -9,8 +9,8 @@
         public int InspectionResult { get; set; }
         public int CloneBehavior { get; set; }
         public int AssetHome { get; set; }
-        public object[] Tags { get; set; }
-        public object[] Contributors { get; set; }
+        public string[] Tags { get; set; }
+        public string[] Contributors { get; set; }
         public AssetVersionFile Files { get; set; }
         public string VersionId { get; set; }
         public int AssetKind { get; set; }
