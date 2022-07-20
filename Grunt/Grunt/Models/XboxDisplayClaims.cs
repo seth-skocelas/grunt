@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace Grunt.Models
 {
     public class XboxDisplayClaims
     {
-        [JsonProperty("xui")]
+        [JsonPropertyName("xui")]
         public XboxXui[] Xui { get; set; }
     }
 }

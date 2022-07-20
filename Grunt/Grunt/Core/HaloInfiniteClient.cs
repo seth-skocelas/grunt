@@ -3,13 +3,13 @@ using Grunt.Models.HaloInfinite;
 using Grunt.Models.HaloInfinite.ApiIngress;
 using Grunt.Models.Xbox;
 using Grunt.Util;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Grunt.Core
@@ -78,7 +78,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<ApiSettingsContainer>(response);
+                return JsonSerializer.Deserialize<ApiSettingsContainer>(response);
             }
             else
             {
@@ -105,7 +105,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<BotCustomizationData>(response);
+                return JsonSerializer.Deserialize<BotCustomizationData>(response);
             }
             else
             {
@@ -127,7 +127,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AcademyClientManifest>(response);
+                return JsonSerializer.Deserialize<AcademyClientManifest>(response);
             }
             else
             {
@@ -150,7 +150,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<TestAcademyClientManifest>(response);
+                return JsonSerializer.Deserialize<TestAcademyClientManifest>(response);
             }
             else
             {
@@ -172,7 +172,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AcademyStarDefinitions>(response);
+                return JsonSerializer.Deserialize<AcademyStarDefinitions>(response);
             }
             else
             {
@@ -228,7 +228,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Models.HaloInfinite.AiCore>(response);
+                return JsonSerializer.Deserialize<Models.HaloInfinite.AiCore>(response);
             }
             else
             {
@@ -251,7 +251,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AiCores>(response);
+                return JsonSerializer.Deserialize<AiCores>(response);
             }
             else
             {
@@ -274,7 +274,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerCores>(response);
+                return JsonSerializer.Deserialize<PlayerCores>(response);
             }
             else
             {
@@ -299,7 +299,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<ArmorCore>(response);
+                return JsonSerializer.Deserialize<ArmorCore>(response);
             }
             else
             {
@@ -323,7 +323,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<ArmorCoreCollection>(response);
+                return JsonSerializer.Deserialize<ArmorCoreCollection>(response);
             }
             else
             {
@@ -347,7 +347,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<ActiveBoostsContainer>(response);
+                return JsonSerializer.Deserialize<ActiveBoostsContainer>(response);
             }
             else
             {
@@ -372,7 +372,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<RewardSnapshot>(response);
+                return JsonSerializer.Deserialize<RewardSnapshot>(response);
             }
             else
             {
@@ -395,7 +395,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<StoreItem>(response);
+                return JsonSerializer.Deserialize<StoreItem>(response);
             }
             else
             {
@@ -443,7 +443,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerGiveaways>(response);
+                return JsonSerializer.Deserialize<PlayerGiveaways>(response);
             }
             else
             {
@@ -466,7 +466,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<StoreItem>(response);
+                return JsonSerializer.Deserialize<StoreItem>(response);
             }
             else
             {
@@ -490,7 +490,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerInventory>(response);
+                return JsonSerializer.Deserialize<PlayerInventory>(response);
             }
             else
             {
@@ -514,7 +514,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<StoreItem>(response);
+                return JsonSerializer.Deserialize<StoreItem>(response);
             }
             else
             {
@@ -539,7 +539,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerCustomizationCollection>(response);
+                return JsonSerializer.Deserialize<PlayerCustomizationCollection>(response);
             }
             else
             {
@@ -563,7 +563,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<StoreItem>(response);
+                return JsonSerializer.Deserialize<StoreItem>(response);
             }
             else
             {
@@ -587,7 +587,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<StoreItem>(response);
+                return JsonSerializer.Deserialize<StoreItem>(response);
             }
             else
             {
@@ -613,7 +613,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<RewardTrackMetadata>(response);
+                return JsonSerializer.Deserialize<RewardTrackMetadata>(response);
             }
             else
             {
@@ -637,7 +637,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<CurrencySnapshot>(response);
+                return JsonSerializer.Deserialize<CurrencySnapshot>(response);
             }
             else
             {
@@ -661,7 +661,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<StoreItem>(response);
+                return JsonSerializer.Deserialize<StoreItem>(response);
             }
             else
             {
@@ -686,7 +686,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Models.HaloInfinite.Foundation.Core>(response);
+                return JsonSerializer.Deserialize<Models.HaloInfinite.Foundation.Core>(response);
             }
             else
             {
@@ -710,7 +710,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AppearanceCustomization>(response);
+                return JsonSerializer.Deserialize<AppearanceCustomization>(response);
             }
             else
             {
@@ -735,7 +735,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<CustomizationData>(response);
+                return JsonSerializer.Deserialize<CustomizationData>(response);
             }
             else
             {
@@ -759,7 +759,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<OperationRewardTrackSnapshot>(response);
+                return JsonSerializer.Deserialize<OperationRewardTrackSnapshot>(response);
             }
             else
             {
@@ -787,7 +787,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<TransactionSnapshot>(response);
+                return JsonSerializer.Deserialize<TransactionSnapshot>(response);
             }
             else
             {
@@ -836,7 +836,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<StoreItem>(response);
+                return JsonSerializer.Deserialize<StoreItem>(response);
             }
             else
             {
@@ -860,7 +860,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<SpartanBody>(response);
+                return JsonSerializer.Deserialize<SpartanBody>(response);
             }
             else
             {
@@ -885,7 +885,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<VehicleCore>(response);
+                return JsonSerializer.Deserialize<VehicleCore>(response);
             }
             else
             {
@@ -909,7 +909,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<VehicleCoreCollection>(response);
+                return JsonSerializer.Deserialize<VehicleCoreCollection>(response);
             }
             else
             {
@@ -934,7 +934,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<WeaponCore>(response);
+                return JsonSerializer.Deserialize<WeaponCore>(response);
             }
             else
             {
@@ -958,7 +958,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<WeaponCoreCollection>(response);
+                return JsonSerializer.Deserialize<WeaponCoreCollection>(response);
             }
             else
             {
@@ -986,7 +986,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AchievementCollection>(response);
+                return JsonSerializer.Deserialize<AchievementCollection>(response);
             }
             else
             {
@@ -1034,7 +1034,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AsyncComputeOverrides>(response);
+                return JsonSerializer.Deserialize<AsyncComputeOverrides>(response);
             }
             else
             {
@@ -1087,7 +1087,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Challenge>(response);
+                return JsonSerializer.Deserialize<Challenge>(response);
             }
             else
             {
@@ -1112,7 +1112,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<ChallengeDeckDefinition>(response);
+                return JsonSerializer.Deserialize<ChallengeDeckDefinition>(response);
             }
             else
             {
@@ -1137,7 +1137,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<CurrencyDefinition>(response);
+                return JsonSerializer.Deserialize<CurrencyDefinition>(response);
             }
             else
             {
@@ -1165,7 +1165,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<ClawAccessSnapshot>(response);
+                return JsonSerializer.Deserialize<ClawAccessSnapshot>(response);
             }
             else
             {
@@ -1188,7 +1188,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<CPUPresetSnapshot>(response);
+                return JsonSerializer.Deserialize<CPUPresetSnapshot>(response);
             }
             else
             {
@@ -1211,7 +1211,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<CustomGameDefinition>(response);
+                return JsonSerializer.Deserialize<CustomGameDefinition>(response);
             }
             else
             {
@@ -1235,7 +1235,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<InventoryDefinition>(response);
+                return JsonSerializer.Deserialize<InventoryDefinition>(response);
             }
             else
             {
@@ -1261,7 +1261,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<DevicePresetOverrides>(response);
+                return JsonSerializer.Deserialize<DevicePresetOverrides>(response);
             }
             else
             {
@@ -1286,7 +1286,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<RewardTrackMetadata>(response);
+                return JsonSerializer.Deserialize<RewardTrackMetadata>(response);
             }
             else
             {
@@ -1328,7 +1328,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<OverrideQueryDefinition>(response);
+                return JsonSerializer.Deserialize<OverrideQueryDefinition>(response);
             }
             else
             {
@@ -1396,7 +1396,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<InGameItem>(response);
+                return JsonSerializer.Deserialize<InGameItem>(response);
             }
             else
             {
@@ -1419,7 +1419,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<LobbyHopperErrorMessageList>(response);
+                return JsonSerializer.Deserialize<LobbyHopperErrorMessageList>(response);
             }
             else
             {
@@ -1442,7 +1442,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Metadata>(response);
+                return JsonSerializer.Deserialize<Metadata>(response);
             }
             else
             {
@@ -1465,7 +1465,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<NetworkConfiguration>(response);
+                return JsonSerializer.Deserialize<NetworkConfiguration>(response);
             }
             else
             {
@@ -1488,7 +1488,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<News>(response);
+                return JsonSerializer.Deserialize<News>(response);
             }
             else
             {
@@ -1511,7 +1511,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<OEConfiguration>(response);
+                return JsonSerializer.Deserialize<OEConfiguration>(response);
             }
             else
             {
@@ -1536,7 +1536,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<T>(response);
+                return JsonSerializer.Deserialize<T>(response);
             }
             else
             {
@@ -1559,7 +1559,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<DriverManifest>(response);
+                return JsonSerializer.Deserialize<DriverManifest>(response);
             }
             else
             {
@@ -1586,7 +1586,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<SeasonRewardTrack>(response);
+                return JsonSerializer.Deserialize<SeasonRewardTrack>(response);
             }
             else
             {
@@ -1684,7 +1684,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<GuideContainer>(response);
+                return JsonSerializer.Deserialize<GuideContainer>(response);
             }
             else
             {
@@ -1708,7 +1708,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<GuideContainer>(response);
+                return JsonSerializer.Deserialize<GuideContainer>(response);
             }
             else
             {
@@ -1732,7 +1732,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<GuideContainer>(response);
+                return JsonSerializer.Deserialize<GuideContainer>(response);
             }
             else
             {
@@ -1756,7 +1756,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<GuideContainer>(response);
+                return JsonSerializer.Deserialize<GuideContainer>(response);
             }
             else
             {
@@ -1780,7 +1780,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<GuideContainer>(response);
+                return JsonSerializer.Deserialize<GuideContainer>(response);
             }
             else
             {
@@ -1804,7 +1804,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<GuideContainer>(response);
+                return JsonSerializer.Deserialize<GuideContainer>(response);
             }
             else
             {
@@ -1834,7 +1834,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<FavoriteAsset>(response);
+                return JsonSerializer.Deserialize<FavoriteAsset>(response);
             }
             else
             {
@@ -1858,11 +1858,11 @@ namespace Grunt.Core
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   JsonConvert.SerializeObject(starter));
+                                   JsonSerializer.Serialize(starter));
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetVersion>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetVersion>(response);
             }
             else
             {
@@ -1964,7 +1964,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<FavoriteAsset>(response);
+                return JsonSerializer.Deserialize<FavoriteAsset>(response);
             }
             else
             {
@@ -1990,7 +1990,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAsset>(response);
+                return JsonSerializer.Deserialize<AuthoringAsset>(response);
             }
             else
             {
@@ -2041,7 +2041,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetVersion>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetVersion>(response);
             }
             else
             {
@@ -2070,7 +2070,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetVersion>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetVersion>(response);
             }
             else
             {
@@ -2096,7 +2096,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetVersion>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetVersion>(response);
             }
             else
             {
@@ -2148,7 +2148,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetVersion>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetVersion>(response);
             }
             else
             {
@@ -2177,7 +2177,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetVersionContainer>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetVersionContainer>(response);
             }
             else
             {
@@ -2205,7 +2205,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetContainer>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetContainer>(response);
             }
             else
             {
@@ -2233,7 +2233,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringFavoritesContainer>(response);
+                return JsonSerializer.Deserialize<AuthoringFavoritesContainer>(response);
             }
             else
             {
@@ -2260,7 +2260,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringFavoritesContainer>(response);
+                return JsonSerializer.Deserialize<AuthoringFavoritesContainer>(response);
             }
             else
             {
@@ -2284,11 +2284,11 @@ namespace Grunt.Core
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   JsonConvert.SerializeObject(patchedAsset));
+                                   JsonSerializer.Serialize(patchedAsset));
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetVersion>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetVersion>(response);
             }
             else
             {
@@ -2336,7 +2336,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetRating>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetRating>(response);
             }
             else
             {
@@ -2360,11 +2360,11 @@ namespace Grunt.Core
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   JsonConvert.SerializeObject(rating));
+                                   JsonSerializer.Serialize(rating));
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAssetRating>(response);
+                return JsonSerializer.Deserialize<AuthoringAssetRating>(response);
             }
             else
             {
@@ -2410,11 +2410,11 @@ namespace Grunt.Core
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   JsonConvert.SerializeObject(asset));
+                                   JsonSerializer.Serialize(asset));
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AuthoringAsset>(response);
+                return JsonSerializer.Deserialize<AuthoringAsset>(response);
             }
             else
             {
@@ -2473,11 +2473,11 @@ namespace Grunt.Core
                                    true,
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   JsonConvert.SerializeObject(starter));
+                                   JsonSerializer.Serialize(starter));
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AssetAuthoringSession>(response);
+                return JsonSerializer.Deserialize<AssetAuthoringSession>(response);
             }
             else
             {
@@ -2509,7 +2509,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<AssetAuthoringSession>(response);
+                return JsonSerializer.Deserialize<AssetAuthoringSession>(response);
             }
             else
             {
@@ -2656,7 +2656,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<EngineGameVariant>(response);
+                return JsonSerializer.Deserialize<EngineGameVariant>(response);
             }
             else
             {
@@ -2680,7 +2680,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<EngineGameVariant>(response);
+                return JsonSerializer.Deserialize<EngineGameVariant>(response);
             }
             else
             {
@@ -2706,7 +2706,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Manifest>(response);
+                return JsonSerializer.Deserialize<Manifest>(response);
             }
             else
             {
@@ -2751,7 +2751,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Manifest>(response);
+                return JsonSerializer.Deserialize<Manifest>(response);
             }
             else
             {
@@ -2795,7 +2795,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Map>(response);
+                return JsonSerializer.Deserialize<Map>(response);
             }
             else
             {
@@ -2825,7 +2825,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<MapModePair>(response);
+                return JsonSerializer.Deserialize<MapModePair>(response);
             }
             else
             {
@@ -2874,7 +2874,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Map>(response);
+                return JsonSerializer.Deserialize<Map>(response);
             }
             else
             {
@@ -2900,7 +2900,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Playlist>(response);
+                return JsonSerializer.Deserialize<Playlist>(response);
             }
             else
             {
@@ -2945,7 +2945,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Prefab>(response);
+                return JsonSerializer.Deserialize<Prefab>(response);
             }
             else
             {
@@ -2970,7 +2970,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Prefab>(response);
+                return JsonSerializer.Deserialize<Prefab>(response);
             }
             else
             {
@@ -2995,7 +2995,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Project>(response);
+                return JsonSerializer.Deserialize<Project>(response);
             }
             else
             {
@@ -3019,7 +3019,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Project>(response);
+                return JsonSerializer.Deserialize<Project>(response);
             }
             else
             {
@@ -3042,7 +3042,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<TagInfo>(response);
+                return JsonSerializer.Deserialize<TagInfo>(response);
             }
             else
             {
@@ -3066,7 +3066,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<UGCGameVariant>(response);
+                return JsonSerializer.Deserialize<UGCGameVariant>(response);
             }
             else
             {
@@ -3089,7 +3089,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<UGCGameVariant>(response);
+                return JsonSerializer.Deserialize<UGCGameVariant>(response);
             }
             else
             {
@@ -3118,7 +3118,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<SearchResultsContainer>(response);
+                return JsonSerializer.Deserialize<SearchResultsContainer>(response);
             }
             else
             {
@@ -3142,7 +3142,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Film>(response);
+                return JsonSerializer.Deserialize<Film>(response);
             }
             else
             {
@@ -3187,7 +3187,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<List<Server>>(response);
+                return JsonSerializer.Deserialize<List<Server>>(response);
             }
             else
             {
@@ -3328,7 +3328,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<LobbyJoinHandle>(response);
+                return JsonSerializer.Deserialize<LobbyJoinHandle>(response);
             }
             else
             {
@@ -3376,7 +3376,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<FlightedFeatureFlags>(response);
+                return JsonSerializer.Deserialize<FlightedFeatureFlags>(response);
             }
             else
             {
@@ -3406,7 +3406,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerClearance>(response);
+                return JsonSerializer.Deserialize<PlayerClearance>(response);
             }
             else
             {
@@ -3433,7 +3433,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerClearance>(response);
+                return JsonSerializer.Deserialize<PlayerClearance>(response);
             }
             else
             {
@@ -3462,7 +3462,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerSkillResultContainer>(response);
+                return JsonSerializer.Deserialize<PlayerSkillResultContainer>(response);
             }
             else
             {
@@ -3488,7 +3488,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlaylistCsrResultContainer>(response);
+                return JsonSerializer.Deserialize<PlaylistCsrResultContainer>(response);
             }
             else
             {
@@ -3516,7 +3516,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<BanSummary>(response); ;
+                return JsonSerializer.Deserialize<BanSummary>(response); ;
             }
             else
             {
@@ -3539,7 +3539,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerDecks>(response); ;
+                return JsonSerializer.Deserialize<PlayerDecks>(response); ;
             }
             else
             {
@@ -3562,7 +3562,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerMatchCount>(response);
+                return JsonSerializer.Deserialize<PlayerMatchCount>(response);
             }
             else
             {
@@ -3585,7 +3585,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<MatchContainer>(response);
+                return JsonSerializer.Deserialize<MatchContainer>(response);
             }
             else
             {
@@ -3608,7 +3608,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<MatchStats>(response);
+                return JsonSerializer.Deserialize<MatchStats>(response);
             }
             else
             {
@@ -3632,7 +3632,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<MatchProgression>(response);
+                return JsonSerializer.Deserialize<MatchProgression>(response);
             }
             else
             {
@@ -3655,7 +3655,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<MatchesPrivacy>(response);
+                return JsonSerializer.Deserialize<MatchesPrivacy>(response);
             }
             else
             {
@@ -3787,7 +3787,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<Key>(response);
+                return JsonSerializer.Deserialize<Key>(response);
             }
             else
             {
@@ -3809,7 +3809,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<ModerationProofKeys>(response);
+                return JsonSerializer.Deserialize<ModerationProofKeys>(response);
             }
             else
             {

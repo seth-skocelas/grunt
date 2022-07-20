@@ -46,10 +46,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<None Update="endpoints.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>

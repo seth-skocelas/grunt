@@ -1,17 +1,16 @@
-﻿
-using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Grunt.Models
 {
     public class ClientConfiguration
     {
-        [JsonProperty("client_id")]
+        [JsonPropertyName("client_id")]
         public string ClientId { get; set; }
 
-        [JsonProperty("client_secret")]
+        [JsonPropertyName("client_secret")]
         public string ClientSecret { get; set; }
 
-        [JsonProperty("redirect_url")]
+        [JsonPropertyName("redirect_url")]
         public string RedirectUrl { get; set; }
     }
 }

@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Grunt.Models.HaloInfinite
 {
     public class IdentifierName
     {
-        [JsonProperty("m_identifier")]
+        [JsonPropertyName("m_identifier")]
         public int MIdentifier { get; set; }
     }
 

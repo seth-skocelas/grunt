@@ -1,13 +1,11 @@
 ﻿using Grunt.Authentication;
 using Grunt.Core;
 using Grunt.Models;
-using Grunt.Models.HaloInfinite;
 using Grunt.Util;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Grunt.Zeta
@@ -227,7 +225,7 @@ namespace Grunt.Zeta
 
         private static bool StoreTokens(OAuthToken token, string path)
         {
-            string json = JsonConvert.SerializeObject(token);
+            string json = JsonSerializer.Serialize(token);
             try
             {
                 System.IO.File.WriteAllText(path, json);

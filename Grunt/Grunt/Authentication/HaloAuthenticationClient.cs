@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
-using Grunt.Models;
+﻿using Grunt.Models;
 using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Grunt.Util;
 using Grunt.Endpoints;
+using System.Text.Json;
 
 namespace Grunt.Authentication
 {
@@ -26,7 +26,7 @@ namespace Grunt.Authentication
             };
 
             var client = new HttpClient();
-            var data = JsonConvert.SerializeObject(tokenRequest);
+            var data = JsonSerializer.Serialize(tokenRequest);
 
             var request = new HttpRequestMessage()
             {
@@ -41,7 +41,7 @@ namespace Grunt.Authentication
 
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<SpartanToken>(response.Content.ReadAsStringAsync().Result);
+                return JsonSerializer.Deserialize<SpartanToken>(response.Content.ReadAsStringAsync().Result);
             }
             else
             {

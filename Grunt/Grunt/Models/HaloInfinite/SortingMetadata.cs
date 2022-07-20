@@ -1,12 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Grunt.Models.HaloInfinite
 {
     public class SortingMetadata
     {
-        [JsonProperty("categoryWeight")]
+        [JsonPropertyName("categoryWeight")]
         public int CategoryWeight { get; set; }
-        [JsonProperty("subCategoryWeight")]
+        [JsonPropertyName("subCategoryWeight")]
         public int SubCategoryWeight { get; set; }
     }
 

@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using System.IO;
+﻿using System.IO;
+using System.Text.Json;
 
 namespace Grunt.Util
 {
@@ -11,7 +11,7 @@ namespace Grunt.Util
             using (StreamReader r = new(path))
             {
                 string json = r.ReadToEnd();
-                config = JsonConvert.DeserializeObject<T>(json);
+                config = JsonSerializer.Deserialize<T>(json);
             }
             return config;
         }

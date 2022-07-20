@@ -1,25 +1,25 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Grunt.Models
 {
     public class OAuthToken
     {
-        [JsonProperty("token_type")]
+        [JsonPropertyName("token_type")]
         public string TokenType { get; set; }
 
-        [JsonProperty("expires_in")]
+        [JsonPropertyName("expires_in")]
         public int ExpiresIn { get; set; }
 
-        [JsonProperty("scope")]
+        [JsonPropertyName("scope")]
         public string Scope { get; set; }
 
-        [JsonProperty("access_token")]
+        [JsonPropertyName("access_token")]
         public string AccessToken { get; set; }
 
-        [JsonProperty("refresh_token")]
+        [JsonPropertyName("refresh_token")]
         public string RefreshToken { get; set; }
 
-        [JsonProperty("user_id")]
+        [JsonPropertyName("user_id")]
         public string UserId { get; set; }
     }
 }

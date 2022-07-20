@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Grunt.Models;
+﻿using Grunt.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -8,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Grunt.Util;
 using Grunt.Endpoints;
+using System.Text.Json;
 
 namespace Grunt.Authentication
 {
@@ -71,7 +71,7 @@ namespace Grunt.Authentication
 
             if (response.IsSuccessStatusCode)
             { 
-                return JsonConvert.DeserializeObject<OAuthToken>(response.Content.ReadAsStringAsync().Result);
+                return JsonSerializer.Deserialize<OAuthToken>(response.Content.ReadAsStringAsync().Result);
             }
             else
             {
@@ -107,7 +107,7 @@ namespace Grunt.Authentication
 
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<OAuthToken>(response.Content.ReadAsStringAsync().Result);
+                return JsonSerializer.Deserialize<OAuthToken>(response.Content.ReadAsStringAsync().Result);
             }
             else
             {
@@ -133,7 +133,7 @@ namespace Grunt.Authentication
             {
                 RequestUri = new Uri(XboxEndpoints.XboxLiveUserAuthenticate),
                 Method = HttpMethod.Post,
-                Content = new StringContent(JsonConvert.SerializeObject(ticketData), Encoding.UTF8, "application/json")
+                Content = new StringContent(JsonSerializer.Serialize(ticketData), Encoding.UTF8, "application/json")
             };
 
             request.Headers.Add("x-xbl-contract-version", "1");
@@ -143,7 +143,7 @@ namespace Grunt.Authentication
 
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<XboxTicket>(responseData);
+                return JsonSerializer.Deserialize<XboxTicket>(responseData);
             }
             else
             {
@@ -172,7 +172,7 @@ namespace Grunt.Authentication
             };
 
             var client = new HttpClient();
-            var data = JsonConvert.SerializeObject(ticketData);
+            var data = JsonSerializer.Serialize(ticketData);
 
             var request = new HttpRequestMessage()
             {
@@ -188,7 +188,7 @@ namespace Grunt.Authentication
 
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<XboxTicket>(responseData);
+                return JsonSerializer.Deserialize<XboxTicket>(responseData);
             }
             else
             {

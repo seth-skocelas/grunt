@@ -1,5 +1,4 @@
 ﻿using Grunt.Models.HaloInfinite.Foundation;
-using Newtonsoft.Json;
 
 namespace Grunt.Models.HaloInfinite
 {

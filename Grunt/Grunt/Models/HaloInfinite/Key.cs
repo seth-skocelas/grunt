@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Grunt.Models.HaloInfinite
 {
@@ -6,16 +6,16 @@ namespace Grunt.Models.HaloInfinite
     // Additional context: https://stackoverflow.com/questions/70022898/what-does-e-aqab-mean-in-jwks
     public class Key
     {
-        [JsonProperty("kty")]
+        [JsonPropertyName("kty")]
         public string KeyType { get; set; }
         public string Use { get; set; }
-        [JsonProperty("kid")]
+        [JsonPropertyName("kid")]
         public string KeyId { get; set; }
-        [JsonProperty("n")]
+        [JsonPropertyName("n")]
         public string Modulus { get; set; }
-        [JsonProperty("e")]
+        [JsonPropertyName("e")]
         public string Exponent { get; set; }
-        [JsonProperty("x5c")]
+        [JsonPropertyName("x5c")]
         public string[] X509CertificateChain { get; set; }
     }
 

@@ -1,28 +1,28 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Grunt.Models
 {
     public class XboxXui
     {
-        [JsonProperty("uhs")]
+        [JsonPropertyName("uhs")]
         public string Uhs { get; set; }
 
-        [JsonProperty("gtg")]
+        [JsonPropertyName("gtg")]
         public string Gtg { get; set; }
 
-        [JsonProperty("xid")]
+        [JsonPropertyName("xid")]
         public string Xid { get; set; }
 
-        [JsonProperty("agg")]
+        [JsonPropertyName("agg")]
         public string Agg { get; set; }
 
-        [JsonProperty("usr")]
+        [JsonPropertyName("usr")]
         public string Usr { get; set; }
 
-        [JsonProperty("utr")]
+        [JsonPropertyName("utr")]
         public string Utr { get; set; }
 
-        [JsonProperty("prv")]
+        [JsonPropertyName("prv")]
         public string Prv { get; set; }
     }
 }

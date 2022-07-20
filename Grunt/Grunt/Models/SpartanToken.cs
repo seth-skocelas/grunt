@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace Grunt.Models
 
     public class SpartanToken
     {
-        [JsonProperty("SpartanToken")]
+        [JsonPropertyName("SpartanToken")]
         public string Token { get; set; }
         public APIFormattedDate ExpiresUtc { get; set; }
         public string TokenDuration { get; set; }

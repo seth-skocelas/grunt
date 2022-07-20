@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Grunt.Models
 {
     public class GruntConfiguration
     {
-        [JsonProperty("clearance_token")]
+        [JsonPropertyName("clearance_token")]
         public string ClearanceToken { get; set; }
     }
 }
