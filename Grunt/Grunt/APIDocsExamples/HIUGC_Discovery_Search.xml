@@ -1,0 +1,492 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/19/2022:
+	<code>
+    {
+        "Tags": [
+            {
+                "Tag": "arena",
+                "Count": 823
+            },
+            {
+                "Tag": "slayer",
+                "Count": 741
+            },
+            {
+                "Tag": "ctf",
+                "Count": 121
+            },
+            {
+                "Tag": "flag",
+                "Count": 115
+            },
+            {
+                "Tag": "multi-flag",
+                "Count": 114
+            }
+        ],
+        "EstimatedTotal": 1985,
+        "Start": 0,
+        "Count": 13,
+        "ResultCount": 13,
+        "Results": [
+            {
+                "AssetId": "b6aca0c7-8ba7-4066-bf91-693571374c3c",
+                "AssetVersionId": "c63ee410-784e-46ae-911e-ab7bc35933b1",
+                "Name": "Live Fire",
+                "Description": "Instructors at the Avery J. Johnson Academy of Military Science ensure their Spartans are prepared for any challenge.",
+                "AssetKind": 2,
+                "Tags": [
+                    "343i",
+                    "training mode"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/b6aca0c7-8ba7-4066-bf91-693571374c3c/c63ee410-784e-46ae-911e-ab7bc35933b1/images/thumbnail.png",
+                "ReferencedAssets": [],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 3694,
+                "Bookmarks": 0,
+                "PlaysRecent": 214021,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T20:59:40.812Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-11-04T02:54:00.359Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T19:58:08.938Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 29322309,
+                "Contributors": [],
+                "ParentAssetCount": 168,
+                "AverageRating": 3.859320419180692,
+                "NumberOfRatings": 3149
+            },
+            {
+                "AssetId": "e859cf75-9b8a-429a-91be-2376681c8537",
+                "AssetVersionId": "977c8fe8-8087-4a48-864d-52b4eeee8765",
+                "Name": "Catalyst",
+                "Description": "Spent shells rain like water in this ancient sanctuary.",
+                "AssetKind": 2,
+                "Tags": [
+                    "343i"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/e859cf75-9b8a-429a-91be-2376681c8537/977c8fe8-8087-4a48-864d-52b4eeee8765/images/thumbnail.png",
+                "ReferencedAssets": [],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 302,
+                "Bookmarks": 0,
+                "PlaysRecent": 204956,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T20:59:25.39Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2022-04-28T16:14:19.974Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T20:12:58.678Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 3037869,
+                "Contributors": [],
+                "ParentAssetCount": 50,
+                "AverageRating": 3.8419243986254297,
+                "NumberOfRatings": 291
+            },
+            {
+                "AssetId": "f0a1760f-0d4a-4bcc-ac7a-e8f9aee331dc",
+                "AssetVersionId": "6e9da6f4-fb07-4d38-b26e-2136941d5531",
+                "Name": "Streets",
+                "Description": "The tranquility of this Mombasa back alley is pierced by the sound of heavy gunfire.",
+                "AssetKind": 2,
+                "Tags": [
+                    "343i",
+                    "training mode"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/f0a1760f-0d4a-4bcc-ac7a-e8f9aee331dc/6e9da6f4-fb07-4d38-b26e-2136941d5531/images/thumbnail.png",
+                "ReferencedAssets": [],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 4886,
+                "Bookmarks": 0,
+                "PlaysRecent": 200989,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T20:59:11.947Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-11-04T02:56:59.669Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T20:15:24.66Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 28313215,
+                "Contributors": [],
+                "ParentAssetCount": 78,
+                "AverageRating": 3.558633186642506,
+                "NumberOfRatings": 3863
+            },
+            {
+                "AssetId": "8420410b-044d-44d7-80b6-98a766c8c39f",
+                "AssetVersionId": "068c0974-f748-41ba-b457-b8fed603576e",
+                "Name": "Recharge",
+                "Description": "Power still courses through the walls of this neglected Axys facility.",
+                "AssetKind": 2,
+                "Tags": [
+                    "343i",
+                    "training mode"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/8420410b-044d-44d7-80b6-98a766c8c39f/068c0974-f748-41ba-b457-b8fed603576e/images/thumbnail.png",
+                "ReferencedAssets": [],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 3479,
+                "Bookmarks": 0,
+                "PlaysRecent": 191807,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T20:59:32.089Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-11-04T02:57:14.295Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T20:20:35.551Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 27648342,
+                "Contributors": [],
+                "ParentAssetCount": 175,
+                "AverageRating": 3.6628300609343265,
+                "NumberOfRatings": 2954
+            },
+            {
+                "AssetId": "1e8cd10b-1496-423b-8699-f98f6f5db67e",
+                "AssetVersionId": "4155142e-b867-4030-a8a0-d5f44f9dce60",
+                "Name": "Arena:Slayer",
+                "Description": "Slay the enemy team.",
+                "AssetKind": 6,
+                "Tags": [
+                    "343i",
+                    "Arena",
+                    "Slayer"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/1e8cd10b-1496-423b-8699-f98f6f5db67e/4155142e-b867-4030-a8a0-d5f44f9dce60/images/thumbnail.png",
+                "ReferencedAssets": [
+                    "1cfee22b-513f-418d-a1d7-2648f1a575e0"
+                ],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 152004,
+                "Bookmarks": 0,
+                "PlaysRecent": 189465,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T21:02:13.205Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-09-30T16:47:19.337Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T19:12:55.87Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 32229896,
+                "Contributors": [],
+                "ParentAssetCount": 105,
+                "AverageRating": 2.7810929091016616,
+                "NumberOfRatings": 101454
+            },
+            {
+                "AssetId": "aca7bbf8-7a18-4aae-8785-1bd3f58275fd",
+                "AssetVersionId": "3685f6b2-2860-4e98-9d13-513087edb465",
+                "Name": "Fiesta:Slayer",
+                "Description": "Spawn with random loadouts. Slay the enemy team.",
+                "AssetKind": 6,
+                "Tags": [
+                    "343i",
+                    "Arena",
+                    "Fiesta",
+                    "Slayer",
+                    "random"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/aca7bbf8-7a18-4aae-8785-1bd3f58275fd/3685f6b2-2860-4e98-9d13-513087edb465/images/thumbnail.png",
+                "ReferencedAssets": [
+                    "5bda7c62-ac70-46c8-adc1-4d64e7c99577"
+                ],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 31676,
+                "Bookmarks": 0,
+                "PlaysRecent": 188868,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T21:01:17.387Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2022-03-21T21:17:46.646Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T19:19:35.265Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 31669497,
+                "Contributors": [],
+                "ParentAssetCount": 56,
+                "AverageRating": 3.23958998235272,
+                "NumberOfRatings": 26633
+            },
+            {
+                "AssetId": "298d5036-cd43-47b3-a4bd-31e127566593",
+                "AssetVersionId": "a5582547-29fb-4ceb-ac9d-74f899901501",
+                "Name": "Bazaar",
+                "Description": "Dusty streets and double doors.",
+                "AssetKind": 2,
+                "Tags": [
+                    "343i",
+                    "training mode"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/298d5036-cd43-47b3-a4bd-31e127566593/a5582547-29fb-4ceb-ac9d-74f899901501/images/thumbnail.png",
+                "ReferencedAssets": [],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 3496,
+                "Bookmarks": 0,
+                "PlaysRecent": 157987,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T20:59:10.057Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-11-04T02:56:59.575Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T19:15:52.029Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 24225578,
+                "Contributors": [],
+                "ParentAssetCount": 138,
+                "AverageRating": 3.520827429866818,
+                "NumberOfRatings": 3529
+            },
+            {
+                "AssetId": "33c0766c-ef15-48f8-b298-34aba5bff3b4",
+                "AssetVersionId": "8de91561-b9f7-4669-97ef-42e65fb507a7",
+                "Name": "Aquarius",
+                "Description": "Aquarius Terraforming Solutions: Industry leader in returning life to barren worlds.",
+                "AssetKind": 2,
+                "Tags": [
+                    "343i",
+                    "training mode"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/33c0766c-ef15-48f8-b298-34aba5bff3b4/8de91561-b9f7-4669-97ef-42e65fb507a7/images/thumbnail.png",
+                "ReferencedAssets": [],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 3374,
+                "Bookmarks": 0,
+                "PlaysRecent": 140573,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T20:59:09.634Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-11-04T02:57:04.279Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T19:18:57.951Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 20456496,
+                "Contributors": [],
+                "ParentAssetCount": 63,
+                "AverageRating": 3.3823933975240714,
+                "NumberOfRatings": 2908
+            },
+            {
+                "AssetId": "53136ad9-0fd6-4271-8752-31d114b9561e",
+                "AssetVersionId": "1d62423c-39ad-4029-9db2-aab60ef664f1",
+                "Name": "Behemoth",
+                "Description": "Buried for millennia, this ancient structure rises from beneath the sands.",
+                "AssetKind": 2,
+                "Tags": [
+                    "343i",
+                    "training mode"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/53136ad9-0fd6-4271-8752-31d114b9561e/1d62423c-39ad-4029-9db2-aab60ef664f1/images/thumbnail.png",
+                "ReferencedAssets": [],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 4242,
+                "Bookmarks": 0,
+                "PlaysRecent": 118563,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T20:59:45.551Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-11-04T02:57:02.982Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T20:13:49.769Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 18916954,
+                "Contributors": [],
+                "ParentAssetCount": 90,
+                "AverageRating": 3.292328956461645,
+                "NumberOfRatings": 4341
+            },
+            {
+                "AssetId": "8d6e16cd-7e95-4166-92fd-d280163b7ab7",
+                "AssetVersionId": "6ce17bcf-6af5-4d26-9181-9583ed35af56",
+                "Name": "Arena:Land Grab",
+                "Description": "Capture and claim zones to score!",
+                "AssetKind": 6,
+                "Tags": [
+                    "343i"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/8d6e16cd-7e95-4166-92fd-d280163b7ab7/6ce17bcf-6af5-4d26-9181-9583ed35af56/images/thumbnail.png",
+                "ReferencedAssets": [
+                    "d2f11dff-0cb3-4179-aff8-55c7391c3561"
+                ],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 2875,
+                "Bookmarks": 0,
+                "PlaysRecent": 96338,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2021-06-16T20:44:52.815Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2022-04-22T20:22:01.048Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-26T00:21:20.06Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 2806730,
+                "Contributors": [],
+                "ParentAssetCount": 25,
+                "AverageRating": 3.1639344262295084,
+                "NumberOfRatings": 2196
+            },
+            {
+                "AssetId": "56a11b8c-64d1-4537-8893-a9241e4d5b93",
+                "AssetVersionId": "7804214e-c463-49e9-b269-d22694142916",
+                "Name": "Launch Site",
+                "Description": "Sabre proving grounds test the limits of human velocity.",
+                "AssetKind": 2,
+                "Tags": [
+                    "343i",
+                    "training mode"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/56a11b8c-64d1-4537-8893-a9241e4d5b93/7804214e-c463-49e9-b269-d22694142916/images/thumbnail.png",
+                "ReferencedAssets": [],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 3145,
+                "Bookmarks": 0,
+                "PlaysRecent": 86389,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T20:59:21.374Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-11-04T02:58:22.943Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T20:15:35.542Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 11762482,
+                "Contributors": [],
+                "ParentAssetCount": 51,
+                "AverageRating": 2.36815415821501,
+                "NumberOfRatings": 3944
+            },
+            {
+                "AssetId": "4d0f6e15-cc3f-46e0-9d06-22de6311c4cb",
+                "AssetVersionId": "d6a43d27-9a54-4873-b7b5-fb2c22539fdc",
+                "Name": "Arena:Attrition",
+                "Description": "Deplete the enemy’s respawns and then wipe them out.",
+                "AssetKind": 6,
+                "Tags": [
+                    "343i"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/4d0f6e15-cc3f-46e0-9d06-22de6311c4cb/d6a43d27-9a54-4873-b7b5-fb2c22539fdc/images/thumbnail.png",
+                "ReferencedAssets": [
+                    "5308a91a-4499-4a04-8764-861ad5803a21"
+                ],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 10892,
+                "Bookmarks": 0,
+                "PlaysRecent": 80382,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-09-15T17:19:54.179Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-11-04T00:18:19.167Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-25T00:04:33.881Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 7215339,
+                "Contributors": [],
+                "ParentAssetCount": 37,
+                "AverageRating": 2.9636141636141637,
+                "NumberOfRatings": 8190
+            },
+            {
+                "AssetId": "8650f7e0-1f82-4d45-a127-32dd54df06e5",
+                "AssetVersionId": "2cb07a58-190d-4fbc-a071-721147faa9e4",
+                "Name": "Arena:CTF",
+                "Description": "Capture the enemy flag while defending your own.",
+                "AssetKind": 6,
+                "Tags": [
+                    "343i",
+                    "Arena",
+                    "CTF",
+                    "flag",
+                    "multi-flag"
+                ],
+                "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/8650f7e0-1f82-4d45-a127-32dd54df06e5/2cb07a58-190d-4fbc-a071-721147faa9e4/images/thumbnail.png",
+                "ReferencedAssets": [
+                    "71cca199-5a03-48da-a745-5652097d96ae"
+                ],
+                "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+                "Likes": 88099,
+                "Bookmarks": 0,
+                "PlaysRecent": 62303,
+                "NumberOfObjects": 0,
+                "DateCreatedUtc": {
+                    "ISO8601Date": "2020-07-16T21:01:27.982Z"
+                },
+                "DateModifiedUtc": {
+                    "ISO8601Date": "2021-09-30T16:47:28.307Z"
+                },
+                "DatePublishedUtc": {
+                    "ISO8601Date": "2022-05-11T20:21:13.65Z"
+                },
+                "HasNodeGraph": false,
+                "ReadOnlyClones": true,
+                "PlaysAllTime": 10418130,
+                "Contributors": [],
+                "ParentAssetCount": 55,
+                "AverageRating": 2.378904022806462,
+                "NumberOfRatings": 78925
+            }
+        ],
+        "Links": {}
+    }
+	</code>
+</example>

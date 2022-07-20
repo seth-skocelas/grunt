@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-    public class Tag
+    public class AssetTag
     {
         public string Name { get; set; }
     }

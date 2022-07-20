@@ -2,6 +2,6 @@
 {
     public class TagInfo
     {
-        public Tag[] CannedTags { get; set; }
+        public AssetTag[] CannedTags { get; set; }
     }
 }

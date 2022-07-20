@@ -2400,7 +2400,7 @@ namespace Grunt.Core
         /// TODO: Need to figure out what the actual data model is for the POST request.
         /// </remarks>
         /// <param name="title">Title for the game for which the authoring session needs to be spawned. Example variant is "hi" for "Halo Infinite".</param>
-        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants", "Maps", or "Prefabs".</param>
         /// <returns>If successful, returns an instance of AuthoringAsset containing asset information. Otherwise, returns null.</returns>
         public async Task<AuthoringAsset> HIUGCSpawnAsset(string title, string assetType, object asset)
         {
@@ -3096,10 +3096,20 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoverySearch()
+        /// <summary>
+        /// Searches for assets in the user generated content directory.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_Search.xml' path='//example'/>
+        /// <param name="start">Number of results from which to start the iteration.</param>
+        /// <param name="count">Count of results to return.</param>
+        /// <param name="includeTimes">Include creation, modification, and deletion times in results.</param>
+        /// <param name="sort">Property by which to sort the results. Example is "PlaysRecent".</param>
+        /// <param name="order">Descending ("desc") or ascending ("asc") result ordering.</param>
+        /// <param name="assetKind">Type of asset to be searched. Examples are "Film", "Map", "Playlist", "Prefab", "TestAsset", "UgcGameVariant", "MapModePair", "Project", "Manifest", "EngineGameVariant".</param>
+        /// <returns>If successful, returns an instance of SearchResultsContainer container assets. Otherwise, returns null.</returns>
+        public async Task<SearchResultsContainer> HIUGCDiscoverySearch(int start, int count, bool includeTimes, string sort, string order, string assetKind)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/search",
+            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/search?start={start}&count={count}&include-times={includeTimes}&sort={sort}&order={order}&assetKind={assetKind}",
                                    HttpMethod.Get,
                                    true,
                                    false,
@@ -3107,11 +3117,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<SearchResultsContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
