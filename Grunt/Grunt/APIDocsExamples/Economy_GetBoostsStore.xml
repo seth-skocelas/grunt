@@ -1,0 +1,32 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/20/2022:
+	<code>
+    {
+        "StoreId": "Boosts",
+        "StorefrontExpirationDate": {
+            "ISO8601Date": "2031-06-23T17:00:00Z"
+        },
+        "StorefrontDisplayPath": "StoreContent/Display/Storefront/Boosts-20210623-00.json",
+        "Offerings": [
+            {
+                "OfferingId": "20210623-00",
+                "OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-00.json",
+                "OfferingExpirationDate": null,
+                "IncludedItems": [],
+                "Prices": [
+                    {
+                        "Cost": 1,
+                        "CurrencyPath": "Currency/Currencies/xpboost.json"
+                    }
+                ],
+                "IncludedCurrencies": [],
+                "IncludedRewardTracks": [],
+                "BoostPath": "Consumables/Boosts/xpboost.json",
+                "OperationXp": 0,
+                "EventXp": 0,
+                "MatchBoosts": null
+            }
+        ]
+    }
+	</code>
+</example>

@@ -236,22 +236,18 @@ namespace Grunt.Core
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <param name="coreId">The unique identifier for an armor core. An example value is "017-001-eag-c13d0b38".</param>
         /// <returns>If successful, returns an instance of ArmorCore containing customization information. Otherwise, returns null.</returns>
-        public async Task<ArmorCore> EconomyArmorCoreCustomization(string player, string coreId)
+        public async Task<ArmorCore?> EconomyArmorCoreCustomization(string player, string coreId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors/{coreId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors/{coreId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<ArmorCore>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<ArmorCore>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -260,22 +256,18 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/Economy_ArmorCoresCustomization.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, returns an instance of ArmorCoreCollection that contains the list of armor cores. Otherwise, returns null.</returns>
-        public async Task<ArmorCoreCollection> EconomyArmorCoresCustomization(string player)
+        public async Task<ArmorCoreCollection?> EconomyArmorCoresCustomization(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<ArmorCoreCollection>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<ArmorCoreCollection>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -284,22 +276,18 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/Economy_GetActiveBoosts.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, returns an instance of ActiveBoostsContainer that contains the list of active boosts. Otherwise, returns null.</returns>
-        public async Task<ActiveBoostsContainer> EconomyGetActiveBoosts(string player)
+        public async Task<ActiveBoostsContainer?> EconomyGetActiveBoosts(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/boosts",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/boosts",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<ActiveBoostsContainer>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<ActiveBoostsContainer>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -308,70 +296,39 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/Economy_GetAwardedRewards.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <param name="rewardId">The unique ID for the reward given to a player. Example value is "Challenges-35a86ae3-017c-4b5a-b633-b2802a770e0a".</param>
-        /// <returns></returns>
-        public async Task<RewardSnapshot> EconomyGetAwardedRewards(string player, string rewardId)
+        /// <returns>If successful, returns an instance of RewardSnapshot that contains the list of awarded rewards. Otherwise, returns null.</returns>
+        public async Task<RewardSnapshot?> EconomyGetAwardedRewards(string player, string rewardId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewards/{rewardId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewards/{rewardId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<RewardSnapshot>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<RewardSnapshot>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Gets information about boosts offering in the store for a given player.
         /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetBoostsStore.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, returns an instance of StoreItem containing boost information. Otherwise, returns null.</returns>
-        public async Task<StoreItem> EconomyGetBoostsStore(string player)
+        public async Task<StoreItem?> EconomyGetBoostsStore(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/boosts",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/boosts",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<StoreItem>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Returns information about store events. The endpoint currently returns a 404, which is either transient (no events) or no longer relevant. Additional investigation is necessary.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
-        /// <returns>Unknown</returns>
-        private async Task<string> EconomyGetEventsStore(string player)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/events",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<StoreItem>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -380,45 +337,38 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/Economy_GetGiveawayRewards.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, returns an instance of PlayerGiveaways containing available giveaways. Otherwise, returns null.</returns>
-        public async Task<PlayerGiveaways> EconomyGetGiveawayRewards(string player)
+        public async Task<PlayerGiveaways?> EconomyGetGiveawayRewards(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/giveaways",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/giveaways",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<PlayerGiveaways>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<PlayerGiveaways>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Gets information about items available for sale in the Halo Championship Series (HCS) store.
         /// </summary>
+        /// <include file='../APIDocsExamples/Economy_GetHCSStore.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, an instance of StoreItem containing store offerings. Otherwise, returns null.</returns>
-        public async Task<StoreItem> EconomyGetHCSStore(string player)
+        public async Task<StoreItem?> EconomyGetHCSStore(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/hcs",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/hcs",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<StoreItem>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<StoreItem>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
