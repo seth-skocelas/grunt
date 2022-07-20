@@ -66,6 +66,7 @@ namespace Grunt.Core
         /// <summary>
         /// Gets the list of API settings as provided by the official Halo API. This is the latest version of all available endpoints.
         /// </summary>
+        /// <include file='../APIDocsExamples/GetApiSettingsContainer.xml' path='//example'/>
         /// <returns>An instance of ApiSettingsContainer if the call is successful. Otherwise, returns null.</returns>
         public async Task<ApiSettingsContainer?> GetApiSettingsContainer()
         {
@@ -88,44 +89,32 @@ namespace Grunt.Core
         /// </summary>
         /// <param name="flightId">ID of the flight/clearance associated with the request.</param>
         /// <returns>If successful, returns an instance of BotCustomizationData that contains bot customization information. Otherwise, returns null.</returns>
-        public async Task<BotCustomizationData> AcademyGetBotCustomization(string flightId)
+        public async Task<BotCustomizationData?> AcademyGetBotCustomization(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/BotCustomizationData.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_PC_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/BotCustomizationData.json?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_PC_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<BotCustomizationData>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response) ? JsonSerializer.Deserialize<BotCustomizationData>(response, this.serializerOptions) : null;
         }
 
         /// <summary>
         /// Gets the client manifest for the Academy.
         /// </summary>
         /// <returns>If successful, returns an instance of AcademyClientManifest that contains the definition of drills available in the Academy. Otherwise, returns null.</returns>
-        public async Task<AcademyClientManifest> AcademyGetContent()
+        public async Task<AcademyClientManifest?> AcademyGetContent()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyClientManifest.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_PC_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyClientManifest.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_PC_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AcademyClientManifest>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response) ? JsonSerializer.Deserialize<AcademyClientManifest>(response, this.serializerOptions) : null;
         }
 
         /// <summary>
