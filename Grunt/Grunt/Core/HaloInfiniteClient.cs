@@ -77,7 +77,9 @@ namespace Grunt.Core
                 false,
                 GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            return !string.IsNullOrEmpty(response) ? JsonSerializer.Deserialize<ApiSettingsContainer>(response, this.serializerOptions) : null;
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<ApiSettingsContainer>(response, this.serializerOptions)
+                : null;
         }
 
         // ================================================
@@ -87,6 +89,7 @@ namespace Grunt.Core
         /// <summary>
         /// Get bot customization information.
         /// </summary>
+        /// <include file='../APIDocsExamples/Academy_GetBotCustomization.xml' path='//example'/>
         /// <param name="flightId">ID of the flight/clearance associated with the request.</param>
         /// <returns>If successful, returns an instance of BotCustomizationData that contains bot customization information. Otherwise, returns null.</returns>
         public async Task<BotCustomizationData?> AcademyGetBotCustomization(string flightId)
@@ -98,12 +101,15 @@ namespace Grunt.Core
                 true,
                 GlobalConstants.HALO_PC_USER_AGENT);
 
-            return !string.IsNullOrEmpty(response) ? JsonSerializer.Deserialize<BotCustomizationData>(response, this.serializerOptions) : null;
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<BotCustomizationData>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Gets the client manifest for the Academy.
         /// </summary>
+        /// <include file='../APIDocsExamples/Academy_GetContent.xml' path='//example'/>
         /// <returns>If successful, returns an instance of AcademyClientManifest that contains the definition of drills available in the Academy. Otherwise, returns null.</returns>
         public async Task<AcademyClientManifest?> AcademyGetContent()
         {
@@ -114,84 +120,53 @@ namespace Grunt.Core
                 true,
                 GlobalConstants.HALO_PC_USER_AGENT);
 
-            return !string.IsNullOrEmpty(response) ? JsonSerializer.Deserialize<AcademyClientManifest>(response, this.serializerOptions) : null;
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AcademyClientManifest>(response, this.serializerOptions) 
+                : null;
         }
 
         /// <summary>
         /// Gets the client manifest for the Academy. From the endpoint name we can infer that this is test data.
         /// </summary>
+        /// <include file='../APIDocsExamples/Academy_GetContentTest.xml' path='//example'/>
         /// <param name="clearanceId">ID of the flight/clearance associated with the request.</param>
         /// <returns>If successful, returns an instance of TestAcademyClientManifest that contains the definition of drills available in the Academy. Otherwise, returns null.</returns>
-        public async Task<TestAcademyClientManifest> AcademyGetContentTest(string clearanceId)
+        public async Task<TestAcademyClientManifest?> AcademyGetContentTest(string clearanceId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyClientManifest_Test.json?flight={clearanceId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_PC_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyClientManifest_Test.json?flight={clearanceId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_PC_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<TestAcademyClientManifest>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<TestAcademyClientManifest>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Gets definitions for stars awarded in the Academy. This call breaks if a user agent is specified.
         /// </summary>
+        /// <include file='../APIDocsExamples/Academy_GetStarDefinitions.xml' path='//example'/>
         /// <returns>If successful, returns an instance of AcademyStarDefinitions that contains definitions for stars awarded in the Academy. Otherwise, returns null.</returns>
-        public async Task<AcademyStarDefinitions> AcademyGetStarDefinitions()
+        public async Task<AcademyStarDefinitions?> AcademyGetStarDefinitions()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyStarGUIDDefinitions.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_PC_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyStarGUIDDefinitions.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_PC_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AcademyStarDefinitions>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AcademyStarDefinitions>(response, serializerOptions)
+                : null;
         }
 
-        //================================================
-        // Crashes
-        //================================================
-
-        /// <summary>
-        /// Uploads crash information. Have not yet seen this live in the game, and have no information on how it works at this time.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <returns>Uknown.</returns>
-        private async Task<string> CrashesUpload()
-        {
-            var response = await ExecuteAPIRequest<string>($"https://crashes.svc.halowaypoint.com:443/crashes/hipc/bf05b320-ee8f-4be5-879d-505b669654c9",
-                                   HttpMethod.Get,
-                                   false,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        //================================================
+        // ================================================
         // Economy
-        //================================================
+        // ================================================
 
         /// <summary>
         /// Gets information about an individual AI Core.
@@ -199,23 +174,19 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/Economy_AiCoreCustomization.xml' path='//example'/>
         /// <param name="player">The player identifier in the format "xuid(XUID_VALUE)".</param>
         /// <param name="coreId">Unique AI Core ID. Example ID is "304-100-ai-core-debb20e3".</param>
-        /// <returns>An instance of Core containing AI core customization metadata if request was successful. Return value is null otherwise.</returns>
-        public async Task<Models.HaloInfinite.AiCore> EconomyAiCoreCustomization(string player, string coreId)
+        /// <returns>If successful, returns an instance of Core containing AI core customization metadata if request was successful. Otherwise, returns null.</returns>
+        public async Task<AiCore?> EconomyAiCoreCustomization(string player, string coreId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais/{coreId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais/{coreId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Models.HaloInfinite.AiCore>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AiCore>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>

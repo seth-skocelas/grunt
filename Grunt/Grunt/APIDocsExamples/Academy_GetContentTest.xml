@@ -1,0 +1,1116 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/20/2022:
+	<code>
+    {
+        "Tutorial": {
+            "Title": "Tutorial",
+            "Series": [
+                {
+                    "GameVariant": "Academy\\Tutorial",
+                    "MapVariant": "sgh_interlock\\sgh_interlock",
+                    "GameplayGUID": "F6028728-3DB6-4CE0-84F0-684CDC02A799",
+                    "Available": true,
+                    "Description": {
+                        "status": "Test",
+                        "value": "Learn how to play Halo!",
+                        "translations": {
+                            "es-es": "Description, but in spanish!",
+                            "qps-ploc": "Ĺёǻřń ħŏẁ ŧσ φļâý Нàļö! !!! !!! ",
+                            "qps-ploca": "Ļęäřи ћőш ťõ ρĺáý Ĥаℓô! !!! !!! ",
+                            "qps-plocm": "Ľεǻгŉ ђóω тó φℓåŷ Ηăĺǿ! !!! !!! "
+                        }
+                    }
+                }
+            ],
+            "SpriteFrameIndex": 0
+        },
+        "Categories": [
+            {
+                "DrillType": "WeaponDrill",
+                "Drills": [
+                    {
+                        "Title": "MA40 AR",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "D06421E9-9D64-4BD1-831A-5EE31098F243",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "MA40 AR 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "МǺ40 ДҐ 1 !!!",
+                                        "qps-ploca": "МǺ40 ÂŘ 1 !!!",
+                                        "qps-plocm": "МΔ40 ÁŔ 1 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "69808FB0-A805-46AE-A046-5583B822B23E",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "MA40 AR 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "ΜΑ40 ĂŖ 2 !!!",
+                                        "qps-ploca": "МǺ40 ΆŘ 2 !!!",
+                                        "qps-plocm": "МÀ40 ĀЃ 2 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "6A7314D2-61F7-4CF2-B1C9-AE8C42A56903",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "MA40 AR 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "МǺ40 ∆Ř 3 !!!",
+                                        "qps-ploca": "ΜΆ40 ΑЃ 3 !!!",
+                                        "qps-plocm": "МΑ40 ÃŔ 3 !!!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 1
+                    },
+                    {
+                        "Title": "Pulse Carbine",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "AE72B0E3-4503-45FA-BEDF-1C7A1B14C2F1",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Pulse Carbine 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ρύľŝє Ćąѓъĩŋé 1 !!! !",
+                                        "qps-ploca": "Ρûľšé €àŗвĭńз 1 !!! !",
+                                        "qps-plocm": "Ρϋłŝε €ãѓъīŋè 1 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "81DF34CE-6D59-4752-8CF4-ECE438B7C6EB",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Pulse Carbine 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Рüŀśê €άřвìŉє 2 !!! !",
+                                        "qps-ploca": "Рůłşє Ċαгвïπę 2 !!! !",
+                                        "qps-plocm": "Ρųļšέ Ćαřъíŋę 2 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "F7CE1137-6748-4A60-92BC-FD22D8C3DD37",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Pulse Carbine 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Рύłśέ €ǻŕвĭñё 3 !!! !",
+                                        "qps-ploca": "Рùłşė €аřьϊňє 3 !!! !",
+                                        "qps-plocm": "Рůŀšĕ Ċãŕьίиê 3 !!! !"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 42
+                    },
+                    {
+                        "Title": "BR75",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "31F58355-245A-47F9-AA15-FBEAA5185750",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "BR75 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "ЬЯ75 1 !",
+                                        "qps-ploca": "βŘ75 1 !",
+                                        "qps-plocm": "ßЃ75 1 !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "0DBE3B88-EC92-4345-9188-162976FEBCF2",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "BR75 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "ЬЯ75 2 !",
+                                        "qps-ploca": "ВŘ75 2 !",
+                                        "qps-plocm": "ЪŘ75 2 !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "761AEE13-D5F3-44B8-A2DD-1FD33D417CF8",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "BR75 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "БЃ75 3 !",
+                                        "qps-ploca": "БЯ75 3 !",
+                                        "qps-plocm": "ßŘ75 3 !"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 92
+                    },
+                    {
+                        "Title": "VK78 Commando",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "DD6D081A-620D-4F32-BD5F-DCA22D8829B9",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "VK78 Commando 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "VК78 Сǿmмªⁿđб 1 !!! !",
+                                        "qps-ploca": "VЌ78 €ómмàńðô 1 !!! !",
+                                        "qps-plocm": "VĶ78 Ċômmâηđø 1 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "0DD870E3-0872-41FF-9093-FF8E2A56C3EF",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "VK78 Commando 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "VΚ78 Ćõmmâпðø 2 !!! !",
+                                        "qps-ploca": "VЌ78 Сοммåпđö 2 !!! !",
+                                        "qps-plocm": "VΚ78 Ćòmmąñďб 2 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "35DF6A20-D6C8-4A46-ADB4-E0828AC1AD54",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "VK78 Commando 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "VΚ78 €ömмăńđŏ 3 !!! !",
+                                        "qps-ploca": "VЌ78 Ĉόммǻήδó 3 !!! !",
+                                        "qps-plocm": "VΚ78 Ċόммάñďό 3 !!! !"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 92
+                    },
+                    {
+                        "Title": "Shock Rifle",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "B863CD98-0311-45F0-B87C-81A481FAF8DB",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Shock Rifle 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Şћòĉĸ Ŕīƒłě 1 !!! ",
+                                        "qps-ploca": "Ŝнόçк Ѓіƒℓê 1 !!! ",
+                                        "qps-plocm": "Šноċќ Ѓιƒł℮ 1 !!! "
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "B91B9BC3-BF8E-4D05-ABA7-4532B56473E6",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Shock Rifle 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ѕħθçĸ Řïƒŀē 2 !!! ",
+                                        "qps-ploca": "Šђόçĸ Γįƒŀе 2 !!! ",
+                                        "qps-plocm": "Śћосκ Γîƒľę 2 !!! "
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "D96AF84F-E490-4482-9AC2-6C45F0C2EC4C",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Shock Rifle 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Şħøĉк Ґïƒŀè 3 !!! ",
+                                        "qps-ploca": "Şнóçκ Γΐƒļз 3 !!! ",
+                                        "qps-plocm": "Šђοĉκ Řìƒŀе 3 !!! "
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 94
+                    },
+                    {
+                        "Title": "Mk50 Sidekick",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "ACDC6BDC-AD10-4850-BB9B-0D087B311117",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Mk50 Sidekick 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Μκ50 Ѕīðèķϊĉќ 1 !!! !",
+                                        "qps-ploca": "Мķ50 Ѕΐđεќĭςķ 1 !!! !",
+                                        "qps-plocm": "Мķ50 Ѕîδ℮ќìсĸ 1 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "726D75D8-16BC-4882-9CEC-6019C56B7CCA",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Mk50 Sidekick 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Μќ50 Śίð℮κìċк 2 !!! !",
+                                        "qps-ploca": "Μќ50 Şĭδзкí¢к 2 !!! !",
+                                        "qps-plocm": "Μќ50 Şιδэкι¢ĸ 2 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "76D0D5EF-5F71-46CE-B539-5026A37261E4",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Mk50 Sidekick 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Мķ50 Ѕїδêķιçĸ 3 !!! !",
+                                        "qps-ploca": "Мк50 Ŝíďèķісķ 3 !!! !",
+                                        "qps-plocm": "Мк50 Śїđεκΐčκ 3 !!! !"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 4
+                    },
+                    {
+                        "Title": "Mangler",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "5333BC5A-EC1A-412C-9C63-AD5843CC61ED",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Mangler 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Маиğľёř 1 !!!",
+                                        "qps-ploca": "Мãпğℓ℮ѓ 1 !!!",
+                                        "qps-plocm": "Μаⁿģŀēґ 1 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "43AB5128-6C4C-4E5E-BC96-4AA7546CF0F9",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Mangler 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Мâńģℓèг 2 !!!",
+                                        "qps-ploca": "Μāήĝļėŗ 2 !!!",
+                                        "qps-plocm": "Μąпĝĺèŗ 2 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "CEB46D6C-DC1A-4E13-8233-CE0A458BB340",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Mangler 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Мαήģľèя 3 !!!",
+                                        "qps-ploca": "Μăňģℓĕґ 3 !!!",
+                                        "qps-plocm": "Μäπġℓêŕ 3 !!!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 72
+                    },
+                    {
+                        "Title": "Plasma Pistol",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "810C3F39-9AFB-49EC-B1EA-2E954EC0D9AB",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Plasma Pistol 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ρľáѕмǻ Ρϊѕťøļ 1 !!! !",
+                                        "qps-ploca": "Ρŀåŝмǻ Рιѕŧöł 1 !!! !",
+                                        "qps-plocm": "Ρŀǻşmä Ріšтòĺ 1 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "015D66A3-C2DD-46B2-9445-7822138BD056",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Plasma Pistol 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ρℓãѕmα Ρîѕťοℓ 2 !!! !",
+                                        "qps-ploca": "Рľаѕмā Ρϊѕţőŀ 2 !!! !",
+                                        "qps-plocm": "Ρŀāšмã Рϊѕťǿł 2 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "E7720626-85C7-411A-81D7-24D50E9BC054",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Plasma Pistol 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ρļдѕмă Рíşţόľ 3 !!! !",
+                                        "qps-ploca": "Ρłąşmǻ Ріśţόľ 3 !!! !",
+                                        "qps-plocm": "Ρłāşмά Рĭšţбļ 3 !!! !"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 2
+                    },
+                    {
+                        "Title": "Disruptor",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "79964897-B7E0-40DE-8148-5A12031B6EA0",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Disruptor 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ðіśŕųртöг 1 !!!",
+                                        "qps-ploca": "Ďíśŗџρŧóя 1 !!!",
+                                        "qps-plocm": "Ďϊśґũφτōř 1 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "93486B19-E25E-4100-93D2-325B74EAD6CE",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Disruptor 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ðĭşяųρŧõя 2 !!!",
+                                        "qps-ploca": "Ďĩѕѓцрτőг 2 !!!",
+                                        "qps-plocm": "Ðíšѓύφţóŕ 2 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "92BBD602-7920-46FB-B41A-8B097164C810",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Disruptor 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ðΐşřμρťóя 3 !!!",
+                                        "qps-ploca": "Ďìŝяųφŧôґ 3 !!!",
+                                        "qps-plocm": "Ðΐŝѓûрťõя 3 !!!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 82
+                    },
+                    {
+                        "Title": "CQS48 Bulldog",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "EE8C5725-F21F-4C66-9E69-E823E7BEAF0D",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "CQS48 Bulldog 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "€QŜ48 Бųĺĺđŏĝ 1 !!! !",
+                                        "qps-ploca": "ČQЅ48 Ъùℓľđóĝ 1 !!! !",
+                                        "qps-plocm": "ÇQŞ48 Вŭŀŀďθģ 1 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "00195BD8-72C0-4495-8C1D-09C265C7021C",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "CQS48 Bulldog 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "ÇQŞ48 Βυľℓðθġ 2 !!! !",
+                                        "qps-ploca": "€QŜ48 Βùĺłδθĝ 2 !!! !",
+                                        "qps-plocm": "ČQЅ48 ßųľłđőġ 2 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "B6A65DB1-7D20-4A85-AF34-BD2969C9C7F8",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "CQS48 Bulldog 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "ĊQŚ48 Ьũļĺδöğ 3 !!! !",
+                                        "qps-ploca": "ĊQŠ48 ßúľľðǿğ 3 !!! !",
+                                        "qps-plocm": "ĈQŚ48 ßϋłĺðőģ 3 !!! !"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 83
+                    },
+                    {
+                        "Title": "Heatwave",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "FE49D62D-7F2C-4EB7-B7CE-BB83CCBD3939",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Heatwave 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ήëãτώåνэ 1 !!!",
+                                        "qps-ploca": "Ήėάťωανĕ 1 !!!",
+                                        "qps-plocm": "Ħêãŧŵàνз 1 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "00E71D48-63A8-4531-9F29-D5E2B0FD2DA4",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Heatwave 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ĥзåŧŵªνĕ 2 !!!",
+                                        "qps-ploca": "Неªтẁаνэ 2 !!!",
+                                        "qps-plocm": "Ηęáťŵανę 2 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "F553CC46-B0A7-4A2A-B73B-F78F66E1289C",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Heatwave 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ħεąťώανē 3 !!!",
+                                        "qps-ploca": "Нέáţωăνė 3 !!!",
+                                        "qps-plocm": "Ĥęãτώäνē 3 !!!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 98
+                    },
+                    {
+                        "Title": "Sentinel Beam",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "CA4C6DE6-5A78-4A40-B8C9-343C88DB61A2",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Sentinel Beam 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ŝέпŧϊņєℓ ßęåm 1 !!! !",
+                                        "qps-ploca": "Ŝêňţĭлèľ Βēąм 1 !!! !",
+                                        "qps-plocm": "Ѕėñтίņзŀ Βêăм 1 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "96A69907-F064-4C7B-9601-928A8DF25C5D",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Sentinel Beam 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Šέпτïŉεŀ βзâm 2 !!! !",
+                                        "qps-ploca": "Şĕŉťΐⁿěł Ъéäм 2 !!! !",
+                                        "qps-plocm": "Şėпτíŋěŀ Ъêåm 2 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "8C19341F-7745-451A-B49B-74CAAD177ED2",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Sentinel Beam 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Śзŋťĩñέļ Βεäм 3 !!! !",
+                                        "qps-ploca": "Ŝзⁿтĭⁿέľ ß℮άm 3 !!! !",
+                                        "qps-plocm": "Ŝέŋţίⁿĕł βэâм 3 !!! !"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 22
+                    },
+                    {
+                        "Title": "Needler",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "90929888-63AF-4F7A-9192-F5A2732F51B2",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Needler 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ňэêδłĕŕ 1 !!!",
+                                        "qps-ploca": "Ńéέđŀеř 1 !!!",
+                                        "qps-plocm": "Пêεďℓëŗ 1 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "B50774FC-1E0B-417C-88B2-53350C4010C2",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Needler 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Йёέδĺěѓ 2 !!!",
+                                        "qps-ploca": "Йеέđľéґ 2 !!!",
+                                        "qps-plocm": "Ñєęðļэř 2 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "3770118A-BD19-49A4-A9B2-8CC3C3810A67",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Needler 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ņ℮эðłєя 3 !!!",
+                                        "qps-ploca": "∏êзđļėг 3 !!!",
+                                        "qps-plocm": "Ŋ℮ěďļέř 3 !!!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 5
+                    },
+                    {
+                        "Title": "Stalker Rifle",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "E1AAE9A6-F72D-4A38-9442-BFDC7C0B79DF",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Stalker Rifle 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Šтǻĺкĕѓ Ŕįƒľè 1 !!! !",
+                                        "qps-ploca": "Ŝŧąŀκęŕ Ѓîƒĺė 1 !!! !",
+                                        "qps-plocm": "Šţāļκэґ Ŗîƒℓе 1 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "95A0713C-E2C8-438D-BF70-66B027946B82",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Stalker Rifle 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Şţåℓќëř Ŗϊƒłē 2 !!! !",
+                                        "qps-ploca": "Šтâŀκєř Řίƒℓê 2 !!! !",
+                                        "qps-plocm": "Šŧǻłкεŕ Ґіƒłĕ 2 !!! !"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "45398705-3633-49D7-9D38-BCF89391A2FC",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Stalker Rifle 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Śтǻĺĸēř Γїƒļē 3 !!! !",
+                                        "qps-ploca": "Šτаłкεř Ґĭƒļę 3 !!! !",
+                                        "qps-plocm": "Şтªļκэѓ Řΐƒℓ℮ 3 !!! !"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 41
+                    },
+                    {
+                        "Title": "S7 Sniper",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "9907C62C-B064-4580-B9B7-08CBF1112E66",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "S7 Sniper 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Š7 Śиїρĕŕ 1 !!!",
+                                        "qps-ploca": "Š7 Śňіρėŗ 1 !!!",
+                                        "qps-plocm": "Ŝ7 Ŝņíφęя 1 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "5FD687CC-B6C2-4E40-BFAA-52C0ABB2F0D1",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "S7 Sniper 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ѕ7 Ŝηίφ℮ř 2 !!!",
+                                        "qps-ploca": "Ś7 Şńĩφêґ 2 !!!",
+                                        "qps-plocm": "Š7 Śⁿίρëг 2 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "8DCDAC8A-2045-43FB-BB15-6C9E6A5779CA",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "S7 Sniper 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Š7 Şŉīφĕя 3 !!!",
+                                        "qps-ploca": "Š7 Ѕиιрêґ 3 !!!",
+                                        "qps-plocm": "Š7 Ѕпірέѓ 3 !!!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 8
+                    },
+                    {
+                        "Title": "Skewer",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "5DCE7E2A-AFB5-43F7-9FA5-C2755FAAF598",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Skewer 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Śĸêŵεř 1 !!",
+                                        "qps-ploca": "Ѕķёшéг 1 !!",
+                                        "qps-plocm": "Śκ℮шег 1 !!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "8BB1F895-8B33-45FE-8AEB-1E013EFFE027",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Skewer 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Şќęŵеѓ 2 !!",
+                                        "qps-ploca": "Śκέωěŗ 2 !!",
+                                        "qps-plocm": "Śкёщèř 2 !!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "1E028880-0991-4C80-8C34-A2FA6245B417",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Skewer 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Şкėẅěґ 3 !!",
+                                        "qps-ploca": "Śκέẃéř 3 !!",
+                                        "qps-plocm": "Ѕķëẅėř 3 !!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 46
+                    },
+                    {
+                        "Title": "Cindershot",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "17756912-7258-4694-A119-6676660CECC6",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Cindershot 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Čĩŋðέŕšћóŧ 1 !!! ",
+                                        "qps-ploca": "Çĭňđëґşнòţ 1 !!! ",
+                                        "qps-plocm": "Ċïπδеřśђоť 1 !!! "
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "9AC61C16-7706-40B8-9F30-29AA7E1568BE",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Cindershot 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ćϊйđэгѕĥόţ 2 !!! ",
+                                        "qps-ploca": "Çίηđеřšђбτ 2 !!! ",
+                                        "qps-plocm": "Ċïⁿδêѓŝћōτ 2 !!! "
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "31E6F65F-0259-4DA6-ADAA-361DD07943C5",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Cindershot 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "€īņďèŗѕђόť 3 !!! ",
+                                        "qps-ploca": "Ċĩⁿðëґѕнθт 3 !!! ",
+                                        "qps-plocm": "Ċįŉđєŗşħóτ 3 !!! "
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 50
+                    },
+                    {
+                        "Title": "Ravager",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "2694022D-9335-4002-A444-7F586ADFABE8",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Ravager 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ѓāνǻğèř 1 !!!",
+                                        "qps-ploca": "Ѓǻνàģēг 1 !!!",
+                                        "qps-plocm": "Řǻνáĝёř 1 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "33DF6216-C2E7-4094-92FB-C2D1DC7EC128",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Ravager 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ŕàνâģēѓ 2 !!!",
+                                        "qps-ploca": "Гǻνăğêг 2 !!!",
+                                        "qps-plocm": "Яåνãġèґ 2 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "59473394-7AED-472C-A015-F75159811951",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Ravager 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Гàνдĝéŕ 3 !!!",
+                                        "qps-ploca": "Гªνăġєг 3 !!!",
+                                        "qps-plocm": "Яªνаğĕг 3 !!!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 72
+                    },
+                    {
+                        "Title": "Hydra",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "1909A5C0-8F44-4B5C-91D3-75820B239E1B",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Hydra 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Нуδŕā 1 !!",
+                                        "qps-ploca": "Ħγďгα 1 !!",
+                                        "qps-plocm": "Ĥуđřǻ 1 !!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "89F4CDFD-543A-42B7-9DCD-8161999AE56F",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Hydra 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ηỳðřà 2 !!",
+                                        "qps-ploca": "Ηỳðřā 2 !!",
+                                        "qps-plocm": "Ήўðгά 2 !!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\Default",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "2FF752BB-5432-440B-B238-F9090BE21BB3",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "Hydra 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Ĥỳδŗå 3 !!",
+                                        "qps-ploca": "Ĥýδŗā 3 !!",
+                                        "qps-plocm": "Ħỳđґá 3 !!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 72
+                    },
+                    {
+                        "Title": "M41 SPNKr",
+                        "Series": [
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "29C51285-EA0B-45B8-9DE3-12E7730C2987",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "M41 SPNKr 1",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Μ41 ЅР∏Кг 1 !!!",
+                                        "qps-ploca": "Μ41 ЅΡŇЌґ 1 !!!",
+                                        "qps-plocm": "М41 ЅΡПКґ 1 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "309B28BB-B279-4902-954D-C71DF0667EA9",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "M41 SPNKr 2",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "М41 ŚРÑКŕ 2 !!!",
+                                        "qps-ploca": "М41 ЅΡЛКř 2 !!!",
+                                        "qps-plocm": "М41 ŜРŊЌŕ 2 !!!"
+                                    }
+                                }
+                            },
+                            {
+                                "GameVariant": "Academy\\PowerWeaponDrill",
+                                "MapVariant": "academy_weapon_drills\\academy_weapon_drills",
+                                "GameplayGUID": "93621C9A-9F7D-4447-969C-2495859FBE11",
+                                "Available": true,
+                                "Description": {
+                                    "status": "Test",
+                                    "value": "M41 SPNKr 3",
+                                    "translations": {
+                                        "es-es": "Description, but in spanish!",
+                                        "qps-ploc": "Μ41 ŚΡŅКŕ 3 !!!",
+                                        "qps-ploca": "Μ41 ŜРИЌя 3 !!!",
+                                        "qps-plocm": "М41 ЅΡПКя 3 !!!"
+                                    }
+                                }
+                            }
+                        ],
+                        "SpriteFrameIndex": 60
+                    }
+                ]
+            }
+        ]
+    }
+	</code>
+</example>

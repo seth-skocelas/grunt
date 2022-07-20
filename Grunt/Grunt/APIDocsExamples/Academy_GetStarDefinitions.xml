@@ -1,0 +1,62 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/20/2022:
+	<code>
+    {
+        "Values": [
+            {
+                "GUID": "5EB833C8-385A-4F9E-980C-5E75EA7DB9C3",
+                "Title": "Default first star GUID.",
+                "DisplayString": {
+                    "status": "Test",
+                    "value": "Challenge Accepted",
+                    "translations": {
+                        "es-es": "First star display string, but in spanish.",
+                        "qps-ploc": "Сĥåļℓĕńğé Άςĉεртëδ !!! !!",
+                        "qps-ploca": "Ċĥäļļеήģē Ąćçēрťēδ !!! !!",
+                        "qps-plocm": "Ćђдļĺèπģз Āçςèφťēđ !!! !!"
+                    }
+                }
+            },
+            {
+                "GUID": "19F147C7-5978-4445-947B-6959E4952DBE",
+                "Title": "Default second star GUID.",
+                "DisplayString": {
+                    "status": "Test",
+                    "value": "Challenge Passed",
+                    "translations": {
+                        "es-es": "Second star display string, but in spanish.",
+                        "qps-ploc": "Сĥάĺľěиğэ Рàśśēđ !!! !",
+                        "qps-ploca": "Çћдŀļеňġε Рäśŝêδ !!! !",
+                        "qps-plocm": "Ċћάłĺ℮ηģє Рåѕŝеđ !!! !"
+                    }
+                }
+            },
+            {
+                "GUID": "DA0FAC81-3C68-4FE3-9D0F-48D9FA5D8246",
+                "Title": "Default third star GUID.",
+                "DisplayString": {
+                    "status": "Test",
+                    "value": "Challenge Mastered",
+                    "translations": {
+                        "es-es": "Third star display string, but in spanish.",
+                        "qps-ploc": "Снáĺℓėπġе Мāšţ℮ŗēδ !!! !!",
+                        "qps-ploca": "Ĉђåļĺёпĝē Μаśŧëřëď !!! !!",
+                        "qps-plocm": "Čћǻļĺзлģё Мàśτ℮řĕđ !!! !!"
+                    }
+                }
+            },
+            {
+                "GUID": "BD1AEA5C-76A2-40EC-991D-C60F827F9588",
+                "Title": "Default second star GUID.",
+                "DisplayString": {
+                    "status": "Test",
+                    "value": "",
+                    "translations": {
+                        "es-es": "Fourth star display string, but in spanish."
+                    }
+                }
+            }
+        ]
+    }
+	</code>
+</example>
