@@ -2638,8 +2638,14 @@ namespace Grunt.Core
         // HIUGCDiscovery
         //================================================
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetEngineGameVariant(string assetId, string versionId)
+        /// <summary>
+        /// Returns metadata about a given engine game variant version.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetEngineGameVariant.xml' path='//example'/>
+        /// <param name="assetId">Unique asset ID for the engine game variant.</param>
+        /// <param name="versionId">Unique ID for the asset version for the engine game variant.</param>
+        /// <returns>If successful, returns an instance of EngineGameVariant containing appropriate metadata. Otherwise, returns null.</returns>
+        public async Task<EngineGameVariant> HIUGCDiscoveryGetEngineGameVariant(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}/versions/{versionId}",
                                    HttpMethod.Get,
@@ -2649,16 +2655,21 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<EngineGameVariant>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetEngineGameVariantWithoutVersion(string assetId)
+        /// <summary>
+        /// Gets an engine game variant without an associated version.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetEngineGameVariantWithoutVersion.xml' path='//example'/>
+        /// <param name="assetId">Unique asset ID for the engine game variant.</param>
+        /// <returns>If successful, returns an instance of EngineGameVariant containing appropriate metadata. Otherwise, returns null.</returns>
+        public async Task<EngineGameVariant> HIUGCDiscoveryGetEngineGameVariantWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}",
                                    HttpMethod.Get,
@@ -2668,16 +2679,23 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<EngineGameVariant>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetManifest(string assetId, string versionId, string clearanceId)
+        /// <summary>
+        /// Gets a game manifest.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetManifest.xml' path='//example'/>
+        /// <param name="assetId">Unique asset ID for the manifest. Example value is "6369c3a6-390e-496c-ab71-93c326347327".</param>
+        /// <param name="versionId">Unique version ID for the manifest. Example value is "9a348b5b-08aa-41c2-8b3a-681870c78a76".</param>
+        /// <param name="clearanceId">ID of the currently active flight.</param>
+        /// <returns></returns>
+        public async Task<Manifest> HIUGCDiscoveryGetManifest(string assetId, string versionId, string clearanceId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
                                    HttpMethod.Get,
@@ -2687,17 +2705,18 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Manifest>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        // Example branch is HIREL according to HIUGCDiscoveryGetManifestByBuild, but that needs to be validated.
-        public async Task<string> HIUGCDiscoveryGetManifestByBranch(string branchName)
+        // TODO: This function needs some future investigation.
+        // Example branch is HIREL or HIRC according to HIUGCDiscoveryGetManifestByBuild, but that needs to be validated.
+        // Currently all responses return a 403 Forbidden, no matter what branch is specified.
+        private async Task<string> HIUGCDiscoveryGetManifestByBranch(string branchName)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/branches/{branchName}/game",
                                    HttpMethod.Get,
@@ -2718,6 +2737,7 @@ namespace Grunt.Core
         /// <summary>
         /// Gets the current game manifest.
         /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetManifestByBuild.xml' path='//example'/>
         /// <param name="buildNumber">Build for which the manifest needs to be obtained. Maps to official Halo builds, such as 6.10022.10499.</param>
         /// <returns>An instance of Manifest containing game manifest information if request is successful. Otherwise, returns null.</returns>
         public async Task<Manifest> HIUGCDiscoveryGetManifestByBuild(string buildNumber)
@@ -2738,8 +2758,9 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetManifestWithoutVersion(string assetId)
+        // TODO: Additional validation is necessary here to see if there is an actual API endpoint.
+        // Right now, all this does is return a 404.
+        private async Task<string> HIUGCDiscoveryGetManifestWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/{assetId}",
                                    HttpMethod.Get,
@@ -2784,7 +2805,7 @@ namespace Grunt.Core
         /// <summary>
         /// Returns information about a given map and mode combination. For example, the Breaker map can be used in Big Team Battle (BTB).
         /// </summary>
-        /// <include file='../APIDocsExamples/HIUGC_DiscoveryGetMapModePair.xml' path='//example'/>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetMapModePair.xml' path='//example'/>
         /// <remarks>
         /// An example fully constructed HTTP request to the API is: https://discovery-infiniteugc.svc.halowaypoint.com/hi/mapModePairs/9e056bcc-b9bc-4845-9fe3-6d667f018463/versions/37b8cd75-d1ce-4abf-9349-a76673503410.
         /// This request represents the BTB game mode on the Breaker map.
@@ -2838,7 +2859,7 @@ namespace Grunt.Core
         }
 
         /// <summary>
-        /// Returns information about a given map.
+        /// Gets information about a given map.
         /// </summary>
         /// <param name="assetId">Unique map ID. For example, the ID for the Recharge map is "8420410b-044d-44d7-80b6-98a766c8c39f".</param>
         /// <returns>An instance of Map containing map metadata if request is successful. Otherwise, returns null.</returns>
@@ -2860,8 +2881,15 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetPlaylist(string assetId, string versionId, string clearanceId)
+        /// <summary>
+        /// Gets information about a specific playlist.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetPlaylist.xml' path='//example'/>
+        /// <param name="assetId">Unique asset ID for the playlist.</param>
+        /// <param name="versionId">Unique version ID for the playlist.</param>
+        /// <param name="clearanceId">ID of the currently active flight.</param>
+        /// <returns>If successful, returns an instance of Playlist containing playlist information. Otherwise, returns null.</returns>
+        public async Task<Playlist> HIUGCDiscoveryGetPlaylist(string assetId, string versionId, string clearanceId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
                                    HttpMethod.Get,
@@ -2871,16 +2899,17 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Playlist>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetPlaylistWithoutVersion(string assetId)
+        // TODO: Additional validation is necessary here to see if there is an actual API endpoint.
+        // Right now, all this does is return a 404.
+        private async Task<string> HIUGCDiscoveryGetPlaylistWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}",
                                    HttpMethod.Get,
@@ -2898,8 +2927,13 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetPrefab(string assetId, string versionId)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="assetId"></param>
+        /// <param name="versionId"></param>
+        /// <returns></returns>
+        public async Task<Prefab> HIUGCDiscoveryGetPrefab(string assetId, string versionId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}/versions/{versionId}",
                                    HttpMethod.Get,
@@ -2909,16 +2943,18 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Prefab>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCDiscoveryGetPrefabWithoutVersion(string assetId)
+        // TODO: Additional validation is necessary here to see if there is an actual API endpoint.
+        // We have no context on existing prefab IDs.
+        // See: https://github.com/OpenSpartan/grunt/issues/11
+        private async Task<string> HIUGCDiscoveryGetPrefabWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}",
                                    HttpMethod.Get,
@@ -2939,6 +2975,7 @@ namespace Grunt.Core
         /// <summary>
         /// Returns the project details that are associated with a given version of a manifest. This manifest contains all the maps and modes to show in the custom game menus.
         /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetProject.xml' path='//example'/>
         /// <param name="assetId">Unique asset ID representing the project. Example asset ID currently active is the custom game manifest ID: "a9dc0785-2a99-4fec-ba6e-0216feaaf041".</param>
         /// <param name="versionId">Version ID for the project. As an example, a version of a production manifest is "a4e68648-f994-44bb-853e-d09ee224d799".</param>
         /// <returns>An instance of Project containing current game project information if request is successful. Otherwise, returns null.</returns>
@@ -2987,6 +3024,7 @@ namespace Grunt.Core
         /// <summary>
         /// Returns information about available tags that can be associated with game assets.
         /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetTagsInfo.xml' path='//example'/>
         /// <returns>An instance of TagInfo containing a list of tags if the request is successful. Otherwise, returns null.</returns>
         public async Task<TagInfo> HIUGCDiscoveryGetTagsInfo()
         {

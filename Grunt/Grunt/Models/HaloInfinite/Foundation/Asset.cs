@@ -3,6 +3,7 @@
     public abstract class Asset
     {
         public string AssetId { get; set; }
+        public string VersionId { get; set; }
         public string AssetVersionId { get; set; }
         public string PublicName { get; set; }
         public string Description { get; set; }
@@ -12,7 +13,7 @@
         public string[] Tags { get; set; }
         public string[] Contributors { get; set; }
         public AssetVersionFile Files { get; set; }
-        public string VersionId { get; set; }
         public int AssetKind { get; set; }
+        public int Order { get; set; }
     }
 }

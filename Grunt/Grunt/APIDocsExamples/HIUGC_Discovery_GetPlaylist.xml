@@ -1,0 +1,247 @@
+﻿<example>
+    Here is an example response from the API, as snapshotted on 7/19/2022:
+    <code>
+    {
+        "CustomData": {
+            "PlaylistEntries": [
+                {
+                    "MapModePairAssetId": "149b5283-0161-4a36-9ea3-e79c0e69cb7f",
+                    "Metadata": {
+                        "Weight": 175.0
+                    }
+                },
+                {
+                    "MapModePairAssetId": "246d49e3-846a-4215-96dd-cf095ddb7bc3",
+                    "Metadata": {
+                        "Weight": 140.0
+                    }
+                },
+                {
+                    "MapModePairAssetId": "1f06a794-342f-4a5f-9357-54d02512ba80",
+                    "Metadata": {
+                        "Weight": 140.0
+                    }
+                },
+                {
+                    "MapModePairAssetId": "97b78287-b735-4fd4-a280-1cc3b0d8fc6f",
+                    "Metadata": {
+                        "Weight": 140.0
+                    }
+                }
+            ],
+            "Strategy": 0,
+            "MinTeams": 12,
+            "MinTeamSize": 1,
+            "MaxTeams": 12,
+            "MaxTeamSize": 1,
+            "MaxTeamImbalance": 0,
+            "MaxSplitscreenPlayersAllowed": 1,
+            "AllowFriendJoinInProgress": false,
+            "AllowMatchmakingJoinInProgress": false,
+            "AllowBotJoinInProgress": false,
+            "ExitExperienceDurationSec": 30,
+            "FireteamLeaderKickAllowed": false,
+            "DisableMidgameChat": false,
+            "AllowedDeviceInputs": [
+                1,
+                2
+            ],
+            "BotDifficulty": 3,
+            "MinFireteamSize": 1,
+            "MaxFireteamSize": 1
+        },
+        "Tags": [],
+        "RotationEntries": [
+            {
+                "Metadata": {
+                    "Weight": 140.0
+                },
+                "AssetId": "97b78287-b735-4fd4-a280-1cc3b0d8fc6f",
+                "VersionId": "ee220720-f928-46a2-be81-c7068e3b5960",
+                "PublicName": "BTB:Last Spartan Standing on Highpower",
+                "Description": "",
+                "Files": {
+                    "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/mapmodepair/97b78287-b735-4fd4-a280-1cc3b0d8fc6f/ee220720-f928-46a2-be81-c7068e3b5960/",
+                    "FileRelativePaths": [],
+                    "PrefixEndpoint": {
+                        "AuthorityId": "iUgcFiles",
+                        "Path": "/ugcstorage/mapmodepair/97b78287-b735-4fd4-a280-1cc3b0d8fc6f/ee220720-f928-46a2-be81-c7068e3b5960/",
+                        "QueryString": null,
+                        "RetryPolicyId": "linearretry",
+                        "TopicName": "",
+                        "AcknowledgementTypeId": 0,
+                        "AuthenticationLifetimeExtensionSupported": false,
+                        "ClearanceAware": false
+                    }
+                },
+                "Contributors": [],
+                "AssetHome": 1,
+                "AssetStats": {
+                    "PlaysRecent": 4797,
+                    "PlaysAllTime": 4797,
+                    "Favorites": 0,
+                    "Likes": 0,
+                    "Bookmarks": 0,
+                    "ParentAssetCount": 1,
+                    "AverageRating": 0.0,
+                    "NumberOfRatings": 0
+                },
+                "InspectionResult": 0,
+                "CloneBehavior": 0,
+                "Order": 0
+            },
+            {
+                "Metadata": {
+                    "Weight": 140.0
+                },
+                "AssetId": "1f06a794-342f-4a5f-9357-54d02512ba80",
+                "VersionId": "15fbf304-f424-4422-b4e9-ec50eab6759e",
+                "PublicName": "BTB:Last Spartan Standing on Fragmentation",
+                "Description": "",
+                "Files": {
+                    "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/mapmodepair/1f06a794-342f-4a5f-9357-54d02512ba80/15fbf304-f424-4422-b4e9-ec50eab6759e/",
+                    "FileRelativePaths": [],
+                    "PrefixEndpoint": {
+                        "AuthorityId": "iUgcFiles",
+                        "Path": "/ugcstorage/mapmodepair/1f06a794-342f-4a5f-9357-54d02512ba80/15fbf304-f424-4422-b4e9-ec50eab6759e/",
+                        "QueryString": null,
+                        "RetryPolicyId": "linearretry",
+                        "TopicName": "",
+                        "AcknowledgementTypeId": 0,
+                        "AuthenticationLifetimeExtensionSupported": false,
+                        "ClearanceAware": false
+                    }
+                },
+                "Contributors": [],
+                "AssetHome": 1,
+                "AssetStats": {
+                    "PlaysRecent": 4991,
+                    "PlaysAllTime": 4991,
+                    "Favorites": 0,
+                    "Likes": 0,
+                    "Bookmarks": 0,
+                    "ParentAssetCount": 1,
+                    "AverageRating": 0.0,
+                    "NumberOfRatings": 0
+                },
+                "InspectionResult": 0,
+                "CloneBehavior": 0,
+                "Order": 0
+            },
+            {
+                "Metadata": {
+                    "Weight": 140.0
+                },
+                "AssetId": "246d49e3-846a-4215-96dd-cf095ddb7bc3",
+                "VersionId": "07393dd8-3b92-48e4-b1bd-64f141891f45",
+                "PublicName": "BTB:Last Spartan Standing on Deadlock",
+                "Description": "",
+                "Files": {
+                    "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/mapmodepair/246d49e3-846a-4215-96dd-cf095ddb7bc3/07393dd8-3b92-48e4-b1bd-64f141891f45/",
+                    "FileRelativePaths": [],
+                    "PrefixEndpoint": {
+                        "AuthorityId": "iUgcFiles",
+                        "Path": "/ugcstorage/mapmodepair/246d49e3-846a-4215-96dd-cf095ddb7bc3/07393dd8-3b92-48e4-b1bd-64f141891f45/",
+                        "QueryString": null,
+                        "RetryPolicyId": "linearretry",
+                        "TopicName": "",
+                        "AcknowledgementTypeId": 0,
+                        "AuthenticationLifetimeExtensionSupported": false,
+                        "ClearanceAware": false
+                    }
+                },
+                "Contributors": [],
+                "AssetHome": 1,
+                "AssetStats": {
+                    "PlaysRecent": 4862,
+                    "PlaysAllTime": 4862,
+                    "Favorites": 0,
+                    "Likes": 0,
+                    "Bookmarks": 0,
+                    "ParentAssetCount": 1,
+                    "AverageRating": 0.0,
+                    "NumberOfRatings": 0
+                },
+                "InspectionResult": 0,
+                "CloneBehavior": 0,
+                "Order": 0
+            },
+            {
+                "Metadata": {
+                    "Weight": 175.0
+                },
+                "AssetId": "149b5283-0161-4a36-9ea3-e79c0e69cb7f",
+                "VersionId": "0ea30daa-924f-448f-b075-ab5a277886ee",
+                "PublicName": "BTB:Last Spartan Standing on Breaker",
+                "Description": "",
+                "Files": {
+                    "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/mapmodepair/149b5283-0161-4a36-9ea3-e79c0e69cb7f/0ea30daa-924f-448f-b075-ab5a277886ee/",
+                    "FileRelativePaths": [],
+                    "PrefixEndpoint": {
+                        "AuthorityId": "iUgcFiles",
+                        "Path": "/ugcstorage/mapmodepair/149b5283-0161-4a36-9ea3-e79c0e69cb7f/0ea30daa-924f-448f-b075-ab5a277886ee/",
+                        "QueryString": null,
+                        "RetryPolicyId": "linearretry",
+                        "TopicName": "",
+                        "AcknowledgementTypeId": 0,
+                        "AuthenticationLifetimeExtensionSupported": false,
+                        "ClearanceAware": false
+                    }
+                },
+                "Contributors": [],
+                "AssetHome": 1,
+                "AssetStats": {
+                    "PlaysRecent": 4941,
+                    "PlaysAllTime": 1018721,
+                    "Favorites": 0,
+                    "Likes": 0,
+                    "Bookmarks": 0,
+                    "ParentAssetCount": 1,
+                    "AverageRating": 0.0,
+                    "NumberOfRatings": 0
+                },
+                "InspectionResult": 0,
+                "CloneBehavior": 0,
+                "Order": 0
+            }
+        ],
+        "AssetId": "0299adc1-f07a-4b6c-8126-0c35ac2fa08d",
+        "VersionId": "0a2776ca-b811-4475-93dd-9415c39ef835",
+        "PublicName": "Last Spartan Standing",
+        "Description": "12 Spartan Free-For-All with limited respawns. Level-up your loadout by earning Personal Score and collecting eliminated Enemy AI. Last Spartan standing, WINS!",
+        "Files": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/playlist/0299adc1-f07a-4b6c-8126-0c35ac2fa08d/0a2776ca-b811-4475-93dd-9415c39ef835/",
+            "FileRelativePaths": [
+                "images/hero.png",
+                "images/screenshot1.png",
+                "images/thumbnail.png"
+            ],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/playlist/0299adc1-f07a-4b6c-8126-0c35ac2fa08d/0a2776ca-b811-4475-93dd-9415c39ef835/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Contributors": [],
+        "AssetHome": 1,
+        "AssetStats": {
+            "PlaysRecent": 0,
+            "PlaysAllTime": 0,
+            "Favorites": 0,
+            "Likes": 0,
+            "Bookmarks": 0,
+            "ParentAssetCount": 0,
+            "AverageRating": 0.0,
+            "NumberOfRatings": 0
+        },
+        "InspectionResult": 0,
+        "CloneBehavior": 0,
+        "Order": 0
+    }
+    </code>
+</example>

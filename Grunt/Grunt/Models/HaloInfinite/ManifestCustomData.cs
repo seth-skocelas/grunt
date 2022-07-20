@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-    public class CustomManifestData
+    public class ManifestCustomData
     {
         public string BranchName { get; set; }
         public string BuildNumber { get; set; }

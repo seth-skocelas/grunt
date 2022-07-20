@@ -2,10 +2,10 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    public class EngineGameVariant : Asset
-    {
-        public PlayAssetStats AssetStats { get; set; }
-        public EngineGameVariantCustomData CustomData { get; set; }
-    }
 
+    public class Prefab : Asset
+    {
+        public PrefabCustomData CustomData { get; set; }
+        public PlayAssetStats AssetStats { get; set; }
+    }
 }

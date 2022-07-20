@@ -1,0 +1,72 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/19/2022:
+	<code>
+    {
+        "CustomData": {
+            "SubsetData": {
+                "StatBucketGameType": 0,
+                "EngineName": "",
+                "VariantName": ""
+            },
+            "LocalizedData": {}
+        },
+        "Tags": [
+            "343i"
+        ],
+        "AssetId": "6ea0d1e7-57f7-4658-ac1e-7223cbb4f765",
+        "VersionId": "241f10a0-b997-40bf-b2b6-5de1b35c9ee1",
+        "PublicName": "Lone Wolves",
+        "Description": "Lone Wolves",
+        "Files": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/enginegamevariant/6ea0d1e7-57f7-4658-ac1e-7223cbb4f765/241f10a0-b997-40bf-b2b6-5de1b35c9ee1/",
+            "FileRelativePaths": [
+                "PlayCinematicAndQuit.bin",
+                "PlayCinematicAndQuit.br",
+                "PlayCinematicAndQuit.chs",
+                "PlayCinematicAndQuit.cht",
+                "PlayCinematicAndQuit.de",
+                "PlayCinematicAndQuit.dk",
+                "PlayCinematicAndQuit.en",
+                "PlayCinematicAndQuit.fi",
+                "PlayCinematicAndQuit.fr",
+                "PlayCinematicAndQuit.it",
+                "PlayCinematicAndQuit.jpn",
+                "PlayCinematicAndQuit.kor",
+                "PlayCinematicAndQuit.mx",
+                "PlayCinematicAndQuit.nl",
+                "PlayCinematicAndQuit.no",
+                "PlayCinematicAndQuit.pl",
+                "PlayCinematicAndQuit.pt",
+                "PlayCinematicAndQuit.ru",
+                "PlayCinematicAndQuit.sp",
+                "PlayCinematicAndQuit_guid.txt"
+            ],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/enginegamevariant/6ea0d1e7-57f7-4658-ac1e-7223cbb4f765/241f10a0-b997-40bf-b2b6-5de1b35c9ee1/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Contributors": [],
+        "AssetHome": 1,
+        "AssetStats": {
+            "PlaysRecent": -1,
+            "PlaysAllTime": -1,
+            "Favorites": 0,
+            "Likes": 0,
+            "Bookmarks": 0,
+            "ParentAssetCount": 0,
+            "AverageRating": null,
+            "NumberOfRatings": 0
+        },
+        "InspectionResult": 50,
+        "CloneBehavior": 0,
+        "Order": 0
+    }
+	</code>
+</example>

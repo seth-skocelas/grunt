@@ -1,0 +1,144 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/19/2022:
+	<code>
+    {
+        "CannedTags": [
+            {
+                "Name": "10v10"
+            },
+            {
+                "Name": "11v11"
+            },
+            {
+                "Name": "12v12"
+            },
+            {
+                "Name": "1v1"
+            },
+            {
+                "Name": "1vAll"
+            },
+            {
+                "Name": "2v2"
+            },
+            {
+                "Name": "3v3"
+            },
+            {
+                "Name": "4v4"
+            },
+            {
+                "Name": "6v6"
+            },
+            {
+                "Name": "8v8"
+            },
+            {
+                "Name": "9v9"
+            },
+            {
+                "Name": "Arena"
+            },
+            {
+                "Name": "Bots"
+            },
+            {
+                "Name": "BTB"
+            },
+            {
+                "Name": "Casual"
+            },
+            {
+                "Name": "Classic"
+            },
+            {
+                "Name": "Cooperative"
+            },
+            {
+                "Name": "Core"
+            },
+            {
+                "Name": "CTF"
+            },
+            {
+                "Name": "Experimental"
+            },
+            {
+                "Name": "FFA"
+            },
+            {
+                "Name": "Fiesta"
+            },
+            {
+                "Name": "Gametype"
+            },
+            {
+                "Name": "H1"
+            },
+            {
+                "Name": "H2"
+            },
+            {
+                "Name": "H3"
+            },
+            {
+                "Name": "H4"
+            },
+            {
+                "Name": "H5"
+            },
+            {
+                "Name": "Help"
+            },
+            {
+                "Name": "Machinima"
+            },
+            {
+                "Name": "Map"
+            },
+            {
+                "Name": "Mode"
+            },
+            {
+                "Name": "No Vehicle"
+            },
+            {
+                "Name": "Objective"
+            },
+            {
+                "Name": "Oddball"
+            },
+            {
+                "Name": "ODST"
+            },
+            {
+                "Name": "Original"
+            },
+            {
+                "Name": "Reach"
+            },
+            {
+                "Name": "Remake"
+            },
+            {
+                "Name": "Slayer"
+            },
+            {
+                "Name": "Strongholds"
+            },
+            {
+                "Name": "Tactical"
+            },
+            {
+                "Name": "Teams"
+            },
+            {
+                "Name": "Test"
+            },
+            {
+                "Name": "WIP"
+            }
+        ]
+    }
+	</code>
+</example>
