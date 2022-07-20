@@ -192,47 +192,41 @@ namespace Grunt.Core
         /// <summary>
         /// Get AI core customization for a player.
         /// </summary>
+        /// <include file='../APIDocsExamples/Economy_AiCoresCustomization.xml' path='//example'/>
         /// <param name="player">The player identifier in the format "xuid(XUID_VALUE)".</param>
         /// <returns>An instance of AiCores containing AI core customization metadata if request was successful. Return value is null otherwise.</returns>
-        public async Task<AiCores> EconomyAiCoresCustomization(string player)
+        public async Task<AiCores?> EconomyAiCoresCustomization(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_PC_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_PC_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AiCores>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AiCores>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Get details about all owned cores for a player.
         /// </summary>
+        /// <include file='../APIDocsExamples/Economy_AllOwnedCoresDetails.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>An instance of PlayerCores containing player core customization metadata if request was successful. Return value is null otherwise.</returns>
-        public async Task<PlayerCores> EconomyAllOwnedCoresDetails(string player)
+        public async Task<PlayerCores?> EconomyAllOwnedCoresDetails(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/cores",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_PC_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/cores",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_PC_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<PlayerCores>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<PlayerCores>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>

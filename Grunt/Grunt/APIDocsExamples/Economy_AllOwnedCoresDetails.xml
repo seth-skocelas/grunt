@@ -1,0 +1,145 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/20/2022:
+	<code>
+    {
+        "Cores": [
+            {
+                "CorePath": "Cores/ArmorCores/017-001-olympus-c13d0b38.json",
+                "CoreType": "Armor",
+                "CoreId": "017-001-olympus-c13d0b38",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Weapon/209-200-olympus-aa30213b.json",
+                "CoreType": "WeaponSidekick",
+                "CoreId": "209-200-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Weapon/209-201-olympus-aa30213b.json",
+                "CoreType": "WeaponAR",
+                "CoreId": "209-201-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Weapon/209-202-olympus-aa30213b.json",
+                "CoreType": "WeaponBR",
+                "CoreId": "209-202-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Weapon/209-203-olympus-aa30213b.json",
+                "CoreType": "WeaponCommando",
+                "CoreId": "209-203-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Weapon/209-204-olympus-aa30213b.json",
+                "CoreType": "WeaponSPnKr",
+                "CoreId": "209-204-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Weapon/209-205-olympus-aa30213b.json",
+                "CoreType": "WeaponSniper",
+                "CoreId": "209-205-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Weapon/209-206-olympus-aa30213b.json",
+                "CoreType": "WeaponShotgun",
+                "CoreId": "209-206-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Weapon/209-207-olympus-aa30213b.json",
+                "CoreType": "WeaponHydra",
+                "CoreId": "209-207-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Ai/304-100-ai-core-debb20e3.json",
+                "CoreType": "Ai",
+                "CoreId": "304-100-ai-core-debb20e3",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Vehicle/409-300-olympus-aa30213b.json",
+                "CoreType": "VehicleWarthog",
+                "CoreId": "409-300-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Vehicle/409-301-olympus-aa30213b.json",
+                "CoreType": "VehicleMongoose",
+                "CoreId": "409-301-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Vehicle/409-302-olympus-aa30213b.json",
+                "CoreType": "VehicleScorpion",
+                "CoreId": "409-302-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Vehicle/409-303-olympus-aa30213b.json",
+                "CoreType": "VehicleWasp",
+                "CoreId": "409-303-olympus-aa30213b",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Vehicle/409-304-olympus-e8b8a8b3.json",
+                "CoreType": "VehicleRazorBack",
+                "CoreId": "409-304-olympus-e8b8a8b3",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Vehicle/409-305-olympus-90c5035c.json",
+                "CoreType": "VehicleGungoose",
+                "CoreId": "409-305-olympus-90c5035c",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            },
+            {
+                "CorePath": "Cores/Vehicle/409-306-olympus-174b9a04.json",
+                "CoreType": "VehicleRockethog",
+                "CoreId": "409-306-olympus-174b9a04",
+                "FirstAcquiredDate": {
+                    "ISO8601Date": "2022-07-12T00:46:25.403Z"
+                }
+            }
+        ]
+    }
+	</code>
+</example>

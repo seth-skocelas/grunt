@@ -1,0 +1,30 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/20/2022:
+	<code>
+    {
+        "AiCores": [
+            {
+                "CorePath": "Cores/Ai/304-100-ai-core-debb20e3.json",
+                "IsEquipped": true,
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-07-14T23:42:11.095Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-07-14T23:42:24.444Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Ai/Themes/303-100-ai-theme-debb20e3.json",
+                        "ModelPath": "Inventory/Ai/Models/302-100-pyramid-60e07136.json",
+                        "ColorPath": "Inventory/Ai/Colors/301-100-base-cyan-899ff22a.json"
+                    }
+                ],
+                "CoreId": "304-100-ai-core-debb20e3",
+                "CoreType": "Ai"
+            }
+        ]
+    }
+	</code>
+</example>
