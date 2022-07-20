@@ -1,0 +1,87 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/19/2022:
+	<code>
+    {
+        "Value": [
+            {
+                "Id": "xuid(2533274837773602)",
+                "ResultCode": 0,
+                "Result": {
+                    "Current": {
+                        "Value": -1,
+                        "MeasurementMatchesRemaining": 10,
+                        "Tier": "",
+                        "TierStart": 0,
+                        "SubTier": 0,
+                        "NextTier": "",
+                        "NextTierStart": 0,
+                        "NextSubTier": 0,
+                        "InitialMeasurementMatches": 10
+                    },
+                    "SeasonMax": {
+                        "Value": -1,
+                        "MeasurementMatchesRemaining": 10,
+                        "Tier": "",
+                        "TierStart": 0,
+                        "SubTier": 0,
+                        "NextTier": "",
+                        "NextTierStart": 0,
+                        "NextSubTier": 0,
+                        "InitialMeasurementMatches": 10
+                    },
+                    "AllTimeMax": {
+                        "Value": -1,
+                        "MeasurementMatchesRemaining": 10,
+                        "Tier": "",
+                        "TierStart": 0,
+                        "SubTier": 0,
+                        "NextTier": "",
+                        "NextTierStart": 0,
+                        "NextSubTier": 0,
+                        "InitialMeasurementMatches": 10
+                    }
+                }
+            },
+            {
+                "Id": "xuid(2533274855333605)",
+                "ResultCode": 0,
+                "Result": {
+                    "Current": {
+                        "Value": -1,
+                        "MeasurementMatchesRemaining": 10,
+                        "Tier": "",
+                        "TierStart": 0,
+                        "SubTier": 0,
+                        "NextTier": "",
+                        "NextTierStart": 0,
+                        "NextSubTier": 0,
+                        "InitialMeasurementMatches": 10
+                    },
+                    "SeasonMax": {
+                        "Value": -1,
+                        "MeasurementMatchesRemaining": 10,
+                        "Tier": "",
+                        "TierStart": 0,
+                        "SubTier": 0,
+                        "NextTier": "",
+                        "NextTierStart": 0,
+                        "NextSubTier": 0,
+                        "InitialMeasurementMatches": 10
+                    },
+                    "AllTimeMax": {
+                        "Value": -1,
+                        "MeasurementMatchesRemaining": 10,
+                        "Tier": "",
+                        "TierStart": 0,
+                        "SubTier": 0,
+                        "NextTier": "",
+                        "NextTierStart": 0,
+                        "NextSubTier": 0,
+                        "InitialMeasurementMatches": 10
+                    }
+                }
+            }
+        ]
+    }
+	</code>
+</example>

@@ -1,6 +1,7 @@
 ﻿using Grunt.Endpoints;
 using Grunt.Models.HaloInfinite;
 using Grunt.Models.HaloInfinite.ApiIngress;
+using Grunt.Models.Xbox;
 using Grunt.Util;
 using Newtonsoft.Json;
 using System;
@@ -3152,8 +3153,9 @@ namespace Grunt.Core
         //================================================
         // Lobby
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyGameConnection()
+        
+        // TODO: API deals with web sockets connection to the game lobby. For future implementation and research.
+        private async Task<string> LobbyGameConnection()
         {
             var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
@@ -3212,8 +3214,8 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyConnection()
+        // TODO: API deals with web sockets connection to the game lobby. For future implementation and research.
+        private async Task<string> LobbyConnection()
         {
             var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
@@ -3231,8 +3233,8 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyConnectionPublish()
+        // TODO: API deals with web sockets connection to the game lobby. For future implementation and research.
+        private async Task<string> LobbyConnectionPublish()
         {
             var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
@@ -3250,8 +3252,8 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> LobbyConnectionSubscribe()
+        // TODO: API deals with web sockets connection to the game lobby. For future implementation and research.
+        private async Task<string> LobbyConnectionSubscribe()
         {
             var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
@@ -3337,8 +3339,10 @@ namespace Grunt.Core
         //================================================
         // Setting
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> SettingGetFeatureFlags(string platform, string version)
+
+        // TODO: Need to validate that this API is accurate.
+        // See: https://github.com/OpenSpartan/grunt/issues/12
+        private async Task<string> SettingGetFeatureFlags(string platform, string version)
         {
             var response = await ExecuteAPIRequest<string>($"https://settings.svc.halowaypoint.com:443/featureflags/{platform}/{version}",
                                    HttpMethod.Get,
@@ -3359,6 +3363,7 @@ namespace Grunt.Core
         /// <summary>
         /// Get a list of features enables for a given flight.
         /// </summary>
+        /// <include file='../APIDocsExamples/Setting_GetFlightedFeatureFlags.xml' path='//example'/>
         /// <param name="flightId">Clearance ID/flight that is being used.</param>
         /// <returns>An instance of FlightedFeatureFlags containing a list of enabled and disabled features if the request is successful. Otherwise, returns null.</returns>
         public async Task<FlightedFeatureFlags> SettingGetFlightedFeatureFlags(string flightId)
@@ -3386,6 +3391,7 @@ namespace Grunt.Core
         /// <summary>
         /// Gets the currently assigned clearance/flight ID.
         /// </summary>
+        /// <include file='../APIDocsExamples/Settings_GetClearance.xml' path='//example'/>
         /// <param name="audience">Audience that the request is targeting. Standard value is RETAIL.</param>
         /// <param name="sandbox">Identifier associated with the sandbox. Typical value is UNUSED.</param>
         /// <param name="buildNumber">Number of the game build the data is requested for. Example value is 211755.22.01.23.0549-0.</param>
@@ -3411,6 +3417,7 @@ namespace Grunt.Core
         /// <summary>
         /// Gets the the player clearance/flight ID.
         /// </summary>
+        /// <include file='../APIDocsExamples/Settings_GetPlayerClearance.xml' path='//example'/>
         /// <param name="audience">Audience that the request is targeting. Standard value is RETAIL.</param>
         /// <param name="player">The player identifier in the format "xuid(000000)".</param>
         /// <param name="sandbox">Identifier associated with the sandbox. Typical value is UNUSED.</param>
@@ -3442,9 +3449,9 @@ namespace Grunt.Core
         /// Returns individual player stats for a given match.
         /// </summary>
         /// <param name="matchId">The unique match ID.</param>
-        /// <param name="playerIds">Array of player IDs. Each ID string should be in the format of "xuid(XUID_VALUE)."</param>
+        /// <param name="playerIds">Array of player IDs. Each ID string should be in the format of "xuid(XUID_VALUE)".</param>
         /// <returns></returns>
-        public async Task<PlayerSkillResultValue> SkillGetMatchPlayerResult(string matchId, List<string> playerIds)
+        public async Task<PlayerSkillResultContainer> SkillGetMatchPlayerResult(string matchId, List<string> playerIds)
         {
             var formattedPlayerList = string.Join(",", playerIds);
             var response = await ExecuteAPIRequest<string>($"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players={formattedPlayerList}",
@@ -3455,7 +3462,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<PlayerSkillResultValue>(response);
+                return JsonConvert.DeserializeObject<PlayerSkillResultContainer>(response);
             }
             else
             {
@@ -3463,10 +3470,17 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> SkillGetPlaylistCsr(string playlistId)
+        /// <summary>
+        /// Gets playlist Competitive Skill Rank (CSR) for a player or a set of players.
+        /// </summary>
+        /// <include file='../APIDocsExamples/Skill_GetPlaylistCsr.xml' path='//example'/>
+        /// <param name="playlistId">Unique ID for the playlist.</param>
+        /// <param name="playerIds"></param>
+        /// <returns>Array of player IDs. Each ID string should be in the format of "xuid(XUID_VALUE)".</returns>
+        public async Task<PlaylistCsrResultContainer> SkillGetPlaylistCsr(string playlistId, List<string> playerIds)
         {
-            var response = await ExecuteAPIRequest<string>($"https://skill.svc.halowaypoint.com:443/hi/playlist/{playlistId}/csrs",
+            var formattedPlayerList = string.Join(",", playerIds);
+            var response = await ExecuteAPIRequest<string>($"https://skill.svc.halowaypoint.com:443/hi/playlist/{playlistId}/csrs?players={formattedPlayerList}",
                                    HttpMethod.Get,
                                    true,
                                    true,
@@ -3474,11 +3488,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<PlaylistCsrResultContainer>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 
@@ -3854,8 +3868,14 @@ namespace Grunt.Core
         //================================================
         // Xbl
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> XblGetProfileSettingsForSpeechAccessibility()
+        
+        // TODO: This API call talks to the Xbox API and requires contract version 3.
+        // An opportunity to implement an Xbox API wrapper alongside the Halo APIs
+        // since it will be used actively.
+        //
+        // This also needs to move under a separate Xbox API client, since this is separate from
+        // the Halo client.
+        private async Task<XboxUserProfileSettings> XblGetProfileSettingsForSpeechAccessibility()
         {
             var response = await ExecuteAPIRequest<string>($"https://profile.xboxlive.com:443/users/me/profile/settings?settings=SpeechAccessibility",
                                    HttpMethod.Get,
@@ -3863,21 +3883,19 @@ namespace Grunt.Core
                                    false,
                                    GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return null;
         }
 
         //================================================
         // XboxLive
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> XboxLiveTitleManagedStorage(string xuid, string scid)
+
+        // TODO: Swap this with the correct API: https://titlestorage.xboxlive.com/connectedstorage/users/xuid(2533274855333605)/scids/00000000-0000-0000-0000-000079C6D2A0/
+        // It seems that thunderhead_campaign_saves might've been an older variation of the game.
+        //
+        // This also needs to move under a separate Xbox API client, since this is separate from
+        // the Halo client.
+        private async Task<string> XboxLiveTitleManagedStorage(string xuid, string scid)
         {
             var response = await ExecuteAPIRequest<string>($"https://titlestorage.xboxlive.com:443/trustedplatform/users/xuid({xuid})/scids/{scid}/data/thunderhead_campaign_saves",
                                    HttpMethod.Get,
@@ -3895,8 +3913,12 @@ namespace Grunt.Core
             }
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> XboxLiveTitleManagedStorageFile(string xuid, string scid, string filename, string type)
+        // TODO: Swap this with the correct API: https://titlestorage.xboxlive.com/connectedstorage/users/xuid(2533274855333605)/scids/00000000-0000-0000-0000-000079C6D2A0/
+        // It seems that thunderhead_campaign_saves might've been an older variation of the game.
+        //
+        // This also needs to move under a separate Xbox API client, since this is separate from
+        // the Halo client.
+        private async Task<string> XboxLiveTitleManagedStorageFile(string xuid, string scid, string filename, string type)
         {
             var response = await ExecuteAPIRequest<string>($"https://titlestorage.xboxlive.com:443/trustedplatform/users/xuid({xuid})/scids/{scid}/data/thunderhead_campaign_saves/{filename},{type}",
                                    HttpMethod.Get,
@@ -3917,8 +3939,11 @@ namespace Grunt.Core
         //================================================
         // Xboxlive
         //================================================
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> XboxliveQoSEndpoints()
+        // TODO: Validate with requests from the game.
+        //
+        // This also needs to move under a separate Xbox API client, since this is separate from
+        // the Halo client.
+        private async Task<string> XboxliveQoSEndpoints()
         {
             var response = await ExecuteAPIRequest<string>($"https://gameserverds.xboxlive.com:443/xplatqosservers",
                                    HttpMethod.Get,

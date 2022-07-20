@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    public class PlayerSkillResultValue
+    public class PlayerSkillResultContainer
     {
         public List<PlayerSkillResult> Value { get; set; }
     }
