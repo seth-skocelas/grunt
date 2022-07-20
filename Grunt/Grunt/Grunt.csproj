@@ -27,7 +27,17 @@
 		<Version>$(AssemblyVersionMajor).$(AssemblyVersionMinor).$(AssemblyVersionPatch).$(AssemblyVersionPreRelease)</Version>
 		<TransformOnBuild>true</TransformOnBuild>
 		<TransformOutOfDateOnly>false</TransformOutOfDateOnly>
+		<Nullable>enable</Nullable>
+		<AnalysisLevel>latest</AnalysisLevel>
 	</PropertyGroup>
+	
+	<ItemGroup>
+	  <None Remove="stylecop.json" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <AdditionalFiles Include="stylecop.json" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="..\..\media\grunt-logo.png">
@@ -43,6 +53,13 @@
 			<AutoGen>True</AutoGen>
 			<DependentUpon>VersioningTemplate.tt</DependentUpon>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
 	</ItemGroup>
 
 	<ItemGroup>

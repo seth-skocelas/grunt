@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    public class ArmorCore : Models.HaloInfinite.Foundation.Core
+    public class ArmorCore : Foundation.Core
     {
         public List<ArmorCoreTheme> Themes { get; set; }
     }

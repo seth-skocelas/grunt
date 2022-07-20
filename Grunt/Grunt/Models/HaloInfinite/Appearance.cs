@@ -2,7 +2,7 @@
 {
     public class Appearance
     {
-        public APIFormattedDate LastModifiedDateUtc { get; set; }
+        public APIFormattedDate? LastModifiedDateUtc { get; set; }
         public string ServiceTag { get; set; }
         public string ActionPosePath { get; set; }
         public string StancePath { get; set; }

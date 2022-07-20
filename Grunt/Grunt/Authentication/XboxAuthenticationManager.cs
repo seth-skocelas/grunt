@@ -1,21 +1,26 @@
-﻿using Grunt.Models;
+﻿// <copyright file="XboxAuthenticationManager.cs" company="Den Delimarsky">
+// Developed by Den Delimarsky.
+// Den Delimarsky licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+// The underlying API powering Grunt is managed by 343 Industries and Microsoft. This wrapper is not endorsed by 343 Industries or Microsoft.
+// </copyright>
+
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
-using Grunt.Util;
-using Grunt.Endpoints;
 using System.Text.Json;
+using System.Threading.Tasks;
+using Grunt.Endpoints;
+using Grunt.Models;
+using Grunt.Util;
 
 namespace Grunt.Authentication
 {
     public class XboxAuthenticationManager
     {
-
-
-        public string GenerateAuthUrl(string clientId, string redirectUrl, string[] scopes = null, string state = "")
+        public string GenerateAuthUrl(string clientId, string redirectUrl, string[]? scopes = null, string state = "")
         {
             NameValueCollection queryString = System.Web.HttpUtility.ParseQueryString(string.Empty);
 
@@ -42,7 +47,7 @@ namespace Grunt.Authentication
             return XboxEndpoints.XboxLiveAuthorize + "?" + queryString.ToString();
         }
 
-        public async Task<OAuthToken> RequestOAuthToken(string clientId, string authorizationCode, string redirectUrl, string clientSecret = "", string[] scopes = null)
+        public async Task<OAuthToken> RequestOAuthToken(string clientId, string authorizationCode, string redirectUrl, string clientSecret = "", string[]? scopes = null)
         {
             Dictionary<string,string> tokenRequestContent = new();
 
@@ -79,7 +84,7 @@ namespace Grunt.Authentication
             }
         }
 
-        public async Task<OAuthToken> RefreshOAuthToken(string clientId, string refreshToken, string redirectUrl, string clientSecret = "", string[] scopes = null)
+        public async Task<OAuthToken> RefreshOAuthToken(string clientId, string refreshToken, string redirectUrl, string clientSecret = "", string[]? scopes = null)
         {
             Dictionary<string, string> tokenRequestContent = new();
 

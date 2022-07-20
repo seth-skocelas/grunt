@@ -6,6 +6,6 @@
         public bool IsEquipped { get; set; }
         public string CoreId { get; set; }
         public string CoreType { get; set; }
-        public APIFormattedDate FirstAcquiredDate { get; set; }
+        public APIFormattedDate? FirstAcquiredDate { get; set; }
     }
 }

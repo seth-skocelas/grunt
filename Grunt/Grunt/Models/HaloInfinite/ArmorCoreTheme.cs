@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Grunt.Models.HaloInfinite.Foundation;
+using System.Collections.Generic;
 
 namespace Grunt.Models.HaloInfinite
 {
-    public class ArmorCoreTheme : Models.HaloInfinite.Foundation.Theme
+    public class ArmorCoreTheme : Theme
     {
         public string CoatingPath { get; set; }
         public string GlovePath { get; set; }

@@ -1,7 +1,9 @@
-﻿namespace Grunt.Models.HaloInfinite
+﻿using System.Collections.Generic;
+
+namespace Grunt.Models.HaloInfinite
 {
-    public class AiCore : Models.HaloInfinite.Foundation.Core
+    public class AiCore : Foundation.Core
     {
-        public AiCoreTheme[] Themes { get; set; }
+        public List<AiCoreTheme> Themes { get; set; }
     }
 }

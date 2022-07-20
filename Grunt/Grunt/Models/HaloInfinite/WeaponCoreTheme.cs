@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    public class WeaponCoreTheme : Models.HaloInfinite.Foundation.Theme
+    public class WeaponCoreTheme : Foundation.Theme
     {
         public string CoatingPath { get; set; }
         public List<Emblem> Emblems { get; set; }

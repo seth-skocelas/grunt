@@ -1,11 +1,18 @@
-﻿using Grunt.Models;
+﻿// <copyright file="HaloAuthenticationClient.cs" company="Den Delimarsky">
+// Developed by Den Delimarsky.
+// Den Delimarsky licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+// The underlying API powering Grunt is managed by 343 Industries and Microsoft. This wrapper is not endorsed by 343 Industries or Microsoft.
+// </copyright>
+
 using System;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
-using Grunt.Util;
-using Grunt.Endpoints;
 using System.Text.Json;
+using System.Threading.Tasks;
+using Grunt.Endpoints;
+using Grunt.Models;
+using Grunt.Util;
 
 namespace Grunt.Authentication
 {
@@ -21,8 +28,8 @@ namespace Grunt.Authentication
                 new SpartanTokenProof()
                 {
                     Token = xstsToken,
-                    TokenType = "Xbox_XSTSv3"
-                }
+                    TokenType = "Xbox_XSTSv3",
+                },
             };
 
             var client = new HttpClient();
