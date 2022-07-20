@@ -2928,10 +2928,11 @@ namespace Grunt.Core
         }
 
         /// <summary>
-        /// 
+        /// Gets information abouty a specific prefab version.
         /// </summary>
-        /// <param name="assetId"></param>
-        /// <param name="versionId"></param>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetPrefab.xml' path='//example'/>
+        /// <param name="assetId">Unique asset ID for the prefab.</param>
+        /// <param name="versionId">Unique version ID for the prefab.</param>
         /// <returns></returns>
         public async Task<Prefab> HIUGCDiscoveryGetPrefab(string assetId, string versionId)
         {
@@ -2951,10 +2952,14 @@ namespace Grunt.Core
             }
         }
 
-        // TODO: Additional validation is necessary here to see if there is an actual API endpoint.
-        // We have no context on existing prefab IDs.
-        // See: https://github.com/OpenSpartan/grunt/issues/11
-        private async Task<string> HIUGCDiscoveryGetPrefabWithoutVersion(string assetId)
+        /// <summary>
+        /// Gets information abouty a specific prefab version.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetPrefabWithoutVersion.xml' path='//example'/>
+        /// <param name="assetId">Unique asset ID for the prefab.</param>
+        /// <param name="versionId">Unique version ID for the prefab.</param>
+        /// <returns></returns>
+        public async Task<Prefab> HIUGCDiscoveryGetPrefabWithoutVersion(string assetId)
         {
             var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}",
                                    HttpMethod.Get,
@@ -2964,11 +2969,11 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return response;
+                return JsonConvert.DeserializeObject<Prefab>(response);
             }
             else
             {
-                return string.Empty;
+                return null;
             }
         }
 

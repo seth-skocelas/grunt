@@ -1,0 +1,45 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/19/2022:
+	<code>
+    {
+        "CustomData": {
+            "Parts": 0,
+            "HasNodeGraph": false
+        },
+        "Tags": [],
+        "AssetId": "568fa365-6cdf-42c6-9d2a-751c676118a2",
+        "VersionId": "d9e73ad7-ff48-46a1-b5cd-3ca5754aa461",
+        "PublicName": "f",
+        "Description": "ff",
+        "Files": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/prefab/568fa365-6cdf-42c6-9d2a-751c676118a2/d9e73ad7-ff48-46a1-b5cd-3ca5754aa461/",
+            "FileRelativePaths": [],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/prefab/568fa365-6cdf-42c6-9d2a-751c676118a2/d9e73ad7-ff48-46a1-b5cd-3ca5754aa461/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Contributors": [],
+        "AssetHome": 2,
+        "AssetStats": {
+            "PlaysRecent": 0,
+            "PlaysAllTime": 0,
+            "Favorites": 2,
+            "Likes": 0,
+            "Bookmarks": 0,
+            "ParentAssetCount": 0,
+            "AverageRating": 5.0,
+            "NumberOfRatings": 2
+        },
+        "InspectionResult": 0,
+        "CloneBehavior": 0,
+        "Order": 0
+    }
+	</code>
+</example>
