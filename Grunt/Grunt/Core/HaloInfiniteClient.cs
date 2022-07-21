@@ -490,7 +490,7 @@ namespace Grunt.Core
                 GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             return !string.IsNullOrEmpty(response)
-                ? JsonSerializer.Deserialize<RewardTrackMetadata>(response, serializerOptions)
+                ? JsonSerializer.Deserialize<RewardTrackMetadata>(response, this.serializerOptions)
                 : null;
         }
 
@@ -500,22 +500,18 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/Economy_GetVirtualCurrencyBalances.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, returns an instance of CurrencySnapshot that contains the balances. Otherwise, returns null.</returns>
-        public async Task<CurrencySnapshot> EconomyGetVirtualCurrencyBalances(string player)
+        public async Task<CurrencySnapshot?> EconomyGetVirtualCurrencyBalances(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/currencies",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/currencies",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<CurrencySnapshot>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<CurrencySnapshot>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -524,22 +520,18 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/Economy_GetXpGrantsStore.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, returns an instance of StoreItem that contains information about items in the store. Otherwise, returns null.</returns>
-        public async Task<StoreItem> EconomyGetXpGrantsStore(string player)
+        public async Task<StoreItem?> EconomyGetXpGrantsStore(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/xpgrants",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/xpgrants",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<StoreItem>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<StoreItem>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
