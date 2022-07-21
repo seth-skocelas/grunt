@@ -1,0 +1,17 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "Links": {},
+        "Name": "",
+        "Description": "",
+        "AssetId": "f96f57e2-9f15-45c5-83ac-5775a48d2ba8",
+        "AssetVersionId": null,
+        "CustomData": {
+            "ReportText": ""
+        },
+        "VersionRatings": null,
+        "AssetKind": 6
+    }
+	</code>
+</example>

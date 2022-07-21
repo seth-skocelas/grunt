@@ -1,0 +1,115 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "CustomData": {},
+        "Tags": [],
+        "MapLink": {
+            "AssetId": "b6aca0c7-8ba7-4066-bf91-693571374c3c",
+            "VersionId": "a6430ba1-d001-4f6a-9966-349389bd8b47",
+            "PublicName": "sgh_interlock",
+            "Description": "",
+            "Files": {
+                "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/b6aca0c7-8ba7-4066-bf91-693571374c3c/a6430ba1-d001-4f6a-9966-349389bd8b47/",
+                "FileRelativePaths": [
+                    "images/screenshot1.png",
+                    "images/thumbnail.png"
+                ],
+                "PrefixEndpoint": {
+                    "AuthorityId": "iUgcFiles",
+                    "Path": "/ugcstorage/map/b6aca0c7-8ba7-4066-bf91-693571374c3c/a6430ba1-d001-4f6a-9966-349389bd8b47/",
+                    "QueryString": null,
+                    "RetryPolicyId": "linearretry",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": false
+                }
+            },
+            "Contributors": [],
+            "AssetHome": 1,
+            "AssetStats": {
+                "PlaysRecent": 202632,
+                "PlaysAllTime": 29362862,
+                "Favorites": 3698,
+                "Likes": 0,
+                "Bookmarks": 0,
+                "ParentAssetCount": 168,
+                "AverageRating": 3.85968253968254,
+                "NumberOfRatings": 3150
+            },
+            "InspectionResult": 50,
+            "CloneBehavior": 0,
+            "Order": 0
+        },
+        "UgcGameVariantLink": {
+            "AssetId": "1e8cd10b-1496-423b-8699-f98f6f5db67e",
+            "VersionId": "b11df777-df25-43b5-b117-1229ca627955",
+            "PublicName": "Slayer-Default-UGC",
+            "Description": "",
+            "Files": {
+                "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/1e8cd10b-1496-423b-8699-f98f6f5db67e/b11df777-df25-43b5-b117-1229ca627955/",
+                "FileRelativePaths": [],
+                "PrefixEndpoint": {
+                    "AuthorityId": "iUgcFiles",
+                    "Path": "/ugcstorage/ugcgamevariant/1e8cd10b-1496-423b-8699-f98f6f5db67e/b11df777-df25-43b5-b117-1229ca627955/",
+                    "QueryString": null,
+                    "RetryPolicyId": "linearretry",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": false
+                }
+            },
+            "Contributors": [],
+            "AssetHome": 1,
+            "AssetStats": {
+                "PlaysRecent": 180877,
+                "PlaysAllTime": 32266441,
+                "Favorites": 152116,
+                "Likes": 1,
+                "Bookmarks": 0,
+                "ParentAssetCount": 105,
+                "AverageRating": 2.7816134973554876,
+                "NumberOfRatings": 101531
+            },
+            "InspectionResult": 0,
+            "CloneBehavior": 0,
+            "Order": 0
+        },
+        "AssetId": "4e2f9ba6-4e61-4a1f-b16b-eaa8aa4d3f8d",
+        "VersionId": "64195783-4754-45ad-9e15-00a467216157",
+        "PublicName": "Slayer on Live Fire",
+        "Description": "",
+        "Files": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/mapmodepair/4e2f9ba6-4e61-4a1f-b16b-eaa8aa4d3f8d/64195783-4754-45ad-9e15-00a467216157/",
+            "FileRelativePaths": [],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/mapmodepair/4e2f9ba6-4e61-4a1f-b16b-eaa8aa4d3f8d/64195783-4754-45ad-9e15-00a467216157/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Contributors": [],
+        "AssetHome": 2,
+        "AssetStats": {
+            "PlaysRecent": 0,
+            "PlaysAllTime": 0,
+            "Favorites": 0,
+            "Likes": 0,
+            "Bookmarks": 0,
+            "ParentAssetCount": 1,
+            "AverageRating": 0.0,
+            "NumberOfRatings": 0
+        },
+        "InspectionResult": 0,
+        "CloneBehavior": 0,
+        "Order": 0
+    }
+	</code>
+</example>

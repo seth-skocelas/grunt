@@ -1,0 +1,56 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "CustomData": {
+            "NumOfObjectsOnMap": 64,
+            "TagLevelId": -747133697,
+            "IsBaked": true,
+            "HasNodeGraph": false
+        },
+        "Tags": [
+            "343i"
+        ],
+        "PrefabLinks": [],
+        "AssetId": "76669255-697d-48c9-a802-7ff2ec8257f1",
+        "VersionId": "b8abf687-4e95-4846-83c7-33e779eed33e",
+        "PublicName": "Forge Space",
+        "Description": "",
+        "Files": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/76669255-697d-48c9-a802-7ff2ec8257f1/b8abf687-4e95-4846-83c7-33e779eed33e/",
+            "FileRelativePaths": [
+                "fo03_space_default.mvar",
+                "images/hero.png",
+                "images/screenshot1.png",
+                "images/thumbnail.png",
+                "map.mvar"
+            ],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/map/76669255-697d-48c9-a802-7ff2ec8257f1/b8abf687-4e95-4846-83c7-33e779eed33e/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Contributors": [],
+        "AssetHome": 1,
+        "AssetStats": {
+            "PlaysRecent": 0,
+            "PlaysAllTime": 0,
+            "Favorites": 4,
+            "Likes": 0,
+            "Bookmarks": 0,
+            "ParentAssetCount": 7,
+            "AverageRating": 0.0,
+            "NumberOfRatings": 0
+        },
+        "InspectionResult": 50,
+        "CloneBehavior": 0,
+        "Order": 0
+    }
+	</code>
+</example>

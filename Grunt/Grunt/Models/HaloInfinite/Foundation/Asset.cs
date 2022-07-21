@@ -6,6 +6,7 @@
         public string VersionId { get; set; }
         public string AssetVersionId { get; set; }
         public string PublicName { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public int InspectionResult { get; set; }
         public int CloneBehavior { get; set; }

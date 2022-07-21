@@ -1,0 +1,67 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    [
+        {
+            "region": "SouthAfricaNorth",
+            "serverUrl": "pfmsqos.southafricanorth.cloudapp.azure.com"
+        },
+        {
+            "region": "AustraliaEast",
+            "serverUrl": "pfmsqos.australiaeast.cloudapp.azure.com"
+        },
+        {
+            "region": "JapanEast",
+            "serverUrl": "pfmsqos.japaneast.cloudapp.azure.com"
+        },
+        {
+            "region": "WestEurope",
+            "serverUrl": "pfmsqos.westeurope.cloudapp.azure.com"
+        },
+        {
+            "region": "EastUs",
+            "serverUrl": "pfmsqos.eastus.cloudapp.azure.com"
+        },
+        {
+            "region": "EastUs2",
+            "serverUrl": "pfmsqos.eastus2.cloudapp.azure.com"
+        },
+        {
+            "region": "CentralUs",
+            "serverUrl": "pfmsqos.centralus.cloudapp.azure.com"
+        },
+        {
+            "region": "NorthCentralUs",
+            "serverUrl": "pfmsqos.northcentralus.cloudapp.azure.com"
+        },
+        {
+            "region": "SouthCentralUs",
+            "serverUrl": "pfmsqos.southcentralus.cloudapp.azure.com"
+        },
+        {
+            "region": "WestUs",
+            "serverUrl": "pfmsqos.westus.cloudapp.azure.com"
+        },
+        {
+            "region": "WestUs2",
+            "serverUrl": "pfmsqos.westus2.cloudapp.azure.com"
+        },
+        {
+            "region": "NorthEurope",
+            "serverUrl": "pfmsqos.northeurope.cloudapp.azure.com"
+        },
+        {
+            "region": "EastAsia",
+            "serverUrl": "pfmsqos.eastasia.cloudapp.azure.com"
+        },
+        {
+            "region": "SoutheastAsia",
+            "serverUrl": "pfmsqos.southeastasia.cloudapp.azure.com"
+        },
+        {
+            "region": "BrazilSouth",
+            "serverUrl": "pfmsqos.brazilsouth.cloudapp.azure.com"
+        }
+    ]
+	</code>
+</example>

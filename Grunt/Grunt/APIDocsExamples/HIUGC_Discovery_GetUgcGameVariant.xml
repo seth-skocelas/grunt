@@ -1,0 +1,90 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "CustomData": {
+            "KeyValues": {}
+        },
+        "Tags": [
+            "343i",
+            "Arena",
+            "Fiesta",
+            "Slayer",
+            "Random"
+        ],
+        "EngineGameVariantLink": {
+            "AssetId": "5bda7c62-ac70-46c8-adc1-4d64e7c99577",
+            "VersionId": "1e58b68a-e92f-4655-8a40-cfe59c1eba0b",
+            "PublicName": "Slayer-SlayerFiesta",
+            "Description": "",
+            "Files": {
+                "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/enginegamevariant/5bda7c62-ac70-46c8-adc1-4d64e7c99577/1e58b68a-e92f-4655-8a40-cfe59c1eba0b/",
+                "FileRelativePaths": [],
+                "PrefixEndpoint": {
+                    "AuthorityId": "iUgcFiles",
+                    "Path": "/ugcstorage/enginegamevariant/5bda7c62-ac70-46c8-adc1-4d64e7c99577/1e58b68a-e92f-4655-8a40-cfe59c1eba0b/",
+                    "QueryString": null,
+                    "RetryPolicyId": "linearretry",
+                    "TopicName": "",
+                    "AcknowledgementTypeId": 0,
+                    "AuthenticationLifetimeExtensionSupported": false,
+                    "ClearanceAware": false
+                }
+            },
+            "Contributors": [],
+            "AssetHome": 1,
+            "AssetStats": {
+                "PlaysRecent": 0,
+                "PlaysAllTime": 0,
+                "Favorites": 0,
+                "Likes": 0,
+                "Bookmarks": 0,
+                "ParentAssetCount": 65666,
+                "AverageRating": 0.0,
+                "NumberOfRatings": 0
+            },
+            "InspectionResult": 50,
+            "CloneBehavior": 0,
+            "Order": 0
+        },
+        "AssetId": "aca7bbf8-7a18-4aae-8785-1bd3f58275fd",
+        "VersionId": "3685f6b2-2860-4e98-9d13-513087edb465",
+        "PublicName": "Fiesta:Slayer",
+        "Description": "Spawn with random loadouts. Slay the enemy team.",
+        "Files": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/aca7bbf8-7a18-4aae-8785-1bd3f58275fd/3685f6b2-2860-4e98-9d13-513087edb465/",
+            "FileRelativePaths": [
+                "images/hero.png",
+                "images/screenshot1.png",
+                "images/screenshot2.Png",
+                "images/thumbnail.png"
+            ],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/ugcgamevariant/aca7bbf8-7a18-4aae-8785-1bd3f58275fd/3685f6b2-2860-4e98-9d13-513087edb465/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Contributors": [],
+        "AssetHome": 1,
+        "AssetStats": {
+            "PlaysRecent": 183594,
+            "PlaysAllTime": 31707132,
+            "Favorites": 31710,
+            "Likes": 0,
+            "Bookmarks": 0,
+            "ParentAssetCount": 56,
+            "AverageRating": 3.240646322261378,
+            "NumberOfRatings": 26674
+        },
+        "InspectionResult": 0,
+        "CloneBehavior": 0,
+        "Order": 0
+    }
+	</code>
+</example>

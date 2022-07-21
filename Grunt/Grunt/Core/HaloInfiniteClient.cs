@@ -14,6 +14,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Grunt.Endpoints;
+using Grunt.Models;
 using Grunt.Models.HaloInfinite;
 using Grunt.Models.HaloInfinite.ApiIngress;
 using Grunt.Util;
@@ -1666,22 +1667,18 @@ namespace Grunt.Core
         /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
         /// <param name="versionId">Unique ID for the version of the asset. Example value is "2674c887-7aa1-42ab-a6cd-4a2c60611d0e" for the "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" asset.</param>
         /// <returns>If successful, returns an instance of AuthoringAssetVersion that contains asset version information. Otherwise, returns null.</returns>
-        public async Task<AuthoringAssetVersion> HIUGCGetSpecificAssetVersion(string title, string assetType, string assetId, string versionId)
+        public async Task<AuthoringAssetVersion?> HIUGCGetSpecificAssetVersion(string title, string assetType, string assetId, string versionId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AuthoringAssetVersion>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AuthoringAssetVersion>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1695,22 +1692,18 @@ namespace Grunt.Core
         /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
         /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
         /// <returns>If successful, returns an instance of AuthoringAssetVersionContainer that contains information about all available versions for an asset. Otherwise, returns null.</returns>
-        public async Task<AuthoringAssetVersionContainer> HIUGCListAllVersions(string title, string assetType, string assetId)
+        public async Task<AuthoringAssetVersionContainer?> HIUGCListAllVersions(string title, string assetType, string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AuthoringAssetVersionContainer>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AuthoringAssetVersionContainer>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1723,22 +1716,18 @@ namespace Grunt.Core
         /// <param name="title">Title which contains the asset. An example value here is "hi".</param>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, returns an instance of AuthoringAssetContainer containing information about assets a player owns. Otherwise, returns null.</returns>
-        public async Task<AuthoringAssetContainer> HIUGCListPlayerAssets(string title, string player)
+        public async Task<AuthoringAssetContainer?> HIUGCListPlayerAssets(string title, string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/players/{player}/assets",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/players/{player}/assets",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AuthoringAssetContainer>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AuthoringAssetContainer>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1751,22 +1740,18 @@ namespace Grunt.Core
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
         /// <returns>If successful, returns an instance of AuthoringFavoritesContainer containing the list of favorites. Otherwise, returns null.</returns>
-        public async Task<AuthoringFavoritesContainer> HIUGCListPlayerFavorites(string player, string assetType)
+        public async Task<AuthoringFavoritesContainer?> HIUGCListPlayerFavorites(string player, string assetType)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites/{assetType}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites/{assetType}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AuthoringFavoritesContainer>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AuthoringFavoritesContainer>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1778,50 +1763,43 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/HIUGC_ListPlayerFavoritesAgnostic.xml' path='//example'/>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
         /// <returns>If successful, returns an instance of AuthoringFavoritesContainer containing the list of favorites. Otherwise, returns null.</returns>
-        public async Task<AuthoringFavoritesContainer> HIUGCListPlayerFavoritesAgnostic(string player)
+        public async Task<AuthoringFavoritesContainer?> HIUGCListPlayerFavoritesAgnostic(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AuthoringFavoritesContainer>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AuthoringFavoritesContainer>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Update an existing asset version.
         /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_PatchAssetVersion.xml' path='//example'/>
         /// <param name="title">Title for the game for which the authoring session needs to be spawned. Example variant is "hi" for "Halo Infinite".</param>
         /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
         /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
         /// <param name="versionId">Unique ID for the asset version to be published.</param>
         /// <param name="patchedAsset">Updated asset version with custom configuration.</param>
         /// <returns>If successful, returns an instance of HIUGCPatchAssetVersion containing the changes. Otherwise, returns null.</returns>
-        public async Task<AuthoringAssetVersion> HIUGCPatchAssetVersion(string title, string assetType, string assetId, string versionId, AuthoringAssetVersion patchedAsset)
+        public async Task<AuthoringAssetVersion?> HIUGCPatchAssetVersion(string title, string assetType, string assetId, string versionId, AuthoringAssetVersion patchedAsset)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
-                                   HttpMethod.Patch,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   JsonSerializer.Serialize(patchedAsset));
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
+                HttpMethod.Patch,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT,
+                JsonSerializer.Serialize(patchedAsset));
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AuthoringAssetVersion>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AuthoringAssetVersion>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1834,11 +1812,12 @@ namespace Grunt.Core
         /// <returns>If the publishing process is successful, returns true. Otherwise, returns false.</returns>
         public async Task<bool> HIUGCPublishAssetVersion(string assetType, string assetId, string versionId, string clearanceId)
         {
-            var response = await ExecuteAPIRequest<bool>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/{assetType}/{assetId}/publish/{versionId}?clearanceId={clearanceId}",
-                                   HttpMethod.Post,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<bool>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/{assetType}/{assetId}/publish/{versionId}?clearanceId={clearanceId}",
+                HttpMethod.Post,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             return response;
         }
@@ -1854,22 +1833,18 @@ namespace Grunt.Core
         /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
         /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
         /// <returns>If successful, returns an instance of AuthoringAssetRating containing rating information. Otherwise, returns null.</returns>
-        public async Task<AuthoringAssetRating> HIUGCGetAssetRatings(string player, string assetType, string assetId)
+        public async Task<AuthoringAssetRating?> HIUGCGetAssetRatings(string player, string assetType, string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/ratings/{assetType}/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/ratings/{assetType}/{assetId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AuthoringAssetRating>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AuthoringAssetRating>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1881,103 +1856,82 @@ namespace Grunt.Core
         /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
         /// <param name="rating">An object containing asset rating information. Rating should be set in CustomData.</param>
         /// <returns>If successful, returns an instance of AuthoringAssetRating containing the updated rating. Otherwise, returns null.</returns>
-        public async Task<AuthoringAssetRating> HIUGCRateAnAsset(string player, string assetType, string assetId, AuthoringAssetRating rating)
+        public async Task<AuthoringAssetRating?> HIUGCRateAnAsset(string player, string assetType, string assetId, AuthoringAssetRating rating)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/ratings/{assetType}/{assetId}",
-                                   HttpMethod.Put,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   JsonSerializer.Serialize(rating));
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/ratings/{assetType}/{assetId}",
+                HttpMethod.Put,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT,
+                JsonSerializer.Serialize(rating));
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AuthoringAssetRating>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AuthoringAssetRating>(response, this.serializerOptions)
+                : null;
         }
 
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCReportAnAsset(string player, string assetType, string assetId)
+        /// <summary>
+        /// Reports an asset.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_ReportAnAsset.xml' path='//example'/>
+        /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetId">Unique ID for the asset. Example value is "f96f57e2-9f15-45c5-83ac-5775a48d2ba8" for "Attrition-Default-UGC".</param>
+        /// <returns>If successful, returns an instance of AssetReport containing the report information. Otherwise, returns null.</returns>
+        public async Task<AssetReport?> HIUGCReportAnAsset(string player, string assetType, string assetId, AssetReport report)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/reports/{assetType}/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/reports/{assetType}/{assetId}",
+                HttpMethod.Put,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT,
+                JsonSerializer.Serialize(report));
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AssetReport>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// API for creating new assets.
         /// </summary>
-        /// <include file='../APIDocsExamples/HIUGC_SpawnAsset.xml' path='//example'/>
         /// <remarks>
         /// This API is used to create new assets in the user's file browser. The game generally uses Bond-encoded requests, so it's
         /// still up to discovery to figure out what the values for the POST request are.
         /// TODO: Need to figure out what the actual data model is for the POST request.
         /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_SpawnAsset.xml' path='//example'/>
         /// <param name="title">Title for the game for which the authoring session needs to be spawned. Example variant is "hi" for "Halo Infinite".</param>
         /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants", "Maps", or "Prefabs".</param>
+        /// <param name="asset">Asset definition, containing information about the asset to be created.</param>
+        /// <param name="contentType">Content type to be used for the request. Default value uses the Bond encoding.</param>
         /// <returns>If successful, returns an instance of AuthoringAsset containing asset information. Otherwise, returns null.</returns>
-        public async Task<AuthoringAsset> HIUGCSpawnAsset(string title, string assetType, object asset)
+        public async Task<AuthoringAsset?> HIUGCSpawnAsset(string title, string assetType, object? asset = null, ApiContentType contentType = ApiContentType.BondCompactBinary)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}",
-                                   HttpMethod.Post,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   JsonSerializer.Serialize(asset));
+            if (asset is null)
+            {
+                throw new ArgumentNullException(nameof(asset), "You need to provide an asset definition to create one. Make sure the `asset` object is not null or unspecified.");
+            }
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AuthoringAsset>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
-        }
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}",
+                HttpMethod.Post,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT,
+                JsonSerializer.Serialize(asset),
+                contentType);
 
-        /// <summary>
-        /// This API is likely superseded by the match-bound film spectating API, but that is yet to be determined. I haven't
-        /// seen this API be actively used.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <returns>Uknown.</returns>
-        private async Task<string> HIUGCSpectateFilm(string assetId)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/films/{assetId}/spectate",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AuthoringAsset>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Starts a new authoring session to edit an asset.
         /// </summary>
-        /// <include file='../APIDocsExamples/HIUGC_StartSessionAgnostic.xml' path='//example'/>
         /// <remarks>
         /// Was successful with a POST to https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/UgcGameVariants/9bc31094-8326-42ee-85d5-12e48ee1b129/sessions
         /// Game variant has to be local to the account
@@ -1988,29 +1942,26 @@ namespace Grunt.Core
         /// }
         /// It also seems that using `includeContainerSas` results in a 403 response, but without it a session can be created.
         /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_StartSessionAgnostic.xml' path='//example'/>
         /// <param name="title">Title for the game for which the authoring session needs to be spawned. Example variant is "hi" for "Halo Infinite".</param>
         /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
         /// <param name="assetId">Unique asset ID for the asset type specified earlier.</param>
         /// <param name="includeContainerSas">Determines whether to include the container SAS in the response or not. Setting this value to "true" will result in a 403 Forbidden error.</param>
         /// <param name="starter">Starter object that describes who is starting the session and the previous version of the asset.</param>
         /// <returns>If successful, returns an instance of AssetAuthoringSession with details about the created session. Otherwise, returns null.</returns>
-        public async Task<AssetAuthoringSession> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas, AuthoringSessionStarter starter)
+        public async Task<AssetAuthoringSession?> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas, AuthoringSessionStarter starter)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
-                                   HttpMethod.Post,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   JsonSerializer.Serialize(starter));
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
+                HttpMethod.Post,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT,
+                JsonSerializer.Serialize(starter));
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AssetAuthoringSession>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AssetAuthoringSession>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2026,23 +1977,19 @@ namespace Grunt.Core
         /// <param name="assetId">Unique asset ID for the asset type specified earlier.</param>
         /// <param name="includeContainerSas">Determines whether to include the container SAS in the response or not. Setting this value to "true" will result in a 403 Forbidden error.</param>
         /// <returns>If successful, returns an instance of AssetAuthoringSession with details about the created session. Otherwise, returns null.</returns>
-        public async Task<AssetAuthoringSession> HIUGCExtendSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas)
+        public async Task<AssetAuthoringSession?> HIUGCExtendSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas)
         {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
-                                   HttpMethod.Patch,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT,
-                                   "{}");
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
+                HttpMethod.Patch,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT,
+                "{}");
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AssetAuthoringSession>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AssetAuthoringSession>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2054,37 +2001,14 @@ namespace Grunt.Core
         /// <returns>If the request to delete the session is successful, returns true. Otherwise, returns false.</returns>
         public async Task<bool> HIUGCDeleteSessionAgnostic(string title, string assetType, string assetId)
         {
-            var response = await ExecuteAPIRequest<bool>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions",
-                                   HttpMethod.Delete,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<bool>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions",
+                HttpMethod.Delete,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             return response;
-        }
-
-        /// <summary>
-        /// This API is interesting because POST-ing against it will actually return some string validation results,
-        /// but it is unknown what the content of the POST request should be to actually trigger the validation.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <returns>Uknown.</returns>
-        private async Task<string> HIUGCStringValidation(string title)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/validation/strings",
-                                   HttpMethod.Post,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
         }
 
         /// <summary>
@@ -2100,11 +2024,12 @@ namespace Grunt.Core
         /// <returns>If the request to undelete an asset was successful, returns true. Otherwise, returns false.</returns>
         public async Task<bool> HIUGCUndeleteAsset(string title, string assetType, string assetId)
         {
-            var response = await ExecuteAPIRequest<bool>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/recover",
-                                   HttpMethod.Post,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<bool>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/recover",
+                HttpMethod.Post,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             return response;
         }
@@ -2113,54 +2038,38 @@ namespace Grunt.Core
         /// Undeletes a previously deleted asset version.
         /// </summary>
         /// <param name="title">Title for the game for which the authoring session needs to be spawned. Example variant is "hi" for "Halo Infinite".</param>
-        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetType">Type of asset to unpublish. Example value is "UgcGameVariants".</param>
         /// <param name="assetId">Unique asset ID for the asset type specified earlier.</param>
         /// <param name="versionId">Unique ID for the asset version to be undeleted.</param>
         /// <returns>If successful, returns true. Otherwise, returns false.</returns>
         public async Task<bool> HIUGCUndeleteVersion(string title, string assetType, string assetId, string versionId)
         {
-            var response = await ExecuteAPIRequest<bool>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}/recover",
-                                   HttpMethod.Post,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<bool>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}/recover",
+                HttpMethod.Post,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+
             return response;
         }
 
         /// <summary>
         /// Unpublishes a previously published asset.
         /// </summary>
-        /// <param name="assetType">Type of asset to check. Example value is "UgcGameVariants".</param>
+        /// <param name="assetType">Type of asset to unpublish. Example value is "UgcGameVariants".</param>
         /// <param name="assetId">Unique asset ID for the asset type specified earlier.</param>
         /// <returns>If successful, returns true. Otherwise, returns false.</returns>
         public async Task<bool> HIUGCUnpublishAsset(string assetType, string assetId)
         {
-            var response = await ExecuteAPIRequest<bool>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/{assetType}/{assetId}/unpublish",
-                                   HttpMethod.Post,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<bool>(
+                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/{assetType}/{assetId}/unpublish",
+                HttpMethod.Post,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             return response;
-        }
-
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> HIUGCUploadImage(string title, string assetType, string assetId, string sessionId, string filePath, string player)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions/{sessionId}/Image/{filePath}?player={player}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
         }
 
         // ================================================
@@ -2174,22 +2083,18 @@ namespace Grunt.Core
         /// <param name="assetId">Unique asset ID for the engine game variant.</param>
         /// <param name="versionId">Unique ID for the asset version for the engine game variant.</param>
         /// <returns>If successful, returns an instance of EngineGameVariant containing appropriate metadata. Otherwise, returns null.</returns>
-        public async Task<EngineGameVariant> HIUGCDiscoveryGetEngineGameVariant(string assetId, string versionId)
+        public async Task<EngineGameVariant?> HIUGCDiscoveryGetEngineGameVariant(string assetId, string versionId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}/versions/{versionId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}/versions/{versionId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<EngineGameVariant>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<EngineGameVariant>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2198,22 +2103,18 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/HIUGC_Discovery_GetEngineGameVariantWithoutVersion.xml' path='//example'/>
         /// <param name="assetId">Unique asset ID for the engine game variant.</param>
         /// <returns>If successful, returns an instance of EngineGameVariant containing appropriate metadata. Otherwise, returns null.</returns>
-        public async Task<EngineGameVariant> HIUGCDiscoveryGetEngineGameVariantWithoutVersion(string assetId)
+        public async Task<EngineGameVariant?> HIUGCDiscoveryGetEngineGameVariantWithoutVersion(string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<EngineGameVariant>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<EngineGameVariant>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2223,23 +2124,19 @@ namespace Grunt.Core
         /// <param name="assetId">Unique asset ID for the manifest. Example value is "6369c3a6-390e-496c-ab71-93c326347327".</param>
         /// <param name="versionId">Unique version ID for the manifest. Example value is "9a348b5b-08aa-41c2-8b3a-681870c78a76".</param>
         /// <param name="clearanceId">ID of the currently active flight.</param>
-        /// <returns></returns>
-        public async Task<Manifest> HIUGCDiscoveryGetManifest(string assetId, string versionId, string clearanceId)
+        /// <returns>If successful, an instance of <see cref="Manifest"/> representing the asset details. Otherwise, returns null.</returns>
+        public async Task<Manifest?> HIUGCDiscoveryGetManifest(string assetId, string versionId, string clearanceId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Manifest>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Manifest>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2248,145 +2145,106 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/HIUGC_Discovery_GetManifestByBuild.xml' path='//example'/>
         /// <param name="buildNumber">Build for which the manifest needs to be obtained. Maps to official Halo builds, such as 6.10022.10499.</param>
         /// <returns>An instance of Manifest containing game manifest information if request is successful. Otherwise, returns null.</returns>
-        public async Task<Manifest> HIUGCDiscoveryGetManifestByBuild(string buildNumber)
+        public async Task<Manifest?> HIUGCDiscoveryGetManifestByBuild(string buildNumber)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/builds/{buildNumber}/game",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/builds/{buildNumber}/game",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Manifest>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        // TODO: Additional validation is necessary here to see if there is an actual API endpoint.
-        // Right now, all this does is return a 404.
-        private async Task<string> HIUGCDiscoveryGetManifestWithoutVersion(string assetId)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Manifest>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Returns information about a given map at a specific release version.
         /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetMap.xml' path='//example'/>
         /// <param name="assetId">Unique map ID. For example, the ID for the Recharge map is "8420410b-044d-44d7-80b6-98a766c8c39f".</param>
         /// <param name="versionId">Unique version ID for a map. For example, for the Recharge map a version is "068c0974-f748-41ba-b457-b8fed603576e".</param>
         /// <returns>An instance of Map containing map metadata if request is successful. Otherwise, returns null.</returns>
-        public async Task<Map> HIUGCDiscoveryGetMap(string assetId, string versionId)
+        public async Task<Map?> HIUGCDiscoveryGetMap(string assetId, string versionId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}/versions/{versionId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}/versions/{versionId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Map>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Map>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Returns information about a given map and mode combination. For example, the Breaker map can be used in Big Team Battle (BTB).
         /// </summary>
-        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetMapModePair.xml' path='//example'/>
         /// <remarks>
         /// An example fully constructed HTTP request to the API is: https://discovery-infiniteugc.svc.halowaypoint.com/hi/mapModePairs/9e056bcc-b9bc-4845-9fe3-6d667f018463/versions/37b8cd75-d1ce-4abf-9349-a76673503410.
         /// This request represents the BTB game mode on the Breaker map.
         /// </remarks>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetMapModePair.xml' path='//example'/>
         /// <param name="assetId">Unique ID for the map and mode combination.</param>
         /// <param name="versionId">Unique version ID for the map and mode combination.</param>
         /// <param name="clearanceId">ID of the currently active flight.</param>
         /// <returns>An instance of Map containing map metadata if request is successful. Otherwise, returns null.</returns>
-        public async Task<MapModePair> HIUGCDiscoveryGetMapModePair(string assetId, string versionId, string clearanceId)
+        public async Task<MapModePair?> HIUGCDiscoveryGetMapModePair(string assetId, string versionId, string clearanceId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<MapModePair>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<MapModePair>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
-        /// Should return a map and mode combination without the version.
+        /// Gets a map and mode combination without the version.
         /// </summary>
-        /// <remarks>
-        /// Currently the API seems to return a 404 response, so not sure whether this is even supposed to worl.
-        /// </remarks>
-        /// <param name="assetId">Unique ID for the map and mode combination.</param>
-        /// <returns>Unknown.</returns>
-        private async Task<string> HIUGCDiscoveryGetMapModePairWithoutVersion(string assetId)
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetMapModePairWithoutVersion.xml' path='//example'/>
+        /// <param name="assetId">Unique ID for the map and mode combination. Example value is "b6aca0c7-8ba7-4066-bf91-693571374c3c" for "sgh_interlock".</param>
+        /// <returns>If successful, returns an instance of <see cref="Task"/> representing the map and mode combination. Otherwise, returns null.</returns>
+        public async Task<MapModePair?> HIUGCDiscoveryGetMapModePairWithoutVersion(string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<MapModePair>(response, this.serializerOptions)
+                : null;
         }
+
 
         /// <summary>
         /// Gets information about a given map.
         /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetMapWithoutVersion.xml' path='//example'/>
         /// <param name="assetId">Unique map ID. For example, the ID for the Recharge map is "8420410b-044d-44d7-80b6-98a766c8c39f".</param>
         /// <returns>An instance of Map containing map metadata if request is successful. Otherwise, returns null.</returns>
-        public async Task<Map> HIUGCDiscoveryGetMapWithoutVersion(string assetId)
+        public async Task<Map?> HIUGCDiscoveryGetMapWithoutVersion(string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Map>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Map>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2397,42 +2255,38 @@ namespace Grunt.Core
         /// <param name="versionId">Unique version ID for the playlist.</param>
         /// <param name="clearanceId">ID of the currently active flight.</param>
         /// <returns>If successful, returns an instance of Playlist containing playlist information. Otherwise, returns null.</returns>
-        public async Task<Playlist> HIUGCDiscoveryGetPlaylist(string assetId, string versionId, string clearanceId)
+        public async Task<Playlist?> HIUGCDiscoveryGetPlaylist(string assetId, string versionId, string clearanceId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Playlist>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Playlist>(response, this.serializerOptions)
+                : null;
         }
 
-        // TODO: Additional validation is necessary here to see if there is an actual API endpoint.
-        // Right now, all this does is return a 404.
-        private async Task<string> HIUGCDiscoveryGetPlaylistWithoutVersion(string assetId)
+        /// <summary>
+        /// Gets information about a specific playlist without its version.
+        /// </summary>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetPlaylistWithoutVersion.xml' path='//example'/>
+        /// <param name="assetId">Unique asset ID for the playlist.</param>
+        /// <returns>If successful, returns an instance of <see cref="Playlist"/> representing the targeted playlist. Otherwise, returns null.</returns>
+        public async Task<Playlist?> HIUGCDiscoveryGetPlaylistWithoutVersion(string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Playlist>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2441,23 +2295,19 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/HIUGC_Discovery_GetPrefab.xml' path='//example'/>
         /// <param name="assetId">Unique asset ID for the prefab.</param>
         /// <param name="versionId">Unique version ID for the prefab.</param>
-        /// <returns></returns>
-        public async Task<Prefab> HIUGCDiscoveryGetPrefab(string assetId, string versionId)
+        /// <returns>If successful, returns a <see cref="Prefab"/> instance representing the specific prefab. Otherwise, returns null.</returns>
+        public async Task<Prefab?> HIUGCDiscoveryGetPrefab(string assetId, string versionId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}/versions/{versionId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}/versions/{versionId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Prefab>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Prefab>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2465,24 +2315,19 @@ namespace Grunt.Core
         /// </summary>
         /// <include file='../APIDocsExamples/HIUGC_Discovery_GetPrefabWithoutVersion.xml' path='//example'/>
         /// <param name="assetId">Unique asset ID for the prefab.</param>
-        /// <param name="versionId">Unique version ID for the prefab.</param>
-        /// <returns></returns>
-        public async Task<Prefab> HIUGCDiscoveryGetPrefabWithoutVersion(string assetId)
+        /// <returns>If successful, returns a <see cref="Prefab"/> instance representing the specific prefab. Otherwise, returns null.</returns>
+        public async Task<Prefab?> HIUGCDiscoveryGetPrefabWithoutVersion(string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Prefab>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Prefab>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2492,22 +2337,18 @@ namespace Grunt.Core
         /// <param name="assetId">Unique asset ID representing the project. Example asset ID currently active is the custom game manifest ID: "a9dc0785-2a99-4fec-ba6e-0216feaaf041".</param>
         /// <param name="versionId">Version ID for the project. As an example, a version of a production manifest is "a4e68648-f994-44bb-853e-d09ee224d799".</param>
         /// <returns>An instance of Project containing current game project information if request is successful. Otherwise, returns null.</returns>
-        public async Task<Project> HIUGCDiscoveryGetProject(string assetId, string versionId)
+        public async Task<Project?> HIUGCDiscoveryGetProject(string assetId, string versionId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}/versions/{versionId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}/versions/{versionId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Project>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Project>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2516,22 +2357,18 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/HIUGC_Discovery_GetProjectWithoutVersion.xml' path='//example'/>
         /// <param name="assetId">Unique asset ID representing the project. Example asset ID currently active is the custom game manifest ID: "a9dc0785-2a99-4fec-ba6e-0216feaaf041".</param>
         /// <returns>An instance of Project containing current game project information if request is successful. Otherwise, returns null.</returns>
-        public async Task<Project> HIUGCDiscoveryGetProjectWithoutVersion(string assetId)
+        public async Task<Project?> HIUGCDiscoveryGetProjectWithoutVersion(string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Project>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Project>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2539,69 +2376,59 @@ namespace Grunt.Core
         /// </summary>
         /// <include file='../APIDocsExamples/HIUGC_Discovery_GetTagsInfo.xml' path='//example'/>
         /// <returns>An instance of TagInfo containing a list of tags if the request is successful. Otherwise, returns null.</returns>
-        public async Task<TagInfo> HIUGCDiscoveryGetTagsInfo()
+        public async Task<TagInfo?> HIUGCDiscoveryGetTagsInfo()
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/info/tags",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/info/tags",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<TagInfo>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<TagInfo>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Returns information about a game asset version. This information is specific only to the version specified and does not contain general asset metadata. To get general asset metadata, use HIUGCDiscoveryGetUgcGameVariantWithoutVersion.
         /// </summary>
-        /// <param name="assetId">Unique ID for the game asset. For example, for "Arena:Attrition" game mode, the asset ID is "cefd4723-7bf2-4784-91bb-7c7c3dc9e324".</param>
-        /// <param name="versionId">Version for the asset to obtain. Example value is "latest".</param>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetUgcGameVariant.xml' path='//example'/>
+        /// <param name="assetId">Unique ID for the game asset. For example, for "Fiesta - Slayer" game mode, the asset ID is "aca7bbf8-7a18-4aae-8785-1bd3f58275fd".</param>
+        /// <param name="versionId">Version for the asset to obtain. Example value is "3685f6b2-2860-4e98-9d13-513087edb465".</param>
         /// <returns>An instance of UGCGameVariant containing game variant metadata if the request is successful. Otherwise, returns null.</returns>
-        public async Task<UGCGameVariant> HIUGCDiscoveryGetUgcGameVariant(string assetId, string versionId)
+        public async Task<UGCGameVariant?> HIUGCDiscoveryGetUgcGameVariant(string assetId, string versionId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}/versions/{versionId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}/versions/{versionId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<UGCGameVariant>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<UGCGameVariant>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Returns general asset metadata related to a game asset.
         /// </summary>
-        /// <param name="assetId">Unique ID for the game asset. For example, for "LandGrab-DefaultFiesta" game mode, the asset ID is "6d10405f-6d8d-406d-af8a-56c0d6caa73d".</param>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_GetUgcGameVariantWithoutVersion.xml' path='//example'/>
+        /// <param name="assetId">Unique ID for the game asset. For example, for "Fiesta - Slayer" game mode, the asset ID is "aca7bbf8-7a18-4aae-8785-1bd3f58275fd".</param>
         /// <returns>An instance of GameAssetVariant containing asset metadata if the request is successful. Otherwise, returns null.</returns>
-        public async Task<UGCGameVariant> HIUGCDiscoveryGetUgcGameVariantWithoutVersion(string assetId)
+        public async Task<UGCGameVariant?> HIUGCDiscoveryGetUgcGameVariantWithoutVersion(string assetId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<UGCGameVariant>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<UGCGameVariant>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -2615,46 +2442,39 @@ namespace Grunt.Core
         /// <param name="order">Descending ("desc") or ascending ("asc") result ordering.</param>
         /// <param name="assetKind">Type of asset to be searched. Examples are "Film", "Map", "Playlist", "Prefab", "TestAsset", "UgcGameVariant", "MapModePair", "Project", "Manifest", "EngineGameVariant".</param>
         /// <returns>If successful, returns an instance of SearchResultsContainer container assets. Otherwise, returns null.</returns>
-        public async Task<SearchResultsContainer> HIUGCDiscoverySearch(int start, int count, bool includeTimes, string sort, string order, string assetKind)
+        public async Task<SearchResultsContainer?> HIUGCDiscoverySearch(int start, int count, bool includeTimes, string sort, string order, string assetKind)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/search?start={start}&count={count}&include-times={includeTimes}&sort={sort}&order={order}&assetKind={assetKind}",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/search?start={start}&count={count}&include-times={includeTimes}&sort={sort}&order={order}&assetKind={assetKind}",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<SearchResultsContainer>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<SearchResultsContainer>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Returns information about available film chunks that are used to reconstruct the entire match.
         /// </summary>
+        /// <remarks>Despite the name of this request, the data captured here is not actually a movie but rather a full re-creation of the match, using in-game assets and player positions.</remarks>
+        /// <include file='../APIDocsExamples/HIUGC_Discovery_SpectateByMatchId.xml' path='//example'/>
         /// <param name="matchId">Unique ID for the match.</param>
         /// <returns>An instance of Film containing film metadata if the request is successful. Otherwise, returns null.</returns>
-        /// <remarks>Despite the name of this request, the data captured here is not actually a movie but rather a full re-creation of the match, using in-game assets and player positions.</remarks>
-        public async Task<Film> HIUGCDiscoverySpectateByMatchId(string matchId)
+        public async Task<Film?> HIUGCDiscoverySpectateByMatchId(string matchId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/films/matches/{matchId}/spectate",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/films/matches/{matchId}/spectate",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Film>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Film>(response, this.serializerOptions)
+                : null;
         }
 
         // ================================================
@@ -2664,23 +2484,20 @@ namespace Grunt.Core
         /// <summary>
         /// Gets a list of available lobby servers.
         /// </summary>
+        /// <include file='../APIDocsExamples/Lobby_GetQosServers.xml' path='//example'/>
         /// <returns>A list of Server instances if the request is successful. Otherwise, returns null.</returns>
-        public async Task<List<Server>> LobbyGetQosServers()
+        public async Task<List<Server>?> LobbyGetQosServers()
         {
-            var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/titles/hi/qosservers",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://lobby-hi.svc.halowaypoint.com:443/titles/hi/qosservers",
+                HttpMethod.Get,
+                true,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<List<Server>>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<List<Server>>(response, this.serializerOptions)
+                : null;
         }
 
         //TODO: This function requires manual intervention/checks.
@@ -2759,7 +2576,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<LobbyJoinHandle>(response, serializerOptions);
+                return JsonSerializer.Deserialize<LobbyJoinHandle>(response, this.serializerOptions);
             }
             else
             {
@@ -2787,7 +2604,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<FlightedFeatureFlags>(response, serializerOptions);
+                return JsonSerializer.Deserialize<FlightedFeatureFlags>(response, this.serializerOptions);
             }
             else
             {
@@ -2817,7 +2634,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<PlayerClearance>(response, serializerOptions);
+                return JsonSerializer.Deserialize<PlayerClearance>(response, this.serializerOptions);
             }
             else
             {
@@ -2844,7 +2661,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<PlayerClearance>(response, serializerOptions);
+                return JsonSerializer.Deserialize<PlayerClearance>(response, this.serializerOptions);
             }
             else
             {
@@ -2873,7 +2690,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<PlayerSkillResultContainer>(response, serializerOptions);
+                return JsonSerializer.Deserialize<PlayerSkillResultContainer>(response, this.serializerOptions);
             }
             else
             {
@@ -2899,7 +2716,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<PlaylistCsrResultContainer>(response, serializerOptions);
+                return JsonSerializer.Deserialize<PlaylistCsrResultContainer>(response, this.serializerOptions);
             }
             else
             {
@@ -2928,7 +2745,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<BanSummary>(response, serializerOptions); ;
+                return JsonSerializer.Deserialize<BanSummary>(response, this.serializerOptions);
             }
             else
             {
@@ -2951,7 +2768,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<PlayerDecks>(response, serializerOptions); ;
+                return JsonSerializer.Deserialize<PlayerDecks>(response, this.serializerOptions);
             }
             else
             {
@@ -2974,7 +2791,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<PlayerMatchCount>(response, serializerOptions);
+                return JsonSerializer.Deserialize<PlayerMatchCount>(response, this.serializerOptions);
             }
             else
             {
@@ -2997,7 +2814,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<MatchContainer>(response, serializerOptions);
+                return JsonSerializer.Deserialize<MatchContainer>(response, this.serializerOptions);
             }
             else
             {
@@ -3020,7 +2837,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<MatchStats>(response, serializerOptions);
+                return JsonSerializer.Deserialize<MatchStats>(response, this.serializerOptions);
             }
             else
             {
@@ -3044,7 +2861,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<MatchProgression>(response, serializerOptions);
+                return JsonSerializer.Deserialize<MatchProgression>(response, this.serializerOptions);
             }
             else
             {
@@ -3067,7 +2884,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<MatchesPrivacy>(response, serializerOptions);
+                return JsonSerializer.Deserialize<MatchesPrivacy>(response, this.serializerOptions);
             }
             else
             {
@@ -3151,7 +2968,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<Key>(response, serializerOptions);
+                return JsonSerializer.Deserialize<Key>(response, this.serializerOptions);
             }
             else
             {
@@ -3173,7 +2990,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonSerializer.Deserialize<ModerationProofKeys>(response, serializerOptions);
+                return JsonSerializer.Deserialize<ModerationProofKeys>(response, this.serializerOptions);
             }
             else
             {
@@ -3192,8 +3009,9 @@ namespace Grunt.Core
         /// <param name="useClearance">Determines whether a clearance/flight ID needs to be applied to the request.</param>
         /// <param name="userAgent">User agent to be used for the request.</param>
         /// <param name="content">If the request contains data to be sent to the Halo Waypoint service, include it here. Expected format is JSON.</param>
+        /// <param name="contentType">Content type for POST requests. By default it's `application/json`.</param>
         /// <returns>Response string in case of a successful request. Null if request failed.</returns>
-        private async Task<T?> ExecuteAPIRequest<T>(string endpoint, HttpMethod method, bool useSpartanToken, bool useClearance, string userAgent, string content = "")
+        private async Task<T?> ExecuteAPIRequest<T>(string endpoint, HttpMethod method, bool useSpartanToken, bool useClearance, string userAgent, string content = "", ApiContentType contentType = ApiContentType.Json)
         {
             var client = new HttpClient(new HttpClientHandler
             {
@@ -3205,6 +3023,12 @@ namespace Grunt.Core
                 RequestUri = new Uri(endpoint),
                 Method = method,
             };
+
+            if (request.Method == HttpMethod.Post)
+            {
+                var contentTypeAttribute = contentType.GetHeaderValue();
+                request.Headers.Add("Content-Type", contentTypeAttribute);
+            }
 
             if (!string.IsNullOrEmpty(content))
             {

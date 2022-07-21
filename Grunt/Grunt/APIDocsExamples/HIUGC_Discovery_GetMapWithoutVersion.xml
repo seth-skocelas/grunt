@@ -1,0 +1,57 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "CustomData": {
+            "NumOfObjectsOnMap": 0,
+            "TagLevelId": 117343,
+            "IsBaked": true,
+            "HasNodeGraph": false
+        },
+        "Tags": [
+            "343i",
+            "TRAINING MODE"
+        ],
+        "PrefabLinks": [],
+        "AssetId": "53136ad9-0fd6-4271-8752-31d114b9561e",
+        "VersionId": "1d62423c-39ad-4029-9db2-aab60ef664f1",
+        "PublicName": "Behemoth",
+        "Description": "Buried for millennia, this ancient structure rises from beneath the sands.",
+        "Files": {
+            "Prefix": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/53136ad9-0fd6-4271-8752-31d114b9561e/1d62423c-39ad-4029-9db2-aab60ef664f1/",
+            "FileRelativePaths": [
+                "images/hero.png",
+                "images/screenshot1.png",
+                "images/screenshot2.png",
+                "images/thumbnail.png",
+                "va_behemoth.mvar"
+            ],
+            "PrefixEndpoint": {
+                "AuthorityId": "iUgcFiles",
+                "Path": "/ugcstorage/map/53136ad9-0fd6-4271-8752-31d114b9561e/1d62423c-39ad-4029-9db2-aab60ef664f1/",
+                "QueryString": null,
+                "RetryPolicyId": "linearretry",
+                "TopicName": "",
+                "AcknowledgementTypeId": 0,
+                "AuthenticationLifetimeExtensionSupported": false,
+                "ClearanceAware": false
+            }
+        },
+        "Contributors": [],
+        "AssetHome": 1,
+        "AssetStats": {
+            "PlaysRecent": 112147,
+            "PlaysAllTime": 18938675,
+            "Favorites": 4245,
+            "Likes": 0,
+            "Bookmarks": 0,
+            "ParentAssetCount": 90,
+            "AverageRating": 3.292328956461645,
+            "NumberOfRatings": 4341
+        },
+        "InspectionResult": 50,
+        "CloneBehavior": 0,
+        "Order": 0
+    }
+	</code>
+</example>
