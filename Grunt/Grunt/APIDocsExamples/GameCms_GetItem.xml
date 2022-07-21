@@ -1,0 +1,189 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/20/2022:
+	<code>
+    {
+        "TagId": 0,
+        "ThemeName": {
+            "m_identifier": -986176622
+        },
+        "EmblemShaderName": {
+            "m_identifier": 0
+        },
+        "CommonData": {
+            "Id": "013-001-363f4a25",
+            "HideUntilOwned": false,
+            "Title": {
+                "status": "Ready",
+                "value": "Spades",
+                "translations": {
+                    "cs-CZ": "Piky",
+                    "da-DK": "Spar",
+                    "de-DE": "Pik",
+                    "el-GR": "Μπαστούνια",
+                    "es-ES": "Picas",
+                    "es-MX": "Picas",
+                    "fi-FI": "Pata",
+                    "fr-FR": "Pique",
+                    "hu-HU": "Pikk",
+                    "it-IT": "Picche",
+                    "ja-JP": "スペード",
+                    "ko-KR": "스페이드",
+                    "nb-NO": "Spader",
+                    "nl-NL": "Schoppen",
+                    "pl-PL": "Pik",
+                    "pt-BR": "Espadas",
+                    "pt-PT": "Espadas",
+                    "ru-RU": "Пики",
+                    "sv-SE": "Spader",
+                    "tr-TR": "Maça",
+                    "zh-CN": "黑桃",
+                    "zh-TW": "黑桃王",
+                    "qps-ploc": "Śρªðěş !",
+                    "qps-ploca": "Ѕρáďёş !",
+                    "qps-plocm": "Ѕραδεŝ !"
+                }
+            },
+            "Description": {
+                "status": "Ready",
+                "value": "Calling it like I see it.",
+                "translations": {
+                    "cs-CZ": "Oznamuju to, jako když to vidím.",
+                    "da-DK": "Jeg fortæller bare, hvad jeg ser.",
+                    "de-DE": "Ich nenn es, wie ich es sehe.",
+                    "el-GR": "Το λέω όπως το βλέπω.",
+                    "es-ES": "Lo digo tal y como lo veo.",
+                    "es-MX": "Lo nombro según lo veo.",
+                    "fi-FI": "Sanon asiat suoraan.",
+                    "fr-FR": "Appelons un chat, un chat.",
+                    "hu-HU": "Ami a szívemen, a számon.",
+                    "it-IT": "Chiamare le cose con il loro nome.",
+                    "ja-JP": "見たままを伝える。",
+                    "ko-KR": "보인다고 해야겠군.",
+                    "nb-NO": "Jeg forteller det jeg ser.",
+                    "nl-NL": "Ik zeg waar het op staat.",
+                    "pl-PL": "Mówię, co widzę.",
+                    "pt-BR": "Dei o nome do que vejo.",
+                    "pt-PT": "Falar de forma honesta.",
+                    "ru-RU": "Называю всё своими именами.",
+                    "sv-SE": "Jag säger som det är.",
+                    "tr-TR": "İçimden geldiği gibi söylüyorum.",
+                    "zh-CN": "就像我看到的那样叫它。",
+                    "zh-TW": "像我看到的那樣稱呼。",
+                    "qps-ploc": "Ĉǻłłíйğ îτ ļїќё İ ŝęê ϊŧ. !!! !!! !",
+                    "qps-ploca": "Сªłŀίñģ íť ĺїкε Į şёè įţ. !!! !!! !",
+                    "qps-plocm": "Ĉаľŀįⁿğ îт ℓїķє Į ś℮э ìŧ. !!! !!! !"
+                }
+            },
+            "FeatureFlag": true,
+            "ItemAvailability": {
+                "status": "Test",
+                "value": "",
+                "translations": {}
+            },
+            "DateReleased": {
+                "ISO8601Date": ""
+            },
+            "AltName": {
+                "status": "Test",
+                "value": "013-001-363f4a25",
+                "translations": {
+                    "qps-ploc": "013-001-363ƒ4а25 !!! !",
+                    "qps-ploca": "013-001-363ƒ4â25 !!! !",
+                    "qps-plocm": "013-001-363ƒ4ά25 !!! !"
+                }
+            },
+            "IconStringId": {
+                "m_identifier": -1
+            },
+            "SpriteBitmap": 0,
+            "SpriteFrameIndex": 0,
+            "AltSpriteBitmap": 0,
+            "AltSpriteFrameIndex": 0,
+            "DisplayPath": {
+                "Width": 1024,
+                "Height": 1024,
+                "Media": {
+                    "MediaUrl": {
+                        "AuthorityId": "",
+                        "Path": "progression/Inventory/Emblems/classic_spades_emblem.png",
+                        "RetryPolicyId": "",
+                        "TopicName": "",
+                        "AcknowledgementTypeId": "NoAcknowledgement",
+                        "AuthenticationLifetimeExtensionSupported": false,
+                        "ClearanceAware": false
+                    },
+                    "MimeType": "",
+                    "Caption": {
+                        "status": "Test",
+                        "value": ""
+                    },
+                    "AlternateText": {
+                        "status": "Test",
+                        "value": ""
+                    },
+                    "FolderPath": "",
+                    "FileName": ""
+                },
+                "MimeType": "image/png",
+                "FolderPath": "progression/Inventory/Emblems",
+                "FileName": "classic_spades_emblem.png"
+            },
+            "Quality": "Common",
+            "ManufacturerId": 0,
+            "Type": "ArmorEmblem",
+            "RewardTrack": "",
+            "ParentPaths": [
+                {
+                    "Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+                    "Type": "ArmorTheme"
+                },
+                {
+                    "Path": "Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json",
+                    "Type": "ArmorTheme"
+                },
+                {
+                    "Path": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
+                    "Type": "ArmorTheme"
+                },
+                {
+                    "Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+                    "Type": "ArmorTheme"
+                },
+                {
+                    "Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
+                    "Type": "ArmorTheme"
+                }
+            ],
+            "SortingMetadata": {
+                "categoryWeight": 0,
+                "subCategoryWeight": 0
+            },
+            "SeasonNumber": 2,
+            "OriginalSeasonNumber": 2,
+            "Season": {
+                "status": "Test",
+                "value": "Season 2",
+                "translations": {}
+            }
+        },
+        "AvailableConfigurations": [
+            {
+                "ConfigurationId": 453000596,
+                "ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a5b4a66c.json"
+            },
+            {
+                "ConfigurationId": -1054298304,
+                "ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-2493744e.json"
+            },
+            {
+                "ConfigurationId": -954735186,
+                "ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-b519380b.json"
+            },
+            {
+                "ConfigurationId": -1521440680,
+                "ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-3be13c53.json"
+            }
+        ]
+    }
+	</code>
+</example>

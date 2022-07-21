@@ -799,48 +799,20 @@ namespace Grunt.Core
         /// <remarks>
         /// Keep in mind that this is not a list of achievements that the player has unlocked - it's just an aggregation of all available achievements in Halo Infinite.
         /// </remarks>
+        /// <include file='../APIDocsExamples/GameCms_GetAchievements.xml' path='//example'/>
         /// <returns>If successful, returns an instance of AchievementCollection that contains the list of available achievements. Otherwise, returns null.</returns>
-        public async Task<AchievementCollection> GameCmsGetAchievements()
+        public async Task<AchievementCollection?> GameCmsGetAchievements()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/Live/Achievements.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/Live/Achievements.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AchievementCollection>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// The API doesn't seem to exist anymore.
-        /// Tracked in: https://github.com/dend/grunt/issues/10
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <param name="flightId">The unique ID for the currently active flight.</param>
-        /// <returns>Unknown</returns>
-        private async Task<string> GameCmsGetArmorCoreManifest(string flightId)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/Inventory/Manifest/armorcores.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AchievementCollection>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -848,50 +820,18 @@ namespace Grunt.Core
         /// </summary>
         /// <include file='../APIDocsExamples/GameCms_GetAsyncComputeOverrides.xml' path='//example'/>
         /// <returns>If successful, returns an instance of AsyncComputeOverrides containing override metadata. Otherwise, returns null.</returns>
-        public async Task<AsyncComputeOverrides> GameCmsGetAsyncComputeOverrides()
+        public async Task<AsyncComputeOverrides?> GameCmsGetAsyncComputeOverrides()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/AsyncComputeOverrides.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/AsyncComputeOverrides.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<AsyncComputeOverrides>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// The API likely obtains a specific ban message, but unless someone banned can confirm what this looks like, can't tell what the data is.
-        /// Tracked in: https://github.com/dend/grunt/issues/9
-        /// </summary>
-        /// <remarks>
-        /// TODO: Figure out what the content for the response here actually. is.
-        /// </remarks>
-        /// <param name="messageIdentity">The unique ID for the ban message.</param>
-        /// <param name="flightId">The unique ID for the currently active flight.</param>
-        /// <returns>Unknown.</returns>
-        private async Task<string> GameCmsGetBanMessage(string messageIdentity, string flightId)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Banning/file/BanMessages/{messageIdentity}.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<AsyncComputeOverrides>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -901,22 +841,18 @@ namespace Grunt.Core
         /// <param name="challengePath">Path to the challenge file. Example is "ChallengeContent/ClientChallengeDefinitions/S1RotationalSet1Challenges/Normal/NTeamSlayerPlay.json".</param>
         /// <param name="flightId">The unique ID for the currently active flight.</param>
         /// <returns>If successful, returns an instance of Challenge containing challenge information. Otherwise, returns null.</returns>
-        public async Task<Challenge> GameCmsGetChallenge(string challengePath, string flightId)
+        public async Task<Challenge?> GameCmsGetChallenge(string challengePath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengePath}?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengePath}?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Challenge>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Challenge>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -926,22 +862,18 @@ namespace Grunt.Core
         /// <param name="challengeDeckPath">Path to the challenge deck. An example value is "ChallengeContent/ClientChallengeDeckDefinitions/S2EntrenchedWeeklyDeck2.json".</param>
         /// <param name="flightId">Unique identifier for the currently active flight.</param>
         /// <returns>If successful, returns an instance of ChallengeDeckDefinition containing challenge deck metadata. Otherwise, returns null.</returns>
-        public async Task<ChallengeDeckDefinition> GameCmsGetChallengeDeck(string challengeDeckPath, string flightId)
+        public async Task<ChallengeDeckDefinition?> GameCmsGetChallengeDeck(string challengeDeckPath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengeDeckPath}?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengeDeckPath}?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<ChallengeDeckDefinition>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<ChallengeDeckDefinition>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -951,22 +883,18 @@ namespace Grunt.Core
         /// <param name="currencyPath">Path to the currency. An example is "currency/currencies/cr.json".</param>
         /// <param name="flightId">Unique identifier for the currently active flight.</param>
         /// <returns>If successful, returns an instance of CurrencyDefinition containing information about the specified currency. Otherwise, returns null.</returns>
-        public async Task<CurrencyDefinition> GameCmsGetCurrency(string currencyPath, string flightId)
+        public async Task<CurrencyDefinition?> GameCmsGetCurrency(string currencyPath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{currencyPath}?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{currencyPath}?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<CurrencyDefinition>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<CurrencyDefinition>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -979,22 +907,18 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/GameCms_GetClawAccess.xml' path='//example'/>
         /// <param name="flightId">Unique identifier for the currently active flight.</param>
         /// <returns>If successful, returns an instance of ClawAccessSnapshot containing relevant XUID lists. Otherwise, returns null.</returns>
-        public async Task<ClawAccessSnapshot> GameCmsGetClawAccess(string flightId)
+        public async Task<ClawAccessSnapshot?> GameCmsGetClawAccess(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/TitleAuthorization/file/claw/access.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/TitleAuthorization/file/claw/access.json?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<ClawAccessSnapshot>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<ClawAccessSnapshot>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1002,22 +926,18 @@ namespace Grunt.Core
         /// </summary>
         /// <include file='../APIDocsExamples/GameCms_GetCPUPresets.xml' path='//example'/>
         /// <returns>If successful, returns an instance of CPUPresetSnapshot containing preset information. Otherwise, returns null.</returns>
-        public async Task<CPUPresetSnapshot> GameCmsGetCpuPresets()
+        public async Task<CPUPresetSnapshot?> GameCmsGetCpuPresets()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/cpu/presets.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/cpu/presets.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<CPUPresetSnapshot>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<CPUPresetSnapshot>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1025,22 +945,18 @@ namespace Grunt.Core
         /// </summary>
         /// <include file='../APIDocsExamples/GameCms_GetCustomGameDefaults.xml' path='//example'/>
         /// <returns>If successful, returns an instance of CustomGameDefinition containing game parameters. Otherwise, returns null.</returns>
-        public async Task<CustomGameDefinition> GameCmsGetCustomGameDefaults()
+        public async Task<CustomGameDefinition?> GameCmsGetCustomGameDefaults()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/NonMatchmaking/customgame.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/NonMatchmaking/customgame.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<CustomGameDefinition>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<CustomGameDefinition>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1049,22 +965,18 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/GameCms_GetCustomizationCatalog.xml' path='//example'/>
         /// <param name="flightId">Unique identifier for the currently active flight.</param>
         /// <returns>If successful, returns an instance of InventoryDefinition containing the full list of available items. Otherwise, returns null.</returns>
-        public async Task<InventoryDefinition> GameCmsGetCustomizationCatalog(string flightId)
+        public async Task<InventoryDefinition?> GameCmsGetCustomizationCatalog(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/inventory/catalog/inventory_catalog.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/inventory/catalog/inventory_catalog.json?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<InventoryDefinition>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<InventoryDefinition>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1074,23 +986,19 @@ namespace Grunt.Core
         /// <remarks>
         /// The exact purpose of this function is unknown at this time, and requires additional investigation.
         /// </remarks>
-        /// <returns>If successful, and instance of DevicePresetOverrides. Otherwise, returs null.</returns>
-        public async Task<DevicePresetOverrides> GameCmsGetDevicePresetOverrides()
+        /// <returns>If successful, an instance of DevicePresetOverrides. Otherwise, returns null.</returns>
+        public async Task<DevicePresetOverrides?> GameCmsGetDevicePresetOverrides()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/DevicePresetOverrides.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/DevicePresetOverrides.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<DevicePresetOverrides>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<DevicePresetOverrides>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1099,42 +1007,19 @@ namespace Grunt.Core
         /// <include file='../APIDocsExamples/GameCms_GetEvent.xml' path='//example'/>
         /// <param name="eventPath">The path to the event file. An example value is "RewardTracks/Events/Rituals/ritualEagleStrike.json".</param>
         /// <param name="flightId">Unique identifier for the currently active flight.</param>
-        /// <returns></returns>
-        public async Task<RewardTrackMetadata> GameCmsGetEvent(string eventPath, string flightId)
+        /// <returns>If successful, an instance of RewardTrackMetadata is returned. Otherwise, returns null.</returns>
+        public async Task<RewardTrackMetadata?> GameCmsGetEvent(string eventPath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{eventPath}?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{eventPath}?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<RewardTrackMetadata>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        //TODO: This function requires manual intervention/checks.
-        public async Task<string> GameCmsGetEventManifest(string flightId)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/RewardTracks/Manifest/eventmanifest.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<RewardTrackMetadata>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1142,38 +1027,35 @@ namespace Grunt.Core
         /// </summary>
         /// <include file='../APIDocsExamples/GameCms_GetGraphicsSpecControlOverrides.xml' path='//example'/>
         /// <returns>If successful, returns an instance of OverrideQueryDefinition containing query definitions. Otherwise, returns null.</returns>
-        public async Task<OverrideQueryDefinition> GameCmsGetGraphicsSpecControlOverrides()
+        public async Task<OverrideQueryDefinition?> GameCmsGetGraphicsSpecControlOverrides()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<OverrideQueryDefinition>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<OverrideQueryDefinition>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Unknown what this API specifically returns, but the assumption is that it's configuration for graphic setting overrides.
         /// </summary>
         /// <remarks>
-        /// TODO: Need to figure out what the API response here is. Haven't seen this actually activated in-game.
+        /// TODO: Need to figure out what the API response here is. Haven't seen this actually activated in-game. For the time being, the API call will return a raw response. For details, see <see href="https://github.com/OpenSpartan/grunt/issues/18">GitHub issue</see>.
         /// </remarks>
         /// <returns>Returns a string containing the response.</returns>
         public async Task<string> GameCmsGetGraphicSpecs()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/overrides.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/overrides.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             return response;
         }
@@ -1183,22 +1065,18 @@ namespace Grunt.Core
         /// </summary>
         /// <param name="filePath">Path to the CMS image.</param>
         /// <returns>If successful, returns the byte array for the requested image. Otherwise, returns null.</returns>
-        public async Task<byte[]> GameCmsGetImage(string filePath)
+        public async Task<byte[]?> GameCmsGetImage(string filePath)
         {
-            var response = await ExecuteAPIRequest<byte[]>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/images/file/{filePath}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<byte[]>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/images/file/{filePath}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (response != null)
-            {
-                return response;
-            }
-            else
-            {
-                return null;
-            }
+            return response != null
+                ? response
+                : null;
         }
 
         /// <summary>
@@ -1207,140 +1085,122 @@ namespace Grunt.Core
         /// <remarks>
         /// For example, you may find that you can get the data about an armor emblem with the path "/inventory/armor/emblems/013-001-363f4a25.json".
         /// </remarks>
+        /// <include file='../APIDocsExamples/GameCms_GetItem.xml' path='//example'/>
         /// <param name="itemPath">Path to the item to be obtained. Example is "/inventory/armor/emblems/013-001-363f4a25.json".</param>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
         /// <returns>If successful, an instance of InGameItem. Otherwise, null.</returns>
-        public async Task<InGameItem> GameCmsGetItem(string itemPath, string flightId)
+        public async Task<InGameItem?> GameCmsGetItem(string itemPath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{itemPath}?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{itemPath}?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<InGameItem>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<InGameItem>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Gets the list of possible error messages that a player can get when attempting to join multiplayer games.
         /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetLobbyErrorMessages.xml' path='//example'/>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
         /// <returns>If successful, returns an instance of LobbyHopperErrorMessageList that contains possible errors. Otherwise, returns null.</returns>
-        public async Task<LobbyHopperErrorMessageList> GameCmsGetLobbyErrorMessages(string flightId)
+        public async Task<LobbyHopperErrorMessageList?> GameCmsGetLobbyErrorMessages(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/gameStartErrorMessages/LobbyHoppperErrorMessageList.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/gameStartErrorMessages/LobbyHoppperErrorMessageList.json?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<LobbyHopperErrorMessageList>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<LobbyHopperErrorMessageList>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Returns metadata on currently available in-game manufacturers and currencies.
         /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetMetadata.xml' path='//example'/>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
         /// <returns>If successful, an instance of Metadata containing the information about in-game manufacturers and currencies. Otherwise, null.</returns>
-        public async Task<Metadata> GameCmsGetMetadata(string flightId)
+        public async Task<Metadata?> GameCmsGetMetadata(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/metadata/metadata.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/metadata/metadata.json?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<Metadata>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<Metadata>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Returns the network configuration for the current flight.
         /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetNetworkConfiguration.xml' path='//example'/>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
         /// <returns>If successful, returns an instance of NetworkConfiguration. Otherwise, returns null.</returns>
-        public async Task<NetworkConfiguration> GameCmsGetNetworkConfiguration(string flightId)
+        public async Task<NetworkConfiguration?> GameCmsGetNetworkConfiguration(string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/network/config.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/network/config.json?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<NetworkConfiguration>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<NetworkConfiguration>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Returns the currently relevant news.
         /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetNews.xml' path='//example'/>
         /// <param name="filePath">Path to the news collection. Example is "/articles/articles.json".</param>
         /// <returns>If successful, returns a News instance containing the currently active news. Otherwise, returns null.</returns>
-        public async Task<News> GameCmsGetNews(string filePath)
+        public async Task<News?> GameCmsGetNews(string filePath)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/news/file/{filePath}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/news/file/{filePath}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<News>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<News>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
         /// Returns information about a message that is displayed when, I assume, authentication fails.
         /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetNotAllowedInTitleMessage.xml' path='//example'/>
         /// <remarks>It's unclear where this is actually used because the sample response is a test one, without any relevant context.</remarks>
         /// <returns>If successful, an instance of OEConfiguration containing the message. Otherwise, null.</returns>
-        public async Task<OEConfiguration> GameCmsGetNotAllowedInTitleMessage()
+        public async Task<OEConfiguration?> GameCmsGetNotAllowedInTitleMessage()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/branches/hi/OEConfiguration/data/authfail/Default.json",
-                                   HttpMethod.Get,
-                                   false,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/branches/hi/OEConfiguration/data/authfail/Default.json",
+                HttpMethod.Get,
+                false,
+                false,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<OEConfiguration>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<OEConfiguration>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
@@ -1349,23 +1209,19 @@ namespace Grunt.Core
         /// <typeparam name="T">Type of progression file to be obtained.</typeparam>
         /// <param name="filePath">Path to the progression file.</param>
         /// <returns>If successful, returns an instance of T, where T is the type of the progression file. Otherwise, returns null.</returns>
-        public async Task<T> GameCmsGetProgressionFile<T>(string filePath)
+        public async Task<T?> GameCmsGetProgressionFile<T>(string filePath)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{filePath}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{filePath}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<T>(response, serializerOptions);
-            }
-            else
-            {
-                return default(T);
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<T>(response, this.serializerOptions)
+                : default(T);
         }
 
         /// <summary>
@@ -1373,125 +1229,48 @@ namespace Grunt.Core
         /// </summary>
         /// <include file='../APIDocsExamples/GameCms_GetRecommendedDrivers.xml' path='//example'/>
         /// <returns>If successful, returns an instance of DriverManifest that contains details on supported drivers. Otherwise, returns null.</returns>
-        public async Task<DriverManifest> GameCmsGetRecommendedDrivers()
+        public async Task<DriverManifest?> GameCmsGetRecommendedDrivers()
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/RecommendedDrivers.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_PC_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/RecommendedDrivers.json",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_PC_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<DriverManifest>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<DriverManifest>(response, this.serializerOptions)
+                : null;
         }
 
         /// <summary>
-        /// Returns information about a given Halo Infinite season.
+        /// Gets information about a given Halo Infinite season.
         /// </summary>
+        /// <include file='../APIDocsExamples/GameCms_GetSeasonRewardTrack.xml' path='//example'/>
         /// <remarks>
         /// Keep in mind that the season numbers do not align cleanly with the public season numbers. For example, public Season 2 is Season 7 in this API. That is caused by a number of test season that 343 added to the product ahead of release.
         /// </remarks>
         /// <param name="seasonPath">The path to the season. Typical example is "Seasons/Season7.json" for the Lone Wolves season.</param>
         /// <param name="flightId">Unique ID for the currently active flight.</param>
         /// <returns>If successful, an instance of SeasonRewardTrack containing season information. Otherwise, returns null.</returns>
-        public async Task<SeasonRewardTrack> GameCmsGetSeasonRewardTrack(string seasonPath, string flightId)
+        public async Task<SeasonRewardTrack?> GameCmsGetSeasonRewardTrack(string seasonPath, string flightId)
         {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{seasonPath}?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_PC_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{seasonPath}?flight={flightId}",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_PC_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonSerializer.Deserialize<SeasonRewardTrack>(response, serializerOptions);
-            }
-            else
-            {
-                return null;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? JsonSerializer.Deserialize<SeasonRewardTrack>(response, this.serializerOptions)
+                : null;
         }
 
-        /// <summary>
-        /// This API currently returns a 404, and is not active. Additional investigation required.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <param name="flightId">Unique ID for the currently active flight.</param>
-        /// <returns>Unknown.</returns>
-        private async Task<string> GameCmsGetSeasonRewardTrackManifest(string flightId)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/RewardTracks/Manifest/seasonmanifest.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        /// <summary>
-        /// API currently returns a 403 Forbidden even though the correct Spartan token and clearance are used. Haven't seen this API in the logs either, so not sure if it's still active.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <param name="flightId">Unique ID for the currently active flight.</param>
-        /// <returns>Unknown.</returns>
-        private async Task<string> GameCmsGetStorefronts(string flightId)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/Store/storefronts.json?flight={flightId}",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        /// <summary>
-        /// This API currently returns a 400 Bad Request with a "Title mismatch between path and flight" message. Assuming because the branch is pre-cooked in the URL 
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <returns>Unknown.</returns>
-        private async Task<string> GameCmsGetUiConfigurationJson()
-        {
-            var response = await ExecuteAPIRequest<string>($"https://gamecms-hacs.svc.halowaypoint.com:443/branches/oly/UI-Settings/data/Settings.json",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        //================================================
+        // ================================================
         // GameCmsGetGuide
-        //================================================
+        // ================================================
+
         /// <summary>
         /// Gets a list of all available image files currently used by the multiplayer service.
         /// </summary>
@@ -2459,9 +2238,9 @@ namespace Grunt.Core
             }
         }
 
-        //================================================
+        // ================================================
         // HIUGCDiscovery
-        //================================================
+        // ================================================
 
         /// <summary>
         /// Returns metadata about a given engine game variant version.
@@ -2535,27 +2314,6 @@ namespace Grunt.Core
             else
             {
                 return null;
-            }
-        }
-
-        // TODO: This function needs some future investigation.
-        // Example branch is HIREL or HIRC according to HIUGCDiscoveryGetManifestByBuild, but that needs to be validated.
-        // Currently all responses return a 403 Forbidden, no matter what branch is specified.
-        private async Task<string> HIUGCDiscoveryGetManifestByBranch(string branchName)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/branches/{branchName}/game",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
             }
         }
 
@@ -2974,28 +2732,9 @@ namespace Grunt.Core
             }
         }
 
-        //================================================
+        // ================================================
         // Lobby
-        //================================================
-        
-        // TODO: API deals with web sockets connection to the game lobby. For future implementation and research.
-        private async Task<string> LobbyGameConnection()
-        {
-            var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
+        // ================================================
 
         /// <summary>
         /// Gets a list of available lobby servers.
@@ -3023,63 +2762,6 @@ namespace Grunt.Core
         public async Task<string> JoinLobby(string lobbyId, string player)
         {
             var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/hi/lobbies/{lobbyId}/players/{player}?auth=st",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        // TODO: API deals with web sockets connection to the game lobby. For future implementation and research.
-        private async Task<string> LobbyConnection()
-        {
-            var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        // TODO: API deals with web sockets connection to the game lobby. For future implementation and research.
-        private async Task<string> LobbyConnectionPublish()
-        {
-            var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        // TODO: API deals with web sockets connection to the game lobby. For future implementation and research.
-        private async Task<string> LobbyConnectionSubscribe()
-        {
-            var response = await ExecuteAPIRequest<string>($"https://lobby-hi.svc.halowaypoint.com:443/",
                                    HttpMethod.Get,
                                    true,
                                    false,
@@ -3160,29 +2842,9 @@ namespace Grunt.Core
             }
         }
 
-        //================================================
+        // ================================================
         // Setting
-        //================================================
-
-        // TODO: Need to validate that this API is accurate.
-        // See: https://github.com/OpenSpartan/grunt/issues/12
-        private async Task<string> SettingGetFeatureFlags(string platform, string version)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://settings.svc.halowaypoint.com:443/featureflags/{platform}/{version}",
-                                   HttpMethod.Get,
-                                   false,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
+        // ================================================
 
         /// <summary>
         /// Get a list of features enables for a given flight.
@@ -3208,9 +2870,9 @@ namespace Grunt.Core
             }
         }
 
-        //================================================
+        // ================================================
         // Settings
-        //================================================
+        // ================================================
 
         /// <summary>
         /// Gets the currently assigned clearance/flight ID.
@@ -3265,9 +2927,9 @@ namespace Grunt.Core
             }
         }
 
-        //================================================
+        // ================================================
         // Skill
-        //================================================
+        // ================================================
 
         /// <summary>
         /// Returns individual player stats for a given match.
@@ -3320,9 +2982,10 @@ namespace Grunt.Core
             }
         }
 
-        //================================================
+        // ================================================
         // Stats
-        //================================================
+        // ================================================
+
         /// <summary>
         /// Gets the summary information for applicable bans to players and devices.
         /// </summary>
@@ -3544,58 +3207,10 @@ namespace Grunt.Core
             }
         }
 
-        //================================================
-        // Telemetry
-        //================================================
-        /// <summary>
-        /// Likely deals with in-game telemetry. Early investigations point to WebSockets communication, so additional work is required for full context.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <returns>Unknown</returns>
-        private async Task<string> TelemetryHighPriority()
-        {
-            var response = await ExecuteAPIRequest<string>($"https://telemetry-clients.svc.halowaypoint.com:443/",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        /// <summary>
-        /// Likely deals with in-game telemetry. Early investigations point to WebSockets communication, so additional work is required for full context.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <returns>Unknown</returns>
-        private async Task<string> TelemetryLowPriority()
-        {
-            var response = await ExecuteAPIRequest<string>($"https://telemetry-clients.svc.halowaypoint.com:443/",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        //================================================
+        // ================================================
         // TextModeration
-        //================================================
+        // ================================================
+
         /// <summary>
         /// Gets a specific moderation proof signing key.
         /// </summary>
@@ -3642,54 +3257,6 @@ namespace Grunt.Core
         }
 
         /// <summary>
-        /// Likely posts text for moderation. Have not yet seen this live in the game, and have no information on how it works at this time.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <param name="player">Player ID likely in "xuid(XUID_VALUE)" format.</param>
-        /// <returns>Unknown</returns>
-        private async Task<string> TextModerationPostInappropriateMessageReport(string player)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://text.svc.halowaypoint.com:443/hi/players/{player}/text-message-reports",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        /// <summary>
-        /// Likely posts text for moderation. Have not yet seen this live in the game, and have no information on how it works at this time.
-        /// </summary>
-        /// <remarks>INACTIVE API</remarks>
-        /// <param name="player">Player ID likely in "xuid(XUID_VALUE)" format.</param>
-        /// <returns>Unknown</returns>
-        private async Task<string> TextModerationPostTextForModeration(string player)
-        {
-            var response = await ExecuteAPIRequest<string>($"https://text.svc.halowaypoint.com:443/hi/players/{player}/text-messages",
-                                   HttpMethod.Get,
-                                   true,
-                                   false,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        /// <summary>
         /// Executes an API request in a standard way against a given API endpoint. This is a helper method that's put
         /// in place to simplify how the API calls are made because most requests against the Halo Infinite API are
         /// pretty repetitive.
@@ -3701,17 +3268,17 @@ namespace Grunt.Core
         /// <param name="userAgent">User agent to be used for the request.</param>
         /// <param name="content">If the request contains data to be sent to the Halo Waypoint service, include it here. Expected format is JSON.</param>
         /// <returns>Response string in case of a successful request. Null if request failed.</returns>
-        private async Task<T> ExecuteAPIRequest<T>(string endpoint, HttpMethod method, bool useSpartanToken, bool useClearance, string userAgent, string content = "")
+        private async Task<T?> ExecuteAPIRequest<T>(string endpoint, HttpMethod method, bool useSpartanToken, bool useClearance, string userAgent, string content = "")
         {
             var client = new HttpClient(new HttpClientHandler
             {
-                AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.Brotli
+                AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.Brotli,
             });
 
             var request = new HttpRequestMessage()
             {
                 RequestUri = new Uri(endpoint),
-                Method = method
+                Method = method,
             };
 
             if (!string.IsNullOrEmpty(content))
@@ -3728,7 +3295,7 @@ namespace Grunt.Core
             {
                 request.Headers.Add("343-clearance", this.ClearanceToken);
             }
-            
+
             request.Headers.Add("User-Agent", userAgent);
             request.Headers.Add("Accept", "application/json");
             request.Headers.Add("Accept-Encoding", "gzip, deflate, br");

@@ -1,0 +1,11 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/20/2022:
+	<code>
+    {
+        "Message": {
+            "value": "Byyyyyeeee!!!!!",
+            "status": "Test"
+        }
+    }
+	</code>
+</example>

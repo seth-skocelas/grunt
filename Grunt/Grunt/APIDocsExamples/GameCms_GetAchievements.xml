@@ -1,0 +1,604 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/20/2022:
+	<code>
+    {
+        "Achievements": [
+            {
+                "Id": 1,
+                "XboxLiveId": "1",
+                "SteamId": "NEW_ACHIEVEMENT_1_0"
+            },
+            {
+                "Id": 2,
+                "XboxLiveId": "2",
+                "SteamId": "NEW_ACHIEVEMENT_1_2"
+            },
+            {
+                "Id": 3,
+                "XboxLiveId": "3",
+                "SteamId": "NEW_ACHIEVEMENT_1_3"
+            },
+            {
+                "Id": 4,
+                "XboxLiveId": "4",
+                "SteamId": "NEW_ACHIEVEMENT_1_4"
+            },
+            {
+                "Id": 5,
+                "XboxLiveId": "5",
+                "SteamId": "NEW_ACHIEVEMENT_1_5"
+            },
+            {
+                "Id": 6,
+                "XboxLiveId": "6",
+                "SteamId": "NEW_ACHIEVEMENT_1_6"
+            },
+            {
+                "Id": 7,
+                "XboxLiveId": "7",
+                "SteamId": "NEW_ACHIEVEMENT_1_7"
+            },
+            {
+                "Id": 8,
+                "XboxLiveId": "8",
+                "SteamId": "NEW_ACHIEVEMENT_1_8"
+            },
+            {
+                "Id": 9,
+                "XboxLiveId": "9",
+                "SteamId": "NEW_ACHIEVEMENT_1_9"
+            },
+            {
+                "Id": 10,
+                "XboxLiveId": "10",
+                "SteamId": "NEW_ACHIEVEMENT_1_10"
+            },
+            {
+                "Id": 11,
+                "XboxLiveId": "11",
+                "SteamId": "NEW_ACHIEVEMENT_1_11"
+            },
+            {
+                "Id": 12,
+                "XboxLiveId": "12",
+                "SteamId": "NEW_ACHIEVEMENT_1_12"
+            },
+            {
+                "Id": 13,
+                "XboxLiveId": "13",
+                "SteamId": "NEW_ACHIEVEMENT_1_13"
+            },
+            {
+                "Id": 14,
+                "XboxLiveId": "14",
+                "SteamId": "NEW_ACHIEVEMENT_1_14"
+            },
+            {
+                "Id": 15,
+                "XboxLiveId": "15",
+                "SteamId": "NEW_ACHIEVEMENT_1_15"
+            },
+            {
+                "Id": 16,
+                "XboxLiveId": "16",
+                "SteamId": "NEW_ACHIEVEMENT_1_16"
+            },
+            {
+                "Id": 17,
+                "XboxLiveId": "17",
+                "SteamId": "NEW_ACHIEVEMENT_1_17"
+            },
+            {
+                "Id": 18,
+                "XboxLiveId": "18",
+                "SteamId": "NEW_ACHIEVEMENT_1_20"
+            },
+            {
+                "Id": 19,
+                "XboxLiveId": "19",
+                "SteamId": "NEW_ACHIEVEMENT_1_21"
+            },
+            {
+                "Id": 20,
+                "XboxLiveId": "20",
+                "SteamId": "NEW_ACHIEVEMENT_1_22"
+            },
+            {
+                "Id": 21,
+                "XboxLiveId": "21",
+                "SteamId": "NEW_ACHIEVEMENT_1_23"
+            },
+            {
+                "Id": 22,
+                "XboxLiveId": "22",
+                "SteamId": "NEW_ACHIEVEMENT_1_24"
+            },
+            {
+                "Id": 23,
+                "XboxLiveId": "23",
+                "SteamId": "NEW_ACHIEVEMENT_1_25"
+            },
+            {
+                "Id": 24,
+                "XboxLiveId": "24",
+                "SteamId": "NEW_ACHIEVEMENT_1_26"
+            },
+            {
+                "Id": 25,
+                "XboxLiveId": "25",
+                "SteamId": "NEW_ACHIEVEMENT_1_27"
+            },
+            {
+                "Id": 26,
+                "XboxLiveId": "26",
+                "SteamId": "NEW_ACHIEVEMENT_1_28"
+            },
+            {
+                "Id": 27,
+                "XboxLiveId": "27",
+                "SteamId": "NEW_ACHIEVEMENT_1_29"
+            },
+            {
+                "Id": 28,
+                "XboxLiveId": "28",
+                "SteamId": "NEW_ACHIEVEMENT_1_30"
+            },
+            {
+                "Id": 29,
+                "XboxLiveId": "29",
+                "SteamId": "NEW_ACHIEVEMENT_1_31"
+            },
+            {
+                "Id": 30,
+                "XboxLiveId": "30",
+                "SteamId": "NEW_ACHIEVEMENT_2_0"
+            },
+            {
+                "Id": 31,
+                "XboxLiveId": "31",
+                "SteamId": "NEW_ACHIEVEMENT_2_1"
+            },
+            {
+                "Id": 32,
+                "XboxLiveId": "32",
+                "SteamId": "NEW_ACHIEVEMENT_2_2"
+            },
+            {
+                "Id": 33,
+                "XboxLiveId": "33",
+                "SteamId": "NEW_ACHIEVEMENT_2_3"
+            },
+            {
+                "Id": 34,
+                "XboxLiveId": "34",
+                "SteamId": "NEW_ACHIEVEMENT_2_4"
+            },
+            {
+                "Id": 35,
+                "XboxLiveId": "35",
+                "SteamId": "NEW_ACHIEVEMENT_2_5"
+            },
+            {
+                "Id": 36,
+                "XboxLiveId": "36",
+                "SteamId": "NEW_ACHIEVEMENT_2_6"
+            },
+            {
+                "Id": 37,
+                "XboxLiveId": "37",
+                "SteamId": "NEW_ACHIEVEMENT_2_7"
+            },
+            {
+                "Id": 38,
+                "XboxLiveId": "38",
+                "SteamId": "NEW_ACHIEVEMENT_2_8"
+            },
+            {
+                "Id": 39,
+                "XboxLiveId": "39",
+                "SteamId": "NEW_ACHIEVEMENT_2_9"
+            },
+            {
+                "Id": 40,
+                "XboxLiveId": "40",
+                "SteamId": "NEW_ACHIEVEMENT_2_10"
+            },
+            {
+                "Id": 41,
+                "XboxLiveId": "41",
+                "SteamId": "NEW_ACHIEVEMENT_2_11"
+            },
+            {
+                "Id": 42,
+                "XboxLiveId": "42",
+                "SteamId": "NEW_ACHIEVEMENT_2_12"
+            },
+            {
+                "Id": 43,
+                "XboxLiveId": "43",
+                "SteamId": "NEW_ACHIEVEMENT_2_13"
+            },
+            {
+                "Id": 44,
+                "XboxLiveId": "44",
+                "SteamId": "NEW_ACHIEVEMENT_2_14"
+            },
+            {
+                "Id": 45,
+                "XboxLiveId": "45",
+                "SteamId": "NEW_ACHIEVEMENT_2_15"
+            },
+            {
+                "Id": 46,
+                "XboxLiveId": "46",
+                "SteamId": "NEW_ACHIEVEMENT_2_16"
+            },
+            {
+                "Id": 47,
+                "XboxLiveId": "47",
+                "SteamId": "NEW_ACHIEVEMENT_2_17"
+            },
+            {
+                "Id": 48,
+                "XboxLiveId": "48",
+                "SteamId": "NEW_ACHIEVEMENT_2_18"
+            },
+            {
+                "Id": 49,
+                "XboxLiveId": "49",
+                "SteamId": "NEW_ACHIEVEMENT_2_19"
+            },
+            {
+                "Id": 50,
+                "XboxLiveId": "50",
+                "SteamId": "NEW_ACHIEVEMENT_2_20"
+            },
+            {
+                "Id": 51,
+                "XboxLiveId": "51",
+                "SteamId": "NEW_ACHIEVEMENT_2_21"
+            },
+            {
+                "Id": 52,
+                "XboxLiveId": "52",
+                "SteamId": "NEW_ACHIEVEMENT_2_22"
+            },
+            {
+                "Id": 53,
+                "XboxLiveId": "53",
+                "SteamId": "NEW_ACHIEVEMENT_2_23"
+            },
+            {
+                "Id": 54,
+                "XboxLiveId": "54",
+                "SteamId": "NEW_ACHIEVEMENT_2_24"
+            },
+            {
+                "Id": 55,
+                "XboxLiveId": "55",
+                "SteamId": "NEW_ACHIEVEMENT_2_25"
+            },
+            {
+                "Id": 56,
+                "XboxLiveId": "56",
+                "SteamId": "NEW_ACHIEVEMENT_2_26"
+            },
+            {
+                "Id": 57,
+                "XboxLiveId": "57",
+                "SteamId": "NEW_ACHIEVEMENT_2_27"
+            },
+            {
+                "Id": 58,
+                "XboxLiveId": "58",
+                "SteamId": "NEW_ACHIEVEMENT_2_28"
+            },
+            {
+                "Id": 59,
+                "XboxLiveId": "59",
+                "SteamId": "NEW_ACHIEVEMENT_2_29"
+            },
+            {
+                "Id": 60,
+                "XboxLiveId": "60",
+                "SteamId": "NEW_ACHIEVEMENT_2_30"
+            },
+            {
+                "Id": 61,
+                "XboxLiveId": "61",
+                "SteamId": "NEW_ACHIEVEMENT_2_31"
+            },
+            {
+                "Id": 62,
+                "XboxLiveId": "62",
+                "SteamId": "NEW_ACHIEVEMENT_3_0"
+            },
+            {
+                "Id": 63,
+                "XboxLiveId": "63",
+                "SteamId": "NEW_ACHIEVEMENT_3_1"
+            },
+            {
+                "Id": 64,
+                "XboxLiveId": "64",
+                "SteamId": "NEW_ACHIEVEMENT_3_2"
+            },
+            {
+                "Id": 65,
+                "XboxLiveId": "65",
+                "SteamId": "NEW_ACHIEVEMENT_3_3"
+            },
+            {
+                "Id": 66,
+                "XboxLiveId": "66",
+                "SteamId": "NEW_ACHIEVEMENT_3_4"
+            },
+            {
+                "Id": 67,
+                "XboxLiveId": "67",
+                "SteamId": "NEW_ACHIEVEMENT_3_5"
+            },
+            {
+                "Id": 68,
+                "XboxLiveId": "68",
+                "SteamId": "NEW_ACHIEVEMENT_3_6"
+            },
+            {
+                "Id": 69,
+                "XboxLiveId": "69",
+                "SteamId": "NEW_ACHIEVEMENT_3_14"
+            },
+            {
+                "Id": 70,
+                "XboxLiveId": "70",
+                "SteamId": "NEW_ACHIEVEMENT_3_15"
+            },
+            {
+                "Id": 71,
+                "XboxLiveId": "71",
+                "SteamId": "NEW_ACHIEVEMENT_3_16"
+            },
+            {
+                "Id": 72,
+                "XboxLiveId": "72",
+                "SteamId": "NEW_ACHIEVEMENT_3_17"
+            },
+            {
+                "Id": 73,
+                "XboxLiveId": "73",
+                "SteamId": "NEW_ACHIEVEMENT_3_18"
+            },
+            {
+                "Id": 74,
+                "XboxLiveId": "74",
+                "SteamId": "NEW_ACHIEVEMENT_3_19"
+            },
+            {
+                "Id": 75,
+                "XboxLiveId": "75",
+                "SteamId": "NEW_ACHIEVEMENT_3_20"
+            },
+            {
+                "Id": 76,
+                "XboxLiveId": "76",
+                "SteamId": "NEW_ACHIEVEMENT_3_21"
+            },
+            {
+                "Id": 77,
+                "XboxLiveId": "77",
+                "SteamId": "NEW_ACHIEVEMENT_3_22"
+            },
+            {
+                "Id": 78,
+                "XboxLiveId": "78",
+                "SteamId": "NEW_ACHIEVEMENT_3_23"
+            },
+            {
+                "Id": 79,
+                "XboxLiveId": "79",
+                "SteamId": "NEW_ACHIEVEMENT_3_24"
+            },
+            {
+                "Id": 80,
+                "XboxLiveId": "80",
+                "SteamId": "NEW_ACHIEVEMENT_3_25"
+            },
+            {
+                "Id": 81,
+                "XboxLiveId": "81",
+                "SteamId": "NEW_ACHIEVEMENT_3_26"
+            },
+            {
+                "Id": 82,
+                "XboxLiveId": "82",
+                "SteamId": "NEW_ACHIEVEMENT_3_27"
+            },
+            {
+                "Id": 83,
+                "XboxLiveId": "83",
+                "SteamId": "NEW_ACHIEVEMENT_3_28"
+            },
+            {
+                "Id": 84,
+                "XboxLiveId": "84",
+                "SteamId": "NEW_ACHIEVEMENT_3_29"
+            },
+            {
+                "Id": 85,
+                "XboxLiveId": "85",
+                "SteamId": "NEW_ACHIEVEMENT_3_30"
+            },
+            {
+                "Id": 86,
+                "XboxLiveId": "86",
+                "SteamId": "NEW_ACHIEVEMENT_3_31"
+            },
+            {
+                "Id": 87,
+                "XboxLiveId": "87",
+                "SteamId": "NEW_ACHIEVEMENT_4_0"
+            },
+            {
+                "Id": 88,
+                "XboxLiveId": "88",
+                "SteamId": "NEW_ACHIEVEMENT_4_1"
+            },
+            {
+                "Id": 89,
+                "XboxLiveId": "89",
+                "SteamId": "NEW_ACHIEVEMENT_4_2"
+            },
+            {
+                "Id": 90,
+                "XboxLiveId": "90",
+                "SteamId": "NEW_ACHIEVEMENT_4_3"
+            },
+            {
+                "Id": 91,
+                "XboxLiveId": "91",
+                "SteamId": "NEW_ACHIEVEMENT_4_4"
+            },
+            {
+                "Id": 92,
+                "XboxLiveId": "92",
+                "SteamId": "NEW_ACHIEVEMENT_4_5"
+            },
+            {
+                "Id": 93,
+                "XboxLiveId": "93",
+                "SteamId": "NEW_ACHIEVEMENT_4_6"
+            },
+            {
+                "Id": 94,
+                "XboxLiveId": "94",
+                "SteamId": "NEW_ACHIEVEMENT_4_7"
+            },
+            {
+                "Id": 95,
+                "XboxLiveId": "95",
+                "SteamId": "NEW_ACHIEVEMENT_4_8"
+            },
+            {
+                "Id": 96,
+                "XboxLiveId": "96",
+                "SteamId": "NEW_ACHIEVEMENT_4_9"
+            },
+            {
+                "Id": 97,
+                "XboxLiveId": "97",
+                "SteamId": "NEW_ACHIEVEMENT_4_10"
+            },
+            {
+                "Id": 98,
+                "XboxLiveId": "98",
+                "SteamId": "NEW_ACHIEVEMENT_4_11"
+            },
+            {
+                "Id": 99,
+                "XboxLiveId": "99",
+                "SteamId": "NEW_ACHIEVEMENT_4_12"
+            },
+            {
+                "Id": 100,
+                "XboxLiveId": "100",
+                "SteamId": "NEW_ACHIEVEMENT_4_13"
+            },
+            {
+                "Id": 101,
+                "XboxLiveId": "101",
+                "SteamId": "NEW_ACHIEVEMENT_4_14"
+            },
+            {
+                "Id": 102,
+                "XboxLiveId": "102",
+                "SteamId": "NEW_ACHIEVEMENT_4_15"
+            },
+            {
+                "Id": 103,
+                "XboxLiveId": "103",
+                "SteamId": "NEW_ACHIEVEMENT_4_16"
+            },
+            {
+                "Id": 104,
+                "XboxLiveId": "104",
+                "SteamId": "NEW_ACHIEVEMENT_4_17"
+            },
+            {
+                "Id": 105,
+                "XboxLiveId": "105",
+                "SteamId": "NEW_ACHIEVEMENT_4_18"
+            },
+            {
+                "Id": 106,
+                "XboxLiveId": "106",
+                "SteamId": "NEW_ACHIEVEMENT_4_19"
+            },
+            {
+                "Id": 107,
+                "XboxLiveId": "107",
+                "SteamId": "NEW_ACHIEVEMENT_4_20"
+            },
+            {
+                "Id": 108,
+                "XboxLiveId": "108",
+                "SteamId": "NEW_ACHIEVEMENT_4_21"
+            },
+            {
+                "Id": 109,
+                "XboxLiveId": "109",
+                "SteamId": "NEW_ACHIEVEMENT_4_22"
+            },
+            {
+                "Id": 110,
+                "XboxLiveId": "110",
+                "SteamId": "NEW_ACHIEVEMENT_4_23"
+            },
+            {
+                "Id": 111,
+                "XboxLiveId": "111",
+                "SteamId": "NEW_ACHIEVEMENT_4_24"
+            },
+            {
+                "Id": 112,
+                "XboxLiveId": "112",
+                "SteamId": "NEW_ACHIEVEMENT_4_25"
+            },
+            {
+                "Id": 113,
+                "XboxLiveId": "113",
+                "SteamId": "NEW_ACHIEVEMENT_4_26"
+            },
+            {
+                "Id": 114,
+                "XboxLiveId": "114",
+                "SteamId": "NEW_ACHIEVEMENT_4_27"
+            },
+            {
+                "Id": 115,
+                "XboxLiveId": "115",
+                "SteamId": "NEW_ACHIEVEMENT_4_28"
+            },
+            {
+                "Id": 116,
+                "XboxLiveId": "116",
+                "SteamId": "NEW_ACHIEVEMENT_4_29"
+            },
+            {
+                "Id": 117,
+                "XboxLiveId": "117",
+                "SteamId": "NEW_ACHIEVEMENT_4_30"
+            },
+            {
+                "Id": 118,
+                "XboxLiveId": "118",
+                "SteamId": "NEW_ACHIEVEMENT_4_31"
+            },
+            {
+                "Id": 119,
+                "XboxLiveId": "119",
+                "SteamId": "NEW_ACHIEVEMENT_3_7"
+            }
+        ]
+    }
+	</code>
+</example>

@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-    public class Articleimage
+    public class ArticleImage
     {
         public int Width { get; set; }
         public int Height { get; set; }
