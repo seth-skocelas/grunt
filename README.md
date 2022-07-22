@@ -9,7 +9,7 @@
 
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://den.dev/ukraine) [![Publish API Documentation](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml) [![Publish In-Repo NuGet Package](https://github.com/dend/grunt/actions/workflows/publish-inrepo-package.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-inrepo-package.yml) [![Publish NuGet Package](https://github.com/dend/grunt/actions/workflows/publish-nuget-package.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-nuget-package.yml)
 
-Welcome to **Grunt API** - the unofficial way to use official Halo Infinite APIs. Here be **a lot of dragons** and this is not yet ready to be a standalone package, since the changes will be frequent and large. That said, you can use it as a test pad for your own explorations.
+Welcome to **Grunt API** - the unofficial way to use official undocumented Halo APIs. Here be **a lot of dragons** and this is not yet ready to be a standalone package, since the changes will be frequent and large. That said, you can use it as a test pad for your own explorations.
 
 This API enables you to:
 
@@ -19,8 +19,6 @@ This API enables you to:
 - Track map popularity
 
 And more!
-
->**Current stable package ETA:** February 2022
 
 ## Table of contents
 
@@ -105,20 +103,12 @@ With the file there, you can now run through the authentication flow, that is po
 ConfigurationReader clientConfigReader = new();
 var clientConfig = clientConfigReader.ReadConfiguration<ClientConfiguration>("client.json");
 
-XboxAuthenticationManager manager = new();
+XboxAuthenticationClient manager = new();
 var url = manager.GenerateAuthUrl(clientConfig.ClientId, clientConfig.RedirectUrl);
 
 HaloAuthenticationClient haloAuthClient = new();
 
-// You will need to visit this URL and copy the code in the query string
-// that is issued when the login is successful.
-Console.WriteLine("Provide account authorization and grab the code from the URL:");
-Console.WriteLine(url);
-
-Console.WriteLine("Your code:");
-var code = Console.ReadLine();
-
-var accessToken = string.Empty;
+OAuthToken currentOAuthToken = null;
 
 var ticket = new XboxTicket();
 var haloTicket = new XboxTicket();
@@ -127,38 +117,48 @@ var extendedTicket = new XboxTicket();
 var xblToken = string.Empty;
 var haloToken = new SpartanToken();
 
-// First, request the OAuth token from the Live service.
+if (System.IO.File.Exists("tokens.json"))
+{
+    Console.WriteLine("Trying to use local tokens...");
+    // If a local token file exists, load the file.
+    currentOAuthToken = clientConfigReader.ReadConfiguration<OAuthToken>("tokens.json");
+}
+else
+{
+    currentOAuthToken = RequestNewToken(url, manager, clientConfig);
+}
+
 Task.Run(async () =>
 {
-    var tokens = await manager.RequestOAuthToken(clientConfig.ClientId, code, clientConfig.RedirectUrl, clientConfig.ClientSecret);
-    accessToken = tokens.AccessToken;
+    ticket = await manager.RequestUserToken(currentOAuthToken.AccessToken);
+    if (ticket == null)
+    {
+        // There was a failure to obtain the user token, so likely we need to refresh.
+        currentOAuthToken = await manager.RefreshOAuthToken(clientConfig.ClientId, currentOAuthToken.RefreshToken, clientConfig.RedirectUrl, clientConfig.ClientSecret);
+        if (currentOAuthToken == null)
+        {
+            Console.WriteLine("Could not get the token even with the refresh token.");
+            currentOAuthToken = RequestNewToken(url, manager, clientConfig);
+        }
+        ticket = await manager.RequestUserToken(currentOAuthToken.AccessToken);
+    }
 }).GetAwaiter().GetResult();
 
-// Next, request the user token.
-Task.Run(async () =>
-{
-    ticket = await manager.RequestUserToken(accessToken);
-}).GetAwaiter().GetResult();
-
-// Now, also exchange it for an XSTS token.
 Task.Run(async () =>
 {
     haloTicket = await manager.RequestXstsToken(ticket.Token);
 }).GetAwaiter().GetResult();
 
-// Get an extended one as well, so that you can get the user XUID.
 Task.Run(async () =>
 {
     extendedTicket = await manager.RequestXstsToken(ticket.Token, false);
 }).GetAwaiter().GetResult();
 
-// Now, get the XBL3.0 token that is standard for Xbox services.
 if (ticket != null)
 {
     xblToken = manager.GetXboxLiveV3Token(haloTicket.DisplayClaims.Xui[0].Uhs, haloTicket.Token);
 }
 
-// Lastly, exchange it for a Spartan token.
 Task.Run(async () =>
 {
     haloToken = await haloAuthClient.GetSpartanToken(haloTicket.Token);
@@ -166,13 +166,38 @@ Task.Run(async () =>
     Console.WriteLine(haloToken.Token);
 }).GetAwaiter().GetResult();
 
+HaloInfiniteClient client = new(haloToken.Token, extendedTicket.DisplayClaims.Xui[0].Xid);
+
+// Test getting the clearance for local execution.
+string localClearance = string.Empty;
+Task.Run(async () =>
+{
+    var clearance = (await client.SettingsGetClearance("RETAIL", "UNUSED", "222249.22.06.08.1730-0")).Result;
+    if (clearance != null)
+    {
+        localClearance = clearance.FlightConfigurationId;
+        client.ClearanceToken = localClearance;
+        Console.WriteLine($"Your clearance is {localClearance} and it's set in the client.");
+    }
+    else
+    {
+        Console.WriteLine("Could not obtain the clearance.");
+    }
+}).GetAwaiter().GetResult();
+
+// Try getting actual Halo Infinite data.
+Task.Run(async () =>
+{
+    var example = await client.StatsGetMatchStats("21416434-4717-4966-9902-af7097469f74");
+    Console.WriteLine("You have stats.");
+}).GetAwaiter().GetResult();
 ```
 
-The code above doesn't account for token refreshes that don't require visiting the login URL every single time you want to plan for an API call - I will be working on showing how it works in `Grunt.Zeta` in the near future.
+The code above will try to read tokens locally and refresh them, if available.
 
 > **NOTE:** This is worth additional investigation, but it seems that if the clearance (`343-clearance` header) is used, it needs to be activated at least once with the game before the API access is granted. That is, you need to launch the game at the latest build on your account before you can start querying the API. If you are running into issues with the API and are getting 403 Forbidden errors, make sure that you start Halo Infinite at least once before retrying.
 
-Once you have the Spartan token, you are good to go and can start issuing API requests.
+Once you have the Spartan token, you are good to go and can start issuing API requests. Keep in mind that the Spartan token does expire, so you will need to refresh it along other tokens as well.
 
 ## Endpoints
 
@@ -186,7 +211,7 @@ The endpoint above does not require authentication and can be queried in the ope
 
 ## Documentation
 
-This is work in progress. Aiming to have better docs as the library becomes more stable, but in the meantime you can explore the [library code](https://github.com/dend/grunt/tree/main/Grunt/Grunt) - I am including detailed code comments for assets that I've formalized.
+You can read the docs on the [Grunt docs website](https://docs.grunt.com).
 
 ## FAQ
 

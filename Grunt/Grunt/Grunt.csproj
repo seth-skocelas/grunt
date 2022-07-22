@@ -21,7 +21,7 @@
 		<PackageProjectUrl>https://gruntapi.com</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/openspartan/grunt</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageTags>halo,halo-api</PackageTags>
+		<PackageTags>halo,halo-api,api,halo-infinite,halo-mcc,halo-5,halo-wars,halo-4</PackageTags>
 		<PackageIcon>grunt-logo.png</PackageIcon>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<Version>$(AssemblyVersionMajor).$(AssemblyVersionMinor).$(AssemblyVersionPatch).$(AssemblyVersionPreRelease)</Version>
@@ -29,6 +29,15 @@
 		<TransformOutOfDateOnly>false</TransformOutOfDateOnly>
 		<Nullable>enable</Nullable>
 		<AnalysisLevel>latest</AnalysisLevel>
+		<PackageId>OpenSpartan.$(AssemblyName)</PackageId>
+		<Authors>Den Delimarsky</Authors>
+		<Company>Den Delimarsky</Company>
+		<Product>OpenSpartan.$(AssemblyName)</Product>
+		<Description>An unofficial wrapper for the Halo APIs. Currently supports the full API stack for Halo Infinite.</Description>
+		<Copyright>2022 by Den Delimarsky</Copyright>
+		<PackageReleaseNotes>Initial release of the OpenSpartan.Grunt package.</PackageReleaseNotes>
+		<AssemblyName>OpenSpartan.$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>OpenSpartan.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 	</PropertyGroup>
 	
 	<ItemGroup>
@@ -64,7 +73,7 @@
 
 	<ItemGroup>
 		<None Update="endpoints.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</None>
 		<None Update="VersioningTemplate.tt">
 			<Generator>TextTemplatingFileGenerator</Generator>
