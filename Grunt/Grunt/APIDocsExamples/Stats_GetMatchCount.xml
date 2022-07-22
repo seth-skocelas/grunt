@@ -1,0 +1,11 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "CustomMatchesPlayedCount": 8,
+        "MatchesPlayedCount": 11,
+        "MatchmadeMatchesPlayedCount": 3,
+        "LocalMatchesPlayedCount": 0
+    }
+	</code>
+</example>

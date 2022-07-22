@@ -1,0 +1,652 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "AssignedDecks": [
+            {
+                "Id": "Player_Deck_8585427484854775807_f2a632ce-f6d8-2c79-9cda-6152236925a0",
+                "Path": "ChallengeContent/ClientChallengeDeckDefinitions/S2LoneWolf2WeeklyDeck1.json",
+                "ActiveChallenges": [
+                    {
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S1RotationalSet1Challenges/Normal/NScore.json",
+                        "Progress": 450,
+                        "Id": "13937052-4058-473a-80d3-90ad825092eb",
+                        "CanReroll": true
+                    },
+                    {
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/WeaponChallenges/Heroic/HKillChaingunTurret.json",
+                        "Progress": 0,
+                        "Id": "deb74dc3-1761-4d92-a3e2-cee0e5973013",
+                        "CanReroll": true
+                    },
+                    {
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Normal/NFFAAttritionKillHeadshot.json",
+                        "Progress": 0,
+                        "Id": "bfd41de3-fe1d-4ff1-9619-ce7811242659",
+                        "CanReroll": true
+                    }
+                ],
+                "UpcomingChallenges": [
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2RotationalSet1Challenges/Normal/NLandGrabScore.json",
+                        "Progress": 0,
+                        "Id": "c7089889-b8c8-403b-a30e-24b5caa69165",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Heroic/HFFAAttritionKillMelee.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2RotationalSet1Challenges/Normal/NLandGrabKill.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Normal/NFFAAttritionScore.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/GeneralChallenges/Heroic/HMedalBackSmack.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Normal/NFFAAttritionPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/GeneralChallenges/Heroic/HAssist.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Legendary/LFFAAttritionPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/WeaponChallenges/Normal/NKillBattleRifle.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Normal/NFFAAttritionKillHeadshot.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/GeneralChallenges/Legendary/LMedalBackSmack.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Heroic/HFFAAttritionPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/WeaponChallenges/Heroic/HKillSidearmPistol.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Heroic/HFFAAttritionMedalBackSmack.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S1RotationalSet1Challenges/Legendary/LTacSlayerWin.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Legendary/LFFAAttritionKill.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    }
+                ],
+                "Expiration": {
+                    "ISO8601Date": "2022-07-26T18:00:00Z"
+                },
+                "CompletedChallenges": [
+                    {
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Normal/NFFAAttritionPlay.json",
+                        "Progress": 2,
+                        "Id": "61184508-689f-4e20-8896-2495744c579e",
+                        "CanReroll": true
+                    }
+                ]
+            },
+            {
+                "Id": "Player_Deck_8585430940854775807_d76c03f9-f7e6-88bf-8427-e227569d5f99",
+                "Path": "ChallengeContent/ClientChallengeDeckDefinitions/DailyPlayNewDeck.json",
+                "ActiveChallenges": [
+                    {
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlayB2.json",
+                        "Progress": 0,
+                        "Id": "ca4016b8-f189-4c26-a6bf-74f25e56ba45",
+                        "CanReroll": false
+                    }
+                ],
+                "UpcomingChallenges": [
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlayB2.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlayB3.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlayB3.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlayB3.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    },
+                    {
+                        "Difficulty": null,
+                        "TypeIconPath": null,
+                        "IsUserEvent": null,
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlay.json",
+                        "Progress": 0,
+                        "Id": "00000000-0000-0000-0000-000000000000",
+                        "CanReroll": true
+                    }
+                ],
+                "Expiration": {
+                    "ISO8601Date": "2022-07-22T18:00:00Z"
+                },
+                "CompletedChallenges": [
+                    {
+                        "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlayB1.json",
+                        "Progress": 1,
+                        "Id": "e530b7c3-87ba-4c51-956a-2204120f8798",
+                        "CanReroll": true
+                    }
+                ]
+            }
+        ],
+        "ClearanceId": "0b2a3a48-bce8-4053-be14-f78ba3df4f4d",
+        "ActiveRewardTrack": {
+            "RewardTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
+            "IsOwned": false
+        }
+    }
+	</code>
+</example>

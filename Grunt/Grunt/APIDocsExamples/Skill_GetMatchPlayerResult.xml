@@ -1,0 +1,75 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "Value": [
+            {
+                "Id": "xuid(2533274837773602)",
+                "ResultCode": 0,
+                "Result": {
+                    "TeamMmr": 812.27678274689993,
+                    "RankRecap": {
+                        "PreMatchCsr": {
+                            "Value": 0,
+                            "MeasurementMatchesRemaining": 0,
+                            "Tier": "",
+                            "TierStart": 0,
+                            "SubTier": 0,
+                            "NextTier": "",
+                            "NextTierStart": 0,
+                            "NextSubTier": 0,
+                            "InitialMeasurementMatches": 0
+                        },
+                        "PostMatchCsr": {
+                            "Value": 0,
+                            "MeasurementMatchesRemaining": 0,
+                            "Tier": "",
+                            "TierStart": 0,
+                            "SubTier": 0,
+                            "NextTier": "",
+                            "NextTierStart": 0,
+                            "NextSubTier": 0,
+                            "InitialMeasurementMatches": 0
+                        }
+                    },
+                    "StatPerformances": {
+                        "Kills": {
+                            "Count": 1,
+                            "Expected": 6.1863015516152648,
+                            "StdDev": 2.8883334548504838
+                        },
+                        "Deaths": {
+                            "Count": 6,
+                            "Expected": 5.1871049549087074,
+                            "StdDev": 2.7674724238474853
+                        }
+                    },
+                    "TeamId": 10,
+                    "TeamMmrs": {
+                        "0": 730.6675887935744,
+                        "1": 683.43498020741674,
+                        "2": 826.62067842954139,
+                        "3": 826.04007121293557,
+                        "4": 798.28383797004949,
+                        "5": 967.52305319081165,
+                        "6": 736.18205154377608,
+                        "7": 818.35000521200686,
+                        "8": 825.21229237891339,
+                        "9": 730.07469746983031,
+                        "10": 812.27678274689993,
+                        "11": 699.99710078376006
+                    },
+                    "RankedRewards": null,
+                    "Counterfactuals": {
+                        "SelfCounterfactuals": {
+                            "Kills": 6.1863015516152648,
+                            "Deaths": 5.1871049549087074
+                        },
+                        "TierCounterfactuals": {}
+                    }
+                }
+            }
+        ]
+    }
+	</code>
+</example>

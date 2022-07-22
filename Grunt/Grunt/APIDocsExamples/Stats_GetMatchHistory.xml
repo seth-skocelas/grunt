@@ -1,0 +1,400 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "Start": 0,
+        "Count": 25,
+        "ResultCount": 11,
+        "Results": [
+            {
+                "MatchId": "c56de3e5-ec1f-45b3-9fa2-affc4dbff365",
+                "MatchInfo": {
+                    "StartTime": "2022-07-21T21:42:20.306Z",
+                    "EndTime": "2022-07-21T21:50:15.824Z",
+                    "Duration": "PT7M29.0071295S",
+                    "LifecycleMode": 3,
+                    "GameVariantCategory": 7,
+                    "LevelId": "1a8f0677-7055-4358-8c1e-934db988597d",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "08607bf4-6abe-4a5b-9547-290a6cc1433e",
+                        "VersionId": "2bcbc114-bf14-4549-b1f5-9461b8cbf4bc"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "6b133f2d-0a04-4acb-8af9-d709760bc932",
+                        "VersionId": "26dfe945-fd90-4f96-a783-1033ecccadee"
+                    },
+                    "ClearanceId": "0b2a3a48-bce8-4053-be14-f78ba3df4f4d",
+                    "Playlist": {
+                        "AssetKind": 3,
+                        "AssetId": "0299adc1-f07a-4b6c-8126-0c35ac2fa08d",
+                        "VersionId": "0a2776ca-b811-4475-93dd-9415c39ef835"
+                    },
+                    "PlaylistExperience": 5,
+                    "PlaylistMapModePair": {
+                        "AssetKind": 7,
+                        "AssetId": "246d49e3-846a-4215-96dd-cf095ddb7bc3",
+                        "VersionId": "07393dd8-3b92-48e4-b1bd-64f141891f45"
+                    },
+                    "SeasonId": "Seasons/Season7.json",
+                    "PlayableDuration": "PT7M29S",
+                    "TeamsEnabled": false,
+                    "TeamScoringEnabled": false
+                },
+                "LastTeamId": 10,
+                "Outcome": 4,
+                "Rank": 3,
+                "PresentAtEndOfMatch": false
+            },
+            {
+                "MatchId": "e6b05514-a8c9-4e48-8873-c48a47f30ef3",
+                "MatchInfo": {
+                    "StartTime": "2022-07-20T05:11:50.321Z",
+                    "EndTime": "2022-07-20T05:20:47.575Z",
+                    "Duration": "PT8M12.091113S",
+                    "LifecycleMode": 3,
+                    "GameVariantCategory": 7,
+                    "LevelId": "d4d880b5-59a2-41bd-9c72-70fde4aaaf35",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "e6cbfe01-665b-4a8c-bf3a-d63a65a7c890",
+                        "VersionId": "85b3802a-a087-46a2-be80-610fbfb42919"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "6b133f2d-0a04-4acb-8af9-d709760bc932",
+                        "VersionId": "26dfe945-fd90-4f96-a783-1033ecccadee"
+                    },
+                    "ClearanceId": "46f08f2d-2804-4207-8634-fcf6570bec6e",
+                    "Playlist": {
+                        "AssetKind": 3,
+                        "AssetId": "0299adc1-f07a-4b6c-8126-0c35ac2fa08d",
+                        "VersionId": "0a2776ca-b811-4475-93dd-9415c39ef835"
+                    },
+                    "PlaylistExperience": 5,
+                    "PlaylistMapModePair": {
+                        "AssetKind": 7,
+                        "AssetId": "149b5283-0161-4a36-9ea3-e79c0e69cb7f",
+                        "VersionId": "0ea30daa-924f-448f-b075-ab5a277886ee"
+                    },
+                    "SeasonId": "Seasons/Season7.json",
+                    "PlayableDuration": "PT8M12.062S",
+                    "TeamsEnabled": false,
+                    "TeamScoringEnabled": false
+                },
+                "LastTeamId": 11,
+                "Outcome": 4,
+                "Rank": 5,
+                "PresentAtEndOfMatch": false
+            },
+            {
+                "MatchId": "e5d082d7-6429-4b76-86b9-9813f4279387",
+                "MatchInfo": {
+                    "StartTime": "2022-07-20T01:19:00.989Z",
+                    "EndTime": "2022-07-20T01:29:47.977Z",
+                    "Duration": "PT10M34.3869396S",
+                    "LifecycleMode": 1,
+                    "GameVariantCategory": 6,
+                    "LevelId": "6cb0eb90-2819-4b6f-a38a-8913a8b91c3e",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "53136ad9-0fd6-4271-8752-31d114b9561e",
+                        "VersionId": "9eff68dc-2089-4e89-a1ba-9541ff136be8"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "833fe582-65df-4be9-9f31-1dc71bb62b92",
+                        "VersionId": "0953add8-d76d-4455-acd3-8ac9a032c4da"
+                    },
+                    "ClearanceId": "46f08f2d-2804-4207-8634-fcf6570bec6e",
+                    "Playlist": null,
+                    "PlaylistExperience": null,
+                    "PlaylistMapModePair": null,
+                    "SeasonId": null,
+                    "PlayableDuration": "PT10M34.359S",
+                    "TeamsEnabled": true,
+                    "TeamScoringEnabled": true
+                },
+                "LastTeamId": 0,
+                "Outcome": 2,
+                "Rank": 1,
+                "PresentAtEndOfMatch": true
+            },
+            {
+                "MatchId": "5ea97730-9bd8-4a32-a5f7-1e04d8686aa7",
+                "MatchInfo": {
+                    "StartTime": "2022-07-20T01:13:15.707Z",
+                    "EndTime": "2022-07-20T01:18:06.037Z",
+                    "Duration": "PT4M30.1058526S",
+                    "LifecycleMode": 1,
+                    "GameVariantCategory": 7,
+                    "LevelId": "6cb0eb90-2819-4b6f-a38a-8913a8b91c3e",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "53136ad9-0fd6-4271-8752-31d114b9561e",
+                        "VersionId": "9eff68dc-2089-4e89-a1ba-9541ff136be8"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "4d0f6e15-cc3f-46e0-9d06-22de6311c4cb",
+                        "VersionId": "d6a43d27-9a54-4873-b7b5-fb2c22539fdc"
+                    },
+                    "ClearanceId": "46f08f2d-2804-4207-8634-fcf6570bec6e",
+                    "Playlist": null,
+                    "PlaylistExperience": null,
+                    "PlaylistMapModePair": null,
+                    "SeasonId": null,
+                    "PlayableDuration": "PT4M30.109S",
+                    "TeamsEnabled": true,
+                    "TeamScoringEnabled": true
+                },
+                "LastTeamId": 0,
+                "Outcome": 2,
+                "Rank": 1,
+                "PresentAtEndOfMatch": true
+            },
+            {
+                "MatchId": "ebc9d359-45fa-46ee-b437-3bed5c511964",
+                "MatchInfo": {
+                    "StartTime": "2022-07-20T01:05:50.23Z",
+                    "EndTime": "2022-07-20T01:11:40.442Z",
+                    "Duration": "PT5M29.9895111S",
+                    "LifecycleMode": 1,
+                    "GameVariantCategory": 7,
+                    "LevelId": "6cb0eb90-2819-4b6f-a38a-8913a8b91c3e",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "53136ad9-0fd6-4271-8752-31d114b9561e",
+                        "VersionId": "9eff68dc-2089-4e89-a1ba-9541ff136be8"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "7e48caf3-b440-433a-81fc-c14ef01217ea",
+                        "VersionId": "c2b887dc-cb02-4aba-a539-94349daf1de4"
+                    },
+                    "ClearanceId": "46f08f2d-2804-4207-8634-fcf6570bec6e",
+                    "Playlist": null,
+                    "PlaylistExperience": null,
+                    "PlaylistMapModePair": null,
+                    "SeasonId": null,
+                    "PlayableDuration": "PT5M29.985S",
+                    "TeamsEnabled": true,
+                    "TeamScoringEnabled": true
+                },
+                "LastTeamId": 0,
+                "Outcome": 2,
+                "Rank": 1,
+                "PresentAtEndOfMatch": true
+            },
+            {
+                "MatchId": "c73b507e-1d8f-4f31-97c0-cb78254b1ef0",
+                "MatchInfo": {
+                    "StartTime": "2022-07-20T00:37:26.081Z",
+                    "EndTime": "2022-07-20T00:38:31.251Z",
+                    "Duration": "PT42.5815309S",
+                    "LifecycleMode": 1,
+                    "GameVariantCategory": 6,
+                    "LevelId": "fc878857-e778-4daf-b0ef-5d826b922f3f",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "7342d233-5c52-4da1-9ee3-e9289101d737",
+                        "VersionId": "9ff99187-c55e-4818-8d1a-0fc1412e863d"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "1e8cd10b-1496-423b-8699-f98f6f5db67e",
+                        "VersionId": "4155142e-b867-4030-a8a0-d5f44f9dce60"
+                    },
+                    "ClearanceId": "46f08f2d-2804-4207-8634-fcf6570bec6e",
+                    "Playlist": null,
+                    "PlaylistExperience": null,
+                    "PlaylistMapModePair": null,
+                    "SeasonId": null,
+                    "PlayableDuration": "PT42.579S",
+                    "TeamsEnabled": true,
+                    "TeamScoringEnabled": true
+                },
+                "LastTeamId": 0,
+                "Outcome": 2,
+                "Rank": 1,
+                "PresentAtEndOfMatch": true
+            },
+            {
+                "MatchId": "a740be11-b1a6-40f0-91ae-75e6654844de",
+                "MatchInfo": {
+                    "StartTime": "2022-07-19T21:48:08.397Z",
+                    "EndTime": "2022-07-19T21:48:38.577Z",
+                    "Duration": "PT12.3225148S",
+                    "LifecycleMode": 1,
+                    "GameVariantCategory": 6,
+                    "LevelId": "46222a36-f96d-4c47-bcfb-a85861531713",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "5036dc45-d007-4e4d-b009-330fa8de2b2c",
+                        "VersionId": "2212e07d-9d04-4b97-9b9d-db2343c78e4d"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "5a088f7a-892c-4d49-951e-e2fec0c2fc00",
+                        "VersionId": "7974f931-c58d-4bba-be2e-34af8538d804"
+                    },
+                    "ClearanceId": "57a78c0b-4f07-4830-b85e-e208a3ac4455",
+                    "Playlist": null,
+                    "PlaylistExperience": null,
+                    "PlaylistMapModePair": null,
+                    "SeasonId": null,
+                    "PlayableDuration": "PT12.312S",
+                    "TeamsEnabled": true,
+                    "TeamScoringEnabled": true
+                },
+                "LastTeamId": 0,
+                "Outcome": 1,
+                "Rank": 1,
+                "PresentAtEndOfMatch": true
+            },
+            {
+                "MatchId": "b94542e6-2343-48db-a54b-53aafb2cfd05",
+                "MatchInfo": {
+                    "StartTime": "2022-07-19T04:44:51.259Z",
+                    "EndTime": "2022-07-19T04:50:35.774Z",
+                    "Duration": "PT5M31.4446961S",
+                    "LifecycleMode": 1,
+                    "GameVariantCategory": 6,
+                    "LevelId": "6cb0eb90-2819-4b6f-a38a-8913a8b91c3e",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "53136ad9-0fd6-4271-8752-31d114b9561e",
+                        "VersionId": "9eff68dc-2089-4e89-a1ba-9541ff136be8"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "b5ed517c-ce50-4919-95b2-41197f644ad6",
+                        "VersionId": "b583ff12-40f3-44e5-9471-186ee8332e74"
+                    },
+                    "ClearanceId": "3da91161-c4ac-4fc6-9b58-d887c0863c29",
+                    "Playlist": null,
+                    "PlaylistExperience": null,
+                    "PlaylistMapModePair": null,
+                    "SeasonId": null,
+                    "PlayableDuration": "PT5M31.438S",
+                    "TeamsEnabled": true,
+                    "TeamScoringEnabled": true
+                },
+                "LastTeamId": 0,
+                "Outcome": 1,
+                "Rank": 1,
+                "PresentAtEndOfMatch": true
+            },
+            {
+                "MatchId": "67da4add-6c81-432c-be5a-93578c33fc64",
+                "MatchInfo": {
+                    "StartTime": "2022-07-15T05:14:44.894Z",
+                    "EndTime": "2022-07-15T05:20:48.591Z",
+                    "Duration": "PT5M36.3410759S",
+                    "LifecycleMode": 3,
+                    "GameVariantCategory": 7,
+                    "LevelId": "fc878857-e778-4daf-b0ef-5d826b922f3f",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "33c0766c-ef15-48f8-b298-34aba5bff3b4",
+                        "VersionId": "f5e2d40d-b3f3-4691-9f5b-88fb119a7871"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "4d0f6e15-cc3f-46e0-9d06-22de6311c4cb",
+                        "VersionId": "d6a43d27-9a54-4873-b7b5-fb2c22539fdc"
+                    },
+                    "ClearanceId": "66b28d5b-cf36-440e-99d6-6bf511775cd0",
+                    "Playlist": {
+                        "AssetKind": 3,
+                        "AssetId": "bdceefb3-1c52-4848-a6b7-d49acd13109d",
+                        "VersionId": "c9a74445-4518-4622-88fb-3d5c8c138c29"
+                    },
+                    "PlaylistExperience": 2,
+                    "PlaylistMapModePair": {
+                        "AssetKind": 7,
+                        "AssetId": "210a4bc3-3140-4524-8633-d107cd8f7f07",
+                        "VersionId": "2710a9d9-8f5e-4426-8588-348be53aae55"
+                    },
+                    "SeasonId": "Seasons/Season7.json",
+                    "PlayableDuration": "PT5M28.782S",
+                    "TeamsEnabled": true,
+                    "TeamScoringEnabled": true
+                },
+                "LastTeamId": 0,
+                "Outcome": 2,
+                "Rank": 1,
+                "PresentAtEndOfMatch": true
+            },
+            {
+                "MatchId": "b0927707-c77a-4993-b270-50bcad8e60f5",
+                "MatchInfo": {
+                    "StartTime": "2022-07-13T07:11:31.218Z",
+                    "EndTime": "2022-07-13T07:12:15.472Z",
+                    "Duration": "PT27.5948505S",
+                    "LifecycleMode": 1,
+                    "GameVariantCategory": 6,
+                    "LevelId": "46222a36-f96d-4c47-bcfb-a85861531713",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "5036dc45-d007-4e4d-b009-330fa8de2b2c",
+                        "VersionId": "9a192ca6-5178-4b95-b8ec-486bc021d46b"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "1e8cd10b-1496-423b-8699-f98f6f5db67e",
+                        "VersionId": "4155142e-b867-4030-a8a0-d5f44f9dce60"
+                    },
+                    "ClearanceId": "88dac8ab-a7fb-4ca9-94a8-7331f48703ec",
+                    "Playlist": null,
+                    "PlaylistExperience": null,
+                    "PlaylistMapModePair": null,
+                    "SeasonId": null,
+                    "PlayableDuration": "PT27.594S",
+                    "TeamsEnabled": true,
+                    "TeamScoringEnabled": true
+                },
+                "LastTeamId": 0,
+                "Outcome": 2,
+                "Rank": 1,
+                "PresentAtEndOfMatch": true
+            },
+            {
+                "MatchId": "93858420-152b-4751-a6dc-0ebf67113379",
+                "MatchInfo": {
+                    "StartTime": "2022-07-12T02:45:23.372Z",
+                    "EndTime": "2022-07-12T02:47:39.918Z",
+                    "Duration": "PT1M50.3798525S",
+                    "LifecycleMode": 1,
+                    "GameVariantCategory": 25,
+                    "LevelId": "6cb0eb90-2819-4b6f-a38a-8913a8b91c3e",
+                    "MapVariant": {
+                        "AssetKind": 2,
+                        "AssetId": "53136ad9-0fd6-4271-8752-31d114b9561e",
+                        "VersionId": "9eff68dc-2089-4e89-a1ba-9541ff136be8"
+                    },
+                    "UgcGameVariant": {
+                        "AssetKind": 6,
+                        "AssetId": "7dcd1da0-7fb1-41fc-97a1-276600c3b23a",
+                        "VersionId": "6437c20f-2b82-4993-a96a-7ea8772bb620"
+                    },
+                    "ClearanceId": "f54342de-fed1-4297-b3fa-6a24ec6a95d8",
+                    "Playlist": null,
+                    "PlaylistExperience": null,
+                    "PlaylistMapModePair": null,
+                    "SeasonId": null,
+                    "PlayableDuration": "PT1M50.375S",
+                    "TeamsEnabled": true,
+                    "TeamScoringEnabled": true
+                },
+                "LastTeamId": 0,
+                "Outcome": 2,
+                "Rank": 1,
+                "PresentAtEndOfMatch": true
+            }
+        ],
+        "Links": {}
+    }
+	</code>
+</example>

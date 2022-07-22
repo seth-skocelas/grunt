@@ -1,0 +1,8 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/10/2022:
+	<code>
+	{
+		"JoinHandle": "thirdpartyhandle(l-GUID_a-Friends_s-GUIDa_i-2533274837773602)"
+	}
+	</code>
+</example>

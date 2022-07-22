@@ -1,0 +1,19 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "keys": [
+            {
+                "kty": "RSA",
+                "use": "sig",
+                "kid": "KID_VALUE",
+                "n": "N_VALUE",
+                "e": "AQAB",
+                "x5c": [
+                    "X5C_VALUE"
+                ]
+            }
+        ]
+    }
+	</code>
+</example>

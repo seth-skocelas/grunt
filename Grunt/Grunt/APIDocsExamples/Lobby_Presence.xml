@@ -1,0 +1,25 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "Results": [
+            {
+                "Id": "xuid(2533274837773602)",
+                "ResultCode": 0,
+                "Result": {
+                    "FireteamDetails": {
+                        "FireteamId": "16a49fa0-a920-417f-8905-b7ba6aaf5181",
+                        "PlayerCount": 1,
+                        "MaxPlayers": 28,
+                        "JoinabilityStatus": 1,
+                        "PlaylistRef": null,
+                        "Activity": 5,
+                        "FireteamLeaderMenuActivity": 1
+                    },
+                    "MatchDetails": null
+                }
+            }
+        ]
+    }
+	</code>
+</example>

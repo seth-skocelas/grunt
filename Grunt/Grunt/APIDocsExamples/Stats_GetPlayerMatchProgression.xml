@@ -1,0 +1,45 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+    {
+        "ClearanceId": "0b2a3a48-bce8-4053-be14-f78ba3df4f4d",
+        "RewardId": "Challenges-c56de3e5-ec1f-45b3-9fa2-affc4dbff365-4101",
+        "ChallengeProgressState": [
+            {
+                "Path": "ChallengeContent/ClientChallengeDefinitions/S2EventLoneWolfChallenges/Normal/NFFAAttritionPlay.json",
+                "Id": "61184508-689f-4e20-8896-2495744c579e",
+                "PreviousProgress": 1,
+                "Progress": 2
+            },
+            {
+                "Path": "ChallengeContent/ClientChallengeDefinitions/S1RotationalSet1Challenges/Normal/NScore.json",
+                "Id": "13937052-4058-473a-80d3-90ad825092eb",
+                "PreviousProgress": 300,
+                "Progress": 450
+            },
+            {
+                "Path": "ChallengeContent/ClientChallengeDefinitions/WeaponChallenges/Heroic/HKillChaingunTurret.json",
+                "Id": "deb74dc3-1761-4d92-a3e2-cee0e5973013",
+                "PreviousProgress": 0,
+                "Progress": 0
+            },
+            {
+                "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlayB2.json",
+                "Id": "ca4016b8-f189-4c26-a6bf-74f25e56ba45",
+                "PreviousProgress": 0,
+                "Progress": 0
+            },
+            {
+                "Path": "ChallengeContent/ClientChallengeDefinitions/DailyChallenges/PlayNew/d0NPlayB1.json",
+                "Id": "e530b7c3-87ba-4c51-956a-2204120f8798",
+                "PreviousProgress": 0,
+                "Progress": 1
+            }
+        ],
+        "RewardIds": [
+            "Challenges-c56de3e5-ec1f-45b3-9fa2-affc4dbff365",
+            "Challenges-c56de3e5-ec1f-45b3-9fa2-affc4dbff365-4101"
+        ]
+    }
+	</code>
+</example>

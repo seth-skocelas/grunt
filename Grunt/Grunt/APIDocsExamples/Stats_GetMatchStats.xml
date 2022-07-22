@@ -1,0 +1,154 @@
+﻿<example>
+    Here is an example response from the API, as snapshotted on 7/21/2022:
+    <code>
+    {
+        "MatchId": "c73b507e-1d8f-4f31-97c0-cb78254b1ef0",
+        "MatchInfo": {
+            "StartTime": "2022-07-20T00:37:26.081Z",
+            "EndTime": "2022-07-20T00:38:31.251Z",
+            "Duration": "PT42.5815309S",
+            "LifecycleMode": 1,
+            "GameVariantCategory": 6,
+            "LevelId": "fc878857-e778-4daf-b0ef-5d826b922f3f",
+            "MapVariant": {
+                "AssetKind": 2,
+                "AssetId": "7342d233-5c52-4da1-9ee3-e9289101d737",
+                "VersionId": "9ff99187-c55e-4818-8d1a-0fc1412e863d"
+            },
+            "UgcGameVariant": {
+                "AssetKind": 6,
+                "AssetId": "1e8cd10b-1496-423b-8699-f98f6f5db67e",
+                "VersionId": "4155142e-b867-4030-a8a0-d5f44f9dce60"
+            },
+            "ClearanceId": "46f08f2d-2804-4207-8634-fcf6570bec6e",
+            "Playlist": null,
+            "PlaylistExperience": null,
+            "PlaylistMapModePair": null,
+            "SeasonId": null,
+            "PlayableDuration": "PT42.579S",
+            "TeamsEnabled": true,
+            "TeamScoringEnabled": true
+        },
+        "Teams": [
+            {
+                "TeamId": 0,
+                "Outcome": 2,
+                "Rank": 1,
+                "Stats": {
+                    "CoreStats": {
+                        "Score": 0,
+                        "PersonalScore": 0,
+                        "RoundsWon": 1,
+                        "RoundsLost": 0,
+                        "RoundsTied": 0,
+                        "Kills": 0,
+                        "Deaths": 0,
+                        "Assists": 0,
+                        "KDA": 0.0,
+                        "Suicides": 0,
+                        "Betrayals": 0,
+                        "AverageLifeDuration": "PT25.5S",
+                        "GrenadeKills": 0,
+                        "HeadshotKills": 0,
+                        "MeleeKills": 0,
+                        "PowerWeaponKills": 0,
+                        "ShotsFired": 0,
+                        "ShotsHit": 0,
+                        "Accuracy": 0.0,
+                        "DamageDealt": 0,
+                        "DamageTaken": 0,
+                        "CalloutAssists": 0,
+                        "VehicleDestroys": 0,
+                        "DriverAssists": 0,
+                        "Hijacks": 0,
+                        "EmpAssists": 0,
+                        "MaxKillingSpree": 0,
+                        "Medals": [],
+                        "PersonalScores": [],
+                        "DeprecatedDamageDealt": 0.0,
+                        "DeprecatedDamageTaken": 0.0,
+                        "Spawns": 1
+                    },
+                    "BombStats": null,
+                    "CaptureTheFlagStats": null,
+                    "EliminationStats": null,
+                    "ExtractionStats": null,
+                    "InfectionStats": null,
+                    "OddballStats": null,
+                    "ZonesStats": null,
+                    "StockpileStats": null
+                }
+            }
+        ],
+        "Players": [
+            {
+                "PlayerId": "xuid(2533274837773602)",
+                "PlayerType": 1,
+                "BotAttributes": null,
+                "LastTeamId": 0,
+                "Outcome": 2,
+                "Rank": 1,
+                "ParticipationInfo": {
+                    "FirstJoinedTime": "2022-07-20T00:37:48.665Z",
+                    "LastLeaveTime": null,
+                    "PresentAtBeginning": true,
+                    "JoinedInProgress": false,
+                    "LeftInProgress": false,
+                    "PresentAtCompletion": true,
+                    "TimePlayed": "PT42.579S",
+                    "ConfirmedParticipation": null
+                },
+                "PlayerTeamStats": [
+                    {
+                        "TeamId": 0,
+                        "Stats": {
+                            "CoreStats": {
+                                "Score": 0,
+                                "PersonalScore": 0,
+                                "RoundsWon": 1,
+                                "RoundsLost": 0,
+                                "RoundsTied": 0,
+                                "Kills": 0,
+                                "Deaths": 0,
+                                "Assists": 0,
+                                "KDA": 0.0,
+                                "Suicides": 0,
+                                "Betrayals": 0,
+                                "AverageLifeDuration": "PT25.5S",
+                                "GrenadeKills": 0,
+                                "HeadshotKills": 0,
+                                "MeleeKills": 0,
+                                "PowerWeaponKills": 0,
+                                "ShotsFired": 0,
+                                "ShotsHit": 0,
+                                "Accuracy": 0.0,
+                                "DamageDealt": 0,
+                                "DamageTaken": 0,
+                                "CalloutAssists": 0,
+                                "VehicleDestroys": 0,
+                                "DriverAssists": 0,
+                                "Hijacks": 0,
+                                "EmpAssists": 0,
+                                "MaxKillingSpree": 0,
+                                "Medals": [],
+                                "PersonalScores": [],
+                                "DeprecatedDamageDealt": 0.0,
+                                "DeprecatedDamageTaken": 0.0,
+                                "Spawns": 1
+                            },
+                            "BombStats": null,
+                            "CaptureTheFlagStats": null,
+                            "EliminationStats": null,
+                            "ExtractionStats": null,
+                            "InfectionStats": null,
+                            "OddballStats": null,
+                            "ZonesStats": null,
+                            "StockpileStats": null
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </code>
+</example>

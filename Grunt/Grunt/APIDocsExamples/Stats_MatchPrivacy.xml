@@ -1,0 +1,9 @@
+﻿<example>
+	Here is an example response from the API, as snapshotted on 7/21/2022:
+	<code>
+	{
+		"MatchmadeGames": 1,
+		"OtherGames": 2
+	}
+	</code>
+</example>
