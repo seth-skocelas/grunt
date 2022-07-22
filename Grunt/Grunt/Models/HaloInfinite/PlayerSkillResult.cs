@@ -2,6 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class PlayerSkillResult : ResultContainer
     {
         public SkillResult Result { get; set; }

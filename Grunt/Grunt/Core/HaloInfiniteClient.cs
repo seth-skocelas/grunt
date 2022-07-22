@@ -72,7 +72,7 @@ namespace Grunt.Core
         public async Task<ApiSettingsContainer?> GetApiSettingsContainer()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                SettingsEndpoints.HIPC,
+                HaloCoreEndpoints.HaloInfiniteEndpointsEndpoint,
                 HttpMethod.Get,
                 false,
                 false,
@@ -96,7 +96,7 @@ namespace Grunt.Core
         public async Task<BotCustomizationData?> AcademyGetBotCustomization(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/BotCustomizationData.json?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/multiplayer/file/Academy/BotCustomizationData.json?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -115,7 +115,7 @@ namespace Grunt.Core
         public async Task<AcademyClientManifest?> AcademyGetContent()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyClientManifest.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/multiplayer/file/Academy/AcademyClientManifest.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -135,7 +135,7 @@ namespace Grunt.Core
         public async Task<TestAcademyClientManifest?> AcademyGetContentTest(string clearanceId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyClientManifest_Test.json?flight={clearanceId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/multiplayer/file/Academy/AcademyClientManifest_Test.json?flight={clearanceId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -154,7 +154,7 @@ namespace Grunt.Core
         public async Task<AcademyStarDefinitions?> AcademyGetStarDefinitions()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/multiplayer/file/Academy/AcademyStarGUIDDefinitions.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/multiplayer/file/Academy/AcademyStarGUIDDefinitions.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -179,7 +179,7 @@ namespace Grunt.Core
         public async Task<AiCore?> EconomyAiCoreCustomization(string player, string coreId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais/{coreId}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/ais/{coreId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -199,7 +199,7 @@ namespace Grunt.Core
         public async Task<AiCores?> EconomyAiCoresCustomization(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/ais",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/ais",
                 HttpMethod.Get,
                 true,
                 true,
@@ -219,7 +219,7 @@ namespace Grunt.Core
         public async Task<PlayerCores?> EconomyAllOwnedCoresDetails(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/cores",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/cores",
                 HttpMethod.Get,
                 true,
                 true,
@@ -240,7 +240,7 @@ namespace Grunt.Core
         public async Task<ArmorCore?> EconomyArmorCoreCustomization(string player, string coreId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors/{coreId}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/armors/{coreId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -260,7 +260,7 @@ namespace Grunt.Core
         public async Task<ArmorCoreCollection?> EconomyArmorCoresCustomization(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/armors",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/armors",
                 HttpMethod.Get,
                 true,
                 true,
@@ -280,7 +280,7 @@ namespace Grunt.Core
         public async Task<ActiveBoostsContainer?> EconomyGetActiveBoosts(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/boosts",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/boosts",
                 HttpMethod.Get,
                 true,
                 true,
@@ -301,7 +301,7 @@ namespace Grunt.Core
         public async Task<RewardSnapshot?> EconomyGetAwardedRewards(string player, string rewardId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewards/{rewardId}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/rewards/{rewardId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -321,7 +321,7 @@ namespace Grunt.Core
         public async Task<StoreItem?> EconomyGetBoostsStore(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/boosts",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/stores/boosts",
                 HttpMethod.Get,
                 true,
                 true,
@@ -341,7 +341,7 @@ namespace Grunt.Core
         public async Task<PlayerGiveaways?> EconomyGetGiveawayRewards(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/giveaways",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/giveaways",
                 HttpMethod.Get,
                 true,
                 true,
@@ -361,7 +361,7 @@ namespace Grunt.Core
         public async Task<StoreItem?> EconomyGetHCSStore(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/hcs",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/stores/hcs",
                 HttpMethod.Get,
                 true,
                 true,
@@ -381,7 +381,7 @@ namespace Grunt.Core
         public async Task<PlayerInventory?> EconomyGetInventoryItems(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/inventory",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/inventory",
                 HttpMethod.Get,
                 true,
                 true,
@@ -401,7 +401,7 @@ namespace Grunt.Core
         public async Task<StoreItem?> EconomyGetMainStore(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/main",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/stores/main",
                 HttpMethod.Get,
                 true,
                 true,
@@ -422,7 +422,7 @@ namespace Grunt.Core
         {
             var formattedPlayerList = string.Join(",", playerIds);
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/customization?players={formattedPlayerList}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/customization?players={formattedPlayerList}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -442,7 +442,7 @@ namespace Grunt.Core
         public async Task<StoreItem?> EconomyGetOperationRewardLevelsStore(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/operationrewardlevels",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/stores/operationrewardlevels",
                 HttpMethod.Get,
                 true,
                 true,
@@ -462,7 +462,7 @@ namespace Grunt.Core
         public async Task<StoreItem?> EconomyGetOperationsStore(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/operations",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/stores/operations",
                 HttpMethod.Get,
                 true,
                 true,
@@ -484,7 +484,7 @@ namespace Grunt.Core
         public async Task<RewardTrackMetadata?> EconomyGetRewardTrack(string player, string rewardTrackType, string trackId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewardtracks/{rewardTrackType}s/{trackId}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/rewardtracks/{rewardTrackType}s/{trackId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -504,7 +504,7 @@ namespace Grunt.Core
         public async Task<CurrencySnapshot?> EconomyGetVirtualCurrencyBalances(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/currencies",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/currencies",
                 HttpMethod.Get,
                 true,
                 true,
@@ -524,7 +524,7 @@ namespace Grunt.Core
         public async Task<StoreItem?> EconomyGetXpGrantsStore(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/xpgrants",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/stores/xpgrants",
                 HttpMethod.Get,
                 true,
                 true,
@@ -545,7 +545,7 @@ namespace Grunt.Core
         public async Task<Models.HaloInfinite.Foundation.Core?> EconomyOwnedCoreDetails(string player, string coreId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/cores/{coreId}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/cores/{coreId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -565,7 +565,7 @@ namespace Grunt.Core
         public async Task<AppearanceCustomization?> EconomyPlayerAppearanceCustomization(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/appearance",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/appearance",
                 HttpMethod.Get,
                 true,
                 true,
@@ -586,7 +586,7 @@ namespace Grunt.Core
         public async Task<CustomizationData?> EconomyPlayerCustomization(string player, string viewType)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization?view={viewType}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization?view={viewType}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -606,7 +606,7 @@ namespace Grunt.Core
         public async Task<OperationRewardTrackSnapshot?> EconomyPlayerOperations(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/rewardtracks/operations",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/rewardtracks/operations",
                 HttpMethod.Get,
                 true,
                 true,
@@ -630,7 +630,7 @@ namespace Grunt.Core
         public async Task<TransactionSnapshot?> EconomyPostCurrencyTransaction(string player, string currencyId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/currencies/{currencyId}/transactions",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/currencies/{currencyId}/transactions",
                 HttpMethod.Get,
                 true,
                 true,
@@ -649,20 +649,16 @@ namespace Grunt.Core
         /// <returns>Unknown.</returns>
         private async Task<string> EconomyPurchaseStorefrontOfferingTransaction(string player)
         {
-            var response = await ExecuteAPIRequest<string>($"https://economy.svc.halowaypoint.com:443/hi/players/{player}/storetransactions",
-                                   HttpMethod.Get,
-                                   true,
-                                   true,
-                                   GlobalConstants.HALO_WAYPOINT_USER_AGENT);
+            var response = await this.ExecuteAPIRequest<string>(
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/storetransactions",
+                HttpMethod.Get,
+                true,
+                true,
+                GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return response;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            return !string.IsNullOrEmpty(response)
+                ? response
+                : string.Empty;
         }
 
 
@@ -677,7 +673,7 @@ namespace Grunt.Core
         public async Task<StoreItem?> EconomyScheduledStorefrontOfferings(string player, string storeId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/stores/{storeId}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/stores/{storeId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -697,7 +693,7 @@ namespace Grunt.Core
         public async Task<SpartanBody?> EconomySpartanBodyCustomization(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/spartanbody",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/spartanbody",
                 HttpMethod.Get,
                 true,
                 true,
@@ -718,7 +714,7 @@ namespace Grunt.Core
         public async Task<VehicleCore?> EconomyVehicleCoreCustomization(string player, string coreId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/vehicles/{coreId}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/vehicles/{coreId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -738,7 +734,7 @@ namespace Grunt.Core
         public async Task<VehicleCoreCollection?> EconomyVehicleCoresCustomization(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/vehicles",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/vehicles",
                 HttpMethod.Get,
                 true,
                 true,
@@ -759,7 +755,7 @@ namespace Grunt.Core
         public async Task<WeaponCore?> EconomyWeaponCoreCustomization(string player, string coreId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/weapons/{coreId}",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/weapons/{coreId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -779,7 +775,7 @@ namespace Grunt.Core
         public async Task<WeaponCoreCollection?> EconomyWeaponCoresCustomization(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://economy.svc.halowaypoint.com:443/hi/players/{player}/customization/weapons",
+                $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/weapons",
                 HttpMethod.Get,
                 true,
                 true,
@@ -805,7 +801,7 @@ namespace Grunt.Core
         public async Task<AchievementCollection?> GameCmsGetAchievements()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/Live/Achievements.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Multiplayer/file/Live/Achievements.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -824,7 +820,7 @@ namespace Grunt.Core
         public async Task<AsyncComputeOverrides?> GameCmsGetAsyncComputeOverrides()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/AsyncComputeOverrides.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Specs/file/graphics/AsyncComputeOverrides.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -845,7 +841,7 @@ namespace Grunt.Core
         public async Task<Challenge?> GameCmsGetChallenge(string challengePath, string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengePath}?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/file/{challengePath}?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -866,7 +862,7 @@ namespace Grunt.Core
         public async Task<ChallengeDeckDefinition?> GameCmsGetChallengeDeck(string challengeDeckPath, string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{challengeDeckPath}?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/file/{challengeDeckPath}?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -887,7 +883,7 @@ namespace Grunt.Core
         public async Task<CurrencyDefinition?> GameCmsGetCurrency(string currencyPath, string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{currencyPath}?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/file/{currencyPath}?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -911,7 +907,7 @@ namespace Grunt.Core
         public async Task<ClawAccessSnapshot?> GameCmsGetClawAccess(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/TitleAuthorization/file/claw/access.json?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/TitleAuthorization/file/claw/access.json?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -930,7 +926,7 @@ namespace Grunt.Core
         public async Task<CPUPresetSnapshot?> GameCmsGetCpuPresets()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/cpu/presets.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Specs/file/cpu/presets.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -949,7 +945,7 @@ namespace Grunt.Core
         public async Task<CustomGameDefinition?> GameCmsGetCustomGameDefaults()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/NonMatchmaking/customgame.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Multiplayer/file/NonMatchmaking/customgame.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -969,7 +965,7 @@ namespace Grunt.Core
         public async Task<InventoryDefinition?> GameCmsGetCustomizationCatalog(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/inventory/catalog/inventory_catalog.json?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/file/inventory/catalog/inventory_catalog.json?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -991,7 +987,7 @@ namespace Grunt.Core
         public async Task<DevicePresetOverrides?> GameCmsGetDevicePresetOverrides()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/DevicePresetOverrides.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Specs/file/graphics/DevicePresetOverrides.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1012,7 +1008,7 @@ namespace Grunt.Core
         public async Task<RewardTrackMetadata?> GameCmsGetEvent(string eventPath, string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{eventPath}?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/file/{eventPath}?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1031,7 +1027,7 @@ namespace Grunt.Core
         public async Task<OverrideQueryDefinition?> GameCmsGetGraphicsSpecControlOverrides()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Specs/file/graphics/GraphicsSpecControlOverrides.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1052,7 +1048,7 @@ namespace Grunt.Core
         public async Task<string> GameCmsGetGraphicSpecs()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/overrides.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Specs/file/graphics/overrides.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1069,7 +1065,7 @@ namespace Grunt.Core
         public async Task<byte[]?> GameCmsGetImage(string filePath)
         {
             var response = await this.ExecuteAPIRequest<byte[]>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/images/file/{filePath}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/images/file/{filePath}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1093,7 +1089,7 @@ namespace Grunt.Core
         public async Task<InGameItem?> GameCmsGetItem(string itemPath, string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{itemPath}?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/file/{itemPath}?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1113,7 +1109,7 @@ namespace Grunt.Core
         public async Task<LobbyHopperErrorMessageList?> GameCmsGetLobbyErrorMessages(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/gameStartErrorMessages/LobbyHoppperErrorMessageList.json?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Multiplayer/file/gameStartErrorMessages/LobbyHoppperErrorMessageList.json?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1133,7 +1129,7 @@ namespace Grunt.Core
         public async Task<Metadata?> GameCmsGetMetadata(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/metadata/metadata.json?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/file/metadata/metadata.json?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1153,7 +1149,7 @@ namespace Grunt.Core
         public async Task<NetworkConfiguration?> GameCmsGetNetworkConfiguration(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/file/network/config.json?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Multiplayer/file/network/config.json?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1173,7 +1169,7 @@ namespace Grunt.Core
         public async Task<News?> GameCmsGetNews(string filePath)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/news/file/{filePath}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/news/file/{filePath}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1193,7 +1189,7 @@ namespace Grunt.Core
         public async Task<OEConfiguration?> GameCmsGetNotAllowedInTitleMessage()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/branches/hi/OEConfiguration/data/authfail/Default.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/branches/hi/OEConfiguration/data/authfail/Default.json",
                 HttpMethod.Get,
                 false,
                 false,
@@ -1213,7 +1209,7 @@ namespace Grunt.Core
         public async Task<T?> GameCmsGetProgressionFile<T>(string filePath)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{filePath}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/file/{filePath}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1233,7 +1229,7 @@ namespace Grunt.Core
         public async Task<DriverManifest?> GameCmsGetRecommendedDrivers()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/file/graphics/RecommendedDrivers.json",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Specs/file/graphics/RecommendedDrivers.json",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1257,7 +1253,7 @@ namespace Grunt.Core
         public async Task<SeasonRewardTrack?> GameCmsGetSeasonRewardTrack(string seasonPath, string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/file/{seasonPath}?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/file/{seasonPath}?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1281,7 +1277,7 @@ namespace Grunt.Core
         public async Task<GuideContainer?> GameCmsGetGuideImages(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/images/guide/xo?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/images/guide/xo?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1301,7 +1297,7 @@ namespace Grunt.Core
         public async Task<GuideContainer?> GameCmsGetGuideMultiplayer(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Multiplayer/guide/xo?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Multiplayer/guide/xo?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1321,7 +1317,7 @@ namespace Grunt.Core
         public async Task<GuideContainer?> GameCmsGetGuideNews(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/News/guide/xo?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/News/guide/xo?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1341,7 +1337,7 @@ namespace Grunt.Core
         public async Task<GuideContainer?> GameCmsGetGuideProgression(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Progression/guide/xo?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Progression/guide/xo?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1361,7 +1357,7 @@ namespace Grunt.Core
         public async Task<GuideContainer?> GameCmsGetGuideSpecs(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/Specs/guide/xo?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/Specs/guide/xo?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1381,7 +1377,7 @@ namespace Grunt.Core
         public async Task<GuideContainer?> GameCmsGetGuideTitleAuthorization(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://gamecms-hacs.svc.halowaypoint.com:443/hi/TitleAuthorization/guide/xo?flight={flightId}",
+                $"https://{HaloCoreEndpoints.GameCmsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/TitleAuthorization/guide/xo?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -1408,7 +1404,7 @@ namespace Grunt.Core
         public async Task<FavoriteAsset?> HIUGCCheckAssetPlayerBookmark(string title, string player, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/players/{player}/favorites/{assetType}/{assetId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/players/{player}/favorites/{assetType}/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1431,7 +1427,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetVersion?> HIUGCCreateAssetVersionAgnostic(string title, string assetType, string assetId, AuthoringSessionSourceStarter starter)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/versions",
                 HttpMethod.Post,
                 true,
                 false,
@@ -1453,7 +1449,7 @@ namespace Grunt.Core
         public async Task<bool> HIUGCDeleteAllVersions(string title, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<bool>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/versions",
                 HttpMethod.Delete,
                 true,
                 false,
@@ -1472,7 +1468,7 @@ namespace Grunt.Core
         public async Task<bool> HIUGCDeleteAsset(string title, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<bool>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}",
                 HttpMethod.Delete,
                 true,
                 false,
@@ -1492,7 +1488,7 @@ namespace Grunt.Core
         public async Task<bool> HIUGCDeleteVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await this.ExecuteAPIRequest<bool>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/versions/{versionId}",
                 HttpMethod.Delete,
                 true,
                 false,
@@ -1511,7 +1507,7 @@ namespace Grunt.Core
         public async Task<bool> HIUGCEndSession(string title, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<bool>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions/active",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/sessions/active",
                 HttpMethod.Delete,
                 true,
                 false,
@@ -1534,7 +1530,7 @@ namespace Grunt.Core
         public async Task<FavoriteAsset?> HIUGCFavoriteAnAsset(string player, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites/{assetType}/{assetId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/favorites/{assetType}/{assetId}",
                 HttpMethod.Put,
                 true,
                 false,
@@ -1557,7 +1553,7 @@ namespace Grunt.Core
         public async Task<AuthoringAsset?> HIUGCGetAsset(string title, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1576,7 +1572,7 @@ namespace Grunt.Core
         public async Task<byte[]?> HIUGCGetBlob(string blobPath)
         {
             var response = await this.ExecuteAPIRequest<byte[]>(
-                $"https://blobs-infiniteugc.svc.halowaypoint.com:443/{blobPath}",
+                $"https://blobs-infiniteugc.{HaloCoreEndpoints.ServiceDomain}/{blobPath}",
                 HttpMethod.Get,
                 false,
                 false,
@@ -1600,7 +1596,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetVersion?> HIUGCGetLatestAssetVersionFilm(string title, string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/films/{assetId}/versions/latest",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/films/{assetId}/versions/latest",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1625,7 +1621,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetVersion?> HIUGCGetLatestAssetVersionAgnostic(string title, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/latest",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/versions/latest",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1647,7 +1643,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetVersion?> HIUGCGetPublishedVersion(string title, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/published",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/versions/published",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1670,7 +1666,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetVersion?> HIUGCGetSpecificAssetVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/versions/{versionId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1695,7 +1691,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetVersionContainer?> HIUGCListAllVersions(string title, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/versions",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1719,7 +1715,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetContainer?> HIUGCListPlayerAssets(string title, string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/players/{player}/assets",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/players/{player}/assets",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1743,7 +1739,7 @@ namespace Grunt.Core
         public async Task<AuthoringFavoritesContainer?> HIUGCListPlayerFavorites(string player, string assetType)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites/{assetType}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/favorites/{assetType}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1766,7 +1762,7 @@ namespace Grunt.Core
         public async Task<AuthoringFavoritesContainer?> HIUGCListPlayerFavoritesAgnostic(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/favorites",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/favorites",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1790,7 +1786,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetVersion?> HIUGCPatchAssetVersion(string title, string assetType, string assetId, string versionId, AuthoringAssetVersion patchedAsset)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/versions/{versionId}",
                 HttpMethod.Patch,
                 true,
                 false,
@@ -1813,7 +1809,7 @@ namespace Grunt.Core
         public async Task<bool> HIUGCPublishAssetVersion(string assetType, string assetId, string versionId, string clearanceId)
         {
             var response = await this.ExecuteAPIRequest<bool>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/{assetType}/{assetId}/publish/{versionId}?clearanceId={clearanceId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/{assetType}/{assetId}/publish/{versionId}?clearanceId={clearanceId}",
                 HttpMethod.Post,
                 true,
                 true,
@@ -1836,7 +1832,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetRating?> HIUGCGetAssetRatings(string player, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/ratings/{assetType}/{assetId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/ratings/{assetType}/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -1859,7 +1855,7 @@ namespace Grunt.Core
         public async Task<AuthoringAssetRating?> HIUGCRateAnAsset(string player, string assetType, string assetId, AuthoringAssetRating rating)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/ratings/{assetType}/{assetId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/ratings/{assetType}/{assetId}",
                 HttpMethod.Put,
                 true,
                 false,
@@ -1882,7 +1878,7 @@ namespace Grunt.Core
         public async Task<AssetReport?> HIUGCReportAnAsset(string player, string assetType, string assetId, AssetReport report)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/players/{player}/reports/{assetType}/{assetId}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/reports/{assetType}/{assetId}",
                 HttpMethod.Put,
                 true,
                 false,
@@ -1916,7 +1912,7 @@ namespace Grunt.Core
             }
 
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}",
                 HttpMethod.Post,
                 true,
                 false,
@@ -1933,7 +1929,7 @@ namespace Grunt.Core
         /// Starts a new authoring session to edit an asset.
         /// </summary>
         /// <remarks>
-        /// Was successful with a POST to https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/UgcGameVariants/9bc31094-8326-42ee-85d5-12e48ee1b129/sessions
+        /// Was successful with a POST to https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/UgcGameVariants/9bc31094-8326-42ee-85d5-12e48ee1b129/sessions
         /// Game variant has to be local to the account
         /// POSTed content is like this:
         /// {
@@ -1952,7 +1948,7 @@ namespace Grunt.Core
         public async Task<AssetAuthoringSession?> HIUGCStartSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas, AuthoringSessionStarter starter)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
                 HttpMethod.Post,
                 true,
                 false,
@@ -1980,7 +1976,7 @@ namespace Grunt.Core
         public async Task<AssetAuthoringSession?> HIUGCExtendSessionAgnostic(string title, string assetType, string assetId, bool includeContainerSas)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/sessions?include-container-sas={includeContainerSas}",
                 HttpMethod.Patch,
                 true,
                 false,
@@ -2002,7 +1998,7 @@ namespace Grunt.Core
         public async Task<bool> HIUGCDeleteSessionAgnostic(string title, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<bool>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/sessions",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/sessions",
                 HttpMethod.Delete,
                 true,
                 false,
@@ -2025,7 +2021,7 @@ namespace Grunt.Core
         public async Task<bool> HIUGCUndeleteAsset(string title, string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<bool>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/recover",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/recover",
                 HttpMethod.Post,
                 true,
                 false,
@@ -2045,7 +2041,7 @@ namespace Grunt.Core
         public async Task<bool> HIUGCUndeleteVersion(string title, string assetType, string assetId, string versionId)
         {
             var response = await this.ExecuteAPIRequest<bool>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/{title}/{assetType}/{assetId}/versions/{versionId}/recover",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/{assetType}/{assetId}/versions/{versionId}/recover",
                 HttpMethod.Post,
                 true,
                 false,
@@ -2063,7 +2059,7 @@ namespace Grunt.Core
         public async Task<bool> HIUGCUnpublishAsset(string assetType, string assetId)
         {
             var response = await this.ExecuteAPIRequest<bool>(
-                $"https://authoring-infiniteugc.svc.halowaypoint.com:443/hi/{assetType}/{assetId}/unpublish",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/{assetType}/{assetId}/unpublish",
                 HttpMethod.Post,
                 true,
                 false,
@@ -2086,7 +2082,7 @@ namespace Grunt.Core
         public async Task<EngineGameVariant?> HIUGCDiscoveryGetEngineGameVariant(string assetId, string versionId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}/versions/{versionId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/engineGameVariants/{assetId}/versions/{versionId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2106,7 +2102,7 @@ namespace Grunt.Core
         public async Task<EngineGameVariant?> HIUGCDiscoveryGetEngineGameVariantWithoutVersion(string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/engineGameVariants/{assetId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/engineGameVariants/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2128,7 +2124,7 @@ namespace Grunt.Core
         public async Task<Manifest?> HIUGCDiscoveryGetManifest(string assetId, string versionId, string clearanceId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/manifests/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -2148,7 +2144,7 @@ namespace Grunt.Core
         public async Task<Manifest?> HIUGCDiscoveryGetManifestByBuild(string buildNumber)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/manifests/builds/{buildNumber}/game",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/manifests/builds/{buildNumber}/game",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2169,7 +2165,7 @@ namespace Grunt.Core
         public async Task<Map?> HIUGCDiscoveryGetMap(string assetId, string versionId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}/versions/{versionId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/maps/{assetId}/versions/{versionId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2184,7 +2180,7 @@ namespace Grunt.Core
         /// Returns information about a given map and mode combination. For example, the Breaker map can be used in Big Team Battle (BTB).
         /// </summary>
         /// <remarks>
-        /// An example fully constructed HTTP request to the API is: https://discovery-infiniteugc.svc.halowaypoint.com/hi/mapModePairs/9e056bcc-b9bc-4845-9fe3-6d667f018463/versions/37b8cd75-d1ce-4abf-9349-a76673503410.
+        /// An example fully constructed HTTP request to the API is: https://{HaloCoreEndpoints.DiscoveryOrigin}.svc.halowaypoint.com/hi/mapModePairs/9e056bcc-b9bc-4845-9fe3-6d667f018463/versions/37b8cd75-d1ce-4abf-9349-a76673503410.
         /// This request represents the BTB game mode on the Breaker map.
         /// </remarks>
         /// <include file='../APIDocsExamples/HIUGC_Discovery_GetMapModePair.xml' path='//example'/>
@@ -2195,7 +2191,7 @@ namespace Grunt.Core
         public async Task<MapModePair?> HIUGCDiscoveryGetMapModePair(string assetId, string versionId, string clearanceId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/mapModePairs/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -2215,7 +2211,7 @@ namespace Grunt.Core
         public async Task<MapModePair?> HIUGCDiscoveryGetMapModePairWithoutVersion(string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/{assetId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/mapModePairs/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2236,7 +2232,7 @@ namespace Grunt.Core
         public async Task<Map?> HIUGCDiscoveryGetMapWithoutVersion(string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/{assetId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/maps/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2258,7 +2254,7 @@ namespace Grunt.Core
         public async Task<Playlist?> HIUGCDiscoveryGetPlaylist(string assetId, string versionId, string clearanceId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/playlists/{assetId}/versions/{versionId}?clearanceId={clearanceId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -2278,7 +2274,7 @@ namespace Grunt.Core
         public async Task<Playlist?> HIUGCDiscoveryGetPlaylistWithoutVersion(string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/{assetId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/playlists/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2299,7 +2295,7 @@ namespace Grunt.Core
         public async Task<Prefab?> HIUGCDiscoveryGetPrefab(string assetId, string versionId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}/versions/{versionId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/prefabs/{assetId}/versions/{versionId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2319,7 +2315,7 @@ namespace Grunt.Core
         public async Task<Prefab?> HIUGCDiscoveryGetPrefabWithoutVersion(string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/prefabs/{assetId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/prefabs/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2340,7 +2336,7 @@ namespace Grunt.Core
         public async Task<Project?> HIUGCDiscoveryGetProject(string assetId, string versionId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}/versions/{versionId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/projects/{assetId}/versions/{versionId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2360,7 +2356,7 @@ namespace Grunt.Core
         public async Task<Project?> HIUGCDiscoveryGetProjectWithoutVersion(string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/projects/{assetId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/projects/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2379,7 +2375,7 @@ namespace Grunt.Core
         public async Task<TagInfo?> HIUGCDiscoveryGetTagsInfo()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/info/tags",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/info/tags",
                 HttpMethod.Get,
                 true,
                 true,
@@ -2400,7 +2396,7 @@ namespace Grunt.Core
         public async Task<UGCGameVariant?> HIUGCDiscoveryGetUgcGameVariant(string assetId, string versionId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}/versions/{versionId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/ugcGameVariants/{assetId}/versions/{versionId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2420,7 +2416,7 @@ namespace Grunt.Core
         public async Task<UGCGameVariant?> HIUGCDiscoveryGetUgcGameVariantWithoutVersion(string assetId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/{assetId}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/ugcGameVariants/{assetId}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2445,7 +2441,7 @@ namespace Grunt.Core
         public async Task<SearchResultsContainer?> HIUGCDiscoverySearch(int start, int count, bool includeTimes, string sort, string order, string assetKind)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/search?start={start}&count={count}&include-times={includeTimes}&sort={sort}&order={order}&assetKind={assetKind}",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/search?start={start}&count={count}&include-times={includeTimes}&sort={sort}&order={order}&assetKind={assetKind}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2466,7 +2462,7 @@ namespace Grunt.Core
         public async Task<Film?> HIUGCDiscoverySpectateByMatchId(string matchId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/films/matches/{matchId}/spectate",
+                $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/films/matches/{matchId}/spectate",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2489,7 +2485,7 @@ namespace Grunt.Core
         public async Task<List<Server>?> LobbyGetQosServers()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://lobby-hi.svc.halowaypoint.com:443/titles/hi/qosservers",
+                $"https://{HaloCoreEndpoints.HaloInfiniteLobbyOrigin}.{HaloCoreEndpoints.ServiceDomain}/titles/hi/qosservers",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2514,7 +2510,7 @@ namespace Grunt.Core
             }
 
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://lobby-hi.svc.halowaypoint.com:443/hi/presence",
+                $"https://{HaloCoreEndpoints.HaloInfiniteLobbyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/presence",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2538,7 +2534,7 @@ namespace Grunt.Core
         public async Task<LobbyJoinHandle?> LobbyThirdPartyJoinHandle(string lobbyId, string player, string handleAudience, string handlePlatform)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://lobby-hi.svc.halowaypoint.com:443/hi/lobbies/{lobbyId}/players/{player}/thirdPartyJoinHandle?audience={handleAudience}&platform={handlePlatform}",
+                $"https://{HaloCoreEndpoints.HaloInfiniteLobbyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/lobbies/{lobbyId}/players/{player}/thirdPartyJoinHandle?audience={handleAudience}&platform={handlePlatform}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2562,7 +2558,7 @@ namespace Grunt.Core
         public async Task<FlightedFeatureFlags?> SettingGetFlightedFeatureFlags(string flightId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://settings.svc.halowaypoint.com:443/featureflags/hi?flight={flightId}",
+                $"https://{HaloCoreEndpoints.SettingsOrigin}.{HaloCoreEndpoints.ServiceDomain}/featureflags/hi?flight={flightId}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -2588,7 +2584,7 @@ namespace Grunt.Core
         public async Task<PlayerClearance?> SettingsGetClearance(string audience, string sandbox, string buildNumber)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://settings.svc.halowaypoint.com:443/oban/flight-configurations/titles/hi/audiences/{audience}/active?sandbox={sandbox}&build={buildNumber}",
+                $"https://{HaloCoreEndpoints.SettingsOrigin}.{HaloCoreEndpoints.ServiceDomain}/oban/flight-configurations/titles/hi/audiences/{audience}/active?sandbox={sandbox}&build={buildNumber}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2611,7 +2607,7 @@ namespace Grunt.Core
         public async Task<PlayerClearance?> SettingsGetPlayerClearance(string audience, string player, string sandbox, string buildNumber)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://settings.svc.halowaypoint.com:443/oban/flight-configurations/titles/hi/audiences/{audience}/players/{player}/active?sandbox={sandbox}&build={buildNumber}",
+                $"https://{HaloCoreEndpoints.SettingsOrigin}.{HaloCoreEndpoints.ServiceDomain}/oban/flight-configurations/titles/hi/audiences/{audience}/players/{player}/active?sandbox={sandbox}&build={buildNumber}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2637,7 +2633,7 @@ namespace Grunt.Core
         {
             var formattedPlayerList = string.Join(",", playerIds);
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://skill.svc.halowaypoint.com:443/hi/matches/{matchId}/skill?players={formattedPlayerList}",
+                $"https://{HaloCoreEndpoints.SkillOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/matches/{matchId}/skill?players={formattedPlayerList}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -2659,7 +2655,7 @@ namespace Grunt.Core
         {
             var formattedPlayerList = string.Join(",", playerIds);
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://skill.svc.halowaypoint.com:443/hi/playlist/{playlistId}/csrs?players={formattedPlayerList}",
+                $"https://{HaloCoreEndpoints.SkillOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/playlist/{playlistId}/csrs?players={formattedPlayerList}",
                 HttpMethod.Get,
                 true,
                 true,
@@ -2685,7 +2681,7 @@ namespace Grunt.Core
         {
             var formattedTargetList = string.Join(",", targetlist);
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://banprocessor.svc.halowaypoint.com:443/hi/bansummary?auth=st&targets={formattedTargetList}",
+                $"https://{HaloCoreEndpoints.BanProcessorOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/bansummary?auth=st&targets={formattedTargetList}",
                 HttpMethod.Get,
                 false,
                 false,
@@ -2705,7 +2701,7 @@ namespace Grunt.Core
         public async Task<PlayerDecks?> StatsGetChallengeDecks(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/decks",
+                $"https://{HaloCoreEndpoints.StatsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/decks",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2725,7 +2721,7 @@ namespace Grunt.Core
         public async Task<PlayerMatchCount?> StatsGetMatchCount(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches/count",
+                $"https://{HaloCoreEndpoints.StatsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/matches/count",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2745,7 +2741,7 @@ namespace Grunt.Core
         public async Task<MatchContainer?> StatsGetMatchHistory(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches",
+                $"https://{HaloCoreEndpoints.StatsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/matches",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2765,7 +2761,7 @@ namespace Grunt.Core
         public async Task<MatchStats?> StatsGetMatchStats(string matchId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://halostats.svc.halowaypoint.com:443/hi/matches/{matchId}/stats",
+                $"https://{HaloCoreEndpoints.StatsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/matches/{matchId}/stats",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2786,7 +2782,7 @@ namespace Grunt.Core
         public async Task<MatchProgression?> StatsGetPlayerMatchProgression(string player, string matchId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches/{matchId}/progression",
+                $"https://{HaloCoreEndpoints.StatsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/matches/{matchId}/progression",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2806,7 +2802,7 @@ namespace Grunt.Core
         public async Task<MatchesPrivacy?> StatsMatchPrivacy(string player)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://halostats.svc.halowaypoint.com:443/hi/players/{player}/matches-privacy",
+                $"https://{HaloCoreEndpoints.StatsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/matches-privacy",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2830,7 +2826,7 @@ namespace Grunt.Core
         public async Task<Key?> TextModerationGetSigningKey(string keyId)
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://text.svc.halowaypoint.com:443/hi/moderation-proof-keys/{keyId}",
+                $"https://{HaloCoreEndpoints.TextOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/moderation-proof-keys/{keyId}",
                 HttpMethod.Get,
                 false,
                 false,
@@ -2849,7 +2845,7 @@ namespace Grunt.Core
         public async Task<ModerationProofKeys?> TextModerationGetSigningKeys()
         {
             var response = await this.ExecuteAPIRequest<string>(
-                $"https://text.svc.halowaypoint.com:443/hi/moderation-proof-keys",
+                $"https://{HaloCoreEndpoints.TextOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/moderation-proof-keys",
                 HttpMethod.Get,
                 false,
                 false,
@@ -2873,12 +2869,14 @@ namespace Grunt.Core
         /// <param name="content">If the request contains data to be sent to the Halo Waypoint service, include it here. Expected format is JSON.</param>
         /// <param name="contentType">Content type for POST requests. By default it's `application/json`.</param>
         /// <returns>Response string in case of a successful request. Null if request failed.</returns>
-        private async Task<T?> ExecuteAPIRequest<T>(string endpoint, HttpMethod method, bool useSpartanToken, bool useClearance, string userAgent, string content = "", ApiContentType contentType = ApiContentType.Json)
+        private async Task<HaloApiResultContainer<T, HaloApiErrorContainer>> ExecuteAPIRequest<T>(string endpoint, HttpMethod method, bool useSpartanToken, bool useClearance, string userAgent, string content = "", ApiContentType contentType = ApiContentType.Json)
         {
             var client = new HttpClient(new HttpClientHandler
             {
                 AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.Brotli,
             });
+
+            HaloApiResultContainer<T, HaloApiErrorContainer> resultContainer = new(default, new HaloApiErrorContainer());
 
             var request = new HttpRequestMessage()
             {
@@ -2913,23 +2911,25 @@ namespace Grunt.Core
 
             var response = await client.SendAsync(request);
 
+            resultContainer.Error.Code = Convert.ToInt32(response.StatusCode);
+
             if (response.IsSuccessStatusCode)
             {
                 if (typeof(T) == typeof(string))
                 {
-                    return (T)Convert.ChangeType(response.Content.ReadAsStringAsync().Result, typeof(T));
+                    resultContainer.Result = (T)Convert.ChangeType(await response.Content.ReadAsStringAsync(), typeof(T));
                 }
                 else if (typeof(T) == typeof(byte[]))
                 {
-                    using (MemoryStream dataStream = new MemoryStream())
+                    using (MemoryStream dataStream = new())
                     {
                         response.Content.ReadAsStreamAsync().Result.CopyTo(dataStream);
-                        return (T)Convert.ChangeType(dataStream.ToArray(), typeof(T));
+                        resultContainer.Result = (T)Convert.ChangeType(dataStream.ToArray(), typeof(T));
                     }
                 }
                 else if (typeof(T) == typeof(bool))
                 {
-                    return (T)(object)response.IsSuccessStatusCode;
+                    resultContainer.Result = (T)(object)response.IsSuccessStatusCode;
                 }
                 else
                 {
@@ -2938,8 +2938,13 @@ namespace Grunt.Core
             }
             else
             {
-                return default;
+                if (response.Content != null)
+                {
+                    resultContainer.Error.Message = await response.Content.ReadAsStringAsync();
+                }
             }
+
+            return resultContainer;
         }
     }
 }

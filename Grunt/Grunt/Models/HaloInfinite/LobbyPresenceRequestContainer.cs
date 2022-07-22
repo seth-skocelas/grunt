@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class LobbyPresenceRequestContainer
     {
         public long[] Xuids { get; set; }

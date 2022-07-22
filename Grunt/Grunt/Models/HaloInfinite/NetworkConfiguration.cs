@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-
+    [IsAutomaticallySerializable(IsReady = true)]
     public class NetworkConfiguration
     {
         public int HighlightedHopperSendTimeMs { get; set; }

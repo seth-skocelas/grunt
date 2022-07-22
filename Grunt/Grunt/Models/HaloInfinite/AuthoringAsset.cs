@@ -2,6 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class AuthoringAsset
     {
         public string AssetId { get; set; }

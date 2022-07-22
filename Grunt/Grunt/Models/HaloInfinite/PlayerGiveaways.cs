@@ -1,5 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class PlayerGiveaways
     {
         // TODO: This needs to be tweaked to see what giveaways are available

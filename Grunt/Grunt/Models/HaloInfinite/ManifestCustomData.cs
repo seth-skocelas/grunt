@@ -1,5 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class ManifestCustomData
     {
         public string BranchName { get; set; }

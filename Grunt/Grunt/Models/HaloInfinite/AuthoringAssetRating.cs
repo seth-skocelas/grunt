@@ -2,6 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class AuthoringAssetRating
     {
         //TODO: Figure out what this is.

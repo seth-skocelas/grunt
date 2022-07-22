@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class SkillResult
     {
         public double TeamMmr { get; set; }

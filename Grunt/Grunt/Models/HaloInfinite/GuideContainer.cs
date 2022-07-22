@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-
+    [IsAutomaticallySerializable(IsReady = true)]
     public class GuideContainer
     {
         public string Accept { get; set; }

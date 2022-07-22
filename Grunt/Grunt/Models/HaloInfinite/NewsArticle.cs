@@ -1,5 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class NewsArticle
     {
         public DisplayString ShortHeadline { get; set; }

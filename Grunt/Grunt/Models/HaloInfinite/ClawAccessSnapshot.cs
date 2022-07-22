@@ -2,6 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class ClawAccessSnapshot
     {
         public List<long> FullClawXuids { get; set; }

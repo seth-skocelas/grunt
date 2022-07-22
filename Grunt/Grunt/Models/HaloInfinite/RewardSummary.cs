@@ -2,6 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class RewardSummary
     {
         public List<RewardTrack> UpdatedRewardTracks { get; set; }

@@ -18,7 +18,7 @@ namespace Grunt.Zeta
             var clientConfig = clientConfigReader.ReadConfiguration<ClientConfiguration>("client.json");
             var gruntConfig = clientConfigReader.ReadConfiguration<GruntConfiguration>("grunt.json");
 
-            XboxAuthenticationManager manager = new();
+            XboxAuthenticationClient manager = new();
             var url = manager.GenerateAuthUrl(clientConfig.ClientId, clientConfig.RedirectUrl);
 
             HaloAuthenticationClient haloAuthClient = new();
@@ -189,7 +189,7 @@ namespace Grunt.Zeta
             Console.ReadLine();
         }
 
-        private static OAuthToken RequestNewToken(string url, XboxAuthenticationManager manager, ClientConfiguration clientConfig)
+        private static OAuthToken RequestNewToken(string url, XboxAuthenticationClient manager, ClientConfiguration clientConfig)
         {
             Console.WriteLine("Provide account authorization and grab the code from the URL:");
             Console.WriteLine(url);

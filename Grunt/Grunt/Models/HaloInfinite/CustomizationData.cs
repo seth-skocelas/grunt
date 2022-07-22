@@ -1,5 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class CustomizationData
     {
         public SpartanBody SpartanBody { get; set; }

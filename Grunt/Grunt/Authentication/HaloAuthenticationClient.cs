@@ -16,9 +16,18 @@ using Grunt.Util;
 
 namespace Grunt.Authentication
 {
+    /// <summary>
+    /// Halo authentication client, used to provide the key authentication
+    /// data to perform Halo API requests.
+    /// </summary>
     public class HaloAuthenticationClient
     {
-        public async Task<SpartanToken> GetSpartanToken(string xstsToken)
+        /// <summary>
+        /// Gets the Spartan V4 token.
+        /// </summary>
+        /// <param name="xstsToken">XSTS token from the Xbox Live authentication flow.</param>
+        /// <returns>If successful, returns an instance of <see cref="SpartanToken"/> representing the authentication token. Otherwise, returns null.</returns>
+        public async Task<SpartanToken?> GetSpartanToken(string xstsToken)
         {
             SpartanTokenRequest tokenRequest = new();
             tokenRequest.Audience = "urn:343:s3:services";
@@ -37,23 +46,18 @@ namespace Grunt.Authentication
 
             var request = new HttpRequestMessage()
             {
-                RequestUri = new Uri(SettingsEndpoints.SpartanTokenV4),
+                RequestUri = new Uri(HaloCoreEndpoints.SpartanTokenEndpoint),
                 Method = HttpMethod.Post,
-                Content = new StringContent(data, Encoding.UTF8, "application/json")
+                Content = new StringContent(data, Encoding.UTF8, "application/json"),
             };
 
             request.Headers.Add("User-Agent", GlobalConstants.HALO_WAYPOINT_USER_AGENT);
 
             var response = await client.SendAsync(request);
 
-            if (response.IsSuccessStatusCode)
-            {
-                return JsonSerializer.Deserialize<SpartanToken>(response.Content.ReadAsStringAsync().Result);
-            }
-            else
-            {
-                return null;
-            }
+            return response.IsSuccessStatusCode
+                ? JsonSerializer.Deserialize<SpartanToken>(response.Content.ReadAsStringAsync().Result)
+                : null;
         }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class OperationRewardTrackSnapshot
     {
         public string ActiveOperationRewardTrackPath { get; set; }

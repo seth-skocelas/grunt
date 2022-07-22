@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-
+    [IsAutomaticallySerializable(IsReady = true)]
     public class TransactionSnapshot
     {
         public Transaction[] Transactions { get; set; }

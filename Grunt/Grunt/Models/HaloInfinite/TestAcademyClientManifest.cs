@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class TestAcademyClientManifest
     {
         public TestAcademyTutorial Tutorial { get; set; }

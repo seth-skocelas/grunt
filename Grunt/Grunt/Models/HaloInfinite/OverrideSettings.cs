@@ -2,6 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class OverrideSettings
     {
         [JsonPropertyName("spec_control_async_compute")]

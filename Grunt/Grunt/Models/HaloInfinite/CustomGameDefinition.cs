@@ -1,5 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class CustomGameDefinition
     {
         public int MaxPlayerCount { get; set; }

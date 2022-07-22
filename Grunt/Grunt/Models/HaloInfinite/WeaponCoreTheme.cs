@@ -2,6 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class WeaponCoreTheme : Foundation.Theme
     {
         public string CoatingPath { get; set; }

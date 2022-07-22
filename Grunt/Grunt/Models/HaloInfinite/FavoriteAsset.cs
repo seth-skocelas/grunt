@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class FavoriteAsset : Asset
     {
         //TODO: Figure out what the type is here.

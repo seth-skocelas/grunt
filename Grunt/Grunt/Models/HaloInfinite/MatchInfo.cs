@@ -3,6 +3,7 @@ using System;
 
 namespace Grunt.Models.HaloInfinite
 {
+    [IsAutomaticallySerializable(IsReady = true)]
     public class MatchInfo
     {
         public DateTime StartTime { get; set; }

@@ -2,9 +2,8 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-
+    [IsAutomaticallySerializable(IsReady = true)]
     public class InventoryDefinition
-
     {
         public PlayerItem[] Items { get; set; }
         public int ArmorChestAttachmentsOwnableCount { get; set; }
