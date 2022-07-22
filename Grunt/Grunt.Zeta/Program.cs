@@ -16,8 +16,7 @@ namespace Grunt.Zeta
         {
             ConfigurationReader clientConfigReader = new();
             var clientConfig = clientConfigReader.ReadConfiguration<ClientConfiguration>("client.json");
-            var gruntConfig = clientConfigReader.ReadConfiguration<GruntConfiguration>("grunt.json");
-
+            
             XboxAuthenticationClient manager = new();
             var url = manager.GenerateAuthUrl(clientConfig.ClientId, clientConfig.RedirectUrl);
 
@@ -81,7 +80,7 @@ namespace Grunt.Zeta
                 Console.WriteLine(haloToken.Token);
             }).GetAwaiter().GetResult();
             
-            HaloInfiniteClient client = new(haloToken.Token, extendedTicket.DisplayClaims.Xui[0].Xid, gruntConfig.ClearanceToken);
+            HaloInfiniteClient client = new(haloToken.Token, extendedTicket.DisplayClaims.Xui[0].Xid);
 
             // Test getting the clearance for local execution.
             string localClearance = string.Empty;
