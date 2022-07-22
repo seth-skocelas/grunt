@@ -36,6 +36,8 @@
 		<Description>An unofficial wrapper for the Halo APIs. Currently supports the full API stack for Halo Infinite.</Description>
 		<Copyright>2022 by Den Delimarsky</Copyright>
 		<PackageReleaseNotes>Initial release of the OpenSpartan.Grunt package.</PackageReleaseNotes>
+		<AssemblyName>OpenSpartan.$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>OpenSpartan.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 	</PropertyGroup>
 	
 	<ItemGroup>
@@ -71,7 +73,7 @@
 
 	<ItemGroup>
 		<None Update="endpoints.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</None>
 		<None Update="VersioningTemplate.tt">
 			<Generator>TextTemplatingFileGenerator</Generator>

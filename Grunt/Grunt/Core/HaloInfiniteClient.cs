@@ -172,9 +172,9 @@ namespace OpenSpartan.Grunt.Core
         /// <include file='../APIDocsExamples/Economy_AiCoresCustomization.xml' path='//example'/>
         /// <param name="player">The player identifier in the format "xuid(XUID_VALUE)".</param>
         /// <returns>An instance of AiCores containing AI core customization metadata if request was successful. Return value is null otherwise.</returns>
-        public async Task<HaloApiResultContainer<AiCores, HaloApiErrorContainer>> EconomyAiCoresCustomization(string player)
+        public async Task<HaloApiResultContainer<AiCoreContainer, HaloApiErrorContainer>> EconomyAiCoresCustomization(string player)
         {
-            return await this.ExecuteAPIRequest<AiCores>(
+            return await this.ExecuteAPIRequest<AiCoreContainer>(
                 $"https://{HaloCoreEndpoints.EconomyOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/customization/ais",
                 HttpMethod.Get,
                 true,
