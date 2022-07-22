@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class PlayerState
     {
         public RewardTrack[] RewardTracks { get; set; }

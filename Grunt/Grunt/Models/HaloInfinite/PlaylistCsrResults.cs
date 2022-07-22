@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class PlaylistCsrResults : ResultContainer
     {
         public PlaylistCsrContainer Result { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class PlayerMatchCount
     {
         public int CustomMatchesPlayedCount { get; set; }

@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class AssetReport : Asset
     {
         public AssetReportCustomData CustomData { get; set; }

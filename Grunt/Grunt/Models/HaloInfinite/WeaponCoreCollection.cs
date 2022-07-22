@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class WeaponCoreCollection
     {
         public List<WeaponCore> WeaponCores { get; set; }

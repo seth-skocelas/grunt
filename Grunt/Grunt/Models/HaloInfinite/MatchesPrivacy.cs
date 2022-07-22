@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class MatchesPrivacy
     {
         public int MatchmadeGames { get; set; }

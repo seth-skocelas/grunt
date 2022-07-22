@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class AiCoreTheme : Models.HaloInfinite.Foundation.Theme
     {
         public string ModelPath { get; set; }

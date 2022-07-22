@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class PlaylistRotationEntry : Asset
     {
         public PlaylistMapModePairMetadata Metadata { get; set; }

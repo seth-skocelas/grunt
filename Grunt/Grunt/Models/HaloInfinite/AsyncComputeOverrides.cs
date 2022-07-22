@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class AsyncComputeOverrides
     {
         public Dictionary<string, bool> Nvidia { get; set; }

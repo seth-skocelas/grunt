@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class LobbyPresenceContainer
     {
         public List<LobbyPresenceResultContainer> Results { get; set; }

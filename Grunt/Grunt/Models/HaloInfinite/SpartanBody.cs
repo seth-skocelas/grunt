@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class SpartanBody
     {
         public APIFormattedDate? LastModifiedDateUtc { get; set; }

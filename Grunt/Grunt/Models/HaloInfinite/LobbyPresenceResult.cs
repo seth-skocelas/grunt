@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class LobbyPresenceResult
     {
         public FireTeamDetails FireteamDetails { get; set; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class AuthoringAssetVersionContainer : AuthoringResultContainer
     {
         public List<AuthoringAssetVersion> Results { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class SteamStoreTitleConfiguration
     {
         public HaloInfinite343SteamStoreTitle hi343 { get; set; }

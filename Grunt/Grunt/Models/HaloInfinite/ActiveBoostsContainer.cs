@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class ActiveBoostsContainer
     {
         public List<ActiveBoost> Boosts { get; set; }

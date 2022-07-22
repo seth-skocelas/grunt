@@ -2,7 +2,7 @@
 
 namespace Grunt.Models.HaloInfinite
 {
-    [IsAutomaticallySerializable(IsReady = true)]
+    [IsAutomaticallySerializable]
     public class VehicleCore : Models.HaloInfinite.Foundation.Core
     {
         public List<VehicleCoreTheme> Themes { get; set; }
