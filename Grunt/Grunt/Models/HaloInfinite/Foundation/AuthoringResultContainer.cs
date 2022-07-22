@@ -1,4 +1,4 @@
-﻿namespace Grunt.Models.HaloInfinite.Foundation
+﻿namespace OpenSpartan.Grunt.Models.HaloInfinite.Foundation
 {
     public abstract class AuthoringResultContainer
     {

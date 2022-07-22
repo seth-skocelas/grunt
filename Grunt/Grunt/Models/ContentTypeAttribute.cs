@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Grunt.Models
+namespace OpenSpartan.Grunt.Models
 {
     public class ContentTypeAttribute : Attribute
     {

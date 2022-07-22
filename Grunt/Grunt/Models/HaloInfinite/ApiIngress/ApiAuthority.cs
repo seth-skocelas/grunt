@@ -1,5 +1,5 @@
 ﻿
-namespace Grunt.Models.HaloInfinite.ApiIngress
+namespace OpenSpartan.Grunt.Models.HaloInfinite.ApiIngress
 {
     public class ApiAuthority
     {

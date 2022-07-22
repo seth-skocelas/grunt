@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Grunt.Models.HaloInfinite
+namespace OpenSpartan.Grunt.Models.HaloInfinite
 {
     // For more details, refer to: https://datatracker.ietf.org/doc/html/rfc7518
     // Additional context: https://stackoverflow.com/questions/70022898/what-does-e-aqab-mean-in-jwks

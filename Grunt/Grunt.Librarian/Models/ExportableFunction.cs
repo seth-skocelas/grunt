@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grunt.Librarian.Models
+namespace OpenSpartan.Grunt.Librarian.Models
 {
     internal class ExportableFunction
     {

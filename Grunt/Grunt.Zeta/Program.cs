@@ -1,14 +1,14 @@
-﻿using Grunt.Authentication;
-using Grunt.Core;
-using Grunt.Models;
-using Grunt.Util;
+﻿using OpenSpartan.Grunt.Authentication;
+using OpenSpartan.Grunt.Core;
+using OpenSpartan.Grunt.Models;
+using OpenSpartan.Grunt.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Grunt.Zeta
+namespace OpenSpartan.Grunt.Zeta
 {
     class Program
     {

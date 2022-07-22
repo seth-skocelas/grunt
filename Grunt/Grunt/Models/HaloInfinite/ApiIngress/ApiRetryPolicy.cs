@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grunt.Models.HaloInfinite.ApiIngress
+namespace OpenSpartan.Grunt.Models.HaloInfinite.ApiIngress
 {
     public class ApiRetryPolicy
     {

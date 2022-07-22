@@ -10,11 +10,11 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Grunt.Endpoints;
-using Grunt.Models;
-using Grunt.Util;
+using OpenSpartan.Grunt.Endpoints;
+using OpenSpartan.Grunt.Models;
+using OpenSpartan.Grunt.Util;
 
-namespace Grunt.Authentication
+namespace OpenSpartan.Grunt.Authentication
 {
     /// <summary>
     /// Halo authentication client, used to provide the key authentication

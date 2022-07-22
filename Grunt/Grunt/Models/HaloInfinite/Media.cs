@@ -1,6 +1,6 @@
-﻿using Grunt.Models.HaloInfinite.ApiIngress;
+﻿using OpenSpartan.Grunt.Models.HaloInfinite.ApiIngress;
 
-namespace Grunt.Models.HaloInfinite
+namespace OpenSpartan.Grunt.Models.HaloInfinite
 {
     [IsAutomaticallySerializable]
     public class Media

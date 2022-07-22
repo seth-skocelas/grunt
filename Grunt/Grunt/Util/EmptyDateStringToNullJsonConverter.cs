@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Grunt.Util
+namespace OpenSpartan.Grunt.Util
 {
     /// <summary>
     /// Converts an empty date string to a null. 343i is returning some ISO8601 dates that we wrap in <see cref="Grunt.Models.APIFormattedDate"/> as empty,

@@ -1,6 +1,6 @@
-﻿using Grunt.Core;
-using Grunt.Librarian.Models;
-using Grunt.Models.HaloInfinite.ApiIngress;
+﻿using OpenSpartan.Grunt.Core;
+using OpenSpartan.Grunt.Librarian.Models;
+using OpenSpartan.Grunt.Models.HaloInfinite.ApiIngress;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Grunt.Librarian
+namespace OpenSpartan.Grunt.Librarian
 {
     class Program
     {

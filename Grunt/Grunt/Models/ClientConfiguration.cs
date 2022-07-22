@@ -7,7 +7,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace Grunt.Models
+namespace OpenSpartan.Grunt.Models
 {
     public class ClientConfiguration
     {

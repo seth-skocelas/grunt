@@ -1,6 +1,6 @@
-﻿using Grunt.Models.HaloInfinite.Foundation;
+﻿using OpenSpartan.Grunt.Models.HaloInfinite.Foundation;
 
-namespace Grunt.Models.HaloInfinite
+namespace OpenSpartan.Grunt.Models.HaloInfinite
 {
     [IsAutomaticallySerializable]
     public class Project : Asset

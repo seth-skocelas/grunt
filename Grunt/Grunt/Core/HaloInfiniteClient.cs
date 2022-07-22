@@ -13,13 +13,13 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Grunt.Endpoints;
-using Grunt.Models;
-using Grunt.Models.HaloInfinite;
-using Grunt.Models.HaloInfinite.ApiIngress;
-using Grunt.Util;
+using OpenSpartan.Grunt.Endpoints;
+using OpenSpartan.Grunt.Models;
+using OpenSpartan.Grunt.Models.HaloInfinite;
+using OpenSpartan.Grunt.Models.HaloInfinite.ApiIngress;
+using OpenSpartan.Grunt.Util;
 
-namespace Grunt.Core
+namespace OpenSpartan.Grunt.Core
 {
     /// <summary>
     /// Client used to access the Halo Infinite API surface.

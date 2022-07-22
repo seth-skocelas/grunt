@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grunt.Models
+namespace OpenSpartan.Grunt.Models
 {
     public class SpartanTokenRequest
     {

@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// This file is an aggregating ground for discovered URLs. It will be standardized in the future.
 /// </summary>
-namespace Grunt.Util
+namespace OpenSpartan.Grunt.Util
 {
     internal class GlobalConstants
     {

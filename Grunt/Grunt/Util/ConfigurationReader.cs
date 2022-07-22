@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text.Json;
 
-namespace Grunt.Util
+namespace OpenSpartan.Grunt.Util
 {
     public class ConfigurationReader
     {

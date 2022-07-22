@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Grunt.Models.HaloInfinite
+namespace OpenSpartan.Grunt.Models.HaloInfinite
 {
     [IsAutomaticallySerializable]
     public class ParticipationInfo

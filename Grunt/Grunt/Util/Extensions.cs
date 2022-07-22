@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Reflection;
-using Grunt.Models;
+using OpenSpartan.Grunt.Models;
 
-namespace Grunt.Util
+namespace OpenSpartan.Grunt.Util
 {
     internal static class Extensions
     {

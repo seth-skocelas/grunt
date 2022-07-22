@@ -7,7 +7,7 @@
 
 using System.Collections.Generic;
 
-namespace Grunt.Models.HaloInfinite
+namespace OpenSpartan.Grunt.Models.HaloInfinite
 {
     [IsAutomaticallySerializable]
     public class LobbyPresenceContainer
