@@ -24,7 +24,7 @@ namespace Grunt.Librarian
             // Get the API endpoint data.
             Task.Run(async () =>
             {
-                container = await client.GetApiSettingsContainer();
+                container = (await client.GetApiSettingsContainer()).Result;
             }).GetAwaiter().GetResult();
 
             if (container != null)

@@ -87,7 +87,7 @@ namespace Grunt.Zeta
             string localClearance = string.Empty;
             Task.Run(async () =>
             {
-                var clearance = await client.SettingsGetClearance("RETAIL", "UNUSED", "222249.22.06.08.1730-0");
+                var clearance = (await client.SettingsGetClearance("RETAIL", "UNUSED", "222249.22.06.08.1730-0")).Result;
                 if (clearance != null)
                 {
                     localClearance = clearance.FlightConfigurationId;
@@ -124,14 +124,14 @@ namespace Grunt.Zeta
             Task.Run(async () =>
             {
                 List<string> sampleXuids = "xuid(2533274793272155),xuid(2533274814715980),xuid(2533274855333605),xuid(2535435749594170),xuid(2535448099228893),xuid(2535457135464780),xuid(2535466738529606),xuid(2535472868898775)".Split(',').ToList();
-                var performanceData = await client.SkillGetMatchPlayerResult("ad6a3d46-9320-44ee-94cd-c5cb39c7aedd", sampleXuids);
+                var performanceData = (await client.SkillGetMatchPlayerResult("ad6a3d46-9320-44ee-94cd-c5cb39c7aedd", sampleXuids)).Result;
                 Console.WriteLine("Got player performance data.");
             }).GetAwaiter().GetResult();
 
             // Get an example image and store it locally.
             Task.Run(async () =>
             {
-                var imageData = await client.GameCmsGetImage("progression/inventory/armor/gloves/003-001-olympus-8e7c9dff-sm.png");
+                var imageData = (await client.GameCmsGetImage("progression/inventory/armor/gloves/003-001-olympus-8e7c9dff-sm.png")).Result;
                 Console.WriteLine("Got image data.");
                 if (imageData != null)
                 {
@@ -147,7 +147,7 @@ namespace Grunt.Zeta
             // Get bot customization data
             Task.Run(async () =>
             {
-                var seasonData = await client.AcademyGetBotCustomization(localClearance);
+                var seasonData = (await client.AcademyGetBotCustomization(localClearance)).Result;
                 if (seasonData != null)
                 {
                     Console.WriteLine("Got but customization data.");
@@ -161,7 +161,7 @@ namespace Grunt.Zeta
             // Get currency data
             Task.Run(async () =>
             {
-                var currencyData = await client.GameCmsGetCurrency("currency/currencies/cr.json", localClearance);
+                var currencyData = (await client.GameCmsGetCurrency("currency/currencies/cr.json", localClearance)).Result;
                 if (currencyData != null)
                 {
                     Console.WriteLine("Got currency data.");
@@ -175,7 +175,7 @@ namespace Grunt.Zeta
             // Get reward data.
             Task.Run(async () =>
             {
-                var rewardData = await client.EconomyGetAwardedRewards("xuid(2533274855333605)", "Challenges-35a86ae3-017c-4b5a-b633-b2802a770e0a");
+                var rewardData = (await client.EconomyGetAwardedRewards("xuid(2533274855333605)", "Challenges-35a86ae3-017c-4b5a-b633-b2802a770e0a")).Result;
                 if (rewardData != null)
                 {
                     Console.WriteLine("Got reward data.");
