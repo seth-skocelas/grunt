@@ -9,6 +9,9 @@ jobs:
     environment: Production
     runs-on: windows-latest
     timeout-minutes: 15
+    env:
+      GRUNT_NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
+
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -35,4 +38,4 @@ jobs:
       run: dotnet pack --configuration Release -p:Version=$env:VERSION -p:TransformOnBuild="false" -p:IsGitHubActions="true" --no-build --output .
     - name: Push
       working-directory: ./Grunt/Grunt
-      run: dotnet nuget push OpenSpartan.Grunt.$env:VERSION.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push OpenSpartan.Grunt.$env:VERSION.nupkg --source https://api.nuget.org/v3/index.json --api-key $env:GRUNT_NUGET_KEY
