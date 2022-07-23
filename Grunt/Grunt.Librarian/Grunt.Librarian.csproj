@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Grunt\Grunt.csproj" />
+    <ProjectReference Include="..\Grunt\OpenSpartan.Grunt.csproj" />
   </ItemGroup>
 
 </Project>

@@ -20,6 +20,8 @@ jobs:
         git branch --remote --contains | grep origin/main
     - name: Set VERSION variable from tag
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - name: Echo version
+      run: echo ${VERSION}
     - name: Update Version
       working-directory: ./Grunt/Grunt
       run: >

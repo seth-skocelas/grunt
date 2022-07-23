@@ -29,15 +29,15 @@
 		<TransformOutOfDateOnly>false</TransformOutOfDateOnly>
 		<Nullable>enable</Nullable>
 		<AnalysisLevel>latest</AnalysisLevel>
-		<PackageId>OpenSpartan.$(AssemblyName)</PackageId>
+		<PackageId>$(AssemblyName)</PackageId>
 		<Authors>Den Delimarsky</Authors>
 		<Company>Den Delimarsky</Company>
-		<Product>OpenSpartan.$(AssemblyName)</Product>
+		<Product>$(AssemblyName)</Product>
 		<Description>An unofficial wrapper for the Halo APIs. Currently supports the full API stack for Halo Infinite.</Description>
 		<Copyright>2022 by Den Delimarsky</Copyright>
 		<PackageReleaseNotes>Initial release of the OpenSpartan.Grunt package.</PackageReleaseNotes>
-		<AssemblyName>OpenSpartan.$(MSBuildProjectName)</AssemblyName>
-		<RootNamespace>OpenSpartan.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 	</PropertyGroup>
 	
 	<ItemGroup>
