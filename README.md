@@ -1,11 +1,8 @@
-<div align="center">
-	<img alt="Grunt API logo" src="media/grunt-logo.png" width="200" height="200" />
-	<h1>🪐 Grunt API</h1>
-	<p>
-		<b>The unofficial, reverse-engineered Halo Infinite web API</b>
-	</p>
-	<br>
-</div>
+![Grunt logo](https://github.com/OpenSpartan/grunt/raw/main/media/grunt-logo.png)
+
+# 🪐 Grunt API - The Halo API Wrapper
+
+_Your one-stop-shop for the official undocumented Halo API_
 
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://den.dev/ukraine) [![Publish API Documentation](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-api-docs.yml) [![Publish In-Repo NuGet Package](https://github.com/dend/grunt/actions/workflows/publish-inrepo-package.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-inrepo-package.yml) [![Publish NuGet Package](https://github.com/dend/grunt/actions/workflows/publish-nuget-package.yml/badge.svg)](https://github.com/dend/grunt/actions/workflows/publish-nuget-package.yml)
 
@@ -52,7 +49,7 @@ If you want to bring your own token, you carry the responsibility of acquiring a
 
 Look for API calls that return JSON data, and in some of the request headers you will notice a particularly interesting one - `x-343-authorization-spartan`. That's what you need.
 
-![Acquiring the Spartan token from the Halo Waypoint website](media/spartan-token.png) 
+![Acquiring the Spartan token from the Halo Waypoint website](https://github.com/OpenSpartan/grunt/raw/main/media/spartan-token.png) 
 
 I'll say it again - this token is not long-lived and if you see calls failing with `401 Unauthorized`, that means you need a new token.
 
@@ -95,7 +92,7 @@ With the application created, in the `Grunt.Zeta` project create a `client.json`
 
 When you add the configuration file to your project, make sure that it's `Build Action` is set to `None` and `Copy to Output Directory` is `Copy if newer`.
 
-![Configuration file for Grunt.Zeta](media/grunt-zeta-config.png)
+![Configuration file for Grunt.Zeta](https://github.com/OpenSpartan/grunt/raw/main/media/grunt-zeta-config.png)
 
 With the file there, you can now run through the authentication flow, that is powered by Grunt's helper methods:
 
