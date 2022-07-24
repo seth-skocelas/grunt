@@ -19,6 +19,7 @@ And more!
 
 ## Table of contents
 
+- [Platform Support](#platform-support)
 - [Components](#components)
 - [Setup & usage](#setup--usage)
 	- [Bring your own token](#bring-your-own-token)
