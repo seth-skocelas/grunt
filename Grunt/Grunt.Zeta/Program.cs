@@ -34,6 +34,7 @@ namespace OpenSpartan.Grunt.Zeta
             if (System.IO.File.Exists("tokens.json"))
             {
                 Console.WriteLine("Trying to use local tokens...");
+
                 // If a local token file exists, load the file.
                 currentOAuthToken = clientConfigReader.ReadConfiguration<OAuthToken>("tokens.json");
             }
@@ -48,7 +49,12 @@ namespace OpenSpartan.Grunt.Zeta
                 if (ticket == null)
                 {
                     // There was a failure to obtain the user token, so likely we need to refresh.
-                    currentOAuthToken = await manager.RefreshOAuthToken(clientConfig.ClientId, currentOAuthToken.RefreshToken, clientConfig.RedirectUrl, clientConfig.ClientSecret);
+                    currentOAuthToken = await manager.RefreshOAuthToken(
+                        clientConfig.ClientId,
+                        currentOAuthToken.RefreshToken,
+                        clientConfig.RedirectUrl,
+                        clientConfig.ClientSecret);
+
                     if (currentOAuthToken == null)
                     {
                         Console.WriteLine("Could not get the token even with the refresh token.");
@@ -115,7 +121,9 @@ namespace OpenSpartan.Grunt.Zeta
             // Test getting the season data.
             Task.Run(async () =>
             {
-                var seasonData = await client.GameCmsGetSeasonRewardTrack("Seasons/Season7.json", localClearance);
+                var seasonData = await client.GameCmsGetSeasonRewardTrack(
+                    "Seasons/Season7.json",
+                    localClearance);
                 Console.WriteLine("Got season data.");
             }).GetAwaiter().GetResult();
 
