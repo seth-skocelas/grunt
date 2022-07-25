@@ -107,7 +107,7 @@ With the application created, in the `Grunt.Zeta` project create a `client.json`
 
 When you add the configuration file to your project, make sure that it's `Build Action` is set to `None` and `Copy to Output Directory` is `Copy if newer`.
 
-![Configuration file for Grunt.Zeta](https://raw.githubusercontent.com/OpenSpartan/grunt/main/grunt-zeta-config.png)
+![Configuration file for Grunt.Zeta](https://raw.githubusercontent.com/OpenSpartan/grunt/main/media/grunt-zeta-config.png)
 
 With the file there, you can now run through the authentication flow, that is powered by Grunt's helper methods:
 
