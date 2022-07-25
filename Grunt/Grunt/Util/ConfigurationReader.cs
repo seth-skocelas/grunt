@@ -10,16 +10,27 @@ using System.Text.Json;
 
 namespace OpenSpartan.Grunt.Util
 {
+    /// <summary>
+    /// Helper class used to read configuration data from disk.
+    /// </summary>
     public class ConfigurationReader
     {
-        public T ReadConfiguration<T>(string path)
+        /// <summary>
+        /// Reads configuration from a local file and deserializes it into an object.
+        /// </summary>
+        /// <typeparam name="T">Type of object to deserialize.</typeparam>
+        /// <param name="path">Path to the file to read.</param>
+        /// <returns>If successful, returns an instance of the object <typeparamref name="T"/>. Otherwise, returns null.</returns>
+        public static T ReadConfiguration<T>(string path)
         {
-            T config = default(T);
+            T? config = default;
+
             using (StreamReader r = new(path))
             {
                 string json = r.ReadToEnd();
                 config = JsonSerializer.Deserialize<T>(json);
             }
+
             return config;
         }
     }

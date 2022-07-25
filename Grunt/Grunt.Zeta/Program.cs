@@ -14,8 +14,7 @@ namespace OpenSpartan.Grunt.Zeta
     {
         static void Main(string[] args)
         {
-            ConfigurationReader clientConfigReader = new();
-            var clientConfig = clientConfigReader.ReadConfiguration<ClientConfiguration>("client.json");
+            var clientConfig = ConfigurationReader.ReadConfiguration<ClientConfiguration>("client.json");
             
             XboxAuthenticationClient manager = new();
             var url = manager.GenerateAuthUrl(clientConfig.ClientId, clientConfig.RedirectUrl);
@@ -36,7 +35,7 @@ namespace OpenSpartan.Grunt.Zeta
                 Console.WriteLine("Trying to use local tokens...");
 
                 // If a local token file exists, load the file.
-                currentOAuthToken = clientConfigReader.ReadConfiguration<OAuthToken>("tokens.json");
+                currentOAuthToken = ConfigurationReader.ReadConfiguration<OAuthToken>("tokens.json");
             }
             else
             {
@@ -184,6 +183,21 @@ namespace OpenSpartan.Grunt.Zeta
             {
                 var rewardData = (await client.EconomyGetAwardedRewards("xuid(2533274855333605)", "Challenges-35a86ae3-017c-4b5a-b633-b2802a770e0a")).Result;
                 if (rewardData != null)
+                {
+                    Console.WriteLine("Got reward data.");
+                }
+                else
+                {
+                    Console.WriteLine("Could not get reward data.");
+                }
+            }).GetAwaiter().GetResult();
+
+            Task.Run(async () =>
+            {
+                var matchData = await client.StatsGetMatchHistory("xuid(2533274855333605)", 0, 12, Models.HaloInfinite.MatchType.All);
+                
+                var data = matchData.Result;
+                if (data != null)
                 {
                     Console.WriteLine("Got reward data.");
                 }

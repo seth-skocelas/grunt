@@ -1,23 +1,18 @@
-﻿// <copyright file="AiCore.cs" company="Den Delimarsky">
+﻿// <copyright file="MatchInfo.cs" company="Den Delimarsky">
 // Developed by Den Delimarsky.
 // Den Delimarsky licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 // The underlying API powering Grunt is managed by 343 Industries and Microsoft. This wrapper is not endorsed by 343 Industries or Microsoft.
 // </copyright>
 
-using System.Collections.Generic;
-
 namespace OpenSpartan.Grunt.Models.HaloInfinite
 {
     /// <summary>
-    /// AI Core available in Halo Infinite.
+    /// Playlist experience associated with a given match.
     /// </summary>
-    [IsAutomaticallySerializable]
-    public class AiCore : Foundation.Core
+    public enum PlaylistExperience
     {
-        /// <summary>
-        /// Gets or sets a list of themes associated with an AI Core.
-        /// </summary>
-        public List<AiCoreTheme>? Themes { get; set; }
+        Arena = 2,
+        Featured = 5
     }
 }

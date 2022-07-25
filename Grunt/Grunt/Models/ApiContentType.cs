@@ -7,10 +7,20 @@
 
 namespace OpenSpartan.Grunt.Models
 {
+    /// <summary>
+    /// Type of content to return for the Halo API.
+    /// </summary>
     public enum ApiContentType
     {
+        /// <summary>
+        /// JSON data format.
+        /// </summary>
         [ContentType(HeaderValue = "application/json")]
         Json,
+
+        /// <summary>
+        /// <see href="https://microsoft.github.io/bond/manual/bond_cs.html#compact-binary">Microsoft Bond Compact Binary</see> data format.
+        /// </summary>
         [ContentType(HeaderValue = "application/x-bond-compact-binary")]
         BondCompactBinary,
     }

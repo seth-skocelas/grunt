@@ -1408,11 +1408,24 @@ namespace OpenSpartan.Grunt.Core
         /// <include file='../APIDocsExamples/HIUGC_ListPlayerAssets.xml' path='//example'/>
         /// <param name="title">Title which contains the asset. An example value here is "hi".</param>
         /// <param name="player">The unique player XUID, in the format "xuid(XUID_VALUE)".</param>
+        /// <param name="start">Number of results from which to start the iteration.</param>
+        /// <param name="count">Number of assets to return. Maximum is 25. Going beyond 25 will result in only 25 values being returned.</param>
+        /// <param name="includeTimes">Include times for asset modification.</param>
+        /// <param name="sort">Property by which to sort the results. Example is "PlaysRecent".</param>
+        /// <param name="order">Determines whether results are ordered in descending or ascending order.</param>
+        /// <param name="keywords">List of keywords by which to filter.</param>
+        /// <param name="kind">Type of asset to return.</param>
         /// <returns>If successful, returns an instance of AuthoringAssetContainer containing information about assets a player owns. Otherwise, returns null.</returns>
-        public async Task<HaloApiResultContainer<AuthoringAssetContainer, HaloApiErrorContainer>> HIUGCListPlayerAssets(string title, string player)
+        public async Task<HaloApiResultContainer<AuthoringAssetContainer, HaloApiErrorContainer>> HIUGCListPlayerAssets(string title, string player, int start, int count, bool includeTimes, string sort, ResultOrder order, List<string> keywords, AssetKind kind)
         {
+            var formattedKeywordList = string.Empty;
+            if (keywords != null && keywords.Count > 0)
+            {
+                formattedKeywordList = string.Join(",", keywords);
+            }
+
             return await this.ExecuteAPIRequest<AuthoringAssetContainer>(
-                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/players/{player}/assets",
+                $"https://{HaloCoreEndpoints.AuthoringOrigin}.{HaloCoreEndpoints.ServiceDomain}/{title}/players/{player}/assets?start={start}&count={count}&include-times={includeTimes}&sort={sort}&order={order}&keywords={formattedKeywordList}&kind={kind}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2014,10 +2027,10 @@ namespace OpenSpartan.Grunt.Core
         /// <param name="count">Count of results to return.</param>
         /// <param name="includeTimes">Include creation, modification, and deletion times in results.</param>
         /// <param name="sort">Property by which to sort the results. Example is "PlaysRecent".</param>
-        /// <param name="order">Descending ("desc") or ascending ("asc") result ordering.</param>
-        /// <param name="assetKind">Type of asset to be searched. Examples are "Film", "Map", "Playlist", "Prefab", "TestAsset", "UgcGameVariant", "MapModePair", "Project", "Manifest", "EngineGameVariant".</param>
+        /// <param name="order">Determines whether results are ordered in descending or ascending order.</param>
+        /// <param name="assetKind">Type of asset to be searched.</param>
         /// <returns>If successful, returns an instance of SearchResultsContainer container assets. Otherwise, returns null.</returns>
-        public async Task<HaloApiResultContainer<SearchResultsContainer, HaloApiErrorContainer>> HIUGCDiscoverySearch(int start, int count, bool includeTimes, string sort, string order, string assetKind)
+        public async Task<HaloApiResultContainer<SearchResultsContainer, HaloApiErrorContainer>> HIUGCDiscoverySearch(int start, int count, bool includeTimes, string sort, ResultOrder order, AssetKind assetKind)
         {
             return await this.ExecuteAPIRequest<SearchResultsContainer>(
                 $"https://{HaloCoreEndpoints.DiscoveryOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/search?start={start}&count={count}&include-times={includeTimes}&sort={sort}&order={order}&assetKind={assetKind}",
@@ -2264,11 +2277,14 @@ namespace OpenSpartan.Grunt.Core
         /// </summary>
         /// <include file='../APIDocsExamples/Stats_GetMatchHistory.xml' path='//example'/>
         /// <param name="player">The player identifier in the format "xuid(000000)"</param>
+        /// <param name="start">Start value for the counter, from which data should be returned.</param>
+        /// <param name="count">Number of matches to return. Maximum is 25. Going beyond 25 will result in only 25 values being returned.</param>
+        /// <param name="type">Type of matches to query.</param>
         /// <returns>An instance of MatchContainer containing match metadata if request was successful. Return value is null otherwise.</returns>
-        public async Task<HaloApiResultContainer<MatchContainer, HaloApiErrorContainer>> StatsGetMatchHistory(string player)
+        public async Task<HaloApiResultContainer<MatchHistoryResponse, HaloApiErrorContainer>> StatsGetMatchHistory(string player, int start, int count, Models.HaloInfinite.MatchType type)
         {
-            return await this.ExecuteAPIRequest<MatchContainer>(
-                $"https://{HaloCoreEndpoints.StatsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/matches",
+            return await this.ExecuteAPIRequest<MatchHistoryResponse>(
+                $"https://{HaloCoreEndpoints.StatsOrigin}.{HaloCoreEndpoints.ServiceDomain}/hi/players/{player}/matches?start={start}&count={count}&type={type}",
                 HttpMethod.Get,
                 true,
                 false,
@@ -2446,12 +2462,10 @@ namespace OpenSpartan.Grunt.Core
                     }
                 }
             }
-            else
+
+            if (response.Content != null)
             {
-                if (response.Content != null)
-                {
-                    resultContainer.Error.Message = await response.Content.ReadAsStringAsync();
-                }
+                resultContainer.Error.Message = await response.Content.ReadAsStringAsync();
             }
 
             return resultContainer;

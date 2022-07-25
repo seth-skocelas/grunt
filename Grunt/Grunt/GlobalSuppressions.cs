@@ -5,4 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1629:Documentation text should end with a period", Justification = "The documentation in most cases ends with a period. A sample does not fall into the same category.", Scope = "type", Target = "~T:Grunt.Core.HaloInfiniteClient")]
+[assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1629:Documentation text should end with a period", Justification = "The documentation in most cases ends with a period. A sample does not fall into the same category.")]
