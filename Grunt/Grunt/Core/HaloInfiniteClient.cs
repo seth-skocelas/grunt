@@ -41,7 +41,7 @@ namespace OpenSpartan.Grunt.Core
         /// <param name="spartanToken">The Spartan token used to authenticate against the Halo Infinite API.</param>
         /// <param name="xuid">The player identifier in the format "xuid(XUID_VALUE)".</param>
         /// <param name="clearanceToken">ID of the flight/clearance currently active for the player. Optional when first instantiating the client.</param>
-        public HaloInfiniteClient(string spartanToken, string xuid, string clearanceToken = "")
+        public HaloInfiniteClient(string spartanToken, string xuid = "", string clearanceToken = "")
         {
             this.SpartanToken = spartanToken;
             this.Xuid = xuid;

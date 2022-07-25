@@ -26,8 +26,6 @@ namespace OpenSpartan.Grunt.Zeta
             var ticket = new XboxTicket();
             var haloTicket = new XboxTicket();
             var extendedTicket = new XboxTicket();
-
-            var xblToken = string.Empty;
             var haloToken = new SpartanToken();
 
             if (System.IO.File.Exists("tokens.json"))
@@ -72,11 +70,6 @@ namespace OpenSpartan.Grunt.Zeta
             {
                 extendedTicket = await manager.RequestXstsToken(ticket.Token, false);
             }).GetAwaiter().GetResult();
-
-            if (ticket != null)
-            {
-                xblToken = manager.GetXboxLiveV3Token(haloTicket.DisplayClaims.Xui[0].Uhs, haloTicket.Token);
-            }
 
             Task.Run(async () =>
             {
