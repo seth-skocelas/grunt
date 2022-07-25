@@ -19,6 +19,7 @@ namespace OpenSpartan.Grunt.Models.HaloInfinite
         MultiplayerBastion = 12,
         MultiplayerCtf = 15,
         MultiplayerOddball = 18,
+        MultiplayerGrifball = 25,
         MultiplayerLandGrab = 39,
     }
 }
