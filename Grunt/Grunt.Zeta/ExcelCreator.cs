@@ -25,6 +25,7 @@ namespace Grunt.Zeta
                     worksheet.Cell("J1").Value = "CSR Change";
                     worksheet.Cell("K1").Value = "Damage Dealt";
                     worksheet.Cell("L1").Value = "Damage Taken";
+                    worksheet.Cell("M1").Value = "Accuracy";
 
                     var cores = coreDict[entry.Key];
                     var i = 2;
@@ -44,6 +45,7 @@ namespace Grunt.Zeta
                         worksheet.Cell($"J{i}").Value = $"{result.RankRecap.PostMatchCsr.Value - result.RankRecap.PreMatchCsr.Value}";
                         worksheet.Cell($"K{i}").Value = $"{core.DamageDealt}";
                         worksheet.Cell($"L{i}").Value = $"{core.DamageTaken}";
+                        worksheet.Cell($"M{i}").Value = $"{core.Accuracy}";
                         i += 1;
                     }
                     worksheet.Columns().AdjustToContents();
