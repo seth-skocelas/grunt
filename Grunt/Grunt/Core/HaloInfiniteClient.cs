@@ -3328,11 +3328,7 @@ namespace Grunt.Core
 
             if (!string.IsNullOrEmpty(response))
             {
-                var settings = new JsonSerializerSettings
-                {
-                    NullValueHandling = NullValueHandling.Ignore,
-                };
-                return JsonConvert.DeserializeObject<PlayerSkillResultValue>(response, settings);
+                return JsonConvert.DeserializeObject<PlayerSkillResultValue>(response);
             }
             else
             {

@@ -11,8 +11,6 @@ namespace Grunt.Models.HaloInfinite
         public StatPerformances StatPerformances { get; set; }
         public int TeamId { get; set; }
         public Dictionary<String, Double> TeamMmrs { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public RankedRewards RankedRewards { get; set; }
         public Counterfactuals Counterfactuals { get; set; }
 
