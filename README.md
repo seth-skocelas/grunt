@@ -16,8 +16,8 @@ This API enables you to:
 
 - Get stats on matches you played.
 - Get your personal player stats.
-- Track campaign progress.
-- Track map popularity
+- Track your campaign progress.
+- Track map and game mode popularity (see - [`openspartan-data-snapshots`](https://github.com/OpenSpartan/openspartan-data-snapshots)).
 
 And more!
 
