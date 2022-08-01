@@ -11,6 +11,8 @@ Welcome to **Grunt API** - the unofficial way to use official undocumented Halo 
 > **👋 NOTE**
 >
 > In case you are wondering, this API is simply a wrapper over the Halo Waypoint API requests that the game executes while running. Nothing here required looking at anything more complex than a [Fiddler trace](https://www.telerik.com/fiddler/fiddler-classic) to see what calls the game makes. To use this API, you will need to go through the authentication flow with your very own credentials.
+>
+>This projects **does not circumvent** and has **no goals of circumventing** any of the existing authentication mechanisms or in-game protections.
 
 This API enables you to:
 
