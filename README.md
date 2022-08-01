@@ -54,19 +54,25 @@ _In development_
 | Component | Description |
 |:----------|:------------|
 | [`Grunt`](https://github.com/dend/grunt/tree/main/Grunt/Grunt) | The core library, written in C#, that wraps the Halo Infinite web APIs. |
-| [`Grunt.Zeta`](https://github.com/dend/grunt/tree/main/Grunt/Grunt.Zeta) | Experimental ground for the Grunt library. This will eventually become the Grunt CLI. |
-| [`Grunt.Librarian`](https://github.com/dend/grunt/tree/main/Grunt/Grunt.Librarian) | Tool used to auto-generate code stubs for Halo Infinite API endpoints. It's a very "brute"-ish way to generate the code, but it works for now. |
+| [`Grunt.Zeta`](https://github.com/dend/grunt/tree/main/Grunt/Grunt.Zeta) | Experimental ground for the Grunt library. It's a project where wrapped APIs from Grunt are tested in a more real scenario. |
+| [`Grunt.Librarian`](https://github.com/dend/grunt/tree/main/Grunt/Grunt.Librarian) | Tool used to auto-generate code stubs for Halo Infinite API endpoints. It's a very "brute"-ish way to produce the code, but it works for now. |
 
 ## Setup & usage
 
-The core requirement to use the endpoints in the library is to have a Spartan token, that is provided by the Halo Infinite service. That being said, there are two ways to experiment with the library:
+The core requirement to use the endpoints in the library is to have a Spartan token, that is provided by the Halo Infinite service.
 
-1. **Bring your own Spartan token**. That means that you can obtain it on your own through man-in-the-middle inspection of the app/game traffic, or by grabbing it from the [Halo Waypoint](https://halowaypoint.com) site. Read more on that in the [section below](#bring-your-own-token).
-2. **Executing the full authentication flow yourself.** This is a bit more complex, but doable because Grunt API wraps all the required methods out-of-the-box. For details, see [section below](#authenticate-yourself).
+>**⚠️ WARNING**
+>
+>The Spartan token is associated with _your identity_ and _your account_. **Do not share it** with anyone, under any circumstances. The API wrapper does not explicitly store it anywhere. It's your responsibility to make sure that it's secure and not available to anyone else.
+
+There are two ways to experiment with the library:
+
+1. **Bring your own Spartan token**. That means that you can obtain it on your own through man-in-the-middle inspection of the app/game traffic (what Julia Evans described [in her blog post](https://jvns.ca/blog/2022/03/10/how-to-use-undocumented-web-apis/)), or by grabbing it from the [Halo Waypoint](https://halowaypoint.com) site. Read more on that in the [section below](#bring-your-own-token).
+2. **Executing the full authentication flow yourself.** This is a bit more complex, but doable because Grunt API wraps all the required methods out-of-the-box. You are still using your own identity and account, but will be generating a new Spartan token for your requests. For details, see [section below](#authenticate-yourself).
 
 ### Bring your own token
 
-If you want to bring your own token, you carry the responsibility of acquiring and getting an up-to-date version of the Spartan token (they do expire frequently). The easiest way to do that is by looking at the [Halo Waypoint site](https://halowaypoint.com) through the lens of your browser's Network Inspector.
+If you want to bring your own token, you carry the responsibility of acquiring and getting an up-to-date version of the Spartan token (they expire frequently). The easiest way to do that is by looking at the [Halo Waypoint site](https://halowaypoint.com) through the lens of your browser's Network Inspector.
 
 Look for API calls that return JSON data, and in some of the request headers you will notice a particularly interesting one - `x-343-authorization-spartan`. That's what you need.
 
@@ -74,15 +80,9 @@ Look for API calls that return JSON data, and in some of the request headers you
 
 I'll say it again - this token is not long-lived and if you see calls failing with `401 Unauthorized`, that means you need a new token.
 
-Some API calls are also requiring you include another header - `343-clearance`. This token is obtained through a separate API call that I am yet to document, but you can also grab it from the Halo Waypoint site. An example API call that you can watch for with the Synthwave event going on is this:
+Some API calls are also requiring you include another header - `343-clearance`. This token is obtained through a separate API call, but you can also grab it from the Halo Waypoint site. If you look for it in the network inspector, you will get the `343-clearance` header as well.
 
-```bash
-https://gamecms-hacs-origin.svc.halowaypoint.com/hi/Progression/file/ChallengeContent/ClientChallengeDefinitions/S1EventSynthwaveChallenges/Normal/NSynthwaveMedalRevive.json
-```
-
-If you look for it in the network inspector, you will get the `343-clearance` header as well. It's on my TODO list to document available endpoints and whether they require clearance or not.
-
-Once you have the Spartan and clearance tokens, you are good to go, and can now call the API endpoints from Grunt.
+Once you have the Spartan and clearance tokens, you are good to go, and can now [call the API endpoints from Grunt](https://docs.gruntapi.com/dotnet/api/openspartan.grunt.core/openspartan.grunt.core.haloinfiniteclient).
 
 ```csharp
 HaloInfiniteClient client = new(<YOUR_SPARTAN_TOKEN>, <YOUR_CLEARANCE_TOKEN>, <YOUR_XUID_REQUIRED_ONLY_FOR_SOME_CALLS>);
@@ -99,7 +99,7 @@ Task.Run(async () =>
 
 > **IMPORTANT**: The instructions below are using Visual Studio 2019, but are going to work with Visual Studio 2022, which you can [download for free](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=17).
 
-If you want to automatically generate the Spartan token, you can do so with the help of Grunt API without having to worry about doing any of the REST API calls yourself. Before you get started, make sure that you [register an Azure Active Directory application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app). You will need it in order to log in with your Microsoft account, that will be used to generate the token. Because this is just for you, you can use `https://localhost` as the redirect URI when you create the application, unless you're thinking of productizing whatever you're building.
+If you want to automatically generate the Spartan token, you can do so with the help of Grunt API without having to worry about doing any of the REST API calls yourself. Before you get started, make sure that you [register an Azure Active Directory application](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app). You will need it in order to log in with your Microsoft account, that will be used to generate the token. Because this is just for you, you can use `https://localhost` as the redirect URI when you create the application, unless you're thinking of productizing whatever you're building.
 
 With the application created, in the `Grunt.Zeta` project create a `client.json` file, that has the following contents:
 
@@ -213,7 +213,9 @@ Task.Run(async () =>
 
 The code above will try to read tokens locally and refresh them, if available.
 
-> **NOTE:** This is worth additional investigation, but it seems that if the clearance (`343-clearance` header) is used, it needs to be activated at least once with the game before the API access is granted. That is, you need to launch the game at the latest build on your account before you can start querying the API. If you are running into issues with the API and are getting 403 Forbidden errors, make sure that you start Halo Infinite at least once before retrying.
+> **👋 NOTE**
+>
+>This is worth additional investigation, but it seems that if the clearance (`343-clearance` header) is used, it needs to be activated at least once with the game before the API access is granted. That is, you need to launch the game at the latest build on your account before you can start querying the API. If you are running into issues with the API and are getting `403 Forbidden` errors, make sure that you start Halo Infinite at least once before retrying.
 
 Once you have the Spartan token, you are good to go and can start issuing API requests. Keep in mind that the Spartan token does expire, so you will need to refresh it along other tokens as well.
 
@@ -233,21 +235,25 @@ You can read the docs on the [Grunt docs website](https://docs.grunt.com).
 
 ## FAQ
 
-**Is this in any way endorsed by 343 Industries?**
+**Q1: Is this in any way endorsed by 343 Industries or Microsoft?**
 
-No. Not at all. This is something that I've put together myself by inspecting network traffic.
+No. Not at all. This is something that I've put together myself by inspecting network traffic. This project is not funded, supported, or otherwise endorsed by either 343 Industries or Microsoft.
 
-**Something is broken and my production site that uses your library doesn't work. Can you help?**
+**Q2: Something is broken and my production site that uses your library doesn't work. Can you help?**
 
-Don't use any of this code in production. It's nowhere near stable.
+Don't use any of this code in production. It's nowhere near stable, and will never be.
 
-**Some API endpoint is not working anymore or returns an unexpected result. What's up with that?**
+**Q3: Some API endpoint is not working anymore or returns an unexpected result. What's up with that?**
 
 [Open an issue](https://github.com/dend/grunt/issues) so that I can investigate.
 
-**How do I contact the author?**
+**Q4: How do I contact the author?**
 
 [Open an issue](https://github.com/dend/grunt/issues) or reach out [on Twitter](https://twitter.com/denniscode).
+
+**Q5: Can this be used for commercial purposes?**
+
+_Absolutely not_. This project is exploratory in nature. It has no guarantees, implied or otherwise, of your ability to consume the API. It does not give you any permission to use this in commercial projects, and neither does it guarantee API access or stability. If you are looking at building something serious using the Halo API, you need to reach out to [343 Industries](https://www.343industries.com/studio).
 
 ## Contributions
 
