@@ -17,7 +17,7 @@ namespace OpenSpartan.Grunt.Models.HaloInfinite
     {
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
-        public string Duration { get; set; }
+        public TimeSpan Duration { get; set; }
         public int LifecycleMode { get; set; }
         public GameVariantCategory? GameVariantCategory { get; set; }
         public string LevelId { get; set; }
