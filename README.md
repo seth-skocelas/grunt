@@ -14,6 +14,11 @@ Welcome to **Grunt API** - the unofficial way to use official undocumented Halo 
 >
 >This projects **does not circumvent** and has **no goals of circumventing** any of the existing authentication mechanisms or in-game protections.
 
+> **⚠️ WARNING **
+>
+> This project wraps the undocumented Halo Waypoint APIs and requires use of your account credentials/tokens. While 343 Industries has not yet raised any concerns over the use of these APIs, **I cannot guarantee 343 Industries won't change their position** (e.g. ban your account). Use at your own risk.
+
+
 This API enables you to:
 
 - Get stats on matches you played.
