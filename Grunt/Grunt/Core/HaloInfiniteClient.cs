@@ -13,6 +13,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using OpenSpartan.Grunt.Converters;
 using OpenSpartan.Grunt.Endpoints;
 using OpenSpartan.Grunt.Models;
 using OpenSpartan.Grunt.Models.HaloInfinite;
@@ -32,6 +33,7 @@ namespace OpenSpartan.Grunt.Core
             Converters =
             {
                 new EmptyDateStringToNullJsonConverter(),
+                new XmlDurationToTimeSpanJsonConverter(),
             },
         };
 
